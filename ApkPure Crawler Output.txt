@@ -1,0 +1,795 @@
+Name: PUBG MOBILE
+	Author: Tencent Games
+	Category: Action GAME
+	Rating: 8.8 / 10.0
+	Package Name: com.tencent.ig
+	Versions:
+		Version: 0.8.0
+		Publish Date: 2018-09-12
+		Sha Value: dab6b50aa380a5581ffcd425b7a3692767a2fc41
+		Version: 0.8.0
+		Publish Date: 2018-09-12
+		Sha Value: 632dba33f6cc23db226465b0254c13ceb1e83a91
+		Version: 0.7.0
+		Publish Date: 2018-07-24
+		Sha Value: 263a4ee7fe53c500b00f08e8a0252b8e36278bb9
+		Version: 0.7.0
+		Publish Date: 2018-07-24
+		Sha Value: 9c0b4e9b5e58b9530f3e751945041fc04c9bfd6e
+		Version: 0.6.0
+		Publish Date: 2018-06-19
+		Sha Value: de3c7e08a800b19dfce1cc8b2cde5a2f78bb6027
+		Version: 0.6.0
+		Publish Date: 2018-06-19
+		Sha Value: 30cbc764920bb55551d8752fad51898e5048895a
+		Version: 0.5.0
+		Publish Date: 2018-05-15
+		Sha Value: 96f8657e14a05d4858c20d7c6794e9ef718b516f
+		Version: 0.5.0
+		Publish Date: 2018-05-15
+		Sha Value: 562b091871f77f17b8a68adee734a8bd75cadab6
+		Version: 0.4.0
+		Publish Date: 2018-04-17
+		Sha Value: 8608178d03b98a706adba01354bb830ac5ab8ef4
+		Version: 0.4.0
+		Publish Date: 2018-04-17
+		Sha Value: bd76f46daa42724c51d22a2155c4174fa912d1c5
+		Version: 0.3.3
+		Publish Date: 2018-03-29
+		Sha Value: adca1b368c0e3e6eaad67f557a4abcf5c994054b
+		Version: 0.3.3
+		Publish Date: 2018-03-29
+		Sha Value: cbb5e4ede2063848b7ee5e8c6993945851cd7009
+		Version: 0.3.2
+		Publish Date: 2018-03-15
+		Sha Value: 6df48153699e2074bf4237b58a1c1ef40da9ad3b
+		Version: 0.3.2
+		Publish Date: 2018-03-15
+		Sha Value: e4ee72d59964cad5ac801977e9f2ad180461cccf
+Name: PUBG MOBILE LITE
+	Author: Tencent Games
+	Category: Action GAME
+	Rating: 8.4 / 10.0
+	Package Name: com.tencent.iglite
+	Versions:
+		Version: 0.5.1
+		Publish Date: 2018-09-28
+		Sha Value: 6169cf16e0d956fba10dce8f594f9c12c051e1cc
+		Version: 0.5.1
+		Publish Date: 2018-09-28
+		Sha Value: 0b4556b3eda5e668f41b98a2d429382e930f6dca
+		Version: 0.5.1
+		Publish Date: 2018-09-12
+		Sha Value: bda8fde90b35bfef57b3e4fea39427d5fd9ecc74
+		Version: 0.5.1
+		Publish Date: 2018-09-12
+		Sha Value: ee26e8957a1a7d26856bf91967c381b62363a45f
+		Version: 0.5.0
+		Publish Date: 2018-08-19
+		Sha Value: 6e42a3512367ecbb7a35c307ad2f02597ca329a8
+		Version: 0.5.0
+		Publish Date: 2018-08-19
+		Sha Value: 0df822cfeec3397e04dd888e73ab07bc53e97ff5
+		Version: 0.5.0
+		Publish Date: 2018-08-09
+		Sha Value: ee204c1c5207b2c995e65fe349a5ccbd0ceb5d26
+		Version: 0.5.0
+		Publish Date: 2018-08-09
+		Sha Value: 6ec655d9b0278c33271aa81ad8e2c18720d3d550
+Name: Garena Free Fire
+	Author: GARENA INTERNATIONAL I PRIVATE LIMITED
+	Category: Action GAME
+	Rating: 9.0 / 10.0
+	Package Name: com.dts.freefireth
+	Versions:
+		Version: 1.22.1
+		Publish Date: 2018-09-12
+		Sha Value: e5d67093544a8a71a5c24bb5bdce58c7d47340ff
+		Version: 1.22.1
+		Publish Date: 2018-09-12
+		Sha Value: 2870f5c15195ca95ab8654741a209747244b37e2
+		Version: 1.21.0
+		Publish Date: 2018-08-03
+		Sha Value: d3b2d563d9cb2a57a06f7e4dd715efeba16be545
+		Version: 1.21.0
+		Publish Date: 2018-08-03
+		Sha Value: 696bebefec6a0e339ae4ad89d8a8bd5217083ab2
+		Version: 1.20.3
+		Publish Date: 2018-07-26
+		Sha Value: 0ce13f13043b4febdcd4af402f3a3478293ee464
+		Version: 1.20.3
+		Publish Date: 2018-07-26
+		Sha Value: 1dc2e5afbd10a5466365b6afa26b9778318ab2ca
+		Version: 1.19.0
+		Publish Date: 2018-06-22
+		Sha Value: 1f2a59170bfe5aacffe1aac348ac54d9c841d52b
+		Version: 1.19.0
+		Publish Date: 2018-06-22
+		Sha Value: 60877a7b6224c812747cfeb4c245d6b7214d46bc
+		Version: 1.18.0
+		Publish Date: 2018-06-20
+		Sha Value: 35852756a8e8ddf099fb932c46b40136eeeceb3b
+		Version: 1.18.0
+		Publish Date: 2018-06-20
+		Sha Value: 1123852645ba7928f2901afde622cf5035e6dabd
+		Version: 1.17.1
+		Publish Date: 2018-05-24
+		Sha Value: 697802aa74b044f5d3d62abad836755ef712523b
+		Version: 1.17.1
+		Publish Date: 2018-05-24
+		Sha Value: 3e3081998d28860e82982cd1a08c7f3530e81116
+		Version: 1.16.0
+		Publish Date: 2018-04-19
+		Sha Value: 06966857cfe6f09dc1701c75fa25616c3c249b1b
+		Version: 1.16.0
+		Publish Date: 2018-04-19
+		Sha Value: 0dedb10cf06fdb3d3aab25dfb6d229f4ed95e4df
+		Version: 1.15.3
+		Publish Date: 2018-04-17
+		Sha Value: c6f4c5234a8820219742292c09c0f4d4400f2e0a
+		Version: 1.15.3
+		Publish Date: 2018-04-17
+		Sha Value: fef0688836667aaf5e80226bb2f6e861b51601a8
+		Version: 1.14.0
+		Publish Date: 2018-03-20
+		Sha Value: aa1e7a60f51bd535f0e69613f338c50ad3809153
+		Version: 1.14.0
+		Publish Date: 2018-03-20
+		Sha Value: 04700b51748cd02347ebd31e068e68e0c040a958
+		Version: 1.13.0
+		Publish Date: 2018-03-02
+		Sha Value: 7e14de644ed9e6cbe66b49d099366c7194a6985b
+		Version: 1.13.0
+		Publish Date: 2018-03-02
+		Sha Value: e4a36fef6f3070a230ed478bade2e84b9f17ce15
+		Version: 1.12.0
+		Publish Date: 2018-02-11
+		Sha Value: dbbb4bff943520ba54ba103c1b14c906185819b7
+		Version: 1.12.0
+		Publish Date: 2018-02-11
+		Sha Value: 5b8d3102bb61919745da9313cfeb1812037f16c2
+		Version: 1.11.2
+		Publish Date: 2018-02-08
+		Sha Value: ce08adcd2f6afd8273d34a383183d0a360696e39
+		Version: 1.11.2
+		Publish Date: 2018-02-08
+		Sha Value: 174005519ea103d0a2dd626008e65b2185790c52
+		Version: 1.10.0
+		Publish Date: 2018-01-15
+		Sha Value: 8619ebade859d3acec00900b8e883494d5bc349b
+		Version: 1.10.0
+		Publish Date: 2018-01-15
+		Sha Value: a2b9c12235d871647a90580923ea8003c71b77d2
+		Version: 1.9.3
+		Publish Date: 2018-01-09
+		Sha Value: f9b5eee84a62b1f6819b8804eb2900fff8d4c494
+		Version: 1.9.3
+		Publish Date: 2018-01-09
+		Sha Value: 8641ba426ca86f6aabbd709f3aa76bcf106b9d73
+		Version: 1.8.11
+		Publish Date: 2017-12-22
+		Sha Value: b0e5c4721257904ce834e8a61f7a6e67e7da659a
+		Version: 1.8.11
+		Publish Date: 2017-12-22
+		Sha Value: ddd7b7902e1b7e0d2933ba39566099d1fd952fb5
+		Version: 1.8.8
+		Publish Date: 2017-12-21
+		Sha Value: 7768d6f6825d0ed71bbb4c64bc4abd15cd018370
+		Version: 1.8.8
+		Publish Date: 2017-12-21
+		Sha Value: 126cdeb81e2ddb24db698a88a7741eefc90c061e
+		Version: 1.7.20
+		Publish Date: 2017-12-13
+		Sha Value: 5704cef0a612c0f280a9304b035d3026246bbf66
+		Version: 1.7.20
+		Publish Date: 2017-12-13
+		Sha Value: 8cae53746d8fb861853a637d21579129cc485623
+		Version: 1.7.16
+		Publish Date: 2017-12-06
+		Sha Value: af375e45b7dd1f7251ae09a751d76b00da69d13a
+		Version: 1.7.16
+		Publish Date: 2017-12-06
+		Sha Value: f1d732ed82dab0a29d54786964dc4b127c1c2ba0
+		Version: 1.7.10
+		Publish Date: 2017-12-03
+		Sha Value: d62490f14a737635a826c0a2978ee25879d3b055
+		Version: 1.7.10
+		Publish Date: 2017-12-03
+		Sha Value: c786dc372a991f8c3a7338dce5a447ea955997d9
+		Version: 1.6.14
+		Publish Date: 2017-11-23
+		Sha Value: cb62ae18c9d8a4e96110a3e3800ccb6865555c97
+		Version: 1.6.14
+		Publish Date: 2017-11-23
+		Sha Value: 05278d8dd2bbe1c6e0d48d95ffe556cb8b9ac391
+		Version: 1.6.6
+		Publish Date: 2017-11-20
+		Sha Value: 473f18cafff8c9aa06560454f6fbf27a447d1d73
+		Version: 1.6.6
+		Publish Date: 2017-11-20
+		Sha Value: 07a391c75b7cc5f1f65f6b0b6e2abc60097302db
+		Version: 1.6.5
+		Publish Date: 2017-11-17
+		Sha Value: f80c16a2cd8b350b20a301aa1ef38fb2726c5b3b
+		Version: 1.6.5
+		Publish Date: 2017-11-17
+		Sha Value: 3a467357fbe57ea3622014405e400c1d2dca1559
+		Version: 1.6.1
+		Publish Date: 2017-11-16
+		Sha Value: 98ccab4b5285e3aaf8590894b53f1841ba1a8712
+		Version: 1.6.1
+		Publish Date: 2017-11-16
+		Sha Value: 9bb9f317a2df84250f9be4c1d54f9bdc18293bfd
+		Version: 1.5.26
+		Publish Date: 2017-11-10
+		Sha Value: 1a197aa97122ffc89abf7513a85295536ac23369
+		Version: 1.5.26
+		Publish Date: 2017-11-10
+		Sha Value: ef25c81932991e2e1a8c817c85eee6922f45784d
+		Version: 1.2.17
+		Publish Date: 2017-11-06
+		Sha Value: 24eb206e21d02b0ebc5015ffe2501ea92375eedc
+		Version: 1.2.17
+		Publish Date: 2017-11-06
+		Sha Value: 62642a28e0f19084e4ace64d3bc3a86f27f23258
+		Version: 1.1.15
+		Publish Date: 2017-11-02
+		Sha Value: e3fb26c3b3a3e0af6cc87695efc0307f1085b2ab
+		Version: 1.1.15
+		Publish Date: 2017-11-02
+		Sha Value: 1026de8a91378e0ac813e87fbf246f201d47f50d
+		Version: 1.0.0
+		Publish Date: 2017-10-02
+		Sha Value: 8a4c5226ab95a2836fbe462a890399d2f28e9cc6
+		Version: 1.0.0
+		Publish Date: 2017-10-02
+		Sha Value: db384a3e8d2315b896c2245f5b9d312e6acef565
+Name: Creative Destruction
+	Author: ZuoMasterDeveloper
+	Category: Action GAME
+	Rating: 9.1 / 10.0
+	Package Name: com.titan.cd.gb
+	Versions:
+		Version: 1.0.21
+		Publish Date: 2018-09-27
+		Sha Value: c0ede7e666a8ec99a205578ecaadcf015851c1bb
+		Version: 1.0.21
+		Publish Date: 2018-09-27
+		Sha Value: 4e7c1dac550864e9ad867d38dffda8e1afd6c0d0
+		Version: 1.0.19
+		Publish Date: 2018-09-20
+		Sha Value: 4be9da86b5a5d8f04bbeb51f1684a13d311529b9
+		Version: 1.0.19
+		Publish Date: 2018-09-20
+		Sha Value: 1e076c23f79f0a1cd6ca43b9170e908a8d38ba68
+		Version: 1.0.17
+		Publish Date: 2018-09-13
+		Sha Value: 2fd15e555f2b7e356e7eec526e20c7fdfea04ea7
+		Version: 1.0.17
+		Publish Date: 2018-09-13
+		Sha Value: 36584feea0252551d4b5e1b6532d292b06f4f032
+		Version: 1.0.13
+		Publish Date: 2018-09-06
+		Sha Value: 1ab36988aa95668cb3b19d8294c6ab2021952433
+		Version: 1.0.13
+		Publish Date: 2018-09-06
+		Sha Value: 5999e9b1f4777fc604fd7ca67eda80b972b21fa1
+		Version: 1.0.12
+		Publish Date: 2018-08-30
+		Sha Value: 4fbfb0c728e24b2fd810f17acd901efeff0cba71
+		Version: 1.0.12
+		Publish Date: 2018-08-30
+		Sha Value: b6a4f1ca6a2a16a7cc990d0a15add1caaa35e024
+		Version: 1.0.11
+		Publish Date: 2018-08-23
+		Sha Value: 17fad251fa8eb0efc5a8d3cb1b8c2e87ff2c137c
+		Version: 1.0.11
+		Publish Date: 2018-08-23
+		Sha Value: 12f3072610d8f233375b5cd90140568d11846e71
+		Version: 1.0.9
+		Publish Date: 2018-08-16
+		Sha Value: a60c50262270509234a83dbfd4b26b80d92ac1ab
+		Version: 1.0.9
+		Publish Date: 2018-08-16
+		Sha Value: 2693799faaae77aab3c1425dddf06803f659be5b
+		Version: 1.0.7
+		Publish Date: 2018-08-09
+		Sha Value: 8afe2de95d17e185d59dda2a5fa5ba34b634d983
+		Version: 1.0.7
+		Publish Date: 2018-08-09
+		Sha Value: 618fe6a7895a6078fdac6fe3c6c22ae643035704
+		Version: 1.0.6
+		Publish Date: 2018-08-02
+		Sha Value: d285f526e646c310bb9d13a262cfb0eed55ef1bb
+		Version: 1.0.6
+		Publish Date: 2018-08-02
+		Sha Value: 604f55652434dd12e348fa1adbacda371ecfa0e7
+		Version: 1.0.5
+		Publish Date: 2018-07-26
+		Sha Value: a74a1b613d7cbdfbeda41e716a2c9981b795484a
+		Version: 1.0.5
+		Publish Date: 2018-07-26
+		Sha Value: c2c096b90cf140ba200f318c9962ec08ed47a03b
+		Version: 1.0.4
+		Publish Date: 2018-07-19
+		Sha Value: 1dcd1abcaf268c6e0f921d2f2db121cf78499940
+		Version: 1.0.4
+		Publish Date: 2018-07-19
+		Sha Value: c554813f8bfbc24a0e1f182fe30a6cdc1b926642
+		Version: 1.0.3
+		Publish Date: 2018-06-25
+		Sha Value: 1aa01de75e690ea0b3ace8cfb8d8dfe74623fa15
+		Version: 1.0.3
+		Publish Date: 2018-06-25
+		Sha Value: 08b02e25e0394da1d423ddabdfb99be3be31ea56
+		Version: 1.0.1
+		Publish Date: 2018-06-20
+		Sha Value: 189ce9c291058f06bae05306449f194b387af591
+		Version: 1.0.1
+		Publish Date: 2018-06-20
+		Sha Value: 82c93da5e9025a0b8b753c3f434c2469ad80ebe5
+Name: Mobile Legends: Bang Bang
+	Author: Moonton
+	Category: Action GAME
+	Rating: 8.8 / 10.0
+	Package Name: com.mobile.legends
+	Versions:
+		Version: 1.3.16.3223
+		Publish Date: 2018-09-28
+		Sha Value: f0c445fe87e168cdd7c180d25697c730ff786b6d
+		Version: 1.3.15.3222
+		Publish Date: 2018-09-19
+		Sha Value: 5e55f74d5b903d1bab08f41c0a3c1d39a8be94b9
+		Version: 1.3.14.3221
+		Publish Date: 2018-09-18
+		Sha Value: 45d8c58f1b21560fa6b81e0c850b7f4103a2b96a
+		Version: 1.3.09.3152
+		Publish Date: 2018-09-10
+		Sha Value: 2c8a3f6a7662e499053b2ebcd4643122f9e3a54a
+		Version: 1.3.08.3143
+		Publish Date: 2018-09-04
+		Sha Value: 029c8ab1cd7edf57ebe0c7bc1bb23dae68cb78df
+		Version: 1.3.07.3142
+		Publish Date: 2018-08-28
+		Sha Value: 2f14dd7dce5172f96e75a62377c05cdf0b05b6bf
+		Version: 1.3.07.3141
+		Publish Date: 2018-08-28
+		Sha Value: a13b3f1a2669acb0fba699ae23b542b89c47a4c6
+		Version: 1.3.06.3141
+		Publish Date: 2018-08-21
+		Sha Value: 6a45d89b5029e21f1da8d01f533126115d286da9
+		Version: 1.2.98.3043
+		Publish Date: 2018-08-07
+		Sha Value: 222f6229286cb85ab8630787ac7cdb9db71d0010
+		Version: 1.2.97.3042
+		Publish Date: 2018-07-24
+		Sha Value: 0c18e3c9872b72cb2a39194fba07e3efdf7da7e9
+		Version: 1.2.89.2961
+		Publish Date: 2018-07-13
+		Sha Value: 49e67954692ed001b273776f23e1a3683d864437
+		Version: 1.2.88.2954
+		Publish Date: 2018-07-10
+		Sha Value: 1104848f8d58e237e43cfecbc2b8a37cbc051f34
+		Version: 1.2.88.2953
+		Publish Date: 2018-07-09
+		Sha Value: f5976ffe1fe7585848ed3faacf15894e42ecfe8a
+		Version: 1.2.88.2952
+		Publish Date: 2018-07-06
+		Sha Value: fbbc391aa996b752fc65a05f42af97b99fadb4b2
+		Version: 1.2.88.2951
+		Publish Date: 2018-06-28
+		Sha Value: f70cc45f382374f32c6a22eb8cc893ff9ef966ca
+		Version: 1.2.81.2853
+		Publish Date: 2018-06-22
+		Sha Value: 03e677d13b8351333b1f0659d8504b5241909c59
+		Version: 1.2.81.2851
+		Publish Date: 2018-06-16
+		Sha Value: 2d3c443ddbf08356ef69ca60ead88c408b130c22
+		Version: 1.2.81.2845
+		Publish Date: 2018-06-12
+		Sha Value: 1d5d97c6f9a9d857bbcbe218f4d0eab55214564b
+		Version: 1.2.80.2842
+		Publish Date: 2018-06-05
+		Sha Value: 944fbeeefb48bb579458ce96d3273493a79b4b75
+		Version: 1.2.80.2842
+		Publish Date: 2018-05-30
+		Sha Value: 5f62efc1c19e3021ae578d41e13a46056c2fc224
+		Version: 1.2.73.2762
+		Publish Date: 2018-05-22
+		Sha Value: 7eaa685958b1ec64f8b21cf6fe7f9fcc8672eb87
+		Version: 1.2.73.2761
+		Publish Date: 2018-05-09
+		Sha Value: a5e9c448c68f1541baf8df8ece3e5b641b102878
+		Version: 1.2.72.2751
+		Publish Date: 2018-05-02
+		Sha Value: a99d0f257cf85bdb0de0c8f4670908dbc2c03ad9
+		Version: 1.2.66.2665
+		Publish Date: 2018-04-23
+		Sha Value: a38ca8033e1842dc230c68ac0ad0530ab8666ff9
+		Version: 1.2.65.2662
+		Publish Date: 2018-04-09
+		Sha Value: be0e68b4a4ecb87f20171681c7bc474eacc64989
+Name: PAYDAY: Crime War
+	Author: Starbreeze
+	Category: Action GAME
+	Rating: 7.9 / 10.0
+	Package Name: com.starbreezepublishing.paydaycrimewar
+	Versions:
+		Version: 180906.1826
+		Publish Date: 2018-09-17
+		Sha Value: 0adfd7b036763f899f833b8f472804714db126ba
+Name: RULES OF SURVIVAL
+	Author: NetEase Games
+	Category: Action GAME
+	Rating: 8.5 / 10.0
+	Package Name: com.netease.chiji
+	Versions:
+		Version: 1.194559.199153
+		Publish Date: 2018-09-26
+		Sha Value: ab588dd5565311a8516137f32f3f9e8ef15011d9
+		Version: 1.194559.199153
+		Publish Date: 2018-09-26
+		Sha Value: 81a03ace54729b552584ba4106939136c8e04666
+		Version: 1.194559.197271
+		Publish Date: 2018-09-19
+		Sha Value: 89b5119b34fdbcdebe018d99f294394464643735
+		Version: 1.194559.197271
+		Publish Date: 2018-09-19
+		Sha Value: d663d25abc4b33468c1217f3e0d033ae45a6e571
+		Version: 1.194559.195595
+		Publish Date: 2018-09-12
+		Sha Value: d56a50f85b4461aca379ea551417ab6e2c5b3bb8
+		Version: 1.194559.195595
+		Publish Date: 2018-09-12
+		Sha Value: 0bfe9fc6b47c37d6c995c8f0a9e0025d97edc58e
+		Version: 1.193201.194269
+		Publish Date: 2018-09-08
+		Sha Value: 7f6f665bafb47c35edd2d89c70d2a0d7722270fc
+		Version: 1.193201.194269
+		Publish Date: 2018-09-08
+		Sha Value: 72e859ddd0294e51f54f240ba24e844e1956ab78
+		Version: 1.188132.191980
+		Publish Date: 2018-08-29
+		Sha Value: a34b8cbd0db335b54e486ac3fc6c3be55d87eff6
+		Version: 1.188132.191980
+		Publish Date: 2018-08-29
+		Sha Value: 9897c2df67cd70c5a859c5bb682970d0d7e224cd
+		Version: 1.186372.190230
+		Publish Date: 2018-08-22
+		Sha Value: 520659636bbc0e620abac8ee8c276cd879139a3c
+		Version: 1.186372.190230
+		Publish Date: 2018-08-22
+		Sha Value: fa420ecfddbe6d7fcdfcb11be2597ac6f272e6c5
+		Version: 1.186372.188496
+		Publish Date: 2018-08-15
+		Sha Value: 9e8ca415451c1133dc5cc2c6ad6be600a8a6368e
+		Version: 1.186372.188496
+		Publish Date: 2018-08-15
+		Sha Value: eb7dcc289611a5f5fcfe0da94dd6e2fecd634bc5
+		Version: 1.186372.186984
+		Publish Date: 2018-08-09
+		Sha Value: a40196621b1bc0cee903d11271e77d9329830460
+		Version: 1.186372.186984
+		Publish Date: 2018-08-09
+		Sha Value: dd4a81be9c73f5e5295abd3c6de970cbac737e07
+		Version: 1.186372.186454
+		Publish Date: 2018-08-08
+		Sha Value: 0b3cf6123a1b55c451feb56bfffd6c70a5ba8098
+		Version: 1.186372.186454
+		Publish Date: 2018-08-08
+		Sha Value: 04b8164ed36363b11b38330da8f7499751b0d474
+		Version: 1.180271.184729
+		Publish Date: 2018-08-01
+		Sha Value: 919fd4a1fc98c157db9573f0ca305fbb04d95694
+		Version: 1.180271.184729
+		Publish Date: 2018-08-01
+		Sha Value: 21d69461b873620dc13462d4765e0ace8744252e
+		Version: 1.180271.182850
+		Publish Date: 2018-07-25
+		Sha Value: 6daa8423c080f90574bfb7a453c150e1ae3ea60f
+		Version: 1.180271.182850
+		Publish Date: 2018-07-25
+		Sha Value: c727c45cf2dffe9fcca15f63ff6f0de3690407f6
+		Version: 1.180271.181135
+		Publish Date: 2018-07-18
+		Sha Value: 6fb7d86e048c99b44312e62ead3425cf22b5e6b4
+		Version: 1.180271.181135
+		Publish Date: 2018-07-18
+		Sha Value: 001ecaefde285f0f38120c1d2afc2448bc6c75cf
+		Version: 1.177882.179289
+		Publish Date: 2018-07-16
+		Sha Value: 0b2d697d6f47c3c8b5128214b751f2ffece22bf2
+		Version: 1.177882.179289
+		Publish Date: 2018-07-16
+		Sha Value: ae3e3d8c3797648aae0e5941524489f6039eb691
+		Version: 1.177491.177510
+		Publish Date: 2018-07-04
+		Sha Value: ae7db9aecccb43941efea4adbb0d531c74808092
+		Version: 1.177491.177510
+		Publish Date: 2018-07-04
+		Sha Value: 09326b9243b218c43a2d603eb7a16384e2b9eb05
+		Version: 1.175458.175259
+		Publish Date: 2018-06-27
+		Sha Value: 0241680e5108e63f92df164bd220071d791b2e6e
+		Version: 1.175458.175259
+		Publish Date: 2018-06-27
+		Sha Value: 529fdd1d6095e289be68fd331247bef56ed334a9
+		Version: 1.172293.173136
+		Publish Date: 2018-06-25
+		Sha Value: 1430b5bb192093d13681e1cb45f4a6457b1e0eef
+		Version: 1.172293.173136
+		Publish Date: 2018-06-25
+		Sha Value: bb04a7fd5383a3bd19dbcf45f9b429784299099c
+		Version: 1.163895.171312
+		Publish Date: 2018-06-13
+		Sha Value: 810e2a1992146917f4ceca2f1c3926d7ad415d92
+		Version: 1.163895.171312
+		Publish Date: 2018-06-13
+		Sha Value: b26d5c81f29e55d5c603b351934ebac33074e6bc
+		Version: 1.163895.168993
+		Publish Date: 2018-06-06
+		Sha Value: 2dacb8f29647b98bed0e5d95ac80d34aefdd0910
+		Version: 1.163895.168993
+		Publish Date: 2018-06-06
+		Sha Value: 340f606d1e5ff6c748da7e8d7b21761231522aa0
+		Version: 1.161759.163098
+		Publish Date: 2018-05-21
+		Sha Value: 897398cf7f4aab7351223a85ba0f8d72d2b41d59
+		Version: 1.161759.163098
+		Publish Date: 2018-05-21
+		Sha Value: 554e4db4f0c28813d98d6d21a0ee76fd2af8cb35
+		Version: 1.161759.161779
+		Publish Date: 2018-05-10
+		Sha Value: f7ac3120c1ad1161fbc3ab7c43e158f4de43c622
+		Version: 1.161759.161779
+		Publish Date: 2018-05-10
+		Sha Value: ba896e3792a96fe6ed820eb54e1333b6d540b243
+		Version: 1.158576.159627
+		Publish Date: 2018-05-02
+		Sha Value: 2698a994db4a5afa52bb45074680799ee38f004b
+		Version: 1.158576.159627
+		Publish Date: 2018-05-02
+		Sha Value: 1a00a150285564058f5c326bcf9abc80145af335
+		Version: 1.157711.158037
+		Publish Date: 2018-04-25
+		Sha Value: 4446fee99a98ca51830b461bcf26f691e4503ad3
+		Version: 1.157711.158037
+		Publish Date: 2018-04-25
+		Sha Value: d88dc11940422eb8ecf268495e9a862349502022
+		Version: 1.150917.156089
+		Publish Date: 2018-04-19
+		Sha Value: c3bf9da41621b9461e21d4708f53dbda091ffc60
+		Version: 1.150917.156089
+		Publish Date: 2018-04-19
+		Sha Value: 3dde8f35f4bea670cdca0cfb465079b71c1a4ab7
+		Version: 1.150917.154025
+		Publish Date: 2018-04-13
+		Sha Value: 73c3ee6558a793e4c24c9a496d85b5237713dddb
+		Version: 1.150917.154025
+		Publish Date: 2018-04-13
+		Sha Value: 4b2d557ad4838dcef59ace2e88bccb815e4fe9d8
+		Version: 1.150917.151559
+		Publish Date: 2018-04-05
+		Sha Value: 700feb8cb701f5d5d28eda191a3ea9e942596cad
+		Version: 1.150917.151559
+		Publish Date: 2018-04-05
+		Sha Value: 15ff81f7273036ff3ac4cf6d87fde1830f17cf89
+		Version: 1.144302.149250
+		Publish Date: 2018-03-29
+		Sha Value: 3b488379cdf23a877285a23aa76e42ffbc03543a
+		Version: 1.144302.149250
+		Publish Date: 2018-03-29
+		Sha Value: 22cee3d73823c50422fe755bd394a8e5198fbfcc
+		Version: 1.144302.146369
+		Publish Date: 2018-03-22
+		Sha Value: b0442dfe055c6998aec48605e3a2846e127b783b
+		Version: 1.144302.146369
+		Publish Date: 2018-03-22
+		Sha Value: 1bbd28b8f930aad088c50b3f50db0f8e4812cde7
+		Version: 1.144302.144141
+		Publish Date: 2018-03-15
+		Sha Value: 269320ac1c863c153fb37d1b608b9e56227439f0
+		Version: 1.144302.144141
+		Publish Date: 2018-03-15
+		Sha Value: 6810b4cf0d7ff9750513f8dbc462d2c819a5d82f
+		Version: 1.140254.141609
+		Publish Date: 2018-03-08
+		Sha Value: 21b05c9d7e3a4b44c1be218e0e55bc9beb880d06
+		Version: 1.140254.141609
+		Publish Date: 2018-03-08
+		Sha Value: ec48640236495eadb2dbee8d0ef8822a47d7ad4d
+		Version: 1.137638.139342
+		Publish Date: 2018-03-01
+		Sha Value: bfa7bc8f91545beda0eaaf11506a2967e40b641b
+		Version: 1.137638.139342
+		Publish Date: 2018-03-01
+		Sha Value: 5a2db79326b50ed43a10589bc2748a4ec29f55f4
+Name: TheOne
+	Author: Fat Dragon Studio
+	Category: Action GAME
+	Rating: 7.3 / 10.0
+	Package Name: com.funova.gunsouldtsa
+	Versions:
+		Version: 0.1.8
+		Publish Date: 2018-10-01
+		Sha Value: 3ed22861e2bfc504e0a74f8cc3151f02303e2d8d
+		Version: 0.1.8
+		Publish Date: 2018-10-01
+		Sha Value: c230785e245e098254e5c8bebe0539e3adc424c0
+		Version: 0.1.7
+		Publish Date: 2018-09-19
+		Sha Value: e689ae0c8a2cb4b7665eb54ee19c9eceb3ec77cb
+		Version: 0.1.7
+		Publish Date: 2018-09-19
+		Sha Value: 27482036a999433badc0a3531f592a8be0d98ec3
+		Version: 0.1.4
+		Publish Date: 2018-09-01
+		Sha Value: a7b31da31eb6ea82b2c96821321d2f5ebaff26cc
+		Version: 0.1.4
+		Publish Date: 2018-09-01
+		Sha Value: 3daefec64a263e40083c9a6c99645c2401fd58fc
+		Version: 0.1.3
+		Publish Date: 2018-08-29
+		Sha Value: 6df2c9828d392e24c57dd07cb8dd10d71fcb55ad
+		Version: 0.1.3
+		Publish Date: 2018-08-29
+		Sha Value: c6d4d8ed5c6041d0caaee521dea110e9658156f1
+		Version: 0.1.0
+		Publish Date: 2018-08-20
+		Sha Value: a579ad0c8517bddc9daea8abff23552a15655d3d
+		Version: 0.1.0
+		Publish Date: 2018-08-20
+		Sha Value: 02e84fa04325f9e018087b80a024d3c2e6dbc87f
+		Version: 0.0.5
+		Publish Date: 2018-06-27
+		Sha Value: 134080e168a97954403c3be3f98a498a496aa169
+		Version: 0.0.5
+		Publish Date: 2018-06-27
+		Sha Value: 28f22088e6ffbebfa200d8ab1e1363f9368efa2d
+		Version: 0.0.4
+		Publish Date: 2018-06-19
+		Sha Value: 24f2eff977575c097fd1792108a053596e92cedb
+Name: Arena of Valor: 5v5 Arena Game
+	Author: Tencent Games
+	Category: Action GAME
+	Rating: 8.8 / 10.0
+	Package Name: com.ngame.allstar.eu
+	Versions:
+		Version: 1.24.1.2
+		Publish Date: 2018-08-30
+		Sha Value: 21f6e4388a318dc94fd0baa378cc0817bffb4217
+		Version: 1.23.1.2
+		Publish Date: 2018-06-28
+		Sha Value: 887955a3258b72d1fbb6c48432c8bb3ef2c8c0a8
+		Version: 1.22.1.2
+		Publish Date: 2018-05-26
+		Sha Value: 4737eca57e9b79e39758560c2a995ccab5a36a75
+		Version: 1.21.1.2
+		Publish Date: 2018-04-12
+		Sha Value: 13f9c4146b5d940fd2c3448c0cb2cf32e3049195
+		Version: 1.20.1.1
+		Publish Date: 2018-01-16
+		Sha Value: dcfbaa854f83880cfe2d94d819c9ebe1362d99ba
+		Version: 1.19.1.1
+		Publish Date: 2017-12-07
+		Sha Value: cb1502d9f06d7c316f0242827ff53b177e685a47
+		Version: 1.19.1.1
+		Publish Date: 2017-12-04
+		Sha Value: 1bf3c599f3edd636d9ffc454ae983c3ccd97c5f7
+		Version: 1.18.2.1
+		Publish Date: 2017-11-02
+		Sha Value: fc04449753ddb8d2f0b2e941c363303f25b5aa97
+		Version: 1.18.1.1
+		Publish Date: 2017-09-28
+		Sha Value: 1f0a23a7b57e704f2d9348fb04615561246e8988
+		Version: 1.17.1.4
+		Publish Date: 2017-08-25
+		Sha Value: bd96b3662d953e0391b6ff57313b9c7320dc197b
+Name: Special Forces Group 2
+	Author: ForgeGames
+	Category: Action GAME
+	Rating: 9.4 / 10.0
+	Package Name: com.ForgeGames.SpecialForcesGroup2
+	Versions:
+		Version: 3.5
+		Publish Date: 2018-09-09
+		Sha Value: 22f78948c8ec025654bbe5e035bcab3611975e81
+		Version: 3.5
+		Publish Date: 2018-09-09
+		Sha Value: e2da27f7bd66248aca322134768f88bc78398a2d
+		Version: 3.3
+		Publish Date: 2018-07-29
+		Sha Value: 620b6d8fea84b64c2cb7858dd5bb9dbbfa0723b1
+		Version: 3.3
+		Publish Date: 2018-07-27
+		Sha Value: b7a42fb4c2941dc19122f9b66f64439ad3efd430
+		Version: 3.3
+		Publish Date: 2018-07-15
+		Sha Value: 8ce88e0a3962b758c49b38558958181dfbcfde83
+		Version: 3.1
+		Publish Date: 2018-05-22
+		Sha Value: d48d8d05c7019cb49875030ade7d368ca5ee3e5e
+		Version: 3.0
+		Publish Date: 2018-05-01
+		Sha Value: 0a46375345d91650d91c0965f66e4f75b6d45e6b
+		Version: 3.0
+		Publish Date: 2018-04-12
+		Sha Value: 46ef380d41f3e9e8a01b48019f0b6d765d118a2f
+		Version: 3.0
+		Publish Date: 2018-04-11
+		Sha Value: 267477752b9a536e3c510d58e80c9efb528148f8
+		Version: 2.9
+		Publish Date: 2018-03-31
+		Sha Value: 4d2427b73dc4aae305833c7d8254a71d66bbfbfb
+Name: Hopeless Land
+	Author: HERO Game
+	Category: Action GAME
+	Rating: 8.6 / 10.0
+	Package Name: com.herogame.gplay.hopelessland
+	Versions:
+		Version: 1.0
+		Publish Date: 2018-09-27
+		Sha Value: 451001caf44a7176589d5ac02d46a2ae714352ec
+		Version: 1.0
+		Publish Date: 2018-09-27
+		Sha Value: 699ed34b33b94254086a3a6bf26e243be3a188ed
+		Version: 1.0
+		Publish Date: 2018-08-29
+		Sha Value: 5a9d9a1076e3d1f752ee57b3b718fbe248f98558
+		Version: 1.0
+		Publish Date: 2018-08-29
+		Sha Value: 53e661059cc755a233abbb3c49de3650585e4500
+		Version: 1.0
+		Publish Date: 2018-08-23
+		Sha Value: 1d39826edb098a2a922539474f1c7cdb4be284f8
+		Version: 1.0
+		Publish Date: 2018-08-23
+		Sha Value: 6f484483bcfdd1caf292a99b462f136f3ef3968f
+		Version: 1.0
+		Publish Date: 2018-07-14
+		Sha Value: e8362656df38e5e6f6f524798afc9ab11da97651
+		Version: 1.0
+		Publish Date: 2018-07-14
+		Sha Value: 00cf4f331c188554339caebb1340ae2feb7d1871
+		Version: 1.0
+		Publish Date: 2018-04-28
+		Sha Value: d3310f7c8dd7b192808385c190be4da38cec086b
+		Version: 1.0
+		Publish Date: 2018-04-28
+		Sha Value: 96c44afa373c65438ba75029645a1d2bb2218306
+		Version: 1.0
+		Publish Date: 2018-03-30
+		Sha Value: 19aa1e88e73be0519887e3a3671c49d5cdbb606f
+		Version: 1.0
+		Publish Date: 2018-03-30
+		Sha Value: 0b679fe9b0a32badbb1aeeb38fb5c20a62e6956f
+		Version: 1.0
+		Publish Date: 2018-02-02
+		Sha Value: 85670d28ffb6263f2f3c44d6b0af94aba3ee290d
+		Version: 1.0
+		Publish Date: 2018-02-02
+		Sha Value: cb32566d347b2647620861e1a02ae788509f7e2a
+		Version: 1.0
+		Publish Date: 2018-01-30
+		Sha Value: a851353a3b7ce595009e4093c42af60bf80ca761
+		Version: 1.0
+		Publish Date: 2018-01-30
+		Sha Value: 7de8ad7de7c96339e537fba26733b13636fbd4fd
+Name: Garena Contra: Return
+	Author: Garena Games Online
+	Category: Action GAME
+	Rating: 7.8 / 10.0
+	Package Name: com.garena.game.hdltw
+	Versions:
+		Version: 1.6.49.0727
+		Publish Date: 2018-09-20
+		Sha Value: 4169d67a8a6b47b03949fd492001b5a099e4041f
+		Version: 1.6.49.0727
+		Publish Date: 2018-09-20
+		Sha Value: ea5e08b16a210c11f8c44d2a40d5e596c5559e3f
+		Version: 1.6.47.1653
+		Publish Date: 2018-08-08
+		Sha Value: 67db07d97e5a03ef4026c3bde3f680934d475ebe
+		Version: 1.6.47.1653
+		Publish Date: 2018-08-08
+		Sha Value: 4f327509a29785cdf36f9274ca4c548665971cf0
