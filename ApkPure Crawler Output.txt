@@ -1,0 +1,100 @@
+Name: Amazon India Online Shopping
+	Author: Amazon Mobile LLC
+	Version: 16.12.0.300
+	Publish Date: 2018-09-06
+	Rating: 9.3 / 10.0
+Name: VidMate
+	Author: Vidmate
+	Version: 3.47 
+	Publish Date: TODO
+	Rating: 9.3 / 10.0
+Name: DealsPure
+	Author: PromoPure
+	Version: 1.0.3 
+	Publish Date: TODO
+	Rating: 9.7 / 10.0
+Name: Cloud Mobile Emulator - Redfinger
+	Author: Android Emulator App | Cloud Phone | Redfinger
+	Version: 1.3.2.3 
+	Publish Date: TODO
+	Rating: 9.4 / 10.0
+Name: WhatsApp
+	Author: WhatsApp Inc.
+	Version: 2.18.278 
+	Publish Date: TODO
+	Rating: 9.2 / 10.0
+Name: YouTube
+	Author: Google LLC
+	Version: 13.36.50
+	Publish Date: 2018-09-15
+	Rating: 9.0 / 10.0
+Name: Messenger – Text and Video Chat for Free
+	Author: Facebook
+	Version: 183.0.0.22.92
+	Publish Date: 2018-09-12
+	Rating: 9.2 / 10.0
+Name: Instagram
+	Author: Instagram
+	Version: 62.0.0.19.93 
+	Publish Date: TODO
+	Rating: 9.4 / 10.0
+Name: Facebook
+	Author: Facebook
+	Version: 189.0.0.35.91
+	Publish Date: 2018-09-13
+	Rating: 9.0 / 10.0
+Name: SHAREit
+	Author: SHAREit Technologies Co.Ltd
+	Version: 4.5.38_ww 
+	Publish Date: TODO
+	Rating: 9.1 / 10.0
+Name: Twitter Lite
+	Author: Twitter, Inc.
+	Version: 1.4.0--22
+	Publish Date: 2018-08-13
+	Rating: 8.0 / 10.0
+Name: Google Play Store
+	Author: Google LLC
+	Version: 11.6.18-all [0] [PR] 211882939 
+	Publish Date: TODO
+	Rating: 8.5 / 10.0
+Name: Tamago
+	Author: ASIA SPORTS VENTURES
+	Version: 1.12.1 
+	Publish Date: TODO
+	Rating: 9.0 / 10.0
+Name: dsfgdhffdgh
+	Author: asiamundosubstv
+	Version: 1.1
+	Publish Date: 2017-08-27
+	Rating: 9.5 / 10.0
+Name: Amazon Shopping
+	Author: Amazon Mobile LLC
+	Version: 16.17.0.100
+	Publish Date: 2018-09-06
+	Rating: 9.6 / 10.0
+Name: Amazon Kindle
+	Author: Amazon Mobile LLC
+	Version: 8.10.0.116
+	Publish Date: 2018-08-24
+	Rating: 8.8 / 10.0
+Name: Facebook Lite
+	Author: Facebook
+	Version: 111.0.0.7.91 
+	Publish Date: TODO
+	Rating: 9.0 / 10.0
+Name: Snapchat
+	Author: Snap Inc
+	Version: 10.40.5.0 
+	Publish Date: TODO
+	Rating: 8.8 / 10.0
+Name: Nonton Film Online BF 18 + Terbaru
+	Author: Video Hot Collection 2018
+	Version: 9.0 
+	Publish Date: TODO
+	Rating: 8.0 / 10.0
+Name: KineMaster – Pro Video Editor
+	Author: NexStreaming Corp.
+	Version: 4.6.5.11247.GP
+	Publish Date: 2018-08-31
+	Rating: 9.3 / 10.0
