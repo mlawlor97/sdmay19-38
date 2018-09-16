@@ -62,9 +62,12 @@ for items in linksToVisit:
 # Publish Date
 #
     pub = v
+    pubAlt = soup.find("p", {"class": "update-on"})
     if pub:  # Standard Format for publish date
         pubSub = pub.contents[5]
         publishDate.append(pubSub.contents[3].text)
+    elif vAlt:  # Version Format that is sometimes used
+        publishDate.append(pubAlt.contents[0])
     else:
         publishDate.append("TODO")
 
