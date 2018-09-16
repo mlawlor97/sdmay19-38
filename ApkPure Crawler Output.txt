@@ -27,7 +27,7 @@ Name: YouTube
 	Author: Google LLC
 	Version: 13.36.50
 	Publish Date: 2018-09-15
-	Rating: 9.0 / 10.0
+	Rating: 9.1 / 10.0
 Name: Messenger – Text and Video Chat for Free
 	Author: Facebook
 	Version: 183.0.0.22.92

@@ -1,5 +1,6 @@
 
 import requests
+import os.path
 from bs4 import BeautifulSoup
 
 url = "https://apkpure.com"
@@ -30,7 +31,8 @@ for items in linksToVisit:
     # Name
     # name.append(soup.find("h1").text)
     previousPages = soup.find("div", {"class": "title bread-crumbs"})
-    name.append(previousPages.find("span").text);
+    name.append(previousPages.find("span").text)
+    apkName = previousPages.find("span").text
     
     # Author
     author.append(soup.find("p", {"itemtype": "http://schema.org/Organization"}).text)
@@ -79,11 +81,12 @@ for items in linksToVisit:
         ratings.append("rating is not standart format")
 
 # APk
-#
-# i = 0
-# while i < len(name):
-#     print("Name: " + name[i] + ".", "Author: " + author[i])
-#     i += 1
+    apk = soup.find("a", {"class": " da"})
+    download = requests.get(url + apk.get("href"), allow_redirects=True)
+    savePath = "./apks"
+    completeName = os.path.join(savePath, apkName + ".apk")
+    open(completeName, "wb").write(download.content)
+    # I'm not sure about this method
 
 
 # write to file - text for now
