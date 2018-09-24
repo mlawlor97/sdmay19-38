@@ -1,100 +1,7515 @@
-Name: Amazon India Online Shopping
-	Author: Amazon Mobile LLC
-	Version: 16.12.0.300
-	Publish Date: 2018-09-06
-	Rating: 9.3 / 10.0
-Name: VidMate
-	Author: Vidmate
-	Version: 3.47 
-	Publish Date: TODO
-	Rating: 9.3 / 10.0
-Name: DealsPure
-	Author: PromoPure
-	Version: 1.0.3 
-	Publish Date: TODO
-	Rating: 9.7 / 10.0
-Name: Cloud Mobile Emulator - Redfinger
-	Author: Android Emulator App | Cloud Phone | Redfinger
-	Version: 1.3.2.3 
-	Publish Date: TODO
+Name: PUBG MOBILE
+	Author: Tencent Games
+	Version: 0.8.0
+	Publish Date: 2018-09-12
+	Rating: 8.8 / 10.0
+Name: PUBG MOBILE LITE
+	Author: Tencent Games
+	Version: 0.5.1
+	Publish Date: 2018-09-20
+	Rating: 8.5 / 10.0
+Name: Garena Free Fire
+	Author: GARENA INTERNATIONAL I PRIVATE LIMITED
+	Version: 1.22.1
+	Publish Date: 2018-09-12
+	Rating: 9.0 / 10.0
+Name: Creative Destruction
+	Author: ZuoMasterDeveloper
+	Version: 1.0.19
+	Publish Date: 2018-09-20
+	Rating: 9.1 / 10.0
+Name: Mobile Legends: Bang Bang
+	Author: Moonton
+	Version: 1.3.15.3222
+	Publish Date: 2018-09-19
+	Rating: 8.8 / 10.0
+Name: Garena AOV - Arena of Valor: Action MOBA APK
+	Author: MOBA Games Private Limited
+	Version: 1.24.1.2
+	Publish Date: Android 4.0.3+
+	Rating: 8.7 / 10.0
+Name: RULES OF SURVIVAL
+	Author: NetEase Games
+	Version: 1.194559.197271
+	Publish Date: 2018-09-19
+	Rating: 8.5 / 10.0
+Name: Arena of Valor: 5v5 Arena Game APK
+	Author: Tencent Games
+	Version: 1.24.1.2
+	Publish Date: Android 4.0.3+
+	Rating: 8.8 / 10.0
+Name: CrossFire: Legends
+	Author: Tencent Games
+	Version: 1.0.9.9
+	Publish Date: 2018-08-31
+	Rating: 8.8 / 10.0
+Name: Special Forces Group 2 APK
+	Author: ForgeGames
+	Version: 3.5
+	Publish Date: Android 4.0+
 	Rating: 9.4 / 10.0
-Name: WhatsApp
-	Author: WhatsApp Inc.
-	Version: 2.18.278 
-	Publish Date: TODO
+Name: Graphic Tool for Battlegrounds
+	Author: tsoml
+	Version: 4.5.1
+	Publish Date: 2018-05-10
+	Rating: 9.5 / 10.0
+Name: Hopeless Land Fight for Survival
+	Author: HERO Game
+	Version: 1.0
+	Publish Date: 2018-08-28
+	Rating: 8.6 / 10.0
+Name: PUBG MOBILE
+	Author: PUBG CORPORATION
+	Version: 0.8.0
+	Publish Date: 2018-09-12
+	Rating: 8.4 / 10.0
+Name: Doodle Army 2 : Mini Militia APK
+	Author: Miniclip.com
+	Version: 4.1.2
+	Publish Date: Android 4.1+
+	Rating: 9.3 / 10.0
+Name: Garena Liên Quân Mobile APK
+	Author: Garena Mobile Private
+	Version: 1.24.1.2
+	Publish Date: Android 4.0.3+
+	Rating: 8.5 / 10.0
+Name: TEKKEN™ APK
+	Author: BANDAI NAMCO Entertainment Europe
+	Version: 1.3
+	Publish Date: Android 5.0+
+	Rating: 8.7 / 10.0
+Name: BETA PUBG MOBILE Unreleased
+	Author: Tencent Games
+	Version: 0.7.0
+	Publish Date: 2018-08-27
+	Rating: 8.4 / 10.0
+Name: Helix Jump
+	Author: VOODOO
+	Version: 1.1.4
+	Publish Date: 2018-08-21
+	Rating: 8.3 / 10.0
+Name: Graphics Tool for PUBG
+	Author: tsoml
+	Version: 2.3
+	Publish Date: 2018-05-16
+	Rating: 9.5 / 10.0
+Name: Pixel Gun 3D Survival shooter & Battle Royale
+	Author: Pixel Gun 3D
+	Version: 15.2.4
+	Publish Date: 2018-09-21
+	Rating: 9.3 / 10.0
+Name: ARK: Survival Evolved
+	Author: Studio Wildcard
+	Version: 1.0.94
+	Publish Date: 2018-09-07
+	Rating: 7.3 / 10.0
+Name: Hello Neighbor
+	Author: tinyBuild
+	Version: 1.0
+	Publish Date: 2018-09-11
+	Rating: 7.5 / 10.0
+Name: ROBLOX APK
+	Author: Roblox Corporation
+	Version: 2.354.238701
+	Publish Date: Android 4.1+
+	Rating: 9.1 / 10.0
+Name: Pokémon GO
+	Author: Niantic, Inc.
+	Version: 0.119.2
+	Publish Date: 2018-09-17
+	Rating: 8.4 / 10.0
+Name: Mini World: Block Art APK
+	Author: MiniPlay Inc
+	Version: 0.28.7
+	Publish Date: Android 4.0.3+
+	Rating: 6.2 / 10.0
+Name: Knives Out
+	Author: NetEase Games
+	Version: 1.215.415162
+	Publish Date: 2018-08-15
+	Rating: 8.2 / 10.0
+Name: Digital Wrold
+	Author: Tantan Game
+	Version: 1.0.2
+	Publish Date: 2018-09-07
+	Rating: 7.5 / 10.0
+Name: Growtopia APK
+	Author: Ubisoft Entertainment
+	Version: 2.982
+	Publish Date: Android 2.3.4+
+	Rating: 7.8 / 10.0
+Name: Project : Battle Unreleased
+	Author: NetEase Games
+	Version: 0.100.28
+	Publish Date: 2018-05-19
+	Rating: 7.7 / 10.0
+Name: Q.U.I.R.K. (Unreleased)
+	Author: uGen
+	Version: 0.06.2070
+	Publish Date: 2018-09-19
+	Rating: 7.5 / 10.0
+Name: Hello Neighbor Gameplay APK
+	Author: b-deva
+	Version: 1.0
+	Publish Date: Android 2.3.2+
+	Rating: 5.4 / 10.0
+Name: Terraria
+	Author: 505 Games Srl
+	Version: 1.2.12785
+	Publish Date: 2016-08-01
+	Rating: 8.6 / 10.0
+Name: Harry Potter Hogwarts Mystery
+	Author: Jam City, Inc.
+	Version: 1.9.3
+	Publish Date: 2018-09-13
+	Rating: 7.7 / 10.0
+Name: Life is Strange
+	Author: SQUARE ENIX Ltd
+	Version: 1.00.258
+	Publish Date: 2018-07-25
+	Rating: 8.1 / 10.0
+Name: Crafting and Building APK
+	Author: Mmarcel
+	Version: 2.7.1
+	Publish Date: Android 4.1+
+	Rating: 8.2 / 10.0
+Name: RAFT: Original Survival Game APK
+	Author: Unisoft Games
+	Version: 1.49
+	Publish Date: Android 4.1+
+	Rating: 8.6 / 10.0
+Name: Survival Island: EVO – Survivor building home APK
+	Author: PRIDEGAMESSTUDIO OU PLC
+	Version: 1.19
+	Publish Date: Android 4.0+
+	Rating: 8.9 / 10.0
+Name: CASE: Animatronics Horror game
+	Author: Azur Interactive Games Limited
+	Version: 1.1
+	Publish Date: 2018-09-06
+	Rating: 9.4 / 10.0
+Name: Monster Manual Unreleased
+	Author: GuavalyPlay
+	Version: 5.0
+	Publish Date: 2017-12-21
+	Rating: 6.9 / 10.0
+Name: Morphite
+	Author: Crescent Moon Games
+	Version: 1.51
+	Publish Date: 2018-09-05
+	Rating: 8.8 / 10.0
+Name: Granny
+	Author: DVloper
+	Version: 1.5
+	Publish Date: 2018-08-22
+	Rating: 9.0 / 10.0
+Name: Subway Surfers
+	Author: Kiloo
+	Version: 1.93.0
+	Publish Date: 2018-09-20
+	Rating: 9.4 / 10.0
+Name: Legendary Z Warriors
+	Author: OneMillion Game
+	Version: 1.1
+	Publish Date: 2018-08-31
+	Rating: 9.3 / 10.0
+Name: Rise Up
+	Author: Serkan Özyılmaz
+	Version: 1.3
+	Publish Date: 2018-09-19
+	Rating: 8.5 / 10.0
+Name: The Nun
+	Author: Keplerians
+	Version: 1.0.5
+	Publish Date: 2018-07-16
+	Rating: 8.4 / 10.0
+Name: Evil Nun
+	Author: Keplerians
+	Version: 1.1.6
+	Publish Date: 2018-09-14
+	Rating: 9.6 / 10.0
+Name: Temple Run APK
+	Author: Imangi Studios
+	Version: 1.9.3
+	Publish Date: Android 4.0+
+	Rating: 9.0 / 10.0
+Name: Piano Tiles 2™ APK
+	Author: Cheetah Games
+	Version: 3.1.0.343
+	Publish Date: Android 4.1+
+	Rating: 9.4 / 10.0
+Name: Hungry Dragon™
+	Author: Ubisoft Entertainment
+	Version: 1.12
+	Publish Date: 2018-09-13
+	Rating: 9.3 / 10.0
+Name: Dancing Line APK
+	Author: Cheetah Games
+	Version: 2.2.7.1
+	Publish Date: Android 4.1+
+	Rating: 9.7 / 10.0
+Name: Blockman GO Blocky Mods
+	Author: Blockman Multiplayer
+	Version: 1.6.1
+	Publish Date: 2018-09-19
+	Rating: 9.3 / 10.0
+Name: Sonic Dash APK
+	Author: SEGA
+	Version: 3.8.6.Go
+	Publish Date: Android 4.1+
+	Rating: 9.3 / 10.0
+Name: Galaxy Attack: Alien Shooter APK
+	Author: ONESOFT
+	Version: 5.88
+	Publish Date: Android 4.1+
 	Rating: 9.2 / 10.0
-Name: YouTube
+Name: Angry Birds Classic APK
+	Author: Rovio Entertainment Corporation
+	Version: 7.9.6
+	Publish Date: Android 4.1+
+	Rating: 9.1 / 10.0
+Name: Hungry Shark Evolution APK
+	Author: Ubisoft Entertainment
+	Version: 6.1.2
+	Publish Date: Android 4.1+
+	Rating: 9.4 / 10.0
+Name: Z Champions APK
+	Author: Sansonight
+	Version: 1.5.395
+	Publish Date: Android 4.0+
+	Rating: 9.2 / 10.0
+Name: Payback 2 - The Battle Sandbox APK
+	Author: Apex Designs Entertainment Ltd
+	Version: 2.103
+	Publish Date: Android 4.0.3+
+	Rating: 8.7 / 10.0
+Name: pause king of foghter 2002 kof 2002
+	Author: JINA ARCAD
+	Version: 1.0
+	Publish Date: 2018-03-13
+	Rating: 8.0 / 10.0
+Name: Multiplayer for Minecraft PE - MCPE Servers APK
+	Author: Nimo TV
+	Version: 1.2.102
+	Publish Date: Android 4.0.3+
+	Rating: 8.2 / 10.0
+Name: Knife Hit
+	Author: Ketchapp
+	Version: 1.7.2
+	Publish Date: 2018-05-22
+	Rating: 9.2 / 10.0
+Name: Ludo King™ APK
+	Author: Gamotronix
+	Version: 4.3
+	Publish Date: Android 4.1+
+	Rating: 9.2 / 10.0
+Name: Chess APK
+	Author: Chess Prince
+	Version: 2.4.3
+	Publish Date: Android 2.3.2+
+	Rating: 9.2 / 10.0
+Name: Rolling Sky APK
+	Author: Cheetah Games
+	Version: 1.9.4
+	Publish Date: Android 4.0.3+
+	Rating: 9.8 / 10.0
+Name: Armello Unreleased
+	Author: League of Geeks
+	Version: 1.0
+	Publish Date: 2018-09-13
+	Rating: 8.9 / 10.0
+Name: Ludo Game : New(2018)  Ludo SuperStar Game APK
+	Author: 🌟BlackLight Studio Games 🌟
+	Version: 4.65
+	Publish Date: Android 4.3+
+	Rating: 10.0 / 10.0
+Name: Parchisi STAR APK
+	Author: Gameberry Labs
+	Version: 1.29.31
+	Publish Date: Android 4.0.3+
+	Rating: 9.3 / 10.0
+Name: Ludo Master – Best Ludo Game 2018
+	Author: Hippo Lab
+	Version: 3.1.5
+	Publish Date: 2018-09-21
+	Rating: 10.0 / 10.0
+Name: Дурак на деньги
+	Author: Studio Alpha
+	Version: 1
+	Publish Date: 2018-09-22
+	Rating: 9.0 / 10.0
+Name: Pokémon Duel APK
+	Author: The Pokemon Company
+	Version: 6.2.4
+	Publish Date: Android 4.1+
+	Rating: 9.0 / 10.0
+Name: 360mobi Cờ Tỷ Phú
+	Author: VNG Game Publishing
+	Version: 1.0.505
+	Publish Date: 2018-08-27
+	Rating: 7.4 / 10.0
+Name: Chess Free APK
+	Author: AI Factory Limited
+	Version: 2.73
+	Publish Date: Android 4.1+
+	Rating: 9.7 / 10.0
+Name: Ludo Bing APK
+	Author: Ludo Bing
+	Version: 1.0.28
+	Publish Date: Android 4.0.3+
+	Rating: 8.6 / 10.0
+Name: 모두의마블 for kakao
+	Author: Netmarble
+	Version: 1.10.09
+	Publish Date: 2018-09-18
+	Rating: 9.5 / 10.0
+Name: Okey Plus APK
+	Author: Zynga
+	Version: 5.32.2
+	Publish Date: Android 4.0.3+
+	Rating: 9.7 / 10.0
+Name: Draughts APK
+	Author: English Checkers
+	Version: 4.1.0
+	Publish Date: Android 2.3.2+
+	Rating: 9.3 / 10.0
+Name: Bắn cá Thần Tài-Game ban ca online,ban ca sieu thi
+	Author: Ban ca sieu thi
+	Version: 1.0.6
+	Publish Date: 2018-06-21
+	Rating: 10.0 / 10.0
+Name: Real Chess APK
+	Author: Alienforce
+	Version: 2.85
+	Publish Date: Android 4.1+
+	Rating: 9.3 / 10.0
+Name: Choi bai BigKool Online APK
+	Author: BigK00l Publisher
+	Version: 1.6
+	Publish Date: Android 4.0.3+
+	Rating: 10.0 / 10.0
+Name: Travelling Millionaire APK
+	Author: NETMARBLE EMEA
+	Version: 1.14.1
+	Publish Date: Android 4.2+
+	Rating: 9.2 / 10.0
+Name: Ludo Club - Fun Dice Game APK
+	Author: Moonfrog
+	Version: 1.0.100
+	Publish Date: Android 3.0+
+	Rating: 9.0 / 10.0
+Name: AK Blackjack
+	Author: Beam Solutions
+	Version: 1.5
+	Publish Date: 2018-08-08
+	Rating: 10.0 / 10.0
+Name: Yu-Gi-Oh! Duel Links
+	Author: KONAMI
+	Version: 3.0.1
+	Publish Date: 2018-09-22
+	Rating: 9.2 / 10.0
+Name: Pokémon TCG Online APK
+	Author: The Pokémon Company International
+	Version: 2.55.0
+	Publish Date: Android 4.0+
+	Rating: 9.1 / 10.0
+Name: World Series of Poker – WSOP Free Texas Holdem APK
+	Author: Playtika
+	Version: 5.14.1
+	Publish Date: Android 4.1+
+	Rating: 9.7 / 10.0
+Name: Card Wars Kingdom APK
+	Author: Cartoon Network
+	Version: 1.0.10
+	Publish Date: Android 4.0.3+
+	Rating: 9.5 / 10.0
+Name: Callbreak Multiplayer APK
+	Author: Teslatech Pvt. Ltd.
+	Version: 0.2.12
+	Publish Date: Android 4.0.3+
+	Rating: 8.0 / 10.0
+Name: Yu-Gi-Oh! Duel Generation APK
+	Author: Konami Digital Entertainment, Inc.
+	Version: 121a
+	Publish Date: Android 4.0.3+
+	Rating: 9.4 / 10.0
+Name: Game danh bai doi thuong SU500 Online
+	Author: Pham Cuong Thinh
+	Version: 8.14
+	Publish Date: 2018-08-03
+	Rating: 8.9 / 10.0
+Name: Gin Rummy Plus APK
+	Author: Zynga
+	Version: 4.0.7
+	Publish Date: Android 4.1+
+	Rating: 9.3 / 10.0
+Name: 피망 섯다 APK
+	Author: NEOWIZ corp
+	Version: 32.2
+	Publish Date: Android 4.0.3+
+	Rating: 10.0 / 10.0
+Name: Дурак на раздевание 18+  Выиграй у красотки!
+	Author: Юлия Мурунова
+	Version: 1.0.1
+	Publish Date: 2018-04-18
+	Rating: 2.0 / 10.0
+Name: MARVEL Battle Lines
+	Author: NEXON Company
+	Version: 1.5.0
+	Publish Date: 2018-09-07
+	Rating: 6.8 / 10.0
+Name: Tarneeb JOJO APK
+	Author: jogamer
+	Version: 1.2.8
+	Publish Date: Android 3.0+
+	Rating: 7.8 / 10.0
+Name: 피망 뉴맞고 : 대한민국 1등 고스톱 APK
+	Author: NEOWIZ corp
+	Version: 50.2
+	Publish Date: Android 4.0.3+
+	Rating: 10.0 / 10.0
+Name: Hearthstone APK
+	Author: Blizzard Entertainment, Inc.
+	Version: 12.0.26080
+	Publish Date: Android 4.0+
+	Rating: 8.8 / 10.0
+Name: BigCom - Giải trí trên di động APK
+	Author: Mango Game Studio
+	Version: 1.0.89
+	Publish Date: Android 2.2+
+	Rating: 10.0 / 10.0
+Name: Game danh bai Tai Xiu 68
+	Author: Trung Ton Studio
+	Version: 1.12.4
+	Publish Date: 2018-07-17
+	Rating: 9.9 / 10.0
+Name: 3WIN8 Games APK
+	Author: Royal SCR Developer
+	Version: 3.1.32
+	Publish Date: Android 2.2+
+	Rating: 10.0 / 10.0
+Name: Gem.Club Huyền thoại trở lại
+	Author: Gem Studio
+	Version: 2.5.5
+	Publish Date: 2018-05-07
+	Rating: 10.0 / 10.0
+Name: games cooking donuts APK
+	Author: Dogmarter
+	Version: 3.0.0
+	Publish Date: Android 4.0+
+	Rating: 8.0 / 10.0
+Name: Lucky Day - Win Real Money APK
+	Author: Lucky Day Entertainment, Inc.
+	Version: 5.3.0
+	Publish Date: Android 4.1+
+	Rating: 9.5 / 10.0
+Name: Ngon.Club – Game Bài Đổi Thưởng Mới Nhất 2018
+	Author: Ngon club studio
+	Version: 1.9
+	Publish Date: 2018-06-04
+	Rating: 9.7 / 10.0
+Name: Vuong quoc xeng - Game Slot, no hu, doi thuong
+	Author: Vua Bida - XengClub - Slot doi thuong - Hung Tran
+	Version: 1.0.3
+	Publish Date: 2018-01-30
+	Rating: 9.0 / 10.0
+Name: Kingdom  Slot Machine Game
+	Author: VuongQuocXeng
+	Version: 1.1.0
+	Publish Date: 2017-10-03
+	Rating: 9.4 / 10.0
+Name: Teen Patti Gold - With Poker & Rummy APK
+	Author: Moonfrog
+	Version: 3.69
+	Publish Date: Android 3.0+
+	Rating: 9.6 / 10.0
+Name: Game danh bai doi thuong Nhất Lộc Online
+	Author: Dang Thu Thao
+	Version: 1.8.7
+	Publish Date: 2018-05-29
+	Rating: 7.5 / 10.0
+Name: Tiến lên Miền Nam- Tiến Lên - tien len - ZingPlay APK
+	Author: VNG - Game Studio North
+	Version: 3.9
+	Publish Date: Android 3.1+
+	Rating: 8.8 / 10.0
+Name: Go.Win Cổng Game Quốc Tế
+	Author: GoWin
+	Version: 1.1
+	Publish Date: 2018-09-02
+	Rating: 9.7 / 10.0
+Name: Bin Club
+	Author: Bin CLUB
+	Version: 1.0320
+	Publish Date: 2018-04-02
+	Rating: 9.8 / 10.0
+Name: Slotomania™ Slots - Vegas Casino Slot Games APK
+	Author: Playtika
+	Version: 2.90.2
+	Publish Date: Android 4.0.3+
+	Rating: 9.5 / 10.0
+Name: Slotpark Free Slots Casino: Las Vegas Slot Machine APK
+	Author: Funstage
+	Version: 2.7.6
+	Publish Date: Android 4.0.3+
+	Rating: 9.5 / 10.0
+Name: 12Fun - Cổng Game Số 1 Châu Á
+	Author: 12funGameStudio
+	Version: 1.0
+	Publish Date: 2018-06-28
+	Rating: 9.9 / 10.0
+Name: بوكر تكساس بويا APK
+	Author: Boyaa
+	Version: 5.8.1
+	Publish Date: Android 4.1+
+	Rating: 9.7 / 10.0
+Name: ZoVip Club
+	Author: ZoVip.Club Game Publisher
+	Version: 1.20
+	Publish Date: 2018-07-09
+	Rating: 9.9 / 10.0
+Name: $imple $lots
+	Author: André Santos
+	Version: 0.0.8
+	Publish Date: 2018-09-09
+	Rating: 0 / 10.0
+Name: Teen Patti by Octro APK
+	Author: Octro, Inc.
+	Version: 6.92
+	Publish Date: Android 4.0.3+
+	Rating: 9.2 / 10.0
+Name: Dummy ดัมมี่ เกมไพ่สุดฮิต APK
+	Author: Topfun Game
+	Version: 1.5.8
+	Publish Date: Android 4.0+
+	Rating: 9.6 / 10.0
+Name: 247Club
+	Author: Giải trí VIỆT
+	Version: 1.4
+	Publish Date: 2018-09-17
+	Rating: 10.0 / 10.0
+Name: Săn cá Vip–Game ban ca, ban ca an xu, ban ca tien
+	Author: Hero of Commando
+	Version: 3.1.5
+	Publish Date: 2018-07-13
+	Rating: 8.5 / 10.0
+Name: 星城Online-經典版 APK
+	Author: 網銀國際 股份有限公司
+	Version: 3.81
+	Publish Date: Android 2.2+
+	Rating: 8.7 / 10.0
+Name: Candy Crush Saga APK
+	Author: King
+	Version: 1.134.1.1
+	Publish Date: Android 4.1+
+	Rating: 9.5 / 10.0
+Name: Sweet Candy Story APK
+	Author: Fruit Candy Blast
+	Version: 89.0
+	Publish Date: Android 4.1+
+	Rating: 4.0 / 10.0
+Name: Hay Day APK
+	Author: Supercell
+	Version: 1_39_93
+	Publish Date: Android 4.0.3+
+	Rating: 9.3 / 10.0
+Name: My Talking Tom APK
+	Author: Outfit7 Limited
+	Version: 4.9.0.175
+	Publish Date: Android 4.1+
+	Rating: 9.1 / 10.0
+Name: Plants vs. Zombies™ 2 APK
+	Author: ELECTRONIC ARTS
+	Version: 6.9.1
+	Publish Date: Android 4.1+
+	Rating: 8.4 / 10.0
+Name: Homescapes APK
+	Author: Playrix Games
+	Version: 2.0.2.900
+	Publish Date: Android 4.0.3+
+	Rating: 9.5 / 10.0
+Name: My Talking Angela APK
+	Author: Outfit7 Limited
+	Version: 3.8.2.103
+	Publish Date: Android 4.1+
+	Rating: 8.8 / 10.0
+Name: Gacha Studio (Anime Dress Up) APK
+	Author: Lunime
+	Version: 2.0.3
+	Publish Date: Android 4.0+
+	Rating: 9.2 / 10.0
+Name: Candy Crush Soda Saga
+	Author: King
+	Version: 1.123.2
+	Publish Date: 2018-09-18
+	Rating: 9.5 / 10.0
+Name: Pou APK
+	Author: Zakeh
+	Version: 1.4.77
+	Publish Date: Android 4.0+
+	Rating: 8.2 / 10.0
+Name: Plants vs. Zombies 2 APK
+	Author: ELECTRONIC ARTS
+	Version: 6.9.1
+	Publish Date: Android 4.1+
+	Rating: 8.6 / 10.0
+Name: Farm Heroes Saga APK
+	Author: King
+	Version: 5.4.9
+	Publish Date: Android 4.0+
+	Rating: 9.6 / 10.0
+Name: Angry Birds 2 APK
+	Author: Rovio Entertainment Corporation
+	Version: 2.22.0
+	Publish Date: Android 4.1+
+	Rating: 9.6 / 10.0
+Name: Food Truck Chef™: Cooking Game APK
+	Author: Tilting Point
+	Version: 1.5.0
+	Publish Date: Android 4.1+
+	Rating: 8.6 / 10.0
+Name: Coin Master APK
+	Author: Moon Active
+	Version: 3.5.1
+	Publish Date: Android 4.1+
+	Rating: 8.9 / 10.0
+Name: Family Farm Seaside APK
+	Author: DIANDIAN INTERACTIVE HOLDING
+	Version: 5.0.200
+	Publish Date: Android 4.0.3+
+	Rating: 9.3 / 10.0
+Name: FarmVille 2: Country Escape APK
+	Author: Zynga
+	Version: 10.9.2727
+	Publish Date: Android 4.1+
+	Rating: 9.4 / 10.0
+Name: Sweet Candy Farm with magic Bubbles and Puzzles
+	Author: foranj
+	Version: 1.25
+	Publish Date: 2018-09-14
+	Rating: 10.0 / 10.0
+Name: MegaN64 (N64 Emulator) APK
+	Author: Fastest Game Emulators for Android
+	Version: 6.0
+	Publish Date: Android 2.0+
+	Rating: 9.6 / 10.0
+Name: My Cafe: Recipes & Stories - World Cooking Game APK
+	Author: Melsoft Games
+	Version: 2018.9.1
+	Publish Date: Android 4.0.3+
+	Rating: 9.6 / 10.0
+Name: Little Panda's Dream Town
+	Author: BabyBus Kids Games
+	Version: 8.27.10.00
+	Publish Date: 2018-09-17
+	Rating: 10.0 / 10.0
+Name: من سيربح المليون الموسوعة APK
+	Author: mdkandro
+	Version: 1.5
+	Publish Date: Android 2.3.2+
+	Rating: 9.4 / 10.0
+Name: Toca Kitchen 2
+	Author: Toca Boca
+	Version: 1.2.3-play
+	Publish Date: 2017-06-29
+	Rating: 9.3 / 10.0
+Name: LEGO® Juniors Create & Cruise APK
+	Author: LEGO System A/S
+	Version: 6.7.5222
+	Publish Date: Android 4.1+
+	Rating: 9.3 / 10.0
+Name: Yasa Pets School
+	Author: Yasa Ltd
+	Version: 1.0.1
+	Publish Date: 2018-08-29
+	Rating: 10.0 / 10.0
+Name: Pepi House APK
+	Author: Pepi Play
+	Version: 1.0.53
+	Publish Date: Android 4.1+
+	Rating: 9.9 / 10.0
+Name: Toontastic 3D APK
 	Author: Google LLC
-	Version: 13.36.50
+	Version: 1.0.5
+	Publish Date: Android 5.0+
+	Rating: 8.5 / 10.0
+Name: Baby Panda's Supermarket-Halloween Party Shopping APK
+	Author: BabyBus Kids Games
+	Version: 8.27.10.00
+	Publish Date: Android 4.0.3+
+	Rating: 10.0 / 10.0
+Name: COOKING MAMA Let's Cook! APK
+	Author: Office Create Corp.
+	Version: 1.39.0
+	Publish Date: Android 4.1+
+	Rating: 8.7 / 10.0
+Name: Little Panda’s Restaurant APK
+	Author: BabyBus Kids Games
+	Version: 8.27.10.00
+	Publish Date: Android 4.0.3+
+	Rating: 9.0 / 10.0
+Name: Pepi Super Stores APK
+	Author: Pepi Play
+	Version: 1.0.40
+	Publish Date: Android 4.1+
+	Rating: 10.0 / 10.0
+Name: Masha and the Bear. Educational Games
+	Author: AppQuiz
+	Version: 2.3
+	Publish Date: 2018-07-13
+	Rating: 9.5 / 10.0
+Name: Doctor Kids APK
+	Author: Miniclub by Bubadu
+	Version: 1.40
+	Publish Date: Android 4.1+
+	Rating: 8.5 / 10.0
+Name: Cuphead
+	Author: tutuapp vip
+	Version: cuphead
+	Publish Date: 2017-12-07
+	Rating: 5.5 / 10.0
+Name: Baby Panda's Farm APK
+	Author: BabyBus Kids Games
+	Version: 8.27.10.00
+	Publish Date: Android 4.0.3+
+	Rating: 10.0 / 10.0
+Name: Princess Salon 2 APK
+	Author: Libii
+	Version: 1.1
+	Publish Date: Android 2.3.2+
+	Rating: 10.0 / 10.0
+Name: Baby Panda Care APK
+	Author: BabyBus Kids Games
+	Version: 8.27.10.00
+	Publish Date: Android 4.0.3+
+	Rating: 9.5 / 10.0
+Name: ABC Kids - Tracing & Phonics APK
+	Author: RV AppStudios
+	Version: 1.4.0
+	Publish Date: Android 4.0+
+	Rating: 9.0 / 10.0
+Name: Sweet Baby Girl Daycare 5 - Newborn Nanny Helper APK
+	Author: TutoTOONS
+	Version: 1.0.69
+	Publish Date: Android 4.4+
+	Rating: 9.6 / 10.0
+Name: Baby Panda's Brave Jobs
+	Author: BabyBus Kids Games
+	Version: 8.27.10.00
+	Publish Date: 2018-09-06
+	Rating: 0 / 10.0
+Name: SuperStar SMTOWN APK
+	Author: Dalcomsoft, Inc.
+	Version: 2.4.9
+	Publish Date: Android 4.1+
+	Rating: 9.5 / 10.0
+Name: Magic Piano Tiles 2018 - Music Game
+	Author: Music Game Studio
+	Version: 1.18.0
+	Publish Date: 2018-09-21
+	Rating: 9.7 / 10.0
+Name: SuperStar JYPNATION APK
+	Author: Dalcomsoft, Inc.
+	Version: 2.5.0
+	Publish Date: Android 4.1+
+	Rating: 9.4 / 10.0
+Name: Perfect Piano APK
+	Author: Revontulet Soft Inc
+	Version: 7.1.8
+	Publish Date: Android 4.1+
+	Rating: 9.8 / 10.0
+Name: Magic Tiles 3 APK
+	Author: AMANOTES
+	Version: 6.6.021
+	Publish Date: Android 4.1+
+	Rating: 8.9 / 10.0
+Name: Dancing Ballz: Magic Dance Line Tiles Game APK
+	Author: AMANOTES
+	Version: 1.5.1
+	Publish Date: Android 4.1+
+	Rating: 10.0 / 10.0
+Name: Piano Free - Keyboard with Magic Tiles Music Games APK
+	Author: Gismart
+	Version: 1.36
+	Publish Date: Android 4.1+
+	Rating: 9.6 / 10.0
+Name: アイドルマスター シンデレラガールズ スターライトステージ APK
+	Author: BANDAI NAMCO Entertainment Inc.
+	Version: 4.2.0
+	Publish Date: Android 4.1+
+	Rating: 9.8 / 10.0
+Name: UniPad APK
+	Author: 김지섭
+	Version: 3.5.0
+	Publish Date: Android 4.1+
+	Rating: 9.6 / 10.0
+Name: YASUHATI _ With your voice! APK
+	Author: Freem Inc.
+	Version: 4.01
+	Publish Date: Android 4.1+
+	Rating: 9.9 / 10.0
+Name: バンドリ！ ガールズバンドパーティ！ APK
+	Author: Craft Egg, Inc.
+	Version: 2.6.0
+	Publish Date: Android 4.4+
+	Rating: 9.3 / 10.0
+Name: Real Guitar Free - Chords, Tabs & Simulator Games APK
+	Author: Gismart
+	Version: 3.7.0
+	Publish Date: Android 4.0.3+
+	Rating: 9.0 / 10.0
+Name: Arcaea - New Dimension Rhythm Game APK
+	Author: lowiro
+	Version: 1.7.5
+	Publish Date: Android 4.1+
+	Rating: 9.4 / 10.0
+Name: SUPERSTAR BTS
+	Author: PONOS Corporation
+	Version: 1.1.7
+	Publish Date: 2018-09-20
+	Rating: 8.2 / 10.0
+Name: BEAT FEVER - Music Planet APK
+	Author: WRKSHP
+	Version: 2.1.3.7303
+	Publish Date: Android 4.1+
+	Rating: 9.5 / 10.0
+Name: Cytus APK
+	Author: Rayark International Limited
+	Version: 10.0.10
+	Publish Date: Android 2.3.2+
+	Rating: 9.3 / 10.0
+Name: osu!droid APK
+	Author: Pesets
+	Version: 1.5.10
+	Publish Date: Android 1.6+
+	Rating: 10.0 / 10.0
+Name: ラブライブ！スクールアイドルフェスティバル（スクフェス）
+	Author: KLab
+	Version: 6.3.2
+	Publish Date: 2018-09-17
+	Rating: 9.8 / 10.0
+Name: 더뮤지션 APK
+	Author: Smilegate Megaport
+	Version: 0.3.62
+	Publish Date: Android 4.3+
+	Rating: 9.1 / 10.0
+Name: Just Dance Now APK
+	Author: Ubisoft Entertainment
+	Version: 2.4.0
+	Publish Date: Android 4.4+
+	Rating: 8.8 / 10.0
+Name: HexaFall
+	Author: A-TRY TELECOMMUNICATIONS CO., LIMITED
+	Version: 1.4
+	Publish Date: 2018-08-08
+	Rating: 6.5 / 10.0
+Name: Happy Glass
+	Author: Lion Studios
+	Version: 1.0.11
+	Publish Date: 2018-09-21
+	Rating: 8.9 / 10.0
+Name: Line Puzzle: String Art
+	Author: BitMango
+	Version: 1.3.01
+	Publish Date: 2018-09-20
+	Rating: 9.7 / 10.0
+Name: Magic Jigsaw Puzzles APK
+	Author: ZiMAD
+	Version: 5.5.6
+	Publish Date: Android 4.0.3+
+	Rating: 9.5 / 10.0
+Name: Block Puzzle Jewels Legend
+	Author: SUPER EXPERT
+	Version: 1.0.8
+	Publish Date: 2018-08-06
+	Rating: 0 / 10.0
+Name: Block Puzzle Jewel APK
+	Author: hua weiwei
+	Version: 37.0
+	Publish Date: Android 4.1+
+	Rating: 8.9 / 10.0
+Name: Love Balls
+	Author: Lion Studios
+	Version: 1.3.2
+	Publish Date: 2018-09-21
+	Rating: 8.9 / 10.0
+Name: Matchington Mansion
+	Author: Firecraft Studios
+	Version: 1.26.4
+	Publish Date: 2018-09-14
+	Rating: 9.5 / 10.0
+Name: 妖怪ウォッチ ぷにぷに APK
+	Author: LEVEL-5 Inc.
+	Version: 3.52.1
+	Publish Date: Android 4.0+
+	Rating: 9.6 / 10.0
+Name: Toon Blast APK
+	Author: Peak Games
+	Version: 3284
+	Publish Date: Android 4.1+
+	Rating: 9.6 / 10.0
+Name: Where's My Water? 2 APK
+	Author: Disney
+	Version: 1.6.2
+	Publish Date: Android 4.2+
+	Rating: 9.4 / 10.0
+Name: Roll the Ball® - slide puzzle APK
+	Author: BitMango
+	Version: 1.7.43
+	Publish Date: Android 4.1+
+	Rating: 9.5 / 10.0
+Name: Rubik's Cube Lite APK
+	Author: Magmic Inc
+	Version: 2.6.0
+	Publish Date: Android 4.1+
+	Rating: 9.5 / 10.0
+Name: Puzzle & Dragons APK
+	Author: GungHoOnlineEntertainment
+	Version: 15.1.1
+	Publish Date: Android 4.0+
+	Rating: 8.9 / 10.0
+Name: Candy Crush Jelly Saga APK
+	Author: King
+	Version: 2.5.6
+	Publish Date: Android 4.0+
+	Rating: 8.9 / 10.0
+Name: ضربة معلم - لعبة الغاز مسلية APK
+	Author: Zytoona
+	Version: 3.0
+	Publish Date: Android 4.1+
+	Rating: 9.7 / 10.0
+Name: Bubble Witch 3 Saga APK
+	Author: King
+	Version: 4.10.2
+	Publish Date: Android 4.0+
+	Rating: 9.7 / 10.0
+Name: Neighbours from Hell: Season 1 APK
+	Author: HandyGames
+	Version: 1.4
+	Publish Date: Android 2.3.2+
+	Rating: 9.5 / 10.0
+Name: Looper!
+	Author: Kwalee Ltd
+	Version: 1.2.4
+	Publish Date: 2018-09-19
+	Rating: 10.0 / 10.0
+Name: Angry Birds Match APK
+	Author: Rovio Entertainment Corporation
+	Version: 1.7.1
+	Publish Date: Android 5.0+
+	Rating: 8.6 / 10.0
+Name: Asphalt 9: Legends - 2018’s New Arcade Racing Game APK
+	Author: Gameloft
+	Version: 1.0.1a
+	Publish Date: Android 4.3+
+	Rating: 8.1 / 10.0
+Name: Need for Speed™ No Limits
+	Author: ELECTRONIC ARTS
+	Version: 3.0.1
+	Publish Date: 2018-09-14
+	Rating: 9.3 / 10.0
+Name: Asphalt 8 Airborne
+	Author: Gameloft
+	Version: 3.8.1c
+	Publish Date: 2018-09-07
+	Rating: 9.1 / 10.0
+Name: Hill Climb Racing
+	Author: Fingersoft
+	Version: 1.38.1
+	Publish Date: 2018-09-06
+	Rating: 9.1 / 10.0
+Name: Drift هجولة APK
+	Author: RABABA Games
+	Version: 2.9.273
+	Publish Date: Android 4.1+
+	Rating: 9.4 / 10.0
+Name: MadOut2 BigCityOnline APK
+	Author: MadOut Games
+	Version: 5.9
+	Publish Date: Android 4.4+
+	Rating: 8.3 / 10.0
+Name: Dr. Driving APK
+	Author: SUD Inc.
+	Version: 1.53
+	Publish Date: Android 4.0.3+
+	Rating: 9.6 / 10.0
+Name: Gravity Rider Space Bike Racing Game Online
+	Author: Vivid Games S.A.
+	Version: 1.9.9
+	Publish Date: 2018-09-06
+	Rating: 8.9 / 10.0
+Name: Real Racing 3 APK
+	Author: ELECTRONIC ARTS
+	Version: 6.5.1
+	Publish Date: Android 4.1+
+	Rating: 9.5 / 10.0
+Name: CarX Highway Racing APK
+	Author: CarX Technologies
+	Version: 1.59.2
+	Publish Date: Android 4.1+
+	Rating: 9.4 / 10.0
+Name: MotoGP Racing '18 APK
+	Author: WePlay Media LLC
+	Version: 3.0.0
+	Publish Date: Android 4.1+
+	Rating: 9.0 / 10.0
+Name: Reduced Transmission HD. multiplayer game (2019)
+	Author: T.Mashine
+	Version: 1
+	Publish Date: 2018-09-22
+	Rating: 7.3 / 10.0
+Name: Kon.Club Game giải trí
+	Author: kon club
+	Version: 2.0
+	Publish Date: 2018-04-03
+	Rating: 8.5 / 10.0
+Name: CSR Racing 2 APK
+	Author: NaturalMotionGames Ltd
+	Version: 1.22.0
+	Publish Date: Android 4.4+
+	Rating: 9.5 / 10.0
+Name: Hill Climb Racing 2 APK
+	Author: Fingersoft
+	Version: 1.18.0
+	Publish Date: Android 4.2+
+	Rating: 9.5 / 10.0
+Name: Driving School 2017 APK
+	Author: Ovidiu Pop
+	Version: 2.0.0
+	Publish Date: Android 4.1+
+	Rating: 9.3 / 10.0
+Name: Extreme Car Driving Simulator APK
+	Author: AxesInMotion Racing
+	Version: 4.17.2
+	Publish Date: Android 4.0+
+	Rating: 9.2 / 10.0
+Name: Traffic Rider
+	Author: Soner Kara
+	Version: 1.5
+	Publish Date: 2018-09-17
+	Rating: 9.7 / 10.0
+Name: Traffic Racer APK
+	Author: Soner Kara
+	Version: 2.5
+	Publish Date: Android 4.1+
+	Rating: 9.4 / 10.0
+Name: CarX Drift Racing APK
+	Author: CarX Technologies
+	Version: 1.14.3
+	Publish Date: Android 4.1+
+	Rating: 9.5 / 10.0
+Name: Fate_Grand Order (English)
+	Author: Aniplex Inc.
+	Version: 1.21.0
+	Publish Date: 2018-09-13
+	Rating: 9.1 / 10.0
+Name: Shadow Fight 3
+	Author: NEKKI
+	Version: 1.13.1
 	Publish Date: 2018-09-15
 	Rating: 9.1 / 10.0
-Name: Messenger – Text and Video Chat for Free
-	Author: Facebook
-	Version: 183.0.0.22.92
+Name: TALION
+	Author: GAMEVIL
+	Version: 1.0.4a
+	Publish Date: 2018-09-20
+	Rating: 7.2 / 10.0
+Name: 黑色沙漠 MOBILE
+	Author: PEARL ABYSS
+	Version: 2.5.94
 	Publish Date: 2018-09-12
+	Rating: 7.3 / 10.0
+Name: MARVEL Future Fight APK
+	Author: Netmarble
+	Version: 4.4.0
+	Publish Date: Android 4.0.3+
 	Rating: 9.2 / 10.0
-Name: Instagram
-	Author: Instagram
-	Version: 62.0.0.19.93 
-	Publish Date: TODO
-	Rating: 9.4 / 10.0
-Name: Facebook
-	Author: Facebook
-	Version: 189.0.0.35.91
-	Publish Date: 2018-09-13
-	Rating: 9.0 / 10.0
-Name: SHAREit
-	Author: SHAREit Technologies Co.Ltd
-	Version: 4.5.38_ww 
-	Publish Date: TODO
-	Rating: 9.1 / 10.0
-Name: Twitter Lite
-	Author: Twitter, Inc.
-	Version: 1.4.0--22
-	Publish Date: 2018-08-13
-	Rating: 8.0 / 10.0
-Name: Google Play Store
-	Author: Google LLC
-	Version: 11.6.18-all [0] [PR] 211882939 
-	Publish Date: TODO
+Name: MapleStory M
+	Author: NEXON Company
+	Version: 1.3100.315
+	Publish Date: 2018-09-20
+	Rating: 7.0 / 10.0
+Name: Age of Magic
+	Author: Playkot LTD
+	Version: 1.7.5
+	Publish Date: 2018-09-20
 	Rating: 8.5 / 10.0
-Name: Tamago
-	Author: ASIA SPORTS VENTURES
-	Version: 1.12.1 
-	Publish Date: TODO
-	Rating: 9.0 / 10.0
-Name: dsfgdhffdgh
-	Author: asiamundosubstv
-	Version: 1.1
-	Publish Date: 2017-08-27
+Name: 吞食天地Ｍ
+	Author: 推薦人氣熱門免費遊戲
+	Version: 1.0.4
+	Publish Date: 2018-09-11
+	Rating: 8.8 / 10.0
+Name: 에픽세븐
+	Author: Smilegate Megaport
+	Version: 1.0.39
+	Publish Date: 2018-09-19
 	Rating: 9.5 / 10.0
-Name: Amazon Shopping
-	Author: Amazon Mobile LLC
-	Version: 16.17.0.100
+Name: Tokyo Ghoul: Dark War
+	Author: GameSamba
+	Version: 1.2.1
+	Publish Date: 2018-09-11
+	Rating: 8.5 / 10.0
+Name: 검은사막 모바일
+	Author: PEARL ABYSS
+	Version: 1.6.31
+	Publish Date: 2018-09-22
+	Rating: 8.8 / 10.0
+Name: Era of Celestials
+	Author: GTarcade
+	Version: 1.160.150336
+	Publish Date: 2018-09-14
+	Rating: 8.8 / 10.0
+Name: MOBA Legends Kong Skull Island
+	Author: Electronic Soul
+	Version: 1.3.38
+	Publish Date: 2017-08-31
+	Rating: 6.5 / 10.0
+Name: Sword Art Online: Integral Factor
+	Author: BANDAI NAMCO Entertainment Inc.
+	Version: 1.1.2
+	Publish Date: 2018-09-19
+	Rating: 7.8 / 10.0
+Name: Summoners War APK
+	Author: Com2uS
+	Version: 4.0.9
+	Publish Date: Android 4.0.3+
+	Rating: 8.8 / 10.0
+Name: Darkness Rises
+	Author: NEXON Company
+	Version: 1.5.0
+	Publish Date: 2018-09-18
+	Rating: 8.5 / 10.0
+Name: Lineage2 Revolution APK
+	Author: Netmarble
+	Version: 0.25.13
+	Publish Date: Android 4.4+
+	Rating: 8.5 / 10.0
+Name: DanMachi - MEMORIA FREESE
+	Author: Ellation, Inc.
+	Version: 4.3.3
+	Publish Date: 2018-09-14
+	Rating: 8.2 / 10.0
+Name: Fate_Grand Order
+	Author: Aniplex Inc.
+	Version: 1.46.0
+	Publish Date: 2018-09-19
+	Rating: 9.3 / 10.0
+Name: Durango: Wild Lands (Unreleased) APK
+	Author: NEXON Company
+	Version: 2.23.0+1801181052
+	Publish Date: Android 4.1+
+	Rating: 9.1 / 10.0
+Name: Baldi's Basics in Education
+	Author: Last Project Games
+	Version: 1.3
+	Publish Date: 2018-05-30
+	Rating: 9.0 / 10.0
+Name: Bus Simulator Indonesia APK
+	Author: Maleo
+	Version: 2.8.1
+	Publish Date: Android 4.2+
+	Rating: 8.9 / 10.0
+Name: The Sims™ Mobile
+	Author: ELECTRONIC ARTS
+	Version: 12.0.0.184164
+	Publish Date: 2018-08-21
+	Rating: 8.7 / 10.0
+Name: Episode - Choose Your Story APK
+	Author: Episode Interactive
+	Version: 9.10.2+g
+	Publish Date: Android 4.1+
+	Rating: 8.7 / 10.0
+Name: Real Car Parking 2 Driving School 2018
+	Author: Genetic Studios ™
+	Version: 3.0.1
 	Publish Date: 2018-09-06
+	Rating: 7.4 / 10.0
+Name: euro truck simulator 2 SNG APK
+	Author: RAMAN BARDASHEVICH
+	Version: 0.1
+	Publish Date: Android 2.3.2+
+	Rating: 4.5 / 10.0
+Name: World Truck Driving Simulator
+	Author: Dynamic Games Ltda
+	Version: 1,033
+	Publish Date: 2018-08-25
+	Rating: 8.1 / 10.0
+Name: Dragon City APK
+	Author: Social Point
+	Version: 8.5
+	Publish Date: Android 4.0.3+
+	Rating: 9.4 / 10.0
+Name: Euro Truck Driver 2018
+	Author: Ovidiu Pop
+	Version: 2.11
+	Publish Date: 2018-09-12
+	Rating: 8.5 / 10.0
+Name: Euro Truck Driver (Simulator) APK
+	Author: Ovidiu Pop
+	Version: 1.6.0
+	Publish Date: Android 4.1+
+	Rating: 9.3 / 10.0
+Name: Baldi's Basics in Education and Learning
+	Author: Ryitaz
+	Version: 6.0
+	Publish Date: 2018-05-15
+	Rating: 9.4 / 10.0
+Name: Vegas Crime Simulator APK
+	Author: Naxeex LLC
+	Version: 2.7
+	Publish Date: Android 4.1+
+	Rating: 9.1 / 10.0
+Name: Taxi Game 2
+	Author: baklabs
+	Version: 1.3.1
+	Publish Date: 2018-08-28
+	Rating: 9.2 / 10.0
+Name: Block Craft 3D Building Simulator Games For Free
+	Author: Fun Games For Free
+	Version: 2.10.8
+	Publish Date: 2018-09-19
+	Rating: 9.4 / 10.0
+Name: Jurassic World™: The Game APK
+	Author: Ludia Inc.
+	Version: 1.26.3
+	Publish Date: Android 4.3+
+	Rating: 8.8 / 10.0
+Name: Merge Plane Click & Idle Tycoon
+	Author: Merger Games
+	Version: 1.4.4
+	Publish Date: 2018-09-19
+	Rating: 10.0 / 10.0
+Name: Goat Simulator
+	Author: Coffee Stain Publishing
+	Version: 1.4.19
+	Publish Date: 2018-09-10
+	Rating: 8.8 / 10.0
+Name: Heavy Bus Simulator APK
+	Author: Dynamic Games Entretenimento Ltda
+	Version: 1.084
+	Publish Date: Android 2.3.2+
+	Rating: 9.1 / 10.0
+Name: SimCity BuildIt APK
+	Author: ELECTRONIC ARTS
+	Version: 1.23.3.75024
+	Publish Date: Android 4.0+
 	Rating: 9.6 / 10.0
-Name: Amazon Kindle
+Name: School Girls Simulator APK
+	Author: Meromsoft
+	Version: 1.0
+	Publish Date: Android 4.1+
+	Rating: 9.7 / 10.0
+Name: Dream League Soccer 2018
+	Author: First Touch Games Ltd.
+	Version: 5.064
+	Publish Date: 2018-07-16
+	Rating: 9.4 / 10.0
+Name: FIFA Soccer
+	Author: ELECTRONIC ARTS
+	Version: 10.6.00
+	Publish Date: 2018-09-04
+	Rating: 8.8 / 10.0
+Name: FIFA 16 Soccer APK
+	Author: ELECTRONIC ARTS
+	Version: 3.2.113645
+	Publish Date: Android 4.4+
+	Rating: 9.2 / 10.0
+Name: 8 Ball Pool APK
+	Author: Miniclip.com
+	Version: 4.0.2
+	Publish Date: Android 4.0.3+
+	Rating: 9.5 / 10.0
+Name: Score! Hero APK
+	Author: First Touch Games Ltd.
+	Version: 1.77
+	Publish Date: Android 4.4+
+	Rating: 9.6 / 10.0
+Name: NBA LIVE Mobile Basketball APK
+	Author: ELECTRONIC ARTS
+	Version: 3.0.03
+	Publish Date: Android 4.0+
+	Rating: 9.2 / 10.0
+Name: Dream League Soccer - Classic APK
+	Author: First Touch
+	Version: 2.07
+	Publish Date: Android 2.3.2+
+	Rating: 9.6 / 10.0
+Name: Pool Instant Rewards - Free coins APK
+	Author: Hasty Clicks
+	Version: 5.0.1
+	Publish Date: Android 4.1+
+	Rating: 9.0 / 10.0
+Name: Online Soccer Manager (OSM) APK
+	Author: Gamebasics BV
+	Version: 3.4.10.1
+	Publish Date: Android 4.4+
+	Rating: 9.5 / 10.0
+Name: Score! Match
+	Author: First Touch Games Ltd.
+	Version: 1.43
+	Publish Date: 2018-09-20
+	Rating: 8.9 / 10.0
+Name: World Cricket Championship 2 APK
+	Author: Nextwave Multimedia
+	Version: 2.8.2
+	Publish Date: Android 4.1+
+	Rating: 9.6 / 10.0
+Name: PES 2017 ultimate APK
+	Author: Jim Alfred
+	Version: 1.4
+	Publish Date: Android 4.0.3+
+	Rating: 7.8 / 10.0
+Name: FIFA 15 Soccer Ultimate Team APK
+	Author: ELECTRONIC ARTS
+	Version: 1.7.0
+	Publish Date: Android 2.3.4+
+	Rating: 9.1 / 10.0
+Name: World of Cricket APK
+	Author: AppOn Innovate
+	Version: 5.0
+	Publish Date: Android 2.3.4+
+	Rating: 10.0 / 10.0
+Name: Real Football APK
+	Author: Gameloft
+	Version: 1.5.0
+	Publish Date: Android 4.0.3+
+	Rating: 8.5 / 10.0
+Name: Football Strike - Multiplayer Soccer APK
+	Author: Miniclip.com
+	Version: 1.10.0
+	Publish Date: Android 4.1+
+	Rating: 9.4 / 10.0
+Name: Toon Cup 2018 Cartoon Network’s Football Game
+	Author: Cartoon Network EMEA
+	Version: 1.2.7
+	Publish Date: 2018-08-16
+	Rating: 9.0 / 10.0
+Name: Winning Eleven APK
+	Author: Dhaka
+	Version: 1.2
+	Publish Date: Android 4.0.3+
+	Rating: 6.8 / 10.0
+Name: Real Cricket™ 18
+	Author: Nautilus Mobile
+	Version: 1.8
+	Publish Date: 2018-08-10
+	Rating: 8.9 / 10.0
+Name: Top Eleven 2018 -  Be a Soccer Manager APK
+	Author: Nordeus
+	Version: 7.6
+	Publish Date: Android 4.1+
+	Rating: 9.6 / 10.0
+Name: Clash of Clans
+	Author: Supercell
+	Version: 10.322.27
+	Publish Date: 2018-08-30
+	Rating: 9.4 / 10.0
+Name: Clash Royale
+	Author: Supercell
+	Version: 2.4.3
+	Publish Date: 2018-09-07
+	Rating: 9.4 / 10.0
+Name: Lords Mobile Battle of the Empires - Strategy RPG
+	Author: IGG.COM
+	Version: 1.79
+	Publish Date: 2018-09-12
+	Rating: 9.1 / 10.0
+Name: Plants vs. Zombies FREE APK
+	Author: ELECTRONIC ARTS
+	Version: 2.3.30
+	Publish Date: Android 4.1+
+	Rating: 9.3 / 10.0
+Name: انتقام السلاطين APK
+	Author: ONEMT
+	Version: 1.10.1
+	Publish Date: Android 4.0.3+
+	Rating: 9.2 / 10.0
+Name: Vainglory 5V5 APK
+	Author: Super Evil Megacorp
+	Version: 3.7.1
+	Publish Date: Android 4.1+
+	Rating: 9.1 / 10.0
+Name: Onmyoji Arena
+	Author: NetEase Games
+	Version: 3.40.0
+	Publish Date: 2018-09-19
+	Rating: 8.7 / 10.0
+Name: Survivor Royale
+	Author: NetEase Games
+	Version: 1.137
+	Publish Date: 2018-07-31
+	Rating: 8.6 / 10.0
+Name: Girls' Frontline
+	Author: Sunborn Games
+	Version: 2.0081_206
+	Publish Date: 2018-05-18
+	Rating: 9.0 / 10.0
+Name: الفاتحون  Conquerors APK
+	Author: IGG.COM
+	Version: 1.9.1
+	Publish Date: Android 4.0+
+	Rating: 8.7 / 10.0
+Name: Heroes Evolved APK
+	Author: Reality Squared Games
+	Version: 1.1.28.0
+	Publish Date: Android 3.0+
+	Rating: 8.9 / 10.0
+Name: Castle Crush: Free Strategy Games - Epic War Clash APK
+	Author: Fun Games For Free
+	Version: 3.19.4
+	Publish Date: Android 4.0.3+
+	Rating: 9.2 / 10.0
+Name: Boom Beach
+	Author: Supercell
+	Version: 35.130
+	Publish Date: 2018-09-19
+	Rating: 9.4 / 10.0
+Name: Сlаs οf Сlаn Guide
+	Author: Лариса Давыдова
+	Version: 2
+	Publish Date: 2018-08-02
+	Rating: 6.4 / 10.0
+Name: Mafia City
+	Author: YottaGames
+	Version: 1.3.270
+	Publish Date: 2018-09-15
+	Rating: 9.3 / 10.0
+Name: Stone Arena
+	Author: 37GAMES
+	Version: 1.0.10
+	Publish Date: 2018-09-20
+	Rating: 8.3 / 10.0
+Name: Rise of Civilizations
+	Author: Lilith  Games
+	Version: 1.0.9.9
+	Publish Date: 2018-09-20
+	Rating: 9.4 / 10.0
+Name: Bloons Adventure Time TD
+	Author: ninja kiwi
+	Version: 1.0.6
+	Publish Date: 2018-08-30
+	Rating: 8.0 / 10.0
+Name: GG Toolbox for Terraria (Mods) APK
+	Author: Flymobi
+	Version: 1.2.4470
+	Publish Date: Android 4.1+
+	Rating: 8.8 / 10.0
+Name: Stick War: Legacy APK
+	Author: Max Games Studios
+	Version: 1.7.04
+	Publish Date: Android 4.4+
+	Rating: 9.6 / 10.0
+Name: Trivia Crack APK
+	Author: Etermax
+	Version: 2.86.0
+	Publish Date: Android 4.1+
+	Rating: 8.5 / 10.0
+Name: Loco Live Trivia Game Show
+	Author: Pocket Aces Pictures Private Limited
+	Version: 2.4.3
+	Publish Date: 2018-09-04
+	Rating: 8.0 / 10.0
+Name: Answers for Loco
+	Author: pararydevper@gmail.com
+	Version: 1.03
+	Publish Date: 2018-04-11
+	Rating: 5.5 / 10.0
+Name: Kaun Banega Crorepati - KBC Hindi 2017 APK
+	Author: Turbo Technolabs
+	Version: 1.0
+	Publish Date: Android 4.1+
+	Rating: 0 / 10.0
+Name: Qureka Play Live Trivia Game Show & Win Cash
+	Author: CoolBoots Media
+	Version: 1.0.48
+	Publish Date: 2018-09-20
+	Rating: 8.3 / 10.0
+Name: Trivia Crack 2
+	Author: Etermax
+	Version: 1.1.2
+	Publish Date: 2018-09-13
+	Rating: 0 / 10.0
+Name: Q Live
+	Author: News Corp UK & Ireland Limited
+	Version: 2.5.1
+	Publish Date: 2018-08-23
+	Rating: 0 / 10.0
+Name: AppTrailers APK
+	Author: AppRedeem Inc
+	Version: 6.0.8
+	Publish Date: Android 4.1+
+	Rating: 9.5 / 10.0
+Name: HQ Trivia
+	Author: Intermedia Labs
+	Version: 1.20.0
+	Publish Date: 2018-09-21
+	Rating: 7.5 / 10.0
+Name: Saif Almarifa APK
+	Author: THX Games Zrt.
+	Version: 20170620
+	Publish Date: Android 4.0+
+	Rating: 9.4 / 10.0
+Name: Bearuang Prized Trivia Quiz
+	Author: Bearuang Family
+	Version: 3.4.0
+	Publish Date: 2018-08-27
+	Rating: 6.0 / 10.0
+Name: Quiz: Logo game APK
+	Author: Lemmings at work
+	Version: 6.7
+	Publish Date: Android 4.0.3+
+	Rating: 9.8 / 10.0
+Name: Hangtime: Trivia Game Shows! APK
+	Author: Kiswe Mobile
+	Version: 1.3.1
+	Publish Date: Android 4.4+
+	Rating: 10.0 / 10.0
+Name: Basic Education & Learning in School game 3D
+	Author: baldi inc.
+	Version: 1.0
+	Publish Date: 2018-09-01
+	Rating: 6.0 / 10.0
+Name: MiniCraft crafting adventure and exploration
+	Author: Ijo Crafting 3D Building Games Dev
+	Version: 8.1
+	Publish Date: 2018-04-12
+	Rating: 0 / 10.0
+Name: Joyride play live game shows with friends
+	Author: Kiwi, Inc.
+	Version: 2.7.0
+	Publish Date: 2018-09-21
+	Rating: 10.0 / 10.0
+Name: TTS Lontong APK
+	Author: Gambir Game Studio
+	Version: 2.7
+	Publish Date: Android 5.0+
+	Rating: 8.5 / 10.0
+Name: Gartic APK
+	Author: Gartic
+	Version: 2.1.5
+	Publish Date: Android 4.1+
+	Rating: 10.0 / 10.0
+Name: Knowledge is Power
+	Author: PlayStation Mobile Inc.
+	Version: 1.3
+	Publish Date: 2018-04-18
+	Rating: 10.0 / 10.0
+Name: Live Quiz Games App, Trivia & Gaming App for Money
+	Author: Times Internet Limited
+	Version: 2.0.57
+	Publish Date: 2018-09-19
+	Rating: 9.4 / 10.0
+Name: Word Link
+	Author: Worzzle Games
+	Version: 2.3.2
+	Publish Date: 2018-09-20
+	Rating: 9.3 / 10.0
+Name: CodyCross: Crossword Puzzles APK
+	Author: Fanatee Games
+	Version: 1.16.2
+	Publish Date: Android 4.1+
+	Rating: 10.0 / 10.0
+Name: كلمات كراش لعبة تسلية وتحدي من زيتونة
+	Author: Zytoona
+	Version: 3.5
+	Publish Date: 2018-08-11
+	Rating: 9.8 / 10.0
+Name: |Lucky Patcher|
+	Author: SnapTube,Lucky Patcher,snap tube,tubemate youtube
+	Version: 1.1
+	Publish Date: 2017-11-16
+	Rating: 9.7 / 10.0
+Name: كلمات متقاطعة APK
+	Author: Sab Apps
+	Version: 1.25
+	Publish Date: Android 4.0.3+
+	Rating: 9.6 / 10.0
+Name: لعبة كلمة السر APK
+	Author: Alrazy Labs (ZoZo)
+	Version: 7.6
+	Publish Date: Android 2.3.2+
+	Rating: 9.9 / 10.0
+Name: Words Of Wonders
+	Author: Fugo Games
+	Version: 1.3.11A
+	Publish Date: 2018-09-20
+	Rating: 0 / 10.0
+Name: Word Cross
+	Author: WePlay Word Games
+	Version: 1.0.63
+	Publish Date: 2018-09-18
+	Rating: 9.2 / 10.0
+Name: Wordscapes APK
+	Author: PeopleFun
+	Version: 1.0.50
+	Publish Date: Android 4.1+
+	Rating: 9.3 / 10.0
+Name: وصلة - لعبة كلمات متقاطعة APK
+	Author: Alrazy Labs (ZoZo)
+	Version: 1.6
+	Publish Date: Android 2.3.4+
+	Rating: 9.7 / 10.0
+Name: لعبة كلمة السر : الجزء الثاني APK
+	Author: Zytoona
+	Version: 2.5
+	Publish Date: Android 4.0.3+
+	Rating: 9.8 / 10.0
+Name: Word Cookies™ APK
+	Author: BitMango
+	Version: 3.0.5
+	Publish Date: Android 4.1+
+	Rating: 9.7 / 10.0
+Name: فطحل العرب - لعبة معلومات عامة APK
+	Author: Sab Apps
+	Version: 1.53
+	Publish Date: Android 4.0.3+
+	Rating: 9.9 / 10.0
+Name: Word Connect APK
+	Author: Zentertain
+	Version: 2.313.0
+	Publish Date: Android 4.1+
+	Rating: 9.7 / 10.0
+Name: Words With Friends 2 - Word Game APK
+	Author: Zynga
+	Version: 11.605
+	Publish Date: Android 5.0+
+	Rating: 9.8 / 10.0
+Name: Word Connect - Word Games Puzzle APK
+	Author: Word Connect Games
+	Version: 5.2
+	Publish Date: Android 4.1+
+	Rating: 9.8 / 10.0
+Name: اشبكها - لعبة تسلية وتفكير APK
+	Author: Zytoona
+	Version: 3.0
+	Publish Date: Android 4.1+
+	Rating: 9.7 / 10.0
+Name: Word Domination APK
+	Author: MAG Interactive
+	Version: 1.0.30
+	Publish Date: Android 5.0+
+	Rating: 9.5 / 10.0
+Name: لعبة كلمة السر الجديدة 2018 APK
+	Author: Break Games
+	Version: 2.6
+	Publish Date: Android 4.1+
+	Rating: 9.0 / 10.0
+Name: رشفة: كلمات متقاطعة وصلة مطورة APK
+	Author: Zytoona
+	Version: 3.1
+	Publish Date: Android 4.0.3+
+	Rating: 9.7 / 10.0
+Name: GTA VICE CITY APK
+	Author: oficial best apps
+	Version: 1.0
+	Publish Date: Android 4.0.3+
+	Rating: 5.6 / 10.0
+Name: Canva Poster, banner, card maker & graphic design
+	Author: Canva
+	Version: 1.8.2
+	Publish Date: 2018-09-20
+	Rating: 9.8 / 10.0
+Name: ibis Paint X APK
+	Author: ibis mobile inc.
+	Version: 5.5.5
+	Publish Date: Android 4.1+
+	Rating: 9.7 / 10.0
+Name: Photo Designer - Write your name with shapes
+	Author: Alhusseini Apps
+	Version: 4.1
+	Publish Date: 2018-09-21
+	Rating: 9.7 / 10.0
+Name: Dj Liker Auto 2018
+	Author: MaxZabalou,2k18
+	Version: 1.0
+	Publish Date: 2017-12-23
+	Rating: 9.7 / 10.0
+Name: FlipaClip - Cartoon animation APK
+	Author: Visual Blasters LLC
+	Version: 2.2.7
+	Publish Date: Android 4.0.3+
+	Rating: 9.4 / 10.0
+Name: Theme for Jio Phone Launcher Glassy Wallpaper
+	Author: Cool Theme Workshop
+	Version: 1.0.0
+	Publish Date: 2017-10-31
+	Rating: 0 / 10.0
+Name: Infinite Design APK
+	Author: Infinite Studio Mobile
+	Version: 3.4.10
+	Publish Date: Android 4.1+
+	Rating: 9.0 / 10.0
+Name: Camera body scan 2018
+	Author: FoxCrox
+	Version: 1.1.2
+	Publish Date: 2018-04-24
+	Rating: 9.3 / 10.0
+Name: Sketch - Draw & Paint APK
+	Author: Sony Mobile Communications
+	Version: 8.3.A.0.11
+	Publish Date: Android 4.2+
+	Rating: 9.1 / 10.0
+Name: Easy Poser
+	Author: Madcat Games
+	Version: 1.2.2
+	Publish Date: 2018-09-03
+	Rating: 9.1 / 10.0
+Name: MediBang Paint - Make Art ! APK
+	Author: MediBang Inc.
+	Version: 14.0.1
+	Publish Date: Android 4.1+
+	Rating: 9.8 / 10.0
+Name: 4Likers APK
+	Author: SocialMedia Inc.
+	Version: 7
+	Publish Date: Android 4.2+
+	Rating: 9.6 / 10.0
+Name: OneBox HD
+	Author: KibaInuzuka
+	Version: 1.0
+	Publish Date: 2018-01-14
+	Rating: 2.0 / 10.0
+Name: Theme for New iPhone X HD: ios 11 Skin Themes APK
+	Author: cool launcher theme designer
+	Version: 1.0.4
+	Publish Date: Android 4.0+
+	Rating: 7.4 / 10.0
+Name: Clash of Lights APK
+	Author: Game Light Servers
+	Version: 1.2
+	Publish Date: Android 4.0.3+
+	Rating: 10.0 / 10.0
+Name: Pencil Sketch Art Cartoon Photo Editor
+	Author: Ayogames
+	Version: 2.3
+	Publish Date: 2018-05-19
+	Rating: 4.0 / 10.0
+Name: U Launcher Lite – FREE Live Cool Themes, Hide Apps
+	Author: Moboapps Dev Team
+	Version: 1.2.7
+	Publish Date: 2018-09-21
+	Rating: 9.6 / 10.0
+Name: Onetap Glitch - Photo Editor
+	Author: magic seal
+	Version: 2.0.6
+	Publish Date: 2018-09-08
+	Rating: 10.0 / 10.0
+Name: MG Auto Likers
+	Author: SocialMediaGuru
+	Version: 16
+	Publish Date: 2017-10-04
+	Rating: 0 / 10.0
+Name: Porsche Mission E
+	Author: Dr. Ing. h.c. F. Porsche AG
+	Version: 1.0.1
+	Publish Date: 2018-07-13
+	Rating: 9.5 / 10.0
+Name: Android Auto - Google Maps, Media & Messaging APK
+	Author: Google LLC
+	Version: 3.6.583533-release
+	Publish Date: Android 5.0+
+	Rating: 8.7 / 10.0
+Name: LG MirrorDrive APK
+	Author: LG Electronics, Inc.
+	Version: 1.2.2.5
+	Publish Date: Android 4.0.3+
+	Rating: 0 / 10.0
+Name: Suspension Master APK
+	Author: K2Leaf
+	Version: 3.0
+	Publish Date: Android 4.0+
+	Rating: 0 / 10.0
+Name: Offroad Buggy Car Racing
+	Author: Constr
+	Version: 2.0
+	Publish Date: 2018-09-03
+	Rating: 0 / 10.0
+Name: Tractor Farming 2018
+	Author: Creptorgames
+	Version: 2.0
+	Publish Date: 2018-08-23
+	Rating: 0 / 10.0
+Name: Snow Heavy Excavator Simulator
+	Author: Larrea Apps
+	Version: 2.0
+	Publish Date: 2018-09-12
+	Rating: 2.0 / 10.0
+Name: SUMO365 APK
+	Author: Otomoto Indonesia
+	Version: 5.1.2
+	Publish Date: Android 4.0.3+
+	Rating: 0 / 10.0
+Name: Demolition Derby
+	Author: Larrea Apps
+	Version: 1.0
+	Publish Date: 2018-08-19
+	Rating: 0 / 10.0
+Name: Carly for BMW - (New Version) APK
+	Author: Carly - Connected Car
+	Version: 28.90
+	Publish Date: Android 4.3+
+	Rating: 0 / 10.0
+Name: Car FM Transmitter 100%
+	Author: MEYA EDITOR
+	Version: 10.0
+	Publish Date: 2018-09-01
+	Rating: 0 / 10.0
+Name: Scoot – Electric Kick & Scooter Sharing in SF
+	Author: ScootNetworks
+	Version: 1.8.1
+	Publish Date: 2018-09-11
+	Rating: 0 / 10.0
+Name: Spyzie
+	Author: TochaLouis
+	Version: 1.1
+	Publish Date: 2017-12-22
+	Rating: 10.0 / 10.0
+Name: Offroad Wood Transport Truck Driver 2018
+	Author: Larrea Apps
+	Version: 3.0
+	Publish Date: 2018-09-19
+	Rating: 0 / 10.0
+Name: Cars GTAsa
+	Author: جنرال اندرويد
+	Version: 1.0
+	Publish Date: 2018-01-04
+	Rating: 10.0 / 10.0
+Name: yellow – מבצעים והטבות עם הארנק הדיגיטלי של פז!
+	Author: PAZ Oil Company Ltd
+	Version: 1.3.0.72
+	Publish Date: 2018-09-03
+	Rating: 0 / 10.0
+Name: AutoScout24 - used car finder APK
+	Author: AutoScout24 GmbH
+	Version: 9.3.66
+	Publish Date: Android 4.2+
+	Rating: 10.0 / 10.0
+Name: Car Launcher AGAMA APK
+	Author: altergames.ru
+	Version: 2.1.4
+	Publish Date: Android 4.0.3+
+	Rating: 10.0 / 10.0
+Name: गाड़ी के नंबर से मालिक का पता करे
+	Author: TinyGames
+	Version: 1.0
+	Publish Date: 2018-05-18
+	Rating: 0 / 10.0
+Name: mobile.de – Germany‘s largest car market APK
+	Author: mobile.de GmbH
+	Version: 6.8
+	Publish Date: Android 4.2+
+	Rating: 0 / 10.0
+Name: 글로우픽 - 대한민국 1등 화장품 리뷰_랭킹 앱 APK
+	Author: GlowDayz
+	Version: 1.16.1
+	Publish Date: Android 4.1+
+	Rating: 0 / 10.0
+Name: King root
+	Author: Esappsdi
+	Version: 2.1
+	Publish Date: 2017-09-26
+	Rating: 9.4 / 10.0
+Name: Lucky Patcher Pro APK
+	Author: SnapTube Youtube downloader
+	Version: 1.0
+	Publish Date: Android 2.3.4+
+	Rating: 7.9 / 10.0
+Name: GBWhatsapp APK
+	Author: OriginaI lnc
+	Version: 4.1.0
+	Publish Date: Android 3.0+
+	Rating: 8.7 / 10.0
+Name: cut urls
+	Author: Abude aliraqi
+	Version: 1.0
+	Publish Date: 2017-10-09
+	Rating: 0 / 10.0
+Name: Candy Selfie - Photo Editor - filtre camera 2018
+	Author: appsandapps
+	Version: 1.0.1
+	Publish Date: 2018-02-14
+	Rating: 10.0 / 10.0
+Name: |GBWhatsap|
+	Author: tnaztnaz8proh$$.
+	Version: 2.0
+	Publish Date: 2018-03-11
+	Rating: 8.7 / 10.0
+Name: filters for snapchat : sticker design
+	Author: filters for snapchat
+	Version: 1.3
+	Publish Date: 2018-01-10
+	Rating: 2.0 / 10.0
+Name: دمج صورتين في صورة واحدة وتغيير خلفية الصورة APK
+	Author: تطبيقات الأيفون
+	Version: 1.50
+	Publish Date: Android 4.0+
+	Rating: 0 / 10.0
+Name: تركيب الصور في بعضها البعض APK
+	Author: MachDevTow
+	Version: 2.0.9
+	Publish Date: Android 4.0.3+
+	Rating: 6.0 / 10.0
+Name: Rainbow Camera
+	Author: CREATIVE ART STUDIO
+	Version: 2.3.0
+	Publish Date: 2018-09-02
+	Rating: 6.0 / 10.0
+Name: Camera bady scan 2018
+	Author: robot.app
+	Version: 1.3.6
+	Publish Date: 2018-04-28
+	Rating: 9.0 / 10.0
+Name: Fuji Cam: Film Filter Pro
+	Author: Phu Tuong An
+	Version: 1.0.0.3
+	Publish Date: 2018-04-25
+	Rating: 0 / 10.0
+Name: Filters for Snapchat APK
+	Author: Lab Photo Editor
+	Version: 1.4.1
+	Publish Date: Android 2.3.2+
+	Rating: 0 / 10.0
+Name: Heart Camera
+	Author: Photo Collage Master
+	Version: 2.5.2
+	Publish Date: 2018-08-14
+	Rating: 10.0 / 10.0
+Name: سكس روسي APK
+	Author: SAMARa
+	Version: 0.0.1
+	Publish Date: Android 4.0+
+	Rating: 7.4 / 10.0
+Name: Beauty Camera - Selfie Camera APK
+	Author: InShot Inc.
+	Version: 2.271.74
+	Publish Date: Android 4.0+
+	Rating: 10.0 / 10.0
+Name: How to Get Sexy Breasts APK
+	Author: aymane
+	Version: 1.0
+	Publish Date: Android 4.0+
+	Rating: 7.1 / 10.0
+Name: دمج صورتين في صورة واحدة PRO APK
+	Author: Araby Photography
+	Version: 1.0
+	Publish Date: Android 4.0+
+	Rating: 0 / 10.0
+Name: Perfect365: One-Tap Makeover APK
+	Author: Perfect365, Inc.
+	Version: 7.49.16
+	Publish Date: Android 4.4+
+	Rating: 8.8 / 10.0
+Name: Amazon Kindle Lite – 2MB. Read millions of eBooks
+	Author: Amazon Mobile LLC
+	Version: 1.4
+	Publish Date: 2018-09-19
+	Rating: 5.0 / 10.0
+Name: Amazon Kindle APK
 	Author: Amazon Mobile LLC
 	Version: 8.10.0.116
+	Publish Date: Android 4.4+
+	Rating: 8.6 / 10.0
+Name: Wattpad  📖  Free Books APK
+	Author: Wattpad.com
+	Version: 7.6.0
+	Publish Date: Android 4.4+
+	Rating: 9.4 / 10.0
+Name: Google Play Books APK
+	Author: Google LLC
+	Version: 4.4.9_RC07.213889590
+	Publish Date: Android 4.1+
+	Rating: 9.2 / 10.0
+Name: TEKKEN 3 Fighting for Win
+	Author: Daniel MorriS
+	Version: 3
+	Publish Date: 2018-06-12
+	Rating: 10.0 / 10.0
+Name: PDF Reader APK
+	Author: pickwick santa
+	Version: 5.7
+	Publish Date: Android 4.0+
+	Rating: 9.0 / 10.0
+Name: New PicSay Pro : Free Photo Editor Tips
+	Author: Been Verified ✓
+	Version: 1.0
+	Publish Date: 2017-10-19
+	Rating: 0 / 10.0
+Name: wa pink 2018
+	Author: wa delta
+	Version: 2.0
+	Publish Date: 2018-03-06
+	Rating: 9.5 / 10.0
+Name: Live Lounge-tutor for LIVE LOUNGE tv
+	Author: CINEMA LIVE
+	Version: 1
+	Publish Date: 2017-12-22
+	Rating: 10.0 / 10.0
+Name: القرآن الكريم كامل بدون انترنت APK
+	Author: simppro
+	Version: 5.0
+	Publish Date: Android 4.0+
+	Rating: 9.8 / 10.0
+Name: Читы на Блок Страйк на деньги
+	Author: Koleson90
+	Version: 1.0
+	Publish Date: 2018-03-08
+	Rating: 2.0 / 10.0
+Name: Al Quran Indonesia APK
+	Author: Andi Unpam
+	Version: 2.6.25
+	Publish Date: Android 4.0+
+	Rating: 9.7 / 10.0
+Name: English Dictionary - Offline APK
+	Author: Livio
+	Version: 4.0
+	Publish Date: Android 4.2+
+	Rating: 9.5 / 10.0
+Name: Bible APK
+	Author: Life.Church
+	Version: 8.4.0
+	Publish Date: Android 4.1+
+	Rating: 9.4 / 10.0
+Name: WA Transparan Terbaru MOD
+	Author: ASF WA Transparan Tem
+	Version: 1.0.1
+	Publish Date: 2017-09-01
+	Rating: 8.0 / 10.0
+Name: Wun Zinn - Myanmar Book APK
+	Author: Bagan Innovation Technology
+	Version: 3.6.1
+	Publish Date: Android 4.1+
+	Rating: 8.7 / 10.0
+Name: English-Myanmar Dictionary APK
+	Author: NAING GROUP
+	Version: 2.5.3
+	Publish Date: Android 4.0+
+	Rating: 9.6 / 10.0
+Name: Pro PSP Game Download and Emulator
+	Author: Wulandari puspita suci
+	Version: 2.062
+	Publish Date: 2018-06-05
+	Rating: 8.4 / 10.0
+Name: Free Gems and Coins for Clash Of Clans Cheat prank APK
+	Author: CoinsForGames
+	Version: 1.0
+	Publish Date: Android 4.0+
+	Rating: 9.7 / 10.0
+Name: Golden Dictionary (EN-AR) APK
+	Author: Golden-Soft
+	Version: 7.0.5.3
+	Publish Date: Android 4.0+
+	Rating: 9.7 / 10.0
+Name: Conductor de Beat APK
+	Author: Taxibeat Ltd
+	Version: 10.12
+	Publish Date: Android 4.1+
+	Rating: 10.0 / 10.0
+Name: Beat Conductor
+	Author: Taxibeat Ltd
+	Version: 10.12
+	Publish Date: 2018-09-19
+	Rating: 10.0 / 10.0
+Name: MYDAWA APK
+	Author: ION KENYA LTD.
+	Version: 4.6.2
+	Publish Date: Android 4.2+
+	Rating: 0 / 10.0
+Name: Vault-Hide SMS,Pics & Videos,App Lock, Free backup APK
+	Author: NQ Mobile Security (NYSE:NQ)
+	Version: 6.7.50.22
+	Publish Date: Android 4.0.3+
+	Rating: 9.4 / 10.0
+Name: My Mytel
+	Author: Telecom International Myanmar Limited
+	Version: 1.0.0
+	Publish Date: 2018-09-12
+	Rating: 9.3 / 10.0
+Name: Beat Conductor
+	Author: Taxibeat Ltd
+	Version: 10.12
+	Publish Date: 2018-09-19
+	Rating: 0 / 10.0
+Name: OfficeSuite : Free Office + PDF Editor APK
+	Author: MobiSystems
+	Version: 9.8.14562
+	Publish Date: Android 4.1+
+	Rating: 9.0 / 10.0
+Name: OneAD APK
+	Author: One Advantage
+	Version: 9.0.19
+	Publish Date: Android 4.1+
+	Rating: 9.8 / 10.0
+Name: Facebook Pages Manager APK
+	Author: Facebook
+	Version: 180.0.0.30.88
+	Publish Date: Android 5.0+
+	Rating: 9.3 / 10.0
+Name: Make Money Online: Money SMS APK
+	Author: Money SMS
+	Version: 6.1.1
+	Publish Date: Android 2.3.2+
+	Rating: 8.5 / 10.0
+Name: BlueTie Professional & Business Networking
+	Author: Blue Tie Global Private Limited
+	Version: 2.2.1
+	Publish Date: 2018-09-21
+	Rating: 0 / 10.0
+Name: ApkCustom APK
+	Author: ANdroid
+	Version: 1.0.7
+	Publish Date: Android 4.0+
+	Rating: 8.9 / 10.0
+Name: 
+	Author: 
+	Version: 
+	Publish Date: 
+	Rating:  / 10.0
+Name: Chatlas - phone interpreter APK
+	Author: Alokavi 777 S.L.
+	Version: 2.5.1
+	Publish Date: Android 4.1+
+	Rating: 0 / 10.0
+Name: MSA FRP
+	Author: Appswiz W.III
+	Version: 1.1.0
+	Publish Date: 2018-02-20
+	Rating: 6.0 / 10.0
+Name: File Commander - File Manager_Explorer APK
+	Author: MobiSystems
+	Version: 5.0.18582
+	Publish Date: Android 4.1+
+	Rating: 8.8 / 10.0
+Name: Snapchat Plus APK
+	Author: Appswiz W.XIII
+	Version: 1.0.2
+	Publish Date: Android 4.0+
+	Rating: 6.6 / 10.0
+Name: Klik Bonus APK
+	Author: Graha Indomedia
+	Version: 3.4.1.1
+	Publish Date: Android 4.0.3+
+	Rating: 9.0 / 10.0
+Name: ZOOM Cloud Meetings APK
+	Author: zoom.us
+	Version: 4.1.30445.0820
+	Publish Date: Android 4.0+
+	Rating: 8.0 / 10.0
+Name: Indeed Job Search APK
+	Author: Indeed Jobs
+	Version: 4.8
+	Publish Date: Android 4.1+
+	Rating: 8.3 / 10.0
+Name: LINE WEBTOON - Free Comics APK
+	Author: NAVER WEBTOON CORP.
+	Version: 2.0.11
+	Publish Date: Android 4.1+
+	Rating: 9.5 / 10.0
+Name: Manga AON
+	Author: AONHUB
+	Version: 2.3.0
+	Publish Date: 2018-06-07
+	Rating: 9.2 / 10.0
+Name: Manga Master – Best manga reader
+	Author: All free manga and comic online
+	Version: 1.1.4.0
+	Publish Date: 2018-03-23
+	Rating: 9.4 / 10.0
+Name: Hotstar Tv 2018
+	Author: Hotstar Studio Inc
+	Version: 1.0
+	Publish Date: 2017-10-13
+	Rating: 0 / 10.0
+Name: Hentai Manga APK
+	Author: mangahentai
+	Version: 1.0
+	Publish Date: Android 4.0.3+
+	Rating: 4.2 / 10.0
+Name: Manga Dogs
+	Author: Niadd
+	Version: 5.1.3
+	Publish Date: 2018-06-29
+	Rating: 8.0 / 10.0
+Name: WebComics
+	Author: WEBCOMICS HOLDINGS HK LIMITED
+	Version: 1.4.54
+	Publish Date: 2018-09-19
+	Rating: 9.9 / 10.0
+Name: Narrator's Voice APK
+	Author: Escolha Tecnologia
+	Version: 6.9.2
+	Publish Date: Android 5.0+
+	Rating: 9.6 / 10.0
+Name: MangaToon Comics updated Daily
+	Author: MangaToon
+	Version: 1.1.5
+	Publish Date: 2018-09-21
+	Rating: 8.0 / 10.0
+Name: Manga Master Best manga & comic reader
+	Author: All free manga and comic online
+	Version: 1.1.7.0
+	Publish Date: 2018-07-04
+	Rating: 9.8 / 10.0
+Name: Snap Tube
+	Author: CapoManTicko
+	Version: 2.0
+	Publish Date: 2017-09-29
+	Rating: 8.5 / 10.0
+Name: Manga Rock - Best Manga Reader APK
+	Author: Not A Basement International
+	Version: 3.5.7_world
+	Publish Date: Android 5.0+
+	Rating: 7.6 / 10.0
+Name: Draw Cartoons 2 APK
+	Author: Drawing Cartoons Ltd
+	Version: 0.7.7
+	Publish Date: Android 4.4+
+	Rating: 9.7 / 10.0
+Name: snap plus - سناب شات بلس
+	Author: Zaid Abu Ali
+	Version: 1.1
+	Publish Date: 2017-10-26
+	Rating: 10.0 / 10.0
+Name: TOPTOON 頂通
+	Author: TOPTOON MOBILE
+	Version: 1.09.2018.0816
+	Publish Date: 2018-08-16
+	Rating: 10.0 / 10.0
+Name: ZingBox Manga APK
+	Author: ZingBox Studio
+	Version: 1.4.10.580
+	Publish Date: Android 2.3.4+
+	Rating: 10.0 / 10.0
+Name: Manga Dogs Discussion comics
+	Author: Niadd
+	Version: 6.0.2
+	Publish Date: 2018-07-11
+	Rating: 10.0 / 10.0
+Name: Mangago a mass of genuine manga
+	Author: Keaihudong Entertainment Co,.Ltd
+	Version: 2.4.1
+	Publish Date: 2018-02-27
+	Rating: 0 / 10.0
+Name: 네이버 웹툰 - Naver Webtoon APK
+	Author: NAVER WEBTOON CORP.
+	Version: 1.13.13
+	Publish Date: Android 4.4+
+	Rating: 9.0 / 10.0
+Name: How to draw anime - DrawShow APK
+	Author: DrawShow Anime Studio
+	Version: 4.4.3.4
+	Publish Date: Android 4.0.3+
+	Rating: 9.8 / 10.0
+Name: WhatsApp Messenger
+	Author: WhatsApp Inc.
+	Version: 2.18.290
+	Publish Date: 2018-09-13
+	Rating: 9.2 / 10.0
+Name: Messenger – Text and Video Chat for Free APK
+	Author: Facebook
+	Version: 184.0.0.30.93
+	Publish Date: Android 5.0+
+	Rating: 9.2 / 10.0
+Name: Gmail APK
+	Author: Google LLC
+	Version: 8.8.26.211559306.release
+	Publish Date: Android 4.1+
+	Rating: 9.2 / 10.0
+Name: Google Chrome: Fast & Secure APK
+	Author: Google LLC
+	Version: 69.0.3497.100
+	Publish Date: Android 7.0+
+	Rating: 9.2 / 10.0
+Name: Viber Messenger APK
+	Author: Viber Media S.à r.l.
+	Version: 9.6.5.5
+	Publish Date: Android 4.1+
+	Rating: 9.4 / 10.0
+Name: Messenger Lite: Free Calls & Messages APK
+	Author: Facebook
+	Version: 41.0.0.11.178
+	Publish Date: Android 2.3.2+
+	Rating: 9.1 / 10.0
+Name: UC Browser Mini -Tiny Fast Private & Secure APK
+	Author: UCWeb Inc.
+	Version: 11.1.1
+	Publish Date: Android 4.0+
+	Rating: 8.8 / 10.0
+Name: Opera Mini - fast web browser APK
+	Author: Opera
+	Version: 36.2.2254.130496
+	Publish Date: Android 4.1+
+	Rating: 9.4 / 10.0
+Name: imo free video calls and chat APK
+	Author: imo.im
+	Version: 9.8.000000010501
+	Publish Date: Android 4.0+
+	Rating: 9.4 / 10.0
+Name: 2ndLine - US Phone Number APK
+	Author: TextNow, Inc.
+	Version: 5.72.0.2
+	Publish Date: Android 4.0+
+	Rating: 9.0 / 10.0
+Name: Truecaller: Caller ID, spam blocking & Call Record APK
+	Author: True Software Scandinavia AB
+	Version: 9.17.10
+	Publish Date: Android 4.4+
+	Rating: 9.6 / 10.0
+Name: Psiphon Pro - The Internet Freedom VPN APK
+	Author: Psiphon Inc.
+	Version: 200
+	Publish Date: Android 4.0+
+	Rating: 9.0 / 10.0
+Name: Telegram APK
+	Author: Telegram FZ-LLC
+	Version: 4.9.1
+	Publish Date: Android 6.0+
+	Rating: 9.4 / 10.0
+Name: LINE: Free Calls & Messages APK
+	Author: LINE Corporation
+	Version: 8.14.2
+	Publish Date: Android 4.4+
+	Rating: 9.0 / 10.0
+Name: Hangouts APK
+	Author: Google LLC
+	Version: 26.0.205315597
+	Publish Date: Android 4.1+
+	Rating: 9.2 / 10.0
+Name: Google Duo - High Quality Video Calls APK
+	Author: Google LLC
+	Version: 39.1.213443905.DR39_RC19
+	Publish Date: Android 4.4+
+	Rating: 9.6 / 10.0
+Name: Firefox Browser fast & private APK
+	Author: Mozilla
+	Version: 62.0.2
+	Publish Date: Android 4.1+
+	Rating: 9.2 / 10.0
+Name: WeChat APK
+	Author: WeChat
+	Version: 6.6.7
+	Publish Date: Android 4.2+
+	Rating: 7.6 / 10.0
+Name: Yahoo Mail – Stay Organized APK
+	Author: Yahoo
+	Version: 5.31.3
+	Publish Date: Android 4.4+
+	Rating: 9.6 / 10.0
+Name: WhatsWeb For Whatscan APK
+	Author: Karoon
+	Version: 4.0
+	Publish Date: Android 4.1+
+	Rating: 8.4 / 10.0
+Name: Wink.Live
+	Author: diao jianshan
+	Version: 2.6.6
+	Publish Date: 2018-05-11
+	Rating: 7.2 / 10.0
+Name: FastMeet Chat, Dating, Love
+	Author: WILDEC LLC
+	Version: 1.31.4
+	Publish Date: 2018-07-27
+	Rating: 9.6 / 10.0
+Name: Futebol Ao Vivo Placar Tv
+	Author: FF Development
+	Version: 1.0.3
+	Publish Date: 2018-01-15
+	Rating: 5.5 / 10.0
+Name: Badoo APK
+	Author: Gary Harris
+	Version: 2.0
+	Publish Date: Android 4.0.3+
+	Rating: 9.4 / 10.0
+Name: RandoChat - Chat roulette APK
+	Author: WR
+	Version: 4.0.22
+	Publish Date: Android 4.0.3+
+	Rating: 9.4 / 10.0
+Name: Sex Addiction APK
+	Author: Personal Care & Health Studio
+	Version: 1.0
+	Publish Date: Android 2.3.4+
+	Rating: 8.6 / 10.0
+Name: Пообщаемся - знакомства и чат APK
+	Author: Друзья. Знакомства. Чат.
+	Version: 141
+	Publish Date: Android 4.1+
+	Rating: 8.0 / 10.0
+Name: Hide App, Private Dating, Safe Chat - PrivacyHider APK
+	Author: TRIGTECH (AppLock,Hide apps,Parallel accounts)
+	Version: 2.9.6
+	Publish Date: Android 4.0+
+	Rating: 9.7 / 10.0
+Name: ChatVideo ❤ APK
+	Author: Flaxbin Digital
+	Version: 3.0.20
+	Publish Date: Android 4.1+
+	Rating: 8.7 / 10.0
+Name: Chat Rooms, Virtual World - Galaxy APK
+	Author: in-galaxy.com
+	Version: 9.3.2
+	Publish Date: Android 4.3+
+	Rating: 7.8 / 10.0
+Name: BlaBla Privacy-second space APK
+	Author: Pixcy.me
+	Version: 2.2.1057
+	Publish Date: Android 4.1+
+	Rating: 8.0 / 10.0
+Name: Chaturbate
+	Author: Алла Саванова
+	Version: 1.2.1
+	Publish Date: 2018-02-06
+	Rating: 6.0 / 10.0
+Name: OkCupid Dating APK
+	Author: okcupid.com
+	Version: 21.1.0
+	Publish Date: Android 4.1+
+	Rating: 7.0 / 10.0
+Name: Badoo APK
+	Author: Michette Luna
+	Version: 1.0
+	Publish Date: Android 3.0+
+	Rating: 8.9 / 10.0
+Name: Hot or Not - Find someone right now APK
+	Author: OR NOT LIMITED
+	Version: 5.82.2
+	Publish Date: Android 5.0+
+	Rating: 10.0 / 10.0
+Name: Hinge: Dating & Relationships APK
+	Author: Hinge
+	Version: 6.0.0
+	Publish Date: Android 5.0+
+	Rating: 0 / 10.0
+Name: ارقام بنات واتس اب APK
+	Author: tenseapp
+	Version: 5.6
+	Publish Date: Android 2.1+
+	Rating: 7.2 / 10.0
+Name: Free Dating App & Flirt Chat - Match with Singles APK
+	Author: Flirt and Dating Apps
+	Version: 1.690
+	Publish Date: Android 4.0+
+	Rating: 9.1 / 10.0
+Name: Casual Dating & Adult Singles - Joyride
+	Author: Jaumo
+	Version: 4.17.4
+	Publish Date: 2018-09-20
+	Rating: 9.4 / 10.0
+Name: Random Chat & Date - No Login APK
+	Author: DevCrazzyApps
+	Version: 1.0.2
+	Publish Date: Android 4.0+
+	Rating: 6.0 / 10.0
+Name: Ruangguru - One-stop Learning Solution APK
+	Author: ruangguru.com
+	Version: 3.1.7
+	Publish Date: Android 4.1+
+	Rating: 8.8 / 10.0
+Name: Duolingo: Learn Languages Free APK
+	Author: Duolingo
+	Version: 3.99.2
+	Publish Date: Android 4.4+
+	Rating: 9.7 / 10.0
+Name: Photomath APK
+	Author: Photomath, Inc.
+	Version: 5.0.2
+	Publish Date: Android 5.0+
+	Rating: 9.8 / 10.0
+Name: Kingroot 6.0.1
+	Author: APP TOOL PRO
+	Version: 5.2.1
+	Publish Date: 2017-10-08
+	Rating: 9.4 / 10.0
+Name: lucky patcher hack  game joke APK
+	Author: JOKE
+	Version: 1.0
+	Publish Date: Android 2.3.2+
+	Rating: 9.6 / 10.0
+Name: حلول للمناهج الدراسية APK
+	Author: حلول
+	Version: 1.3
+	Publish Date: Android 4.0+
+	Rating: 9.9 / 10.0
+Name: المعلم الالكتروني APK
+	Author: msz
+	Version: 2.2.20
+	Publish Date: Android 4.1+
+	Rating: 10.0 / 10.0
+Name: U-Dictionary: Best English Learning Dictionary APK
+	Author: Youdao (Hong Kong) Limited
+	Version: 3.7.3
+	Publish Date: Android 4.0.3+
+	Rating: 9.8 / 10.0
+Name: English - Arabic Dictionary APK
+	Author: CodZat
+	Version: 10.1.1
+	Publish Date: Android 4.0.3+
+	Rating: 9.0 / 10.0
+Name: Math Calculator Solve Math Problems by Camera
+	Author: Super T Group
+	Version: 1.7.0
+	Publish Date: 2018-09-17
+	Rating: 0 / 10.0
+Name: Learn Languages, Grammar & Vocabulary with Memrise APK
+	Author: Memrise
+	Version: 2.94_6764_memrise
+	Publish Date: Android 5.0+
+	Rating: 9.5 / 10.0
+Name: Seminário Presbiteriano Simonton
+	Author: CalNave Apps
+	Version: 33.0
+	Publish Date: 2018-03-06
+	Rating: 0 / 10.0
+Name: spyboy APK
+	Author: shubham kumar
+	Version: 23.1
+	Publish Date: Android 4.1+
+	Rating: 9.1 / 10.0
+Name: ГДЗ: мой решебник APK
+	Author: PE Kasko Dzmitry
+	Version: 1.2.25
+	Publish Date: Android 4.1+
+	Rating: 10.0 / 10.0
+Name: Miga Town
+	Author: XiHe Digital (GuangZhou) Technology Co., Ltd.
+	Version: 1.4
+	Publish Date: 2018-09-06
+	Rating: 6.4 / 10.0
+Name: Google Classroom APK
+	Author: Google LLC
+	Version: 4.9.352.08.35
+	Publish Date: Android 4.1+
+	Rating: 4.0 / 10.0
+Name: Calculator Plus
+	Author: Handy App Club
+	Version: 1.1.3
+	Publish Date: 2018-09-20
+	Rating: 7.0 / 10.0
+Name: Miga Town: My Hospital
+	Author: XiHe Digital (GuangZhou) Technology Co., Ltd.
+	Version: 1.1
+	Publish Date: 2018-09-03
+	Rating: 2.0 / 10.0
+Name: تهكير اي لعبة بدون روت joke APK
+	Author: JOKE
+	Version: 4.0
+	Publish Date: Android 2.3.2+
+	Rating: 9.6 / 10.0
+Name: HelloTalk — Chat, Speak & Learn Foreign Languages APK
+	Author: HelloTalk Learn Languages App
+	Version: 2.7.1
+	Publish Date: Android 5.0+
+	Rating: 7.9 / 10.0
+Name: dsfgdhffdgh APK
+	Author: asiamundosubstv
+	Version: 1.1
+	Publish Date: Android 4.0+
+	Rating: 9.5 / 10.0
+Name: Google Play Games APK
+	Author: Google LLC
+	Version: 5.11.6556
+	Publish Date: Android 4.0+
+	Rating: 8.9 / 10.0
+Name: Nonton Film Online BF 18 + Terbaru
+	Author: Video Hot Collection 2018
+	Version: 9.0
+	Publish Date: 2017-10-12
+	Rating: 7.2 / 10.0
+Name: Netflix APK
+	Author: Netflix, Inc.
+	Version: 6.11.0
+	Publish Date: Android 5.0+
+	Rating: 8.7 / 10.0
+Name: PlayPlus
+	Author: Rádio e Televisao Record S.A.
+	Version: 1.10
+	Publish Date: 2018-09-05
+	Rating: 2.0 / 10.0
+Name: Film Semi Japan 18
+	Author: Xia Loung
+	Version: 3.3
+	Publish Date: 2017-09-12
+	Rating: 8.0 / 10.0
+Name: XX1 Lite
+	Author: permatakanji
+	Version: 2.1.1
+	Publish Date: 2018-03-17
+	Rating: 7.4 / 10.0
+Name: Live NetTV
+	Author: Mehar Jani
+	Version: 4.6
+	Publish Date: 2018-01-27
+	Rating: 8.4 / 10.0
+Name: Redbox TV 2018
+	Author: Rego King Budi
+	Version: 1.0
+	Publish Date: 2018-03-23
+	Rating: 8.1 / 10.0
+Name: iflix APK
+	Author: iflix Sdn Bhd
+	Version: 3.5.3-12332
+	Publish Date: Android 4.3+
+	Rating: 9.2 / 10.0
+Name: WhatsHack Pro 2018 Prank
+	Author: APPS4FREEZ
+	Version: 2.2.1
+	Publish Date: 2017-11-16
+	Rating: 9.4 / 10.0
+Name: Bitmoji – Your Personal Emoji APK
+	Author: Bitstrips
+	Version: 10.41.45
+	Publish Date: Android 4.3+
+	Rating: 9.5 / 10.0
+Name: Japps Tube App 2018
+	Author: Carlos Morina
+	Version: 1.0
+	Publish Date: 2018-04-16
+	Rating: 6.9 / 10.0
+Name: Amazon Prime Video APK
+	Author: Amazon Mobile LLC
+	Version: 3.0.236.4641
+	Publish Date: Android 4.1+
+	Rating: 8.6 / 10.0
+Name: FORJA Plus TV
+	Author: MS_studio
+	Version: 3.0.1.1
+	Publish Date: 2017-12-11
+	Rating: 9.8 / 10.0
+Name: |Lucky Patcher|
+	Author: hisanioai
+	Version: 2.5
+	Publish Date: 2018-02-23
+	Rating: 8.8 / 10.0
+Name: Plusdede APK
+	Author: Yisus Studios
+	Version: 1.4.4
+	Publish Date: Android 4.1+
+	Rating: 7.0 / 10.0
+Name: Download Kalash of Cullens APK
+	Author: Fhd18
+	Version: 2.1
+	Publish Date: Android 2.3.2+
+	Rating: 8.5 / 10.0
+Name: New Damon Ps2 Pro Emulator
+	Author: ProLabs Inc
+	Version: 1.0
+	Publish Date: 2018-01-24
+	Rating: 9.8 / 10.0
+Name: tweakbox
+	Author: Ricko apps
+	Version: 2.3.0
+	Publish Date: 2017-11-23
+	Rating: 9.2 / 10.0
+Name: FIFA 2019 news
+	Author: ORI SOFT
+	Version: news
+	Publish Date: 2018-06-03
+	Rating: 8.3 / 10.0
+Name: SnapTube
+	Author: SnapTube lnc..
+	Version: 3.1.0
+	Publish Date: 2017-10-12
+	Rating: 8.4 / 10.0
+Name: |Lucky Patcher|
+	Author: |Mobdro| |KingRoot| |AppVn| |Lucky Patcher|
+	Version: 2.5
+	Publish Date: 2018-01-24
+	Rating: 10.0 / 10.0
+Name: Royal Followers VIP Instagram APK
+	Author: HolyBooster
+	Version: 1.0
+	Publish Date: Android 4.1+
+	Rating: 10.0 / 10.0
+Name: البث المباشر للمباريات HD+
+	Author: devanassch
+	Version: 7.0
+	Publish Date: 2017-10-07
+	Rating: 9.4 / 10.0
+Name: Cheats for Subway Surf Pro APK
+	Author: StudioApdev
+	Version: 1.3
+	Publish Date: Android 2.3.2+
+	Rating: 0 / 10.0
+Name: Tips Tekken 3
+	Author: UK FightingGames
+	Version: 2.2.1
+	Publish Date: 2017-12-19
+	Rating: 7.7 / 10.0
+Name: IPTV PARA TODOS 2.0
+	Author: Ecovoip Telecom
+	Version: 2.0
+	Publish Date: 2018-02-06
+	Rating: 7.4 / 10.0
+Name: 15 August : Plantation 9 Cr.
+	Author: UP Forest Department
+	Version: 1.9
+	Publish Date: 2018-09-10
+	Rating: 0 / 10.0
+Name: Game Guardian 2018
+	Author: COADWIN
+	Version: 1.0
+	Publish Date: 2017-11-01
+	Rating: 8.6 / 10.0
+Name: DroidAdmin for Android - Advice
+	Author: Alexo
+	Version: 3.8
+	Publish Date: 2018-05-29
+	Rating: 10.0 / 10.0
+Name: GBWhatsapp Apk
+	Author: Dugle
+	Version: 1.0
+	Publish Date: 2017-10-15
+	Rating: 10.0 / 10.0
+Name: Ticketmaster Event Tickets APK
+	Author: Ticketmaster L.L.C.
+	Version: 1.18.1
+	Publish Date: Android 4.2+
+	Rating: 0 / 10.0
+Name: happy hijri new year's 2018 : Muharram 1440
+	Author: Dev.cad
+	Version: 6.0
+	Publish Date: 2018-09-05
+	Rating: 0 / 10.0
+Name: Tachiyomi
+	Author: KibaInuzuka
+	Version: 1.0
+	Publish Date: 2018-01-14
+	Rating: 2.0 / 10.0
+Name: Spyzie - Free
+	Author: muadongle
+	Version: 1.0
+	Publish Date: 2018-02-08
+	Rating: 9.8 / 10.0
+Name: WhatsPlus 2018 -Last Seen Tracker
+	Author: posoft
+	Version: 1.1.02
+	Publish Date: 2018-08-22
+	Rating: 0 / 10.0
+Name: Let Me Hack
+	Author: Chathuranga Sandaruwan
+	Version: 1.3
+	Publish Date: 2018-02-24
+	Rating: 0 / 10.0
+Name: Super PPSSPP Tekken 3 - 7 reference
+	Author: HappyDevs LLC
+	Version: 1.0
+	Publish Date: 2017-11-22
+	Rating: 10.0 / 10.0
+Name: Disco Light: Flashlight with Strobe Light & Music APK
+	Author: 💎 Chic Apps 💎
+	Version: 4.0
+	Publish Date: Android 4.0+
+	Rating: 0 / 10.0
+Name: PayPal Cash App: Send and Request Money Fast APK
+	Author: PayPal Mobile
+	Version: 7.0.1
+	Publish Date: Android 4.4+
+	Rating: 9.2 / 10.0
+Name: iDong Vay Tiền Online Nhanh - 30s Có Tiền Ngay
+	Author: 360 Viet Nam
+	Version: 1.0.5.0
+	Publish Date: 2018-09-12
+	Rating: 8.5 / 10.0
+Name: Google Pay APK
+	Author: Google LLC
+	Version: 2.74.212360432
+	Publish Date: Android 5.0+
+	Rating: 9.1 / 10.0
+Name: Free Bitcoin Spinner
+	Author: Cast Away Studio
+	Version: 2.1.5
+	Publish Date: 2018-05-23
+	Rating: 9.5 / 10.0
+Name: Coinbase - Buy Bitcoin & more. Secure Wallet. APK
+	Author: Coinbase, Inc.
+	Version: 5.8.0
+	Publish Date: Android 4.4+
+	Rating: 8.5 / 10.0
+Name: Paytm - Pay Bills in Canada APK
+	Author: Paytm - One97 Communications Ltd.
+	Version: 2.4.1
+	Publish Date: Android 4.1+
+	Rating: 9.2 / 10.0
+Name: eToro Cryptocurrency Trading APK
+	Author: eToro
+	Version: 124.0.0
+	Publish Date: Android 4.1+
+	Rating: 10.0 / 10.0
+Name: Electroneum
+	Author: Electroneum Ltd
+	Version: 2.6.2
+	Publish Date: 2018-09-10
+	Rating: 9.9 / 10.0
+Name: Сбербанк Онлайн APK
+	Author: Sberbank of Russia
+	Version: 8.4.0
+	Publish Date: Android 4.1+
+	Rating: 8.8 / 10.0
+Name: Skrill APK
+	Author: Paysafe
+	Version: 3.0.0
+	Publish Date: Android 4.1+
+	Rating: 6.0 / 10.0
+Name: Blockchain Wallet. Bitcoin, Bitcoin Cash, Ethereum APK
+	Author: Blockchain Luxembourg S.A.
+	Version: 6.13.2
+	Publish Date: Android 4.2+
+	Rating: 0 / 10.0
+Name: Money Lover: Budget App & Expense Tracker APK
+	Author: Finsify
+	Version: 3.8.25.2018091111
+	Publish Date: Android 4.1+
+	Rating: 9.2 / 10.0
+Name: Libertex - online trading: Forex, Bitcoin CFD's APK
+	Author: Indication Investments Ltd
+	Version: 2.14.0
+	Publish Date: Android 4.4+
+	Rating: 0 / 10.0
+Name: Stocks, Forex, Finance, Markets: Portfolio & News APK
+	Author: INVESTING.com
+	Version: 4.4
+	Publish Date: Android 4.2+
+	Rating: 10.0 / 10.0
+Name: 掌上生活 APK
+	Author: 招商银行
+	Version: 7.0.1
+	Publish Date: Android 4.4+
+	Rating: 6.0 / 10.0
+Name: Tu Pago Movil Banco Bicentenario
+	Author: Corporación Unidigital
+	Version: 1.2.1
+	Publish Date: 2018-03-02
+	Rating: 0 / 10.0
+Name: Binance Cryptocurrency Exchange
+	Author: Binance Inc.
+	Version: 1.4.8.0
+	Publish Date: 2018-09-11
+	Rating: 0 / 10.0
+Name: Yahoo Finance: Real-Time Stocks & Investing News APK
+	Author: Yahoo
+	Version: 5.1.0
+	Publish Date: Android 5.1+
+	Rating: 9.0 / 10.0
+Name: Blockfolio - Bitcoin and Cryptocurrency Tracker APK
+	Author: Blockfolio, LLC
+	Version: 1.2.1
+	Publish Date: Android 4.1+
+	Rating: 10.0 / 10.0
+Name: WIREX: Bitcoin Litecoin Ripple Wallet APK
+	Author: Wirex
+	Version: 2.4.23
+	Publish Date: Android 4.4+
+	Rating: 10.0 / 10.0
+Name: foodpanda: Food Order Delivery, Join Crave Party APK
+	Author: foodpanda India
+	Version: 2.6.6
+	Publish Date: Android 4.4+
+	Rating: 0 / 10.0
+Name: McDonald's APK
+	Author: McDonald's Apps
+	Version: 1.2.7
+	Publish Date: Android 4.2+
+	Rating: 10.0 / 10.0
+Name: foodpanda - Local Food Delivery APK
+	Author: Foodpanda GmbH
+	Version: 4.12.3
+	Publish Date: Android 4.2+
+	Rating: 9.4 / 10.0
+Name: Otlob - Food Delivery APK
+	Author: Otlob
+	Version: 3.9.0
+	Publish Date: Android 4.0.3+
+	Rating: 8.4 / 10.0
+Name: 배달의민족 APK
+	Author: WoowaBrothers
+	Version: 8.18.2
+	Publish Date: Android 4.4+
+	Rating: 0 / 10.0
+Name: RepelisPlus
+	Author: SuigetsuHozuki
+	Version: 1.0
+	Publish Date: 2018-01-23
+	Rating: 6.0 / 10.0
+Name: McDelivery- McDonald’s India: Food Delivery App APK
+	Author: McDonald's India – West & South
+	Version: 6.8
+	Publish Date: Android 4.4+
+	Rating: 0 / 10.0
+Name: NetPincér ételrendelés APK
+	Author: Viala Hungary
+	Version: 4.2.1
+	Publish Date: Android 4.1+
+	Rating: 0 / 10.0
+Name: The Coffee House APK
+	Author: The Coffee House
+	Version: 4.0.9
+	Publish Date: Android 4.4+
+	Rating: 0 / 10.0
+Name: McDonald's APK
+	Author: McDonalds USA, LLC
+	Version: 5.17.0
+	Publish Date: Android 4.4+
+	Rating: 8.0 / 10.0
+Name: تمن وقيمة APK
+	Author: Saif Albasri
+	Version: 4.0
+	Publish Date: Android 4.2+
+	Rating: 0 / 10.0
+Name: Domicilios.com - Order food APK
+	Author: Domicilios.com
+	Version: 3.2.57
+	Publish Date: Android 4.1+
+	Rating: 10.0 / 10.0
+Name: HelloFresh - Get Cooking APK
+	Author: HelloFresh
+	Version: 2.41.1
+	Publish Date: Android 4.4+
+	Rating: 0 / 10.0
+Name: Додо Пицца. Доставка пиццы № 1 в России
+	Author: Dodo Franchising, LLC
+	Version: 3.0.0
+	Publish Date: 2018-09-21
+	Rating: 10.0 / 10.0
+Name: Starbucks APK
+	Author: Starbucks Coffee Company
+	Version: 4.13
+	Publish Date: Android 5.0+
+	Rating: 10.0 / 10.0
+Name: Talabatey Online Food Delivery APK
+	Author: Smart Delivery Group
+	Version: 2.6
+	Publish Date: Android 4.1+
+	Rating: 8.8 / 10.0
+Name: ریحون سفارش آنلاین غذا Reyhoon APK
+	Author: Reyhoon
+	Version: 1.17.1
+	Publish Date: Android 4.1+
+	Rating: 10.0 / 10.0
+Name: Cookpad - home cooking recipe manager APK
+	Author: Cookpad Limited
+	Version: 2.82.0.0-android
+	Publish Date: Android 4.2+
+	Rating: 9.5 / 10.0
+Name: Domino's Pizza Turkey APK
+	Author: Domino's Pizza Turkiye
+	Version: 3.3.9
+	Publish Date: Android 4.1+
+	Rating: 0 / 10.0
+Name: pizza.de | Order Food APK
+	Author: Delivery Hero Germany GmbH
+	Version: 5.3.0
+	Publish Date: Android 4.4+
+	Rating: 0 / 10.0
+Name: InstaFit - Ejercicio en Casa APK
+	Author: InstaFit
+	Version: 1.9.18
+	Publish Date: Android 4.4+
+	Rating: 0 / 10.0
+Name: Home Workout No Equipment
+	Author: Leap Fitness Group
+	Version: 1.0.15
+	Publish Date: 2018-06-28
+	Rating: 9.5 / 10.0
+Name: Mi Fit APK
+	Author: Anhui Huami Information Technology Co.,Ltd.
+	Version: 3.5.0
+	Publish Date: Android 4.4+
+	Rating: 6.8 / 10.0
+Name: Sweatcoin Pays You To Get Fit APK
+	Author: Sweatco Ltd
+	Version: 8.0
+	Publish Date: Android 4.4+
+	Rating: 9.0 / 10.0
+Name: Samsung Health APK
+	Author: Samsung Electronics Co.,  Ltd.
+	Version: 6.0.0.085
+	Publish Date: Android 5.0+
+	Rating: 8.9 / 10.0
+Name: Six Pack in 30 Days Abs Workout
+	Author: Leap Fitness Group
+	Version: 1.0.2
+	Publish Date: 2018-09-22
+	Rating: 9.1 / 10.0
+Name: Blue Light Filter - Night Mode, Eye Care APK
+	Author: Leap Fitness Group
+	Version: 1.4.0
+	Publish Date: Android 4.0+
+	Rating: 9.3 / 10.0
+Name: Lose Weight in 30 Days APK
+	Author: Simple Design Ltd.
+	Version: 1.0.23
+	Publish Date: Android 4.2+
+	Rating: 9.2 / 10.0
+Name: Period Tracker Flo, Pregnancy & Ovulation Calendar APK
+	Author: Flo Health, Inc.
+	Version: 4.7.3
+	Publish Date: Android 4.2+
+	Rating: 9.4 / 10.0
+Name: ManFIT – Muscle building Exercise, Home Workout
+	Author: Health Group: Fitness, Eyes Protect, Drink Water.
+	Version: 1.3.6
+	Publish Date: 2018-09-18
+	Rating: 10.0 / 10.0
+Name: 30 Day Fitness Challenge - Workout at Home APK
+	Author: Leap Fitness Group
+	Version: 1.0.47
+	Publish Date: Android 4.0+
+	Rating: 9.7 / 10.0
+Name: Arm Workout Biceps Exercise
+	Author: Leap Fitness Group
+	Version: 1.0.2
+	Publish Date: 2018-07-13
+	Rating: 10.0 / 10.0
+Name: Buttocks Workout - Hips, Legs & Butt Workout APK
+	Author: Simple Design Ltd.
+	Version: 1.0.21
+	Publish Date: Android 4.2+
+	Rating: 8.5 / 10.0
+Name: Period Tracker - Period Calendar Ovulation Tracker APK
+	Author: Simple Design Ltd.
+	Version: 1.642.182
+	Publish Date: Android 4.0+
+	Rating: 9.2 / 10.0
+Name: Lose Belly Fat in 30 Days - Flat Stomach
+	Author: Leap Fitness Group
+	Version: 1.0.8
+	Publish Date: 2018-09-21
+	Rating: 0 / 10.0
+Name: Hard Bodies Boot Camp
+	Author: Branded MINDBODY Apps
+	Version: 4.0.1
+	Publish Date: 2017-09-07
+	Rating: 0 / 10.0
+Name: Yoho Sports APK
+	Author: mCube Inc.
+	Version: 20.27.00
+	Publish Date: Android 4.4+
+	Rating: 10.0 / 10.0
+Name: Calorie Counter - MyFitnessPal APK
+	Author: MyFitnessPal, Inc.
+	Version: 18.9.2
+	Publish Date: Android 5.0+
+	Rating: 9.1 / 10.0
+Name: Female Fitness - Women Workout
+	Author: Leap Fitness Group
+	Version: 1.0.3
+	Publish Date: 2018-08-31
+	Rating: 10.0 / 10.0
+Name: VeryFitPro APK
+	Author: Smart Wearable Devices
+	Version: 2.3.14
+	Publish Date: Android 4.4+
+	Rating: 4.0 / 10.0
+Name: Peel Universal Smart TV Remote Control APK
+	Author: Peel Technologies Inc.
+	Version: 10.4.9.1
+	Publish Date: Android 4.1+
+	Rating: 8.7 / 10.0
+Name: Alfred Home Security Camera APK
+	Author: Alfred Labs Inc.
+	Version: 3.13.04
+	Publish Date: Android 4.1+
+	Rating: 8.7 / 10.0
+Name: SURE Universal Smart TV Remote Control APK
+	Author: SURE Universal Ltd.
+	Version: 4.18.103
+	Publish Date: Android 4.2+
+	Rating: 7.1 / 10.0
+Name: GSM One
+	Author: Commtel Limited
+	Version: 0.1.13
+	Publish Date: 2017-12-11
+	Rating: 0 / 10.0
+Name: 집닥 - 인테리어 1번가 APK
+	Author: 집닥 주식회사
+	Version: 3.4.1
+	Publish Date: Android 4.0.3+
+	Rating: 0 / 10.0
+Name: ImmoScout24 Switzerland – Rent a flat, buy a house APK
+	Author: Scout24 Schweiz AG
+	Version: 3.6.7
+	Publish Date: Android 4.4+
+	Rating: 0 / 10.0
+Name: RGRHCL Indira Mane Ver -2.1 APK
+	Author: Rajiv Gandhi Rural Housing Corporation ltd
+	Version: 26.0
+	Publish Date: Android 2.3.2+
+	Rating: 0 / 10.0
+Name: IR Universal TV Remote APK
+	Author: WaveSpark
+	Version: 12.29
+	Publish Date: Android 4.0+
+	Rating: 0 / 10.0
+Name: Room planner: Interior & Floorplan Design for IKEA APK
+	Author: iCanDesign LLC
+	Version: 865
+	Publish Date: Android 4.0.3+
+	Rating: 10.0 / 10.0
+Name: tinyCam Monitor FREE APK
+	Author: Tiny Solutions LLC
+	Version: 10.1.2
+	Publish Date: Android 4.4+
+	Rating: 10.0 / 10.0
+Name: Home Security Camera WardenCam - reuse old phones APK
+	Author: WardenCam360 - Home Security, Video Monitoring
+	Version: 2.5.9
+	Publish Date: Android 4.1+
+	Rating: 10.0 / 10.0
+Name: Zillow: Find Houses for Sale & Apartments for Rent APK
+	Author: Zillow
+	Version: 9.9.13.7634
+	Publish Date: Android 4.4+
+	Rating: 10.0 / 10.0
+Name: Badi – Find Flatmates & Rooms APK
+	Author: BADIAPP 2015 INC.
+	Version: 5.12.1
+	Publish Date: Android 4.1+
+	Rating: 0 / 10.0
+Name: Houzz Home Design & Shopping APK
+	Author: Houzz
+	Version: 18.9.0.1
+	Publish Date: Android 5.0+
+	Rating: 10.0 / 10.0
+Name: MAMIKOST, kost_room Finder App APK
+	Author: PT MAMA TEKNOLOGI PROPERTI
+	Version: 2.9.1
+	Publish Date: Android 4.1+
+	Rating: 0 / 10.0
+Name: IKEA Place
+	Author: Inter IKEA Systems B.V.
+	Version: 2.2.86
+	Publish Date: 2018-05-25
+	Rating: 10.0 / 10.0
+Name: Room Creator Interior Design APK
+	Author: App Holdings
+	Version: 3.4
+	Publish Date: Android 2.3.2+
+	Rating: 9.7 / 10.0
+Name: Ohmyhome - Buy. Sell. Rent. HDB APK
+	Author: Ohmyhome Pte Ltd
+	Version: 2.7.0
+	Publish Date: Android 4.0.3+
+	Rating: 0 / 10.0
+Name: IP WebCam - Acid APK
+	Author: Screen Mirroring and Cast Smart TV Lab.
+	Version: V17
+	Publish Date: Android 4.0+
+	Rating: 2.0 / 10.0
+Name: Anti-Mosquito Simulated
+	Author: 14CORE
+	Version: 1.1a
+	Publish Date: 2017-11-25
+	Rating: 0 / 10.0
+Name: Lucky Patcher no root APK
+	Author: studiochelpus.inc
+	Version: Version
+	Publish Date: Android 4.0+
+	Rating: 9.1 / 10.0
+Name: PUB Gfx Tool Free(No ads)🔧 1080p HDR 60FPS 4xMSAA
+	Author: Trilokia Inc.
+	Version: 0.12.0f
+	Publish Date: 2018-09-11
+	Rating: 7.5 / 10.0
+Name: Test DPC APK
+	Author: Sample developer
+	Version: 5.0.4
+	Publish Date: Android 5.0+
+	Rating: 8.4 / 10.0
+Name: TubeMate 2.2.9 APK
+	Author: TubeMate OFFICIALS APPS
+	Version: 1.1
+	Publish Date: Android 2.2+
+	Rating: 6.0 / 10.0
+Name: Test DPC 2.0 APK
+	Author: Enterprise Sample
+	Version: 2.0.4
+	Publish Date: Android 5.0+
+	Rating: 10.0 / 10.0
+Name: Snap Tube APK
+	Author: TubeMate OFFICIALS APPS
+	Version: 1.1
+	Publish Date: Android 2.2+
+	Rating: 8.9 / 10.0
+Name: KingRoot
+	Author: King of Root
+	Version: 1.3
+	Publish Date: 2016-11-01
+	Rating: 9.5 / 10.0
+Name: Tube Mate APK
+	Author: TUBEMATE OFFICIAL App
+	Version: 1.1
+	Publish Date: Android 2.2+
+	Rating: 8.0 / 10.0
+Name: Special Generate Gem For Clash of Clans Prank
+	Author: Onyxgos.dev
+	Version: 1.0
+	Publish Date: 2018-07-11
+	Rating: 8.3 / 10.0
+Name: Free Vid Mat Downloader Demo APK
+	Author: Vid Mat
+	Version: 1.0
+	Publish Date: Android 3.0+
+	Rating: 10.0 / 10.0
+Name: MX Player Codec (ARMv7 NEON) APK
+	Author: J2 Interactive
+	Version: 1.9.20
+	Publish Date: Android 4.0+
+	Rating: 9.8 / 10.0
+Name: ViMate HD Video & Music Downloader
+	Author: Turbo VidZap
+	Version: 4.28
+	Publish Date: 2017-10-06
+	Rating: 0 / 10.0
+Name: Cardboard APK
+	Author: Google LLC
+	Version: 1.8
+	Publish Date: Android 4.1+
+	Rating: 9.3 / 10.0
+Name: Download video downloader APK
+	Author: Must app
+	Version: 1.8.9a
+	Publish Date: Android 2.3.2+
+	Rating: 8.8 / 10.0
+Name: LsqQDSq
+	Author: vinop
+	Version: 7.0
+	Publish Date: 2018-01-12
+	Rating: 9.1 / 10.0
+Name: SnapTube APK
+	Author: TUBEMATE OFFICIAL App
+	Version: 1.1
+	Publish Date: Android 2.2+
+	Rating: 8.5 / 10.0
+Name: TubeMate 2.3.0 APK
+	Author: TubeMate OFFICIALS APPS
+	Version: 1.1
+	Publish Date: Android 2.2+
+	Rating: 0 / 10.0
+Name: KingRoot APK
+	Author: KingRoot Studio
+	Version: 1.0
+	Publish Date: Android 3.0+
+	Rating: 9.1 / 10.0
+Name: TubeMate 2.2.6 APK
+	Author: TUbeMAte
+	Version: 1
+	Publish Date: Android 3.0+
+	Rating: 0 / 10.0
+Name: Game Hacker APK
+	Author: Sb Game Hacker 1
+	Version: 1.0
+	Publish Date: Android 4.0.3+
+	Rating: 9.2 / 10.0
+Name: AppValley Android
+	Author: Crafile
+	Version: 1.1.1
+	Publish Date: 2018-01-01
+	Rating: 9.1 / 10.0
+Name: Smart Browser
+	Author: KUKU STUDIO
+	Version: 1.1.7
+	Publish Date: 2018-09-19
+	Rating: 0 / 10.0
+Name: COCOIN - All benefit from Lock-screen APK
+	Author: MOVILEST Co., Ltd.
+	Version: 2.2.64
+	Publish Date: Android 4.1+
+	Rating: 9.5 / 10.0
+Name: Film Thailand Panas 18++ Terbaru
+	Author: Video Hot Collection 2018
+	Version: 5.0
+	Publish Date: 2017-10-12
+	Rating: 9.0 / 10.0
+Name: Super Slime Simulator Satisfying Slime App
+	Author: Dramaton
+	Version: 2.4
+	Publish Date: 2018-09-19
+	Rating: 9.2 / 10.0
+Name: Video Hot HD Apps
+	Author: AutoWebtech
+	Version: 1.0
+	Publish Date: 2018-07-06
+	Rating: 8.3 / 10.0
+Name: Bagan - Myanmar Keyboard APK
+	Author: Bagan Innovation Technology
+	Version: 11.1
+	Publish Date: Android 4.0.3+
+	Rating: 9.3 / 10.0
+Name: Recharge Plans & Prepaid Bill APK
+	Author: Mubble
+	Version: 3.18.3
+	Publish Date: Android 5.0+
+	Rating: 10.0 / 10.0
+Name: حقيبة المؤمن - اوقات الصلاة , القران الكريم APK
+	Author: Alkafeel
+	Version: 6.8.8.7
+	Publish Date: Android 4.1+
+	Rating: 9.5 / 10.0
+Name: freenet - The Free Internet APK
+	Author: Voyager Innovations Inc.
+	Version: 2.5.2
+	Publish Date: Android 4.0+
+	Rating: 9.2 / 10.0
+Name: WowBox APK
+	Author: Telenor Digital
+	Version: 2.12.1
+	Publish Date: Android 4.0.3+
+	Rating: 9.6 / 10.0
+Name: صلاتك Salatuk (Prayer time) APK
+	Author: Masarat App
+	Version: 2.2.71
+	Publish Date: Android 4.0.3+
+	Rating: 9.9 / 10.0
+Name: Fronto Lock Screen APK
+	Author: fronto
+	Version: 2.12.4
+	Publish Date: Android 4.2+
+	Rating: 9.4 / 10.0
+Name: Mi Home APK
+	Author: Xiaomi Inc.
+	Version: 5.4.14
+	Publish Date: Android 4.1+
+	Rating: 9.4 / 10.0
+Name: Muslim Pro - Prayer Times, Azan, Quran & Qibla APK
+	Author: Muslim Pro Limited
+	Version: 9.7
+	Publish Date: Android 4.0.3+
+	Rating: 9.7 / 10.0
+Name: Coin Pop
+	Author: Coin Pop Company
+	Version: 1.2.3-CoinPop
+	Publish Date: 2018-09-11
+	Rating: 7.0 / 10.0
+Name: Live Chat - Meet new people via free video chat APK
+	Author: LiveChat Studio
+	Version: 03.01.13
+	Publish Date: Android 4.3+
+	Rating: 9.4 / 10.0
+Name: Nonton LK21 APK
+	Author: JangKrik
+	Version: 8.0.0
+	Publish Date: Android 4.0.3+
+	Rating: 10.0 / 10.0
+Name: 饿了么 APK
+	Author: 拉扎斯网络科技(上海)有限公司
+	Version: 8.2.0
+	Publish Date: Android 4.0+
+	Rating: 4.3 / 10.0
+Name: Nestaway - Rent furnished house, Room or Bed 👍 APK
+	Author: NestAway
+	Version: 1.2.07
+	Publish Date: Android 4.0.3+
+	Rating: 0 / 10.0
+Name: Beat - Ride app APK
+	Author: Taxibeat Ltd
+	Version: 10.27
+	Publish Date: Android 4.1+
+	Rating: 10.0 / 10.0
+Name: FGL Pro
+	Author: LTP PRO LLC
+	Version: 3.4.6
+	Publish Date: 2018-08-06
+	Rating: 9.0 / 10.0
+Name: DiDi - Greater China APK
+	Author: DiDi
+	Version: 5.2.20
+	Publish Date: Android 4.0.3+
+	Rating: 3.4 / 10.0
+Name: Waze - GPS, Maps, Traffic Alerts & Live Navigation APK
+	Author: Waze
+	Version: 4.43.1.1
+	Publish Date: Android 4.1+
+	Rating: 9.5 / 10.0
+Name: Lalamove Driver - Earn extra income with your car APK
+	Author: Huolala Global Investment Limited
+	Version: 4.811.403
+	Publish Date: Android 4.1+
+	Rating: 10.0 / 10.0
+Name: GPS JoyStick Fake GPS Location APK
+	Author: The App Ninjas
+	Version: 3.0.2
+	Publish Date: Android 4.4+
+	Rating: 9.3 / 10.0
+Name: Ola cabs - Taxi, Auto, Car Rental, Share Booking APK
+	Author: olacabs
+	Version: 4.6.6
+	Publish Date: Android 4.0.3+
+	Rating: 9.7 / 10.0
+Name: HERE WeGo - Offline Maps & GPS APK
+	Author: HERE Apps LLC
+	Version: 2.0.12491
+	Publish Date: Android 4.1+
+	Rating: 9.3 / 10.0
+Name: Cabify APK
+	Author: Cabify
+	Version: 7.2.19
+	Publish Date: Android 5.0+
+	Rating: 0 / 10.0
+Name: GPS Navigation & Offline Maps Sygic APK
+	Author: Sygic maps navigation
+	Version: 17.4.13
+	Publish Date: Android 4.0.3+
+	Rating: 9.5 / 10.0
+Name: GPS , Maps, Navigations & Directions APK
+	Author: AppStar Studios
+	Version: 6.4
+	Publish Date: Android 4.2+
+	Rating: 10.0 / 10.0
+Name: Taxify APK
+	Author: Taxify
+	Version: CA.4.41
+	Publish Date: Android 4.1+
+	Rating: 10.0 / 10.0
+Name: iGO Navigation APK
+	Author: NNG Software Developing and Commercial LLC.
+	Version: 9.18.27.736653
+	Publish Date: Android 4.0.3+
+	Rating: 0 / 10.0
+Name: Snapp
+	Author: Snapp Cab
+	Version: 3.7.0
+	Publish Date: 2018-08-20
+	Rating: 8.4 / 10.0
+Name: TAP30
+	Author: D.BZ
+	Version: 2.4.1-play
+	Publish Date: 2018-09-10
+	Rating: 0 / 10.0
+Name: Easy Taxi - For Drivers APK
+	Author: Easy Taxi
+	Version: 13.27.1.52
+	Publish Date: Android 4.4+
+	Rating: 0 / 10.0
+Name: NAVIGON APK
+	Author: Garmin Würzburg GmbH
+	Version: 1.2.5
+	Publish Date: Android 5.0+
+	Rating: 0 / 10.0
+Name: Soy Rappi APK
+	Author: Rappi, Inc - Delivery
+	Version: 4.1.2
+	Publish Date: Android 4.1+
+	Rating: 4.5 / 10.0
+Name: Taximeter — start driving a taxi today APK
+	Author: Яндекс
+	Version: 8.64
+	Publish Date: Android 4.1+
+	Rating: 4.0 / 10.0
+Name: Yandex.Taxi Ride-Hailing Service APK
+	Author: Яндекс
+	Version: 3.74.1
+	Publish Date: Android 4.1+
+	Rating: 10.0 / 10.0
+Name: Halodoc - Doctors, Medicine & Labs APK
+	Author: Halodoc
+	Version: 3.220
+	Publish Date: Android 4.4+
+	Rating: 0 / 10.0
+Name: Lybrate - Consult a Doctor APK
+	Author: Lybrate
+	Version: 3.0.4
+	Publish Date: Android 4.1+
+	Rating: 10.0 / 10.0
+Name: 1mg - Medicines, Health Tests, Doctor Consultation APK
+	Author: 1mg Technologies
+	Version: 9.9.1
+	Publish Date: Android 4.1+
+	Rating: 9.0 / 10.0
+Name: Zoylo - Medicines, Blood Tests, Doctors APK
+	Author: Zoylo Digihealth Pvt Ltd
+	Version: 1.0
+	Publish Date: Android 4.0+
+	Rating: 0 / 10.0
+Name: PharmEasy - The Healthcare App APK
+	Author: 91streets Media Technologies Private Limited
+	Version: 4.7.5
+	Publish Date: Android 4.1+
+	Rating: 0 / 10.0
+Name: Netmeds - India Ki Pharmacy APK
+	Author: Netmeds Marketplace Limited
+	Version: 6.1
+	Publish Date: Android 4.3+
+	Rating: 10.0 / 10.0
+Name: About An Sex
+	Author: Black Hive
+	Version: 3
+	Publish Date: 2017-10-13
+	Rating: 0 / 10.0
+Name: TeCHO+ APK
+	Author: Argusoft
+	Version: 3.3.5
+	Publish Date: Android 4.1+
+	Rating: 0 / 10.0
+Name: BNF Publications APK
+	Author: Pharmaceutical Press
+	Version: 2.1.3
+	Publish Date: Android 4.4+
+	Rating: 0 / 10.0
+Name: DocOnline Online Doctor Consultation App
+	Author: DocOnline
+	Version: 4.1.6
+	Publish Date: 2018-09-14
+	Rating: 0 / 10.0
+Name: Medscape APK
+	Author: WebMD, LLC
+	Version: 4.8.2
+	Publish Date: Android 4.0.3+
+	Rating: 10.0 / 10.0
+Name: FNM de Cuba APK
+	Author: Grupo Sapiem
+	Version: 18.09.21
+	Publish Date: Android 4.0+
+	Rating: 0 / 10.0
+Name: Muscle | Skeleton - 3D Atlas of Anatomy APK
+	Author: Catfish Animation Studio
+	Version: 1.7.0.15
+	Publish Date: Android 5.0+
+	Rating: 10.0 / 10.0
+Name: mfine Consult Top Doctors Online
+	Author: mfine novocura
+	Version: 1.1.17
+	Publish Date: 2018-09-17
+	Rating: 0 / 10.0
+Name: Mobile JKN APK
+	Author: BPJS Kesehatan
+	Version: 1.15
+	Publish Date: Android 4.0.3+
+	Rating: 10.0 / 10.0
+Name: Ada - Your Health Guide APK
+	Author: Ada Health
+	Version: 2.28.0
+	Publish Date: Android 4.4+
+	Rating: 9.1 / 10.0
+Name: Essential Anatomy 3 for Orgs. APK
+	Author: 3D4Medical.com, LLC
+	Version: 1.1.3
+	Publish Date: Android 4.0.3+
+	Rating: 9.5 / 10.0
+Name: Anatomy Learning - 3D Atlas APK
+	Author: AnatomyLearning
+	Version: 2.1
+	Publish Date: Android 4.3+
+	Rating: 10.0 / 10.0
+Name: Century Chat
+	Author: FrankThangv
+	Version: 1.0.2
+	Publish Date: 2018-08-31
+	Rating: 2.0 / 10.0
+Name: GiveBlood APK
+	Author: Canadian Blood Services
+	Version: 2.5.2
+	Publish Date: Android 4.2+
+	Rating: 0 / 10.0
+Name: Spotify Music APK
+	Author: Spotify Ltd.
+	Version: 8.4.70.666
+	Publish Date: Android 4.1+
+	Rating: 8.6 / 10.0
+Name: Free Ringtones for Android™ APK
+	Author: BestRingtonesApps
+	Version: 7.2.3
+	Publish Date: Android 4.1+
+	Rating: 10.0 / 10.0
+Name: Google Play Music APK
+	Author: Google LLC
+	Version: 8.14.7429-1.H
+	Publish Date: Android 4.1+
+	Rating: 8.9 / 10.0
+Name: Avee Music Player (Pro) APK
+	Author: Daaw Aww
+	Version: 1.2.83
+	Publish Date: Android 4.1+
+	Rating: 8.8 / 10.0
+Name: JOOX Music - Free Streaming APK
+	Author: Tencent Mobility Limited
+	Version: 4.6.1.1
+	Publish Date: Android 4.1+
+	Rating: 9.3 / 10.0
+Name: Solo Music - HD Music & Massive Lyrics
+	Author: SoloMusic
+	Version: 1.1.0
+	Publish Date: 2018-05-16
+	Rating: 9.0 / 10.0
+Name: Smule - The #1 Singing App APK
+	Author: Smule
+	Version: 5.9.7
+	Publish Date: Android 4.3+
+	Rating: 9.4 / 10.0
+Name: Video MP3 Converter APK
+	Author: FunDevs LLC
+	Version: 2.3.2
+	Publish Date: Android 4.1+
+	Rating: 9.5 / 10.0
+Name: SoundCloud - Music & Audio APK
+	Author: SoundCloud
+	Version: 2018.09.03-release
+	Publish Date: Android 4.4+
+	Rating: 9.5 / 10.0
+Name: Fl Studio : Free Mobile
+	Author: Barryshed
+	Version: 1.0
+	Publish Date: 2017-11-10
+	Rating: 6.4 / 10.0
+Name: MP3 Video Converter APK
+	Author: Springwalk
+	Version: 1.9.50
+	Publish Date: Android 2.3.2+
+	Rating: 9.6 / 10.0
+Name: edjing Mix: DJ music mixer APK
+	Author: MWM - Best free music and audio apps for Android
+	Version: 6.5.2
+	Publish Date: Android 5.0+
+	Rating: 9.6 / 10.0
+Name: Tamil Music ON - Tamil Songs APK
+	Author: dhinsoft
+	Version: 3.5.33
+	Publish Date: Android 4.0.3+
+	Rating: 9.0 / 10.0
+Name: Spotlite Sing For Free
+	Author: SPOTLITE MEDIA INC.
+	Version: 1.5.6
+	Publish Date: 2018-09-14
+	Rating: 0 / 10.0
+Name: ORG 2019 APK
+	Author: Sofeh Sunrise
+	Version: 2019.1.1.5
+	Publish Date: Android 3.2+
+	Rating: 9.4 / 10.0
+Name: Samsung Music APK
+	Author: Samsung Electronics Co.,  Ltd.
+	Version: 16.1.93-9
+	Publish Date: Android 5.0+
+	Rating: 9.2 / 10.0
+Name: 멜론 APK
+	Author: Kakao  Corporation
+	Version: 4.7.3
+	Publish Date: Android 4.4+
+	Rating: 9.0 / 10.0
+Name: Anghami - Free Unlimited Music APK
+	Author: Anghami
+	Version: 4.0.49
+	Publish Date: Android 4.1+
+	Rating: 9.3 / 10.0
+Name: MP3 Cutter APK
+	Author: accountlab
+	Version: 1.1.4
+	Publish Date: Android 2.3.2+
+	Rating: 9.4 / 10.0
+Name: Lark Player —— YouTube Music & Free MP3 Top Player APK
+	Author: Mobiuspace Tech Top Player
+	Version: 2.13.63
+	Publish Date: Android 4.2+
+	Rating: 9.6 / 10.0
+Name: Twitter Lite APK
+	Author: Twitter, Inc.
+	Version: 1.4.0--22
+	Publish Date: Android 5.0+
+	Rating: 7.8 / 10.0
+Name: Twitter APK
+	Author: Twitter, Inc.
+	Version: 7.53.0
+	Publish Date: Android 4.2+
+	Rating: 9.3 / 10.0
+Name: Magzter: All Digital Magazines APK
+	Author: Magzter Inc.
+	Version: 7.4.19
+	Publish Date: Android 4.0.3+
+	Rating: 9.6 / 10.0
+Name: Google News APK
+	Author: Google LLC
+	Version: 5.4.0
+	Publish Date: Android 4.4+
+	Rating: 9.3 / 10.0
+Name: BÁO MỚI - Đọc Báo, Tin Tức 24h APK
+	Author: ePi Technologies, JSC.
+	Version: 18.09.01
+	Publish Date: Android 5.0+
+	Rating: 9.4 / 10.0
+Name: Way2News - News, Short News APK
+	Author: Way2online ( Formerly Way2SMS )
+	Version: 5.3
+	Publish Date: Android 4.0.3+
+	Rating: 8.0 / 10.0
+Name: Bounce News: Breaking News, Hot Gist, Low Data App APK
+	Author: Bounce.Ng
+	Version: 1.7.0
+	Publish Date: Android 4.1+
+	Rating: 10.0 / 10.0
+Name: TUKO - Kenya Trending News & Entertainment News APK
+	Author: Genesis Media
+	Version: 9.1.10
+	Publish Date: Android 4.0.3+
+	Rating: 0 / 10.0
+Name: KUBIK BacaBerita dan Raih Pulsa
+	Author: KUBIK Developer
+	Version: 1.5.0
+	Publish Date: 2018-09-19
+	Rating: 9.1 / 10.0
+Name: YEN - Ghana Latest News & Trending News Free App APK
+	Author: Genesis Media
+	Version: 3.4.9
+	Publish Date: Android 4.0.3+
+	Rating: 0 / 10.0
+Name: Opera News Trending news and videos
+	Author: Opera
+	Version: 4.3.2254.129657
+	Publish Date: 2018-09-10
+	Rating: 8.0 / 10.0
+Name: BBC Arabic
+	Author: Media Applications Technologies for the BBC
+	Version: 5.1.0.141
+	Publish Date: 2018-07-23
+	Rating: 10.0 / 10.0
+Name: TuCine
+	Author: Midevelopers
+	Version: 1.1
+	Publish Date: 2018-08-07
+	Rating: 0 / 10.0
+Name: Reddit: Social News, Trending Memes & Funny Videos APK
+	Author: reddit Inc.
+	Version: 3.11.1
+	Publish Date: Android 5.0+
+	Rating: 9.5 / 10.0
+Name: MundoCine
+	Author: Tudevelopers
+	Version: 1.0
 	Publish Date: 2018-08-24
+	Rating: 0 / 10.0
+Name: SnippetMEdia - News, Blogs, Funny Videos & Rewards APK
+	Author: iEZ Technology Inc.
+	Version: 3.2.0
+	Publish Date: Android 4.1+
+	Rating: 10.0 / 10.0
+Name: TV TAP PLUS
+	Author: TV TAP
+	Version: 1.3
+	Publish Date: 2018-08-28
+	Rating: 0 / 10.0
+Name: NAIJ - Nigeria Latest News & Popular News Free App APK
+	Author: Genesis Media
+	Version: 8.2.14
+	Publish Date: Android 4.0.3+
+	Rating: 0 / 10.0
+Name: NUR.KZ - Kazakhstan Latest News & Trending News APK
+	Author: Genesis Media
+	Version: 6.4.1
+	Publish Date: Android 4.0.3+
+	Rating: 10.0 / 10.0
+Name: Hubhopper: Stories & Podcasts That Speak to You APK
+	Author: Hubhopper
+	Version: 3.3
+	Publish Date: Android 4.4+
+	Rating: 0 / 10.0
+Name: Toy Collections: Baby Dolls
+	Author: Toy Collections
+	Version: 1.0
+	Publish Date: 2017-10-03
+	Rating: 0 / 10.0
+Name: Nani Teri Morni-Offline Video APK
+	Author: MnTrend
+	Version: 4.2
+	Publish Date: Android 4.0.3+
+	Rating: 8.0 / 10.0
+Name: Porn Blocker (Safe Surfer) APK
+	Author: Safe Surfer
+	Version: 1.7
+	Publish Date: Android 5.0+
+	Rating: 10.0 / 10.0
+Name: طفلي لايف -حاسبة الحمل، موسوعة الحمل و ولادة الطفل APK
+	Author: OneMena
+	Version: 3.3.0
+	Publish Date: Android 4.0.3+
+	Rating: 8.7 / 10.0
+Name: Best Barbie Doll Videos
+	Author: KikuStudio
+	Version: 1.4
+	Publish Date: 2018-07-18
+	Rating: 0 / 10.0
+Name: GeoZilla GPS Locator – Find Family & Friends APK
+	Author: GeoZilla
+	Version: 5.1.53
+	Publish Date: Android 4.1+
+	Rating: 9.0 / 10.0
+Name: Mr. Bean Cartoon Videos
+	Author: Galinha Pintadinha
+	Version: 1.15
+	Publish Date: 2018-02-10
+	Rating: 0 / 10.0
+Name: Pregnancy Tracker & Countdown to Baby Due Date APK
+	Author: BabyCenter
+	Version: 3.16.0
+	Publish Date: Android 5.0+
+	Rating: 9.3 / 10.0
+Name: تحميل اغاني طيور بيبي فيديو APK
+	Author: funboy apps
+	Version: 1.0
+	Publish Date: Android 2.3.2+
+	Rating: 2.0 / 10.0
+Name: Find My Kids: Child GPS-watch & Phone Tracker APK
+	Author: Refresh LLC
+	Version: 1.9.2
+	Publish Date: Android 6.0+
+	Rating: 9.4 / 10.0
+Name: Doll House Barbie Design Decoration
+	Author: Haikoyu Dev
+	Version: 1.0
+	Publish Date: 2018-03-14
+	Rating: 0 / 10.0
+Name: Anna Elsa Dolls
+	Author: Game For Kid
+	Version: 1.0
+	Publish Date: 2018-01-18
+	Rating: 0 / 10.0
+Name: Toy Collections Baby Doll Makeup
+	Author: Supergame Studio
+	Version: 1.0
+	Publish Date: 2018-02-21
+	Rating: 0 / 10.0
+Name: Hallobumil APK
+	Author: PT Cakra Radha Mustika
+	Version: 1.16
+	Publish Date: Android 4.1+
+	Rating: 0 / 10.0
+Name: Baby Panda Learns Shapes APK
+	Author: BabyBus Kids Games
+	Version: 8.25.10.00
+	Publish Date: Android 4.0.3+
+	Rating: 0 / 10.0
+Name: Porn Blocker : Safe Search & Web Filter
+	Author: KawKaw.company
+	Version: 1.0.3
+	Publish Date: 2018-05-22
+	Rating: 0 / 10.0
+Name: Kids Videos
+	Author: Divisity
+	Version: 1.3.1
+	Publish Date: 2018-05-20
+	Rating: 0 / 10.0
+Name: Overtube
+	Author: TotMob
+	Version: 1.0.0
+	Publish Date: 2018-08-16
+	Rating: 0 / 10.0
+Name: Kaspersky SafeKids: Parental Control & Family GPS APK
+	Author: Kaspersky Lab
+	Version: 1.15.0.101
+	Publish Date: Android 4.4+
+	Rating: 10.0 / 10.0
+Name: شات عربي - دردشة
+	Author: ChatAraby
+	Version: 1.0
+	Publish Date: 2018-05-01
+	Rating: 10.0 / 10.0
+Name: Digital Clock LED Watch
+	Author: Appmakerzz
+	Version: 2.2
+	Publish Date: 2018-09-20
+	Rating: 10.0 / 10.0
+Name: Shark Attack Magic Touch
+	Author: Appmakerzz
+	Version: 2.2
+	Publish Date: 2018-09-20
+	Rating: 10.0 / 10.0
+Name: Parallel Space - Multiple accounts & Two face APK
+	Author: LBE Tech
+	Version: 4.0.8616
+	Publish Date: Android 4.0.3+
+	Rating: 9.7 / 10.0
+Name: CM Launcher 3D - Theme, Wallpapers, Efficient APK
+	Author: Cheetah Mobile Inc
+	Version: 5.49.1
+	Publish Date: Android 4.0.3+
+	Rating: 8.6 / 10.0
+Name: ZEDGE™ Ringtones & Wallpapers APK
+	Author: Zedge
+	Version: 5.46.4
+	Publish Date: Android 4.4+
+	Rating: 9.6 / 10.0
+Name: S Launcher Galaxy S7 Launcher
+	Author: ZhangAn Inc.
+	Version: 4.4
+	Publish Date: 2017-02-20
+	Rating: 9.1 / 10.0
+Name: QuickShortcutMaker APK
+	Author: sika524
+	Version: 2.4.0
+	Publish Date: Android 1.6+
+	Rating: 9.3 / 10.0
+Name: Nova Launcher APK
+	Author: TeslaCoil Software
+	Version: 5.5.4
+	Publish Date: Android 4.1+
+	Rating: 9.9 / 10.0
+Name: Transparent Phone
+	Author: Appmakerzz
+	Version: 1.0
+	Publish Date: 2018-08-14
+	Rating: 6.4 / 10.0
+Name: Cheetah Keyboard-Gif,Emoji Keyboard&3D Themes APK
+	Author: Cheetah Keyboard
+	Version: 4.19.1
+	Publish Date: Android 4.0.3+
+	Rating: 9.5 / 10.0
+Name: POCO Launcher Unreleased
+	Author: Xiaomi Inc.
+	Version: 2.6.0.3
+	Publish Date: 2018-09-17
+	Rating: 8.0 / 10.0
+Name: Cracked Screen Prank
+	Author: Appmakerzz
+	Version: 1.1
+	Publish Date: 2018-09-20
+	Rating: 10.0 / 10.0
+Name: myIM3 APK
+	Author: Indosat Ooredoo
+	Version: v67.5
+	Publish Date: Android 4.0+
+	Rating: 8.9 / 10.0
+Name: Facemoji Emoji Keyboard:GIF, Emoji, Keyboard Theme APK
+	Author: Facemoji Emoji Keyboard & Keyboard Theme
+	Version: 2.2.9.3
+	Publish Date: Android 4.0.3+
+	Rating: 9.3 / 10.0
+Name: Lucky Peatcher APK
+	Author: ‮Lucky patcher
+	Version: 1.1
+	Publish Date: Android 3.0+
+	Rating: 8.6 / 10.0
+Name: FlashLight LED & Tiny
+	Author: Robrt Holook
+	Version: 1.0
+	Publish Date: 2018-05-02
+	Rating: 10.0 / 10.0
+Name: GTA San Andreas Free APK
+	Author: AntoninLipsx
+	Version: 1.0
+	Publish Date: Android 2.2+
+	Rating: 8.8 / 10.0
+Name: Fonts for Samsung (AFonts)
+	Author: Amjad Al-zakwani
+	Version: 3.5
+	Publish Date: 2018-09-09
+	Rating: 7.4 / 10.0
+Name: Chamelephon APK
+	Author: Cryptotel
+	Version: 1.0
+	Publish Date: Android 2.2+
+	Rating: 9.8 / 10.0
+Name: Smiley Emoji Keyboard 2018 - Cute Emoticons
+	Author: iHandy Ltd.
+	Version: 1.2.1
+	Publish Date: 2018-09-19
+	Rating: 10.0 / 10.0
+Name: PicsArt Photo Studio: Collage Maker & Pic Editor APK
+	Author: PicsArt
+	Version: 10.4.1
+	Publish Date: Android 4.1+
+	Rating: 9.5 / 10.0
+Name: B612 - Beauty & Filter Camera APK
+	Author: SNOW, Inc.
+	Version: 7.7.6
+	Publish Date: Android 4.3+
+	Rating: 9.3 / 10.0
+Name: PhotoGrid: Video & Pic Collage Maker, Photo Editor APK
+	Author: Cheetah Mobile (Photo Editor)
+	Version: 6.78
+	Publish Date: Android 4.0.3+
+	Rating: 9.5 / 10.0
+Name: Sweet Selfie - selfie cam, beauty cam, photo edit APK
+	Author: Ufoto
+	Version: 2.76.718
+	Publish Date: Android 4.0.3+
+	Rating: 9.3 / 10.0
+Name: Google Photos APK
+	Author: Google LLC
+	Version: 3.13.0.183914708
+	Publish Date: Android 4.1+
+	Rating: 9.5 / 10.0
+Name: BeautyPlus - Easy Photo Editor & Selfie Camera APK
+	Author: MEITU
+	Version: 6.9.091
+	Publish Date: Android 4.1+
+	Rating: 9.0 / 10.0
+Name: Snapseed APK
+	Author: Google LLC
+	Version: 2.19.0.201907232
+	Publish Date: Android 4.4+
+	Rating: 9.5 / 10.0
+Name: SNOW - Beauty & Makeup camera APK
+	Author: SNOW, Inc.
+	Version: 7.7.5
+	Publish Date: Android 4.3+
+	Rating: 9.3 / 10.0
+Name: PixelLab - Text on pictures APK
+	Author: App Holdings
+	Version: 1.9.2
+	Publish Date: Android 4.1+
+	Rating: 9.6 / 10.0
+Name: Huji Cam
+	Author: Manhole, Inc.
+	Version: 2.2
+	Publish Date: 2018-07-11
+	Rating: 8.6 / 10.0
+Name: Sweet Snap - live filter, Selfie photo edit APK
+	Author: Ufoto
+	Version: 2.21.100256
+	Publish Date: Android 4.1+
+	Rating: 8.4 / 10.0
+Name: Google Camera APK
+	Author: Google Inc.
+	Version: 4.1.006.126161292
+	Publish Date: Android 7.0+
+	Rating: 8.5 / 10.0
+Name: InShot - Video Editor & Video Maker APK
+	Author: InShot Inc.
+	Version: 1.552.205
+	Publish Date: Android 4.3+
+	Rating: 9.5 / 10.0
+Name: Adobe Photoshop Express:Photo Editor Collage Maker APK
+	Author: Adobe
+	Version: 5.1.519
+	Publish Date: Android 4.4+
+	Rating: 9.1 / 10.0
+Name: Adobe Photoshop Lightroom CC APK
+	Author: Adobe
+	Version: 3.6
+	Publish Date: Android 5.0+
+	Rating: 9.1 / 10.0
+Name: YouCam Perfect - Selfie Photo Editor APK
+	Author: Perfect Corp.
+	Version: 5.32.3
+	Publish Date: Android 4.4+
+	Rating: 9.4 / 10.0
+Name: KINEMASTER MOD
+	Author: DESI JUGAD
+	Version: 1.4
+	Publish Date: 2018-01-16
+	Rating: 5.8 / 10.0
+Name: Candy Camera - selfie, beauty camera, photo editor APK
+	Author: JP Brothers, Inc.
+	Version: 4.52
+	Publish Date: Android 4.0.3+
+	Rating: 9.7 / 10.0
+Name: Sweet Camera - Selfie Filters, Beauty Camera APK
+	Author: iHandy Ltd.
+	Version: 1.5.4
+	Publish Date: Android 4.4+
+	Rating: 9.4 / 10.0
+Name: Photo Lab Picture Editor: face effects, art frames APK
+	Author: VicMan LLC
+	Version: 3.2.7
+	Publish Date: Android 4.1+
+	Rating: 9.6 / 10.0
+Name: ES File Explorer File Manager APK
+	Author: ES Global
+	Version: 4.1.8.7.1
+	Publish Date: Android 4.0+
+	Rating: 9.7 / 10.0
+Name: Google Drive APK
+	Author: Google LLC
+	Version: 2.18.372.03.35
+	Publish Date: Android 5.0+
+	Rating: 9.4 / 10.0
+Name: dfndr performance clean, boost, speed & space
+	Author: PSafe
+	Version: 2.11.3
+	Publish Date: 2018-09-20
+	Rating: 8.7 / 10.0
+Name: Blast Phone Optimizer–Speed Cleaner & Game Booster
+	Author: Blast Tech Team
+	Version: 1.1.1
+	Publish Date: 2018-09-20
+	Rating: 0 / 10.0
+Name: XHubs
+	Author: J. Tim
+	Version: 2.8.6.3
+	Publish Date: 2018-09-13
+	Rating: 9.5 / 10.0
+Name: WPS Office - Word, Docs, PDF, Note, Slide & Sheet APK
+	Author: Kingsoft Office Software Corporation Limited
+	Version: 11.2.3
+	Publish Date: Android 4.0+
+	Rating: 8.9 / 10.0
+Name: Microsoft Word APK
+	Author: Microsoft Corporation
+	Version: 16.0.10827.20078
+	Publish Date: Android 6.0+
+	Rating: 9.0 / 10.0
+Name: Mobizen Screen Recorder - Record, Capture, Edit APK
+	Author: MOBIZEN
+	Version: 3.6.0.28
+	Publish Date: Android 4.4+
+	Rating: 9.0 / 10.0
+Name: MEGA APK
+	Author: Mega Ltd
+	Version: 3.3.8
+	Publish Date: Android 4.1+
+	Rating: 9.2 / 10.0
+Name: MyJio APK
+	Author: Reliance Industries Ltd.
+	Version: 5.0.04
+	Publish Date: Android 4.4+
+	Rating: 8.6 / 10.0
+Name: Microsoft Outlook APK
+	Author: Microsoft Corporation
+	Version: 2.2.216
+	Publish Date: Android 4.4+
+	Rating: 9.5 / 10.0
+Name: DENT Send mobile data top-up
+	Author: DENT WIRELESS
+	Version: 1.2.0
+	Publish Date: 2018-09-20
+	Rating: 7.5 / 10.0
+Name: Adobe Acrobat Reader APK
+	Author: Adobe
+	Version: 18.2.0.182935
+	Publish Date: Android 4.1+
+	Rating: 9.4 / 10.0
+Name: Microsoft Excel APK
+	Author: Microsoft Corporation
+	Version: 16.0.10827.20078
+	Publish Date: Android 6.0+
+	Rating: 9.4 / 10.0
+Name: Google Docs APK
+	Author: Google LLC
+	Version: 1.18.352.02.34
+	Publish Date: Android 5.0+
+	Rating: 9.2 / 10.0
+Name: CamScanner - Phone PDF Creator APK
+	Author: INTSIG Information Co.,Ltd
+	Version: 5.7.5.20180907
+	Publish Date: Android 4.3+
+	Rating: 9.5 / 10.0
+Name: Google Sheets APK
+	Author: Google LLC
+	Version: 1.18.352.03.35
+	Publish Date: Android 5.0+
+	Rating: 8.8 / 10.0
+Name: Microsoft PowerPoint APK
+	Author: Microsoft Corporation
+	Version: 16.0.10827.20078
+	Publish Date: Android 6.0+
+	Rating: 9.1 / 10.0
+Name: File Manager&Cleaner
+	Author: File Cleaner
+	Version: 1.0.0.8
+	Publish Date: 2018-09-15
+	Rating: 0 / 10.0
+Name: Kika Keyboard - Emoji, GIFs APK
+	Author: Kika AI Team
+	Version: 5.5.8.2980
+	Publish Date: Android 4.1+
+	Rating: 9.2 / 10.0
+Name: DealsPure
+	Author: PromoPure
+	Version: 1.0.3
+	Publish Date: 2018-08-01
+	Rating: 9.8 / 10.0
+Name: Amazon India Online Shopping APK
+	Author: Amazon Mobile LLC
+	Version: 16.14.0.350
+	Publish Date: Android 4.2+
+	Rating: 9.3 / 10.0
+Name: SHEIN-Fashion Shopping Online APK
+	Author: Shein Group Ltd
+	Version: 6.3.2
+	Publish Date: Android 4.2+
+	Rating: 9.4 / 10.0
+Name: Amazon Shopping APK
+	Author: Amazon Mobile LLC
+	Version: 16.17.0.100
+	Publish Date: Android 4.4+
+	Rating: 9.6 / 10.0
+Name: Souq.com APK
+	Author: Souq.com
+	Version: 4.44.1
+	Publish Date: Android 4.0.3+
+	Rating: 8.6 / 10.0
+Name: Shopee: ที่ 1 ออนไลน์ช้อปปิ้ง APK
+	Author: Shopee
+	Version: 2.27.10
+	Publish Date: Android 4.1+
+	Rating: 10.0 / 10.0
+Name: Autodoc — High Quality Auto Parts at Low Prices APK
+	Author: AutoDoc GMBH - Auto Parts Online Store
+	Version: 1.6.2
+	Publish Date: Android 4.1+
+	Rating: 0 / 10.0
+Name: JD.id - Belanja Online #DijaminOri APK
+	Author: PT.JingDong Indonesia Pertama
+	Version: 4.1.0
+	Publish Date: Android 4.0+
+	Rating: 8.9 / 10.0
+Name: Bukalapak - Jual Beli Online APK
+	Author: PT Bukalapak.com
+	Version: 4.29.3
+	Publish Date: Android 4.1+
+	Rating: 9.2 / 10.0
+Name: Zilingo Shopping APK
+	Author: Zilingo
+	Version: 1.7.5
+	Publish Date: Android 4.0.3+
+	Rating: 10.0 / 10.0
+Name: Club Factory Everything, Unbeaten Price APK
+	Author: Club Factory
+	Version: 4.7.7
+	Publish Date: Android 4.3+
+	Rating: 8.3 / 10.0
+Name: Wadi Grocery
+	Author: Wadi.com
+	Version: 0.3.1
+	Publish Date: 2018-07-13
+	Rating: 0 / 10.0
+Name: Интернет-супермаркет Rozetka APK
+	Author: Rozetka
+	Version: 3.0.1
+	Publish Date: Android 4.2+
+	Rating: 6.0 / 10.0
+Name: Pomelo Fashion APK
+	Author: Pomelo Fashion Pte. Ltd.
+	Version: 1.6.155
+	Publish Date: Android 4.1+
+	Rating: 0 / 10.0
+Name: Nisnass Online Shopping نسناس
+	Author: Al Tayer Insignia LLC
+	Version: 1.4.3
+	Publish Date: 2018-09-10
+	Rating: 10.0 / 10.0
+Name: Jiji.ng APK
+	Author: Jiji
+	Version: 3.8.5.2
+	Publish Date: Android 4.0.3+
+	Rating: 7.4 / 10.0
+Name: Cdiscount : N'économisez pas votre plaisir APK
+	Author: Cdiscount
+	Version: 4.12.1
+	Publish Date: Android 4.1+
+	Rating: 0 / 10.0
+Name: AMARO - Roupas, Sapatos e Acessórios Femininos APK
+	Author: AMARO Fashion
+	Version: 2.4.0
+	Publish Date: Android 5.0+
+	Rating: 0 / 10.0
+Name: Wish - Shopping Made Fun APK
+	Author: Wish Inc.
+	Version: 4.22.6
+	Publish Date: Android 4.1+
+	Rating: 9.4 / 10.0
+Name: OLX: Buy & Sell near you APK
+	Author: OLX Global B.V.
+	Version: 6.12.0
+	Publish Date: Android 4.0.3+
+	Rating: 8.5 / 10.0
+Name: Facebook APK
+	Author: Facebook
+	Version: 190.0.0.34.94
+	Publish Date: Android 8.0+
+	Rating: 9.0 / 10.0
+Name: Instagram
+	Author: Instagram
+	Version: 63.0.0.17.94
+	Publish Date: 2018-09-18
+	Rating: 9.4 / 10.0
+Name: Tamago
+	Author: ASIA SPORTS VENTURES
+	Version: 1.12.2
+	Publish Date: 2018-09-17
+	Rating: 9.1 / 10.0
+Name: Snapchat
+	Author: Snap Inc
+	Version: 10.41.5.0
+	Publish Date: 2018-09-20
 	Rating: 8.8 / 10.0
 Name: Facebook Lite
 	Author: Facebook
-	Version: 111.0.0.7.91 
-	Publish Date: TODO
+	Version: 112.0.0.5.92
+	Publish Date: 2018-09-21
 	Rating: 9.0 / 10.0
-Name: Snapchat
-	Author: Snap Inc
-	Version: 10.40.5.0 
-	Publish Date: TODO
-	Rating: 8.8 / 10.0
-Name: Nonton Film Online BF 18 + Terbaru
-	Author: Video Hot Collection 2018
-	Version: 9.0 
-	Publish Date: TODO
-	Rating: 8.0 / 10.0
-Name: KineMaster – Pro Video Editor
+Name: TikTok - including musical.ly APK
+	Author: musical.ly
+	Version: 8.5.0
+	Publish Date: Android 4.1+
+	Rating: 8.9 / 10.0
+Name: Topface - Dating Meeting Chat! APK
+	Author: Frontapps s.r.o.
+	Version: 3.4.30
+	Publish Date: Android 4.0.3+
+	Rating: 9.9 / 10.0
+Name: Gogo.Live-Live Streaming & Chat APK
+	Author: Tuhaotimes
+	Version: 2.3.1
+	Publish Date: Android 4.1+
+	Rating: 9.2 / 10.0
+Name: Blued - Gay Video Chat & Live Stream APK
+	Author: Blue City Holdings Co., Ltd.
+	Version: 2.7.6
+	Publish Date: Android 4.0.3+
+	Rating: 7.5 / 10.0
+Name: HAGO
+	Author: Hago Games
+	Version: 1.5.7
+	Publish Date: 2018-09-19
+	Rating: 9.1 / 10.0
+Name: Tumblr APK
+	Author: Tumblr, Inc.
+	Version: 11.7.0.00
+	Publish Date: Android 5.0+
+	Rating: 9.2 / 10.0
+Name: Takipçi Kazan APK
+	Author: AGER Medya
+	Version: 1.0
+	Publish Date: Android 2.3.2+
+	Rating: 0 / 10.0
+Name: Google+ APK
+	Author: Google LLC
+	Version: 10.15.0.212756302
+	Publish Date: Android 5.0+
+	Rating: 9.5 / 10.0
+Name: TextNow - free text + calls APK
+	Author: TextNow, Inc.
+	Version: 5.72.0.2
+	Publish Date: Android 4.0+
+	Rating: 8.9 / 10.0
+Name: VK
+	Author: VK.com
+	Version: 5.18
+	Publish Date: 2018-09-19
+	Rating: 8.1 / 10.0
+Name: Pinterest: Creative Ideas & Lifestyle Inspiration APK
+	Author: Pinterest
+	Version: 6.81.0
+	Publish Date: Android 4.4+
+	Rating: 9.6 / 10.0
+Name: textPlus Free Text & Calls
+	Author: textPlus
+	Version: 7.3.4
+	Publish Date: 2018-09-21
+	Rating: 8.9 / 10.0
+Name: Uplive - Live Video Streaming App APK
+	Author: Asia Innovations HK Limited
+	Version: 3.4.0
+	Publish Date: Android 4.1+
+	Rating: 8.5 / 10.0
+Name: Neutrino+ APK
+	Author: Pockybop
+	Version: 1.9.1
+	Publish Date: Android 4.0.3+
+	Rating: 9.5 / 10.0
+Name: Tamilgun-2018 HD Tamil New:old movies
+	Author: Adaikkan
+	Version: 8.2
+	Publish Date: 2018-06-02
+	Rating: 0 / 10.0
+Name: FIFA 18 APK
+	Author: Captain Dhaaka
+	Version: 1.1
+	Publish Date: Android 4.0.3+
+	Rating: 7.3 / 10.0
+Name: Live NetTV
+	Author: ‮‮Live NetTV App
+	Version: lenettv
+	Publish Date: 2017-10-14
+	Rating: 9.0 / 10.0
+Name: لايف بلس - Live Plus APK
+	Author: LivePlus
+	Version: 1.0
+	Publish Date: Android 4.0.3+
+	Rating: 9.0 / 10.0
+Name: SPORTPESA APP
+	Author: Vinny Boss
+	Version: 8.0
+	Publish Date: 2018-02-08
+	Rating: 0 / 10.0
+Name: iSpor 24x7
+	Author: Ollo Mark
+	Version: 1.0.0
+	Publish Date: 2017-12-18
+	Rating: 9.0 / 10.0
+Name: 365Scores - Live Score APK
+	Author: 365Scores LTD
+	Version: 5.7.8
+	Publish Date: Android 4.1+
+	Rating: 9.6 / 10.0
+Name: Live NetTV
+	Author: Live NetTV App
+	Version: 1.1
+	Publish Date: 2017-10-27
+	Rating: 9.6 / 10.0
+Name: Canlı Maç Yayınları, iSpor APK
+	Author: iSpor Inc
+	Version: 1.0.2
+	Publish Date: Android 4.1+
+	Rating: 7.8 / 10.0
+Name: All Football - Latest News & Live Scores APK
+	Author: Footballdog Inc.
+	Version: 3.0.7
+	Publish Date: Android 4.1+
+	Rating: 9.5 / 10.0
+Name: FotMob - Live Soccer Scores APK
+	Author: NorApps AS
+	Version: 83.0.5302.20180903
+	Publish Date: Android 4.1+
+	Rating: 9.8 / 10.0
+Name: Star Sports Live TV APK
+	Author: Star India Pvt ltd
+	Version: 1.0
+	Publish Date: Android 2.3.2+
+	Rating: 10.0 / 10.0
+Name: PTV Sports Live HD - FREE Streaming APK
+	Author: Rockville Technologies, Pvt. Ltd.
+	Version: 3.1.0
+	Publish Date: Android 4.4+
+	Rating: 10.0 / 10.0
+Name: LiveScore: Live Sport Updates APK
+	Author: LiveScore Ltd.
+	Version: 3.0.9
+	Publish Date: Android 4.1+
+	Rating: 9.9 / 10.0
+Name: Albat HD كأس العالم APK
+	Author: Classico Games
+	Version: 3.2
+	Publish Date: Android 4.1+
+	Rating: 9.9 / 10.0
+Name: Free coins - Pool Instant Rewards APK
+	Author: guira apps
+	Version: 2.3
+	Publish Date: Android 4.0+
+	Rating: 9.1 / 10.0
+Name: Star Sports Live Cricket Score APK
+	Author: Novi Digital Entertainment Pvt Ltd
+	Version: 4.8
+	Publish Date: Android 4.2+
+	Rating: 0 / 10.0
+Name: Embratoria G7 APK
+	Author: Embratoria, Inc
+	Version: 7.2.0
+	Publish Date: Android 4.0.3+
+	Rating: 9.6 / 10.0
+Name: SofaScore Live Score APK
+	Author: SofaScore
+	Version: 5.62.3
+	Publish Date: Android 4.4+
+	Rating: 9.8 / 10.0
+Name: Onefootball - Soccer Scores APK
+	Author: Onefootball GmbH
+	Version: 10.13.1.339
+	Publish Date: Android 4.4+
+	Rating: 9.7 / 10.0
+Name: All Sports TV Channel Live HD APK
+	Author: Sports TV Channels Live HD Streaming Company
+	Version: 1.4
+	Publish Date: Android 4.0+
+	Rating: 6.7 / 10.0
+Name: VidMate HD Video Downloader & Live TV
+	Author: Vidmate
+	Version: 3.5102
+	Publish Date: 2018-09-19
+	Rating: 9.3 / 10.0
+Name: Google Play Store
+	Author: Google LLC
+	Version: 11.7.11-all
+	Publish Date: 2018-09-20
+	Rating: 8.5 / 10.0
+Name: SHAREit Transfer & Share
+	Author: SHAREit Technologies Co.Ltd
+	Version: 4.5.38_ww
+	Publish Date: 2018-09-20
+	Rating: 9.1 / 10.0
+Name: TubeMate YouTube Downloader APK
+	Author: Devian Studio
+	Version: 2.4.3
+	Publish Date: Android 2.3.2+
+	Rating: 9.5 / 10.0
+Name: SnapTube APK
+	Author: Snaptube
+	Version: 4.10.0.8632
+	Publish Date: Android 2.3.4+
+	Rating: 9.4 / 10.0
+Name: Turbo VPN – Unlimited Free VPN & Fast Security VPN APK
+	Author: Innovative Connecting
+	Version: 2.5.3
+	Publish Date: Android 4.0.3+
+	Rating: 9.5 / 10.0
+Name: GFX Tool
+	Author: tsoml
+	Version: 3.7
+	Publish Date: 2018-09-21
+	Rating: 9.4 / 10.0
+Name: Google Account Manager
+	Author: By Google LLC
+	Version: 7.0
+	Publish Date: 2017-11-13
+	Rating: 9.5 / 10.0
+Name: Boost Master
+	Author: Charlottesyf Staffordhrzu
+	Version: 1.0.3.74
+	Publish Date: 2018-09-20
+	Rating: 6.0 / 10.0
+Name: Google Translate APK
+	Author: Google LLC
+	Version: 5.23.0.RC04.211183448
+	Publish Date: Android 4.2+
+	Rating: 9.5 / 10.0
+Name: APK Editor Pro APK
+	Author: APK Editor
+	Version: 1.3.28
+	Publish Date: Android 3.1+
+	Rating: 9.7 / 10.0
+Name: Google Play services APK
+	Author: Google LLC
+	Version: 14.3.62
+	Publish Date: Android 5.0+
+	Rating: 8.4 / 10.0
+Name: ZArchiver APK
+	Author: ZDevs
+	Version: 0.9.1
+	Publish Date: Android 4.0+
+	Rating: 9.6 / 10.0
+Name: Game Tuner APK
+	Author: Samsung Electronics Co.,  Ltd.
+	Version: 3.4.04
+	Publish Date: Android 6.0+
+	Rating: 7.8 / 10.0
+Name: Hola Free VPN Proxy APK
+	Author: Hola
+	Version: ARM7A_1.107.879
+	Publish Date: Android 4.0.3+
+	Rating: 9.2 / 10.0
+Name: Octopus Play games with gamepad,mouse,keyboard
+	Author: Phoenix Studio(Chaozhuo Tech)
+	Version: 3.1.0
+	Publish Date: 2018-09-19
+	Rating: 7.6 / 10.0
+Name: Cpu X
+	Author: Free mobile Software
+	Version: 1.0
+	Publish Date: 2018-08-27
+	Rating: 9.0 / 10.0
+Name: Gboard - the Google Keyboard APK
+	Author: Google LLC
+	Version: 7.5.12.211120321-release-armeabi-v7a
+	Publish Date: Android 5.0+
+	Rating: 9.0 / 10.0
+Name: Thunder VPN A Fast , Unlimited, Free VPN Proxy
+	Author: Signal Lab
+	Version: 2.4.10
+	Publish Date: 2018-09-11
+	Rating: 9.4 / 10.0
+Name: Meteor Neutrino Boost
+	Author: Brothers Famous
+	Version: 1.0
+	Publish Date: 2018-03-01
+	Rating: 8.5 / 10.0
+Name: Maps Navigate & Explore
+	Author: Google LLC
+	Version: 9.86.1
+	Publish Date: 2018-09-11
+	Rating: 9.5 / 10.0
+Name: Tak A Trip APK
+	Author: Pinnatta Inc.
+	Version: 1.18
+	Publish Date: Android 4.1+
+	Rating: 6.0 / 10.0
+Name: Cleartrip - Flights, Hotels, Activities, Trains APK
+	Author: Cleartrip
+	Version: 18.9.0
+	Publish Date: Android 4.1+
+	Rating: 10.0 / 10.0
+Name: Skyscanner - Cheap Flights, Hotels and Car Rental APK
+	Author: Skyscanner Ltd
+	Version: 5.51
+	Publish Date: Android 4.4+
+	Rating: 8.9 / 10.0
+Name: Tourego APK
+	Author: Tourego
+	Version: 1.3.19.1
+	Publish Date: Android 4.3+
+	Rating: 0 / 10.0
+Name: AccorHotels - Hotel booking APK
+	Author: AccorHotels
+	Version: 7.6.1
+	Publish Date: Android 4.2+
+	Rating: 10.0 / 10.0
+Name: WiFi Map — Free Passwords & Hotspots APK
+	Author: WiFi Map LLC
+	Version: 4.1.1
+	Publish Date: Android 4.3+
+	Rating: 9.1 / 10.0
+Name: Trip.com – Flights & Hotels APK
+	Author: Trip.com
+	Version: 6.7.0
+	Publish Date: Android 4.4+
+	Rating: 0 / 10.0
+Name: Google Earth APK
+	Author: Google LLC
+	Version: 9.2.24.4
+	Publish Date: Android 4.1+
+	Rating: 9.4 / 10.0
+Name: TravelUR
+	Author: TravelUR Solutions India Pvt. Ltd.
+	Version: 1.0.10
+	Publish Date: 2018-09-19
+	Rating: 0 / 10.0
+Name: Google Street View APK
+	Author: Google LLC
+	Version: 2.0.0.206776571
+	Publish Date: Android 4.4+
+	Rating: 9.4 / 10.0
+Name: ADMA APK
+	Author: Careem
+	Version: 76.0.1
+	Publish Date: Android 4.1+
+	Rating: 6.9 / 10.0
+Name: Almosafer: Flights, Hotels and Holidays APK
+	Author: Almosafer
+	Version: 4.12.0
+	Publish Date: Android 4.2+
+	Rating: 0 / 10.0
+Name: MAPS.ME – Offline Map and Travel Navigation APK
+	Author: My.com B.V.
+	Version: 8.3.5-Google
+	Publish Date: Android 4.0.3+
+	Rating: 9.5 / 10.0
+Name: Tirhal APK
+	Author: Tirhal App
+	Version: 0.21.3-LIGHTNING
+	Publish Date: Android 4.0.3+
+	Rating: 9.6 / 10.0
+Name: Booking.com Travel Deals APK
+	Author: Booking.com Hotels & Vacation Rentals
+	Version: 16.0
+	Publish Date: Android 4.4+
+	Rating: 9.4 / 10.0
+Name: eCooltra: scooter sharing. Share electric scooters APK
+	Author: eCooltra
+	Version: 2.0.1
+	Publish Date: Android 5.0+
+	Rating: 0 / 10.0
+Name: 여기어때 - 숙박부터 액티비티까지 APK
+	Author: WITH Innovation Corp.
+	Version: 3.23.13
+	Publish Date: Android 4.2+
+	Rating: 0 / 10.0
+Name: Where is my Train : Indian Railway & PNR Status APK
+	Author: 🌟 Sigmoid Labs
+	Version: 5.8.3
+	Publish Date: Android 4.0.3+
+	Rating: 9.4 / 10.0
+Name: Despegar.com Hoteles y Vuelos APK
+	Author: Despegar.com
+	Version: 9.4.1
+	Publish Date: Android 4.4+
+	Rating: 0 / 10.0
+Name: YouTube APK
+	Author: Google LLC
+	Version: 13.37.52
+	Publish Date: Android 4.2+
+	Rating: 9.1 / 10.0
+Name: KineMaster – Pro Video Editor APK
 	Author: NexStreaming Corp.
-	Version: 4.6.5.11247.GP
+	Version: 4.6.8.11413.GP
+	Publish Date: Android 4.1+
+	Rating: 9.3 / 10.0
+Name: MX Player
+	Author: J2 Interactive
+	Version: 1.10.9
+	Publish Date: 2018-09-17
+	Rating: 9.6 / 10.0
+Name: TikTok APK
+	Author: Bytemod Pte.Ltd.
+	Version: 3.3.4
+	Publish Date: Android 4.1+
+	Rating: 8.2 / 10.0
+Name: VivaVideo - Video Editor & Photo Movie APK
+	Author: QuVideo Inc. Best Video Editor & Video Maker App
+	Version: 7.3.6
+	Publish Date: Android 4.1+
+	Rating: 9.7 / 10.0
+Name: AntenaTV APK
+	Author: SEPUOS LABS
+	Version: 1.4.4
+	Publish Date: Android 4.1+
+	Rating: 10.0 / 10.0
+Name: DU Recorder – Screen Recorder, Video Editor, Live APK
+	Author: Screen Recorder & Video Editor
+	Version: 1.7.3.2
+	Publish Date: Android 5.0+
+	Rating: 9.1 / 10.0
+Name: IPTV Player Latino APK
+	Author: ELIPLEX TV
+	Version: 1.7.2
+	Publish Date: Android 4.0+
+	Rating: 8.3 / 10.0
+Name: VideoShow-Video Editor, Video Maker, Beauty Camera APK
+	Author: EnjoyMobi Video Editor & Video Maker Studio
+	Version: 8.0.7rc
+	Publish Date: Android 4.0.3+
+	Rating: 9.3 / 10.0
+Name: VLC for Android APK
+	Author: Videolabs
+	Version: 3.0.13
+	Publish Date: Android 2.3.2+
+	Rating: 9.2 / 10.0
+Name: YouTube Go APK
+	Author: Google LLC
+	Version: 1.32.52
+	Publish Date: Android 4.2+
+	Rating: 9.1 / 10.0
+Name: Google Play Movies amp; TV
+	Author: Google LLC
+	Version: 4.7.14.4
+	Publish Date: 2018-09-04
+	Rating: 9.1 / 10.0
+Name: VMate
+	Author: VMate App Team
+	Version: 1.83
+	Publish Date: 2018-09-19
+	Rating: 8.6 / 10.0
+Name: PowerDirector - Bundle Version APK
+	Author: CyberLink.com
+	Version: 4.11.2
+	Publish Date: Android 4.3+
+	Rating: 9.3 / 10.0
+Name: PowerDirector Video Editor App: 4K, Slow Mo & More APK
+	Author: CyberLink.com
+	Version: 4.15.0
+	Publish Date: Android 4.3+
+	Rating: 9.3 / 10.0
+Name: AZ Screen Recorder - No Root APK
+	Author: Hecorat
+	Version: 5.1.1
+	Publish Date: Android 5.0+
+	Rating: 8.9 / 10.0
+Name: LIKE – Magic Video Maker & Community APK
+	Author: BIGO TECHNOLOGY PTE. LTD.
+	Version: 2.7.3
+	Publish Date: Android 4.0+
+	Rating: 9.3 / 10.0
+Name: AnimeTV APK
+	Author: Rhuan Gonzaga
+	Version: 2.2.9
+	Publish Date: Android 4.1+
+	Rating: 8.7 / 10.0
+Name: µTorrent®- Torrent Downloader APK
+	Author: BitTorrent, Inc.
+	Version: 5.3.3
+	Publish Date: Android 4.1+
+	Rating: 9.4 / 10.0
+Name: Séries da TV
+	Author: 123APPS Brasil
+	Version: 2.2.0
+	Publish Date: 2018-01-09
+	Rating: 8.4 / 10.0
+Name: Weather Radar & Alerts APK
+	Author: Apalon Apps
+	Version: 1.16
+	Publish Date: Android 4.1+
+	Rating: 9.8 / 10.0
+Name: Windy: wind, waves and hurricanes forecast APK
+	Author: Windyty SE
+	Version: 16.0501
+	Publish Date: Android 5.0+
+	Rating: 9.5 / 10.0
+Name: AccuWeather: Daily Forecast & Live Weather Maps APK
+	Author: AccuWeather
+	Version: 5.5.1-free
+	Publish Date: Android 6.0+
+	Rating: 9.4 / 10.0
+Name: Weather Live Free APK
+	Author: Apalon Apps
+	Version: 6.11
+	Publish Date: Android 4.4+
+	Rating: 9.4 / 10.0
+Name: Weather & Clock Widget for Android APK
+	Author: Devexpert.NET
+	Version: 5.9.4.2
+	Publish Date: Android 4.0.3+
+	Rating: 9.5 / 10.0
+Name: The Weather Channel: Fall Forecast & Live Alerts APK
+	Author: The Weather Channel
+	Version: 8.14.0
+	Publish Date: Android 4.4+
+	Rating: 9.8 / 10.0
+Name: Transparent clock & weather APK
+	Author: MACHAPP Software Ltd
+	Version: 1.41.06
+	Publish Date: Android 4.0.3+
+	Rating: 9.2 / 10.0
+Name: Weather & Radar - Free APK
+	Author: WetterOnline GmbH
+	Version: 4.37.0
+	Publish Date: Android 4.4+
+	Rating: 8.0 / 10.0
+Name: Weather forecast
+	Author: Green Apple Studio
+	Version: 1.37.145
+	Publish Date: 2018-09-19
+	Rating: 9.3 / 10.0
+Name: Weather forecast
+	Author: smart-pro android apps
+	Version: 43
+	Publish Date: 2018-08-24
+	Rating: 9.5 / 10.0
+Name: Yahoo Weather APK
+	Author: Yahoo
+	Version: 1.13.1
+	Publish Date: Android 4.4+
+	Rating: 9.3 / 10.0
+Name: MyRadar NOAA Weather Radar APK
+	Author: ACME AtronOmatic
+	Version: 7.2.18
+	Publish Date: Android 4.0.3+
+	Rating: 0 / 10.0
+Name: Storm Radar: Weather Map APK
+	Author: The Weather Channel
+	Version: 1.5.2
+	Publish Date: Android 4.4+
+	Rating: 7.5 / 10.0
+Name: MeteoEarth APK
+	Author: MeteoGroup
+	Version: 2.2.5.4
+	Publish Date: Android 4.0.3+
+	Rating: 9.6 / 10.0
+Name: vShare
+	Author: AsumaSarutobi
+	Version: 1.0
+	Publish Date: 2018-01-23
+	Rating: 8.5 / 10.0
+Name: ColorfulClouds Weather Forecast APK
+	Author: 北京彩彻区明科技有限公司
+	Version: 4.0.1
+	Publish Date: Android 4.1+
+	Rating: 9.0 / 10.0
+Name: Info BMKG APK
+	Author: Badan Meteorologi, Klimatologi, dan Geofisika
+	Version: 2.4
+	Publish Date: Android 4.4+
+	Rating: 0 / 10.0
+Name: Weather APK
+	Author: MacroPinch
+	Version: 4.3
+	Publish Date: Android 4.0+
+	Rating: 8.8 / 10.0
+Name: Weather APK
+	Author: Sony Mobile Communications
+	Version: 1.3.A.3.14
+	Publish Date: Android 5.0+
+	Rating: 10.0 / 10.0
+Name: Morecast - Your Personal Weather Companion APK
+	Author: UBIMET
+	Version: 4.0.5
+	Publish Date: Android 4.1+
+	Rating: 10.0 / 10.0
+Name: PUBG MOBILE
+	Author: Tencent Games
+	Version: 0.8.0
+	Publish Date: 2018-09-12
+	Rating: 8.8 / 10.0
+Name: PUBG MOBILE LITE
+	Author: Tencent Games
+	Version: 0.5.1
+	Publish Date: 2018-09-20
+	Rating: 8.5 / 10.0
+Name: Garena Free Fire
+	Author: GARENA INTERNATIONAL I PRIVATE LIMITED
+	Version: 1.22.1
+	Publish Date: 2018-09-12
+	Rating: 9.0 / 10.0
+Name: Creative Destruction
+	Author: ZuoMasterDeveloper
+	Version: 1.0.19
+	Publish Date: 2018-09-20
+	Rating: 9.1 / 10.0
+Name: Mobile Legends: Bang Bang
+	Author: Moonton
+	Version: 1.3.15.3222
+	Publish Date: 2018-09-19
+	Rating: 8.8 / 10.0
+Name: Garena AOV - Arena of Valor: Action MOBA APK
+	Author: MOBA Games Private Limited
+	Version: 1.24.1.2
+	Publish Date: 
+	Rating: 8.7 / 10.0
+Name: RULES OF SURVIVAL
+	Author: NetEase Games
+	Version: 1.194559.197271
+	Publish Date: 2018-09-19
+	Rating: 8.5 / 10.0
+Name: PUBG MOBILE
+	Author: Tencent Games
+	Version: 0.8.0
+	Publish Date: 2018-09-12
+	Rating: 8.8 / 10.0
+Name: PUBG MOBILE LITE
+	Author: Tencent Games
+	Version: 0.5.1
+	Publish Date: 2018-09-20
+	Rating: 8.5 / 10.0
+Name: Garena Free Fire
+	Author: GARENA INTERNATIONAL I PRIVATE LIMITED
+	Version: 1.22.1
+	Publish Date: 2018-09-12
+	Rating: 9.0 / 10.0
+Name: Creative Destruction
+	Author: ZuoMasterDeveloper
+	Version: 1.0.19
+	Publish Date: 2018-09-20
+	Rating: 9.1 / 10.0
+Name: Mobile Legends: Bang Bang
+	Author: Moonton
+	Version: 1.3.15.3222
+	Publish Date: 2018-09-19
+	Rating: 8.8 / 10.0
+Name: PUBG MOBILE
+	Author: Tencent Games
+	Version: 0.8.0
+	Publish Date: 2018-09-12
+	Rating: 8.8 / 10.0
+Name: PUBG MOBILE LITE
+	Author: Tencent Games
+	Version: 0.5.1
+	Publish Date: 2018-09-20
+	Rating: 8.5 / 10.0
+Name: Garena Free Fire
+	Author: GARENA INTERNATIONAL I PRIVATE LIMITED
+	Version: 1.22.1
+	Publish Date: 2018-09-12
+	Rating: 9.0 / 10.0
+Name: Creative Destruction
+	Author: ZuoMasterDeveloper
+	Version: 1.0.19
+	Publish Date: 2018-09-20
+	Rating: 9.1 / 10.0
+Name: Mobile Legends: Bang Bang
+	Author: Moonton
+	Version: 1.3.15.3222
+	Publish Date: 2018-09-19
+	Rating: 8.8 / 10.0
+Name: Garena AOV - Arena of Valor: Action MOBA APK
+	Author: MOBA Games Private Limited
+	Version: 1.24.1.2
+	Publish Date: 
+	Rating: 8.7 / 10.0
+Name: PUBG MOBILE
+	Author: Tencent Games
+	Version: 0.8.0
+	Publish Date: 2018-09-12
+	Rating: 8.8 / 10.0
+Name: PUBG MOBILE LITE
+	Author: Tencent Games
+	Version: 0.5.1
+	Publish Date: 2018-09-20
+	Rating: 8.5 / 10.0
+Name: Garena Free Fire
+	Author: GARENA INTERNATIONAL I PRIVATE LIMITED
+	Version: 1.22.1
+	Publish Date: 2018-09-12
+	Rating: 9.0 / 10.0
+Name: Creative Destruction
+	Author: ZuoMasterDeveloper
+	Version: 1.0.19
+	Publish Date: 2018-09-20
+	Rating: 9.1 / 10.0
+Name: Mobile Legends: Bang Bang
+	Author: Moonton
+	Version: 1.3.15.3222
+	Publish Date: 2018-09-19
+	Rating: 8.8 / 10.0
+Name: Garena AOV - Arena of Valor: Action MOBA APK
+	Author: MOBA Games Private Limited
+	Version: 1.24.1.2
+	Publish Date: 
+	Rating: 8.7 / 10.0
+Name: RULES OF SURVIVAL
+	Author: NetEase Games
+	Version: 1.194559.197271
+	Publish Date: 2018-09-19
+	Rating: 8.5 / 10.0
+Name: PUBG MOBILE
+	Author: Tencent Games
+	Version: 0.8.0
+	Publish Date: 2018-09-12
+	Rating: 8.8 / 10.0
+Name: PUBG MOBILE LITE
+	Author: Tencent Games
+	Version: 0.5.1
+	Publish Date: 2018-09-20
+	Rating: 8.5 / 10.0
+Name: Garena Free Fire
+	Author: GARENA INTERNATIONAL I PRIVATE LIMITED
+	Version: 1.22.1
+	Publish Date: 2018-09-12
+	Rating: 9.0 / 10.0
+Name: Creative Destruction
+	Author: ZuoMasterDeveloper
+	Version: 1.0.19
+	Publish Date: 2018-09-20
+	Rating: 9.1 / 10.0
+Name: Mobile Legends: Bang Bang
+	Author: Moonton
+	Version: 1.3.15.3222
+	Publish Date: 2018-09-19
+	Rating: 8.8 / 10.0
+Name: PUBG MOBILE
+	Author: Tencent Games
+	Version: 0.8.0
+	Publish Date: 2018-09-12
+	Rating: 8.8 / 10.0
+Name: PUBG MOBILE LITE
+	Author: Tencent Games
+	Version: 0.5.1
+	Publish Date: 2018-09-20
+	Rating: 8.5 / 10.0
+Name: Garena Free Fire
+	Author: GARENA INTERNATIONAL I PRIVATE LIMITED
+	Version: 1.22.1
+	Publish Date: 2018-09-12
+	Rating: 9.0 / 10.0
+Name: Creative Destruction
+	Author: ZuoMasterDeveloper
+	Version: 1.0.19
+	Publish Date: 2018-09-20
+	Rating: 9.1 / 10.0
+Name: Mobile Legends: Bang Bang
+	Author: Moonton
+	Version: 1.3.15.3222
+	Publish Date: 2018-09-19
+	Rating: 8.8 / 10.0
+Name: Garena AOV - Arena of Valor: Action MOBA APK
+	Author: MOBA Games Private Limited
+	Version: 1.24.1.2
+	Publish Date: 
+	Rating: 8.7 / 10.0
+Name: PUBG MOBILE
+	Author: Tencent Games
+	Version: 0.8.0
+	Publish Date: 2018-09-12
+	Rating: 8.8 / 10.0
+Name: PUBG MOBILE LITE
+	Author: Tencent Games
+	Version: 0.5.1
+	Publish Date: 2018-09-20
+	Rating: 8.5 / 10.0
+Name: Garena Free Fire
+	Author: GARENA INTERNATIONAL I PRIVATE LIMITED
+	Version: 1.22.1
+	Publish Date: 2018-09-12
+	Rating: 9.0 / 10.0
+Name: Creative Destruction
+	Author: ZuoMasterDeveloper
+	Version: 1.0.19
+	Publish Date: 2018-09-20
+	Rating: 9.1 / 10.0
+Name: Mobile Legends: Bang Bang
+	Author: Moonton
+	Version: 1.3.15.3222
+	Publish Date: 2018-09-19
+	Rating: 8.8 / 10.0
+Name: Garena AOV - Arena of Valor: Action MOBA APK
+	Author: MOBA Games Private Limited
+	Version: 1.24.1.2
+	Publish Date: 
+	Rating: 8.7 / 10.0
+Name: RULES OF SURVIVAL
+	Author: NetEase Games
+	Version: 1.194559.197271
+	Publish Date: 2018-09-19
+	Rating: 8.5 / 10.0
+Name: Arena of Valor: 5v5 Arena Game APK
+	Author: Tencent Games
+	Version: 1.24.1.2
+	Publish Date: 
+	Rating: 8.8 / 10.0
+Name: PUBG MOBILE
+	Author: Tencent Games
+	Version: 0.8.0
+	Publish Date: 2018-09-12
+	Rating: 8.8 / 10.0
+Name: PUBG MOBILE LITE
+	Author: Tencent Games
+	Version: 0.5.1
+	Publish Date: 2018-09-20
+	Rating: 8.5 / 10.0
+Name: Garena Free Fire
+	Author: GARENA INTERNATIONAL I PRIVATE LIMITED
+	Version: 1.22.1
+	Publish Date: 2018-09-12
+	Rating: 9.0 / 10.0
+Name: Creative Destruction
+	Author: ZuoMasterDeveloper
+	Version: 1.0.19
+	Publish Date: 2018-09-20
+	Rating: 9.1 / 10.0
+Name: Mobile Legends: Bang Bang
+	Author: Moonton
+	Version: 1.3.15.3222
+	Publish Date: 2018-09-19
+	Rating: 8.8 / 10.0
+Name: PUBG MOBILE
+	Author: Tencent Games
+	Version: 0.8.0
+	Publish Date: 2018-09-12
+	Rating: 8.8 / 10.0
+Name: PUBG MOBILE LITE
+	Author: Tencent Games
+	Version: 0.5.1
+	Publish Date: 2018-09-20
+	Rating: 8.5 / 10.0
+Name: Garena Free Fire
+	Author: GARENA INTERNATIONAL I PRIVATE LIMITED
+	Version: 1.22.1
+	Publish Date: 2018-09-12
+	Rating: 9.0 / 10.0
+Name: Creative Destruction
+	Author: ZuoMasterDeveloper
+	Version: 1.0.19
+	Publish Date: 2018-09-20
+	Rating: 9.1 / 10.0
+Name: Mobile Legends: Bang Bang
+	Author: Moonton
+	Version: 1.3.15.3222
+	Publish Date: 2018-09-19
+	Rating: 8.8 / 10.0
+Name: Garena AOV - Arena of Valor: Action MOBA APK
+	Author: MOBA Games Private Limited
+	Version: 1.24.1.2
+	Publish Date: 
+	Rating: 8.7 / 10.0
+Name: RULES OF SURVIVAL
+	Author: NetEase Games
+	Version: 1.194559.197271
+	Publish Date: 2018-09-19
+	Rating: 8.5 / 10.0
+Name: Arena of Valor: 5v5 Arena Game APK
+	Author: Tencent Games
+	Version: 1.24.1.2
+	Publish Date: 
+	Rating: 8.8 / 10.0
+Name: CrossFire: Legends
+	Author: Tencent Games
+	Version: 1.0.9.9
+	Publish Date: 2018-08-31
+	Rating: 8.8 / 10.0
+Name: Special Forces Group 2 APK
+	Author: ForgeGames
+	Version: 3.5
+	Publish Date: 
+	Rating: 9.4 / 10.0
+Name: Graphic Tool for Battlegrounds
+	Author: tsoml
+	Version: 4.5.1
+	Publish Date: 2018-05-10
+	Rating: 9.5 / 10.0
+Name: PUBG MOBILE
+	Author: Tencent Games
+	Version: 0.8.0
+	Publish Date: 2018-09-12
+	Rating: 8.8 / 10.0
+Name: PUBG MOBILE LITE
+	Author: Tencent Games
+	Version: 0.5.1
+	Publish Date: 2018-09-20
+	Rating: 8.5 / 10.0
+Name: Garena Free Fire
+	Author: GARENA INTERNATIONAL I PRIVATE LIMITED
+	Version: 1.22.1
+	Publish Date: 2018-09-12
+	Rating: 9.0 / 10.0
+Name: Creative Destruction
+	Author: ZuoMasterDeveloper
+	Version: 1.0.19
+	Publish Date: 2018-09-20
+	Rating: 9.1 / 10.0
+Name: Mobile Legends: Bang Bang
+	Author: Moonton
+	Version: 1.3.15.3222
+	Publish Date: 2018-09-19
+	Rating: 8.8 / 10.0
+Name: PUBG MOBILE
+	Author: Tencent Games
+	Version: 0.8.0
+	Publish Date: 2018-09-12
+	Rating: 8.8 / 10.0
+Name: PUBG MOBILE LITE
+	Author: Tencent Games
+	Version: 0.5.1
+	Publish Date: 2018-09-20
+	Rating: 8.5 / 10.0
+Name: Garena Free Fire
+	Author: GARENA INTERNATIONAL I PRIVATE LIMITED
+	Version: 1.22.1
+	Publish Date: 2018-09-12
+	Rating: 9.0 / 10.0
+Name: Creative Destruction
+	Author: ZuoMasterDeveloper
+	Version: 1.0.19
+	Publish Date: 2018-09-20
+	Rating: 9.1 / 10.0
+Name: Mobile Legends: Bang Bang
+	Author: Moonton
+	Version: 1.3.15.3222
+	Publish Date: 2018-09-19
+	Rating: 8.8 / 10.0
+Name: PUBG MOBILE
+	Author: Tencent Games
+	Version: 0.8.0
+	Publish Date: 2018-09-12
+	Rating: 8.8 / 10.0
+Name: PUBG MOBILE LITE
+	Author: Tencent Games
+	Version: 0.5.1
+	Publish Date: 2018-09-20
+	Rating: 8.5 / 10.0
+Name: Garena Free Fire
+	Author: GARENA INTERNATIONAL I PRIVATE LIMITED
+	Version: 1.22.1
+	Publish Date: 2018-09-12
+	Rating: 9.0 / 10.0
+Name: Creative Destruction
+	Author: ZuoMasterDeveloper
+	Version: 1.0.19
+	Publish Date: 2018-09-20
+	Rating: 9.1 / 10.0
+Name: Mobile Legends: Bang Bang
+	Author: Moonton
+	Version: 1.3.15.3222
+	Publish Date: 2018-09-19
+	Rating: 8.8 / 10.0
+Name: Garena AOV - Arena of Valor: Action MOBA APK
+	Author: MOBA Games Private Limited
+	Version: 1.24.1.2
+	Publish Date: 
+	Rating: 8.7 / 10.0
+Name: RULES OF SURVIVAL
+	Author: NetEase Games
+	Version: 1.194559.197271
+	Publish Date: 2018-09-19
+	Rating: 8.5 / 10.0
+Name: Arena of Valor: 5v5 Arena Game APK
+	Author: Tencent Games
+	Version: 1.24.1.2
+	Publish Date: 
+	Rating: 8.8 / 10.0
+Name: CrossFire: Legends
+	Author: Tencent Games
+	Version: 1.0.9.9
+	Publish Date: 2018-08-31
+	Rating: 8.8 / 10.0
+Name: Special Forces Group 2 APK
+	Author: ForgeGames
+	Version: 3.5
+	Publish Date: 
+	Rating: 9.4 / 10.0
+Name: Graphic Tool for Battlegrounds
+	Author: tsoml
+	Version: 4.5.1
+	Publish Date: 2018-05-10
+	Rating: 9.5 / 10.0
+Name: PUBG MOBILE
+	Author: Tencent Games
+	Version: 0.8.0
+	Publish Date: 2018-09-12
+	Rating: 8.8 / 10.0
+Name: PUBG MOBILE LITE
+	Author: Tencent Games
+	Version: 0.5.1
+	Publish Date: 2018-09-20
+	Rating: 8.5 / 10.0
+Name: Garena Free Fire
+	Author: GARENA INTERNATIONAL I PRIVATE LIMITED
+	Version: 1.22.1
+	Publish Date: 2018-09-12
+	Rating: 9.0 / 10.0
+Name: Creative Destruction
+	Author: ZuoMasterDeveloper
+	Version: 1.0.19
+	Publish Date: 2018-09-20
+	Rating: 9.1 / 10.0
+Name: Mobile Legends: Bang Bang
+	Author: Moonton
+	Version: 1.3.15.3222
+	Publish Date: 2018-09-19
+	Rating: 8.8 / 10.0
+Name: Garena AOV - Arena of Valor: Action MOBA APK
+	Author: MOBA Games Private Limited
+	Version: 1.24.1.2
+	Publish Date: 
+	Rating: 8.7 / 10.0
+Name: RULES OF SURVIVAL
+	Author: NetEase Games
+	Version: 1.194559.197271
+	Publish Date: 2018-09-19
+	Rating: 8.5 / 10.0
+Name: Arena of Valor: 5v5 Arena Game APK
+	Author: Tencent Games
+	Version: 1.24.1.2
+	Publish Date: 
+	Rating: 8.8 / 10.0
+Name: PUBG MOBILE
+	Author: Tencent Games
+	Version: 0.8.0
+	Publish Date: 2018-09-12
+	Rating: 8.8 / 10.0
+Name: PUBG MOBILE LITE
+	Author: Tencent Games
+	Version: 0.5.1
+	Publish Date: 2018-09-20
+	Rating: 8.5 / 10.0
+Name: Garena Free Fire
+	Author: GARENA INTERNATIONAL I PRIVATE LIMITED
+	Version: 1.22.1
+	Publish Date: 2018-09-12
+	Rating: 9.0 / 10.0
+Name: Creative Destruction
+	Author: ZuoMasterDeveloper
+	Version: 1.0.19
+	Publish Date: 2018-09-20
+	Rating: 9.1 / 10.0
+Name: Mobile Legends: Bang Bang
+	Author: Moonton
+	Version: 1.3.15.3222
+	Publish Date: 2018-09-19
+	Rating: 8.8 / 10.0
+Name: PUBG MOBILE
+	Author: Tencent Games
+	Version: 0.8.0
+	Publish Date: 2018-09-12
+	Rating: 8.8 / 10.0
+Name: PUBG MOBILE LITE
+	Author: Tencent Games
+	Version: 0.5.1
+	Publish Date: 2018-09-20
+	Rating: 8.5 / 10.0
+Name: Garena Free Fire
+	Author: GARENA INTERNATIONAL I PRIVATE LIMITED
+	Version: 1.22.1
+	Publish Date: 2018-09-12
+	Rating: 9.0 / 10.0
+Name: Creative Destruction
+	Author: ZuoMasterDeveloper
+	Version: 1.0.19
+	Publish Date: 2018-09-20
+	Rating: 9.1 / 10.0
+Name: Mobile Legends: Bang Bang
+	Author: Moonton
+	Version: 1.3.15.3222
+	Publish Date: 2018-09-19
+	Rating: 8.8 / 10.0
+Name: Garena AOV - Arena of Valor: Action MOBA APK
+	Author: MOBA Games Private Limited
+	Version: 1.24.1.2
+	Publish Date: 
+	Rating: 8.7 / 10.0
+Name: PUBG MOBILE
+	Author: Tencent Games
+	Version: 0.8.0
+	Publish Date: 2018-09-12
+	Rating: 8.8 / 10.0
+Name: PUBG MOBILE LITE
+	Author: Tencent Games
+	Version: 0.5.1
+	Publish Date: 2018-09-20
+	Rating: 8.5 / 10.0
+Name: Garena Free Fire
+	Author: GARENA INTERNATIONAL I PRIVATE LIMITED
+	Version: 1.22.1
+	Publish Date: 2018-09-12
+	Rating: 9.0 / 10.0
+Name: Creative Destruction
+	Author: ZuoMasterDeveloper
+	Version: 1.0.19
+	Publish Date: 2018-09-20
+	Rating: 9.1 / 10.0
+Name: Mobile Legends: Bang Bang
+	Author: Moonton
+	Version: 1.3.15.3222
+	Publish Date: 2018-09-19
+	Rating: 8.8 / 10.0
+Name: PUBG MOBILE
+	Author: Tencent Games
+	Version: 0.8.0
+	Publish Date: 2018-09-12
+	Rating: 8.8 / 10.0
+Name: PUBG MOBILE LITE
+	Author: Tencent Games
+	Version: 0.5.1
+	Publish Date: 2018-09-20
+	Rating: 8.5 / 10.0
+Name: Garena Free Fire
+	Author: GARENA INTERNATIONAL I PRIVATE LIMITED
+	Version: 1.22.1
+	Publish Date: 2018-09-12
+	Rating: 9.0 / 10.0
+Name: Creative Destruction
+	Author: ZuoMasterDeveloper
+	Version: 1.0.19
+	Publish Date: 2018-09-20
+	Rating: 9.1 / 10.0
+Name: Mobile Legends: Bang Bang
+	Author: Moonton
+	Version: 1.3.15.3222
+	Publish Date: 2018-09-19
+	Rating: 8.8 / 10.0
+Name: Garena AOV - Arena of Valor: Action MOBA APK
+	Author: MOBA Games Private Limited
+	Version: 1.24.1.2
+	Publish Date: 
+	Rating: 8.7 / 10.0
+Name: RULES OF SURVIVAL
+	Author: NetEase Games
+	Version: 1.194559.197271
+	Publish Date: 2018-09-19
+	Rating: 8.5 / 10.0
+Name: Arena of Valor: 5v5 Arena Game APK
+	Author: Tencent Games
+	Version: 1.24.1.2
+	Publish Date: 
+	Rating: 8.8 / 10.0
+Name: CrossFire: Legends
+	Author: Tencent Games
+	Version: 1.0.9.9
+	Publish Date: 2018-08-31
+	Rating: 8.8 / 10.0
+Name: PUBG MOBILE
+	Author: Tencent Games
+	Version: 0.8.0
+	Publish Date: 2018-09-12
+	Rating: 8.8 / 10.0
+Name: PUBG MOBILE LITE
+	Author: Tencent Games
+	Version: 0.5.1
+	Publish Date: 2018-09-20
+	Rating: 8.5 / 10.0
+Name: Garena Free Fire
+	Author: GARENA INTERNATIONAL I PRIVATE LIMITED
+	Version: 1.22.1
+	Publish Date: 2018-09-12
+	Rating: 9.0 / 10.0
+Name: Creative Destruction
+	Author: ZuoMasterDeveloper
+	Version: 1.0.19
+	Publish Date: 2018-09-20
+	Rating: 9.1 / 10.0
+Name: Mobile Legends: Bang Bang
+	Author: Moonton
+	Version: 1.3.15.3222
+	Publish Date: 2018-09-19
+	Rating: 8.8 / 10.0
+Name: PUBG MOBILE
+	Author: Tencent Games
+	Version: 0.8.0
+	Publish Date: 2018-09-12
+	Rating: 8.8 / 10.0
+Name: PUBG MOBILE LITE
+	Author: Tencent Games
+	Version: 0.5.1
+	Publish Date: 2018-09-20
+	Rating: 8.5 / 10.0
+Name: Garena Free Fire
+	Author: GARENA INTERNATIONAL I PRIVATE LIMITED
+	Version: 1.22.1
+	Publish Date: 2018-09-12
+	Rating: 9.0 / 10.0
+Name: Creative Destruction
+	Author: ZuoMasterDeveloper
+	Version: 1.0.19
+	Publish Date: 2018-09-20
+	Rating: 9.1 / 10.0
+Name: Mobile Legends: Bang Bang
+	Author: Moonton
+	Version: 1.3.15.3222
+	Publish Date: 2018-09-19
+	Rating: 8.8 / 10.0
+Name: Garena AOV - Arena of Valor: Action MOBA APK
+	Author: MOBA Games Private Limited
+	Version: 1.24.1.2
+	Publish Date: 
+	Rating: 8.7 / 10.0
+Name: RULES OF SURVIVAL
+	Author: NetEase Games
+	Version: 1.194559.197271
+	Publish Date: 2018-09-19
+	Rating: 8.5 / 10.0
+Name: PUBG MOBILE
+	Author: Tencent Games
+	Version: 0.8.0
+	Publish Date: 2018-09-12
+	Rating: 8.8 / 10.0
+Name: PUBG MOBILE LITE
+	Author: Tencent Games
+	Version: 0.5.1
+	Publish Date: 2018-09-20
+	Rating: 8.5 / 10.0
+Name: PUBG MOBILE
+	Author: Tencent Games
+	Version: 0.8.0
+	Publish Date: 2018-09-12
+	Rating: 8.8 / 10.0
+Name: PUBG MOBILE LITE
+	Author: Tencent Games
+	Version: 0.5.1
+	Publish Date: 2018-09-20
+	Rating: 8.5 / 10.0
+Name: Garena Free Fire
+	Author: GARENA INTERNATIONAL I PRIVATE LIMITED
+	Version: 1.22.1
+	Publish Date: 2018-09-12
+	Rating: 9.0 / 10.0
+Name: Creative Destruction
+	Author: ZuoMasterDeveloper
+	Version: 1.0.19
+	Publish Date: 2018-09-20
+	Rating: 9.1 / 10.0
+Name: Mobile Legends: Bang Bang
+	Author: Moonton
+	Version: 1.3.15.3222
+	Publish Date: 2018-09-19
+	Rating: 8.8 / 10.0
+Name: Garena AOV - Arena of Valor: Action MOBA APK
+	Author: MOBA Games Private Limited
+	Version: 1.24.1.2
+	Publish Date: 2018-08-27
+	Rating: 8.7 / 10.0
+Name: RULES OF SURVIVAL
+	Author: NetEase Games
+	Version: 1.194559.197271
+	Publish Date: 2018-09-19
+	Rating: 8.5 / 10.0
+Name: Arena of Valor: 5v5 Arena Game APK
+	Author: Tencent Games
+	Version: 1.24.1.2
+	Publish Date: 2018-08-30
+	Rating: 8.8 / 10.0
+Name: CrossFire: Legends
+	Author: Tencent Games
+	Version: 1.0.9.9
+	Publish Date: 2018-08-31
+	Rating: 8.8 / 10.0
+Name: Special Forces Group 2 APK
+	Author: ForgeGames
+	Version: 3.5
+	Publish Date: 2018-09-09
+	Rating: 9.4 / 10.0
+Name: Graphic Tool for Battlegrounds
+	Author: tsoml
+	Version: 4.5.1
+	Publish Date: 2018-05-10
+	Rating: 9.5 / 10.0
+Name: Hopeless Land Fight for Survival
+	Author: HERO Game
+	Version: 1.0
+	Publish Date: 2018-08-28
+	Rating: 8.6 / 10.0
+Name: PUBG MOBILE
+	Author: PUBG CORPORATION
+	Version: 0.8.0
+	Publish Date: 2018-09-12
+	Rating: 8.4 / 10.0
+Name: Doodle Army 2 : Mini Militia APK
+	Author: Miniclip.com
+	Version: 4.1.2
+	Publish Date: 2018-06-06
+	Rating: 9.3 / 10.0
+Name: Garena Liên Quân Mobile APK
+	Author: Garena Mobile Private
+	Version: 1.24.1.2
+	Publish Date: 2018-08-28
+	Rating: 8.5 / 10.0
+Name: TEKKEN™ APK
+	Author: BANDAI NAMCO Entertainment Europe
+	Version: 1.3
+	Publish Date: 2018-08-23
+	Rating: 8.7 / 10.0
+Name: PUBG MOBILE
+	Author: Tencent Games
+	Version: 0.8.0
+	Publish Date: 2018-09-12
+	Rating: 8.8 / 10.0
+Name: PUBG MOBILE LITE
+	Author: Tencent Games
+	Version: 0.5.1
+	Publish Date: 2018-09-20
+	Rating: 8.5 / 10.0
+Name: Garena Free Fire
+	Author: GARENA INTERNATIONAL I PRIVATE LIMITED
+	Version: 1.22.1
+	Publish Date: 2018-09-12
+	Rating: 9.0 / 10.0
+Name: Creative Destruction
+	Author: ZuoMasterDeveloper
+	Version: 1.0.19
+	Publish Date: 2018-09-20
+	Rating: 9.1 / 10.0
+Name: Mobile Legends: Bang Bang
+	Author: Moonton
+	Version: 1.3.15.3222
+	Publish Date: 2018-09-19
+	Rating: 8.8 / 10.0
+Name: Garena AOV - Arena of Valor: Action MOBA APK
+	Author: MOBA Games Private Limited
+	Version: 1.24.1.2
+	Publish Date: 2018-08-27
+	Rating: 8.7 / 10.0
+Name: RULES OF SURVIVAL
+	Author: NetEase Games
+	Version: 1.194559.197271
+	Publish Date: 2018-09-19
+	Rating: 8.5 / 10.0
+Name: Arena of Valor: 5v5 Arena Game APK
+	Author: Tencent Games
+	Version: 1.24.1.2
+	Publish Date: 2018-08-30
+	Rating: 8.8 / 10.0
+Name: PUBG MOBILE
+	Author: Tencent Games
+	Version: 0.8.0
+	Publish Date: 2018-09-12
+	Rating: 8.8 / 10.0
+Name: PUBG MOBILE LITE
+	Author: Tencent Games
+	Version: 0.5.1
+	Publish Date: 2018-09-20
+	Rating: 8.5 / 10.0
+Name: Garena Free Fire
+	Author: GARENA INTERNATIONAL I PRIVATE LIMITED
+	Version: 1.22.1
+	Publish Date: 2018-09-12
+	Rating: 9.0 / 10.0
+Name: Creative Destruction
+	Author: ZuoMasterDeveloper
+	Version: 1.0.19
+	Publish Date: 2018-09-20
+	Rating: 9.1 / 10.0
+Name: Mobile Legends: Bang Bang
+	Author: Moonton
+	Version: 1.3.15.3222
+	Publish Date: 2018-09-19
+	Rating: 8.8 / 10.0
+Name: Garena AOV - Arena of Valor: Action MOBA APK
+	Author: MOBA Games Private Limited
+	Version: 1.24.1.2
+	Publish Date: 2018-08-27
+	Rating: 8.7 / 10.0
+Name: RULES OF SURVIVAL
+	Author: NetEase Games
+	Version: 1.194559.197271
+	Publish Date: 2018-09-19
+	Rating: 8.5 / 10.0
+Name: Arena of Valor: 5v5 Arena Game APK
+	Author: Tencent Games
+	Version: 1.24.1.2
+	Publish Date: 2018-08-30
+	Rating: 8.8 / 10.0
+Name: CrossFire: Legends
+	Author: Tencent Games
+	Version: 1.0.9.9
+	Publish Date: 2018-08-31
+	Rating: 8.8 / 10.0
+Name: Special Forces Group 2 APK
+	Author: ForgeGames
+	Version: 3.5
+	Publish Date: 2018-09-09
+	Rating: 9.4 / 10.0
+Name: Graphic Tool for Battlegrounds
+	Author: tsoml
+	Version: 4.5.1
+	Publish Date: 2018-05-10
+	Rating: 9.5 / 10.0
+Name: Hopeless Land Fight for Survival
+	Author: HERO Game
+	Version: 1.0
+	Publish Date: 2018-08-28
+	Rating: 8.6 / 10.0
+Name: PUBG MOBILE
+	Author: Tencent Games
+	Version: 0.8.0
+	Publish Date: 2018-09-12
+	Rating: 8.8 / 10.0
+Name: PUBG MOBILE LITE
+	Author: Tencent Games
+	Version: 0.5.1
+	Publish Date: 2018-09-20
+	Rating: 8.5 / 10.0
+Name: Garena Free Fire
+	Author: GARENA INTERNATIONAL I PRIVATE LIMITED
+	Version: 1.22.1
+	Publish Date: 2018-09-12
+	Rating: 9.0 / 10.0
+Name: Creative Destruction
+	Author: ZuoMasterDeveloper
+	Version: 1.0.19
+	Publish Date: 2018-09-20
+	Rating: 9.1 / 10.0
+Name: Mobile Legends: Bang Bang
+	Author: Moonton
+	Version: 1.3.15.3222
+	Publish Date: 2018-09-19
+	Rating: 8.8 / 10.0
+Name: Garena AOV - Arena of Valor: Action MOBA APK
+	Author: MOBA Games Private Limited
+	Version: 1.24.1.2
+	Publish Date: 2018-08-27
+	Rating: 8.7 / 10.0
+Name: RULES OF SURVIVAL
+	Author: NetEase Games
+	Version: 1.194559.197271
+	Publish Date: 2018-09-19
+	Rating: 8.5 / 10.0
+Name: Arena of Valor: 5v5 Arena Game APK
+	Author: Tencent Games
+	Version: 1.24.1.2
+	Publish Date: 2018-08-30
+	Rating: 8.8 / 10.0
+Name: CrossFire: Legends
+	Author: Tencent Games
+	Version: 1.0.9.9
+	Publish Date: 2018-08-31
+	Rating: 8.8 / 10.0
+Name: Special Forces Group 2 APK
+	Author: ForgeGames
+	Version: 3.5
+	Publish Date: 2018-09-09
+	Rating: 9.4 / 10.0
+Name: Graphic Tool for Battlegrounds
+	Author: tsoml
+	Version: 4.5.1
+	Publish Date: 2018-05-10
+	Rating: 9.5 / 10.0
+Name: Hopeless Land Fight for Survival
+	Author: HERO Game
+	Version: 1.0
+	Publish Date: 2018-08-28
+	Rating: 8.6 / 10.0
+Name: PUBG MOBILE
+	Author: PUBG CORPORATION
+	Version: 0.8.0
+	Publish Date: 2018-09-12
+	Rating: 8.4 / 10.0
+Name: Doodle Army 2 : Mini Militia APK
+	Author: Miniclip.com
+	Version: 4.1.2
+	Publish Date: 2018-06-06
+	Rating: 9.3 / 10.0
+Name: Garena Liên Quân Mobile APK
+	Author: Garena Mobile Private
+	Version: 1.24.1.2
+	Publish Date: 2018-08-28
+	Rating: 8.5 / 10.0
+Name: TEKKEN™ APK
+	Author: BANDAI NAMCO Entertainment Europe
+	Version: 1.3
+	Publish Date: 2018-08-23
+	Rating: 8.7 / 10.0
+Name: BETA PUBG MOBILE Unreleased
+	Author: Tencent Games
+	Version: 0.7.0
+	Publish Date: 2018-08-27
+	Rating: 8.3 / 10.0
+Name: Helix Jump
+	Author: VOODOO
+	Version: 1.1.4
+	Publish Date: 2018-08-21
+	Rating: 8.3 / 10.0
+Name: Graphics Tool for PUBG
+	Author: tsoml
+	Version: 2.3
+	Publish Date: 2018-05-16
+	Rating: 9.5 / 10.0
+Name: Pixel Gun 3D Survival shooter & Battle Royale
+	Author: Pixel Gun 3D
+	Version: 15.2.4
+	Publish Date: 2018-09-21
+	Rating: 9.3 / 10.0
+Name: ARK: Survival Evolved
+	Author: Studio Wildcard
+	Version: 1.0.94
+	Publish Date: 2018-09-07
+	Rating: 7.3 / 10.0
+Name: Hello Neighbor
+	Author: tinyBuild
+	Version: 1.0
+	Publish Date: 2018-09-11
+	Rating: 7.5 / 10.0
+Name: PUBG MOBILE
+	Author: Tencent Games
+	Version: 0.8.0
+	Publish Date: 2018-09-12
+	Rating: 8.8 / 10.0
+Name: PUBG MOBILE LITE
+	Author: Tencent Games
+	Version: 0.5.1
+	Publish Date: 2018-09-20
+	Rating: 8.5 / 10.0
+Name: Garena Free Fire
+	Author: GARENA INTERNATIONAL I PRIVATE LIMITED
+	Version: 1.22.1
+	Publish Date: 2018-09-12
+	Rating: 9.0 / 10.0
+Name: Creative Destruction
+	Author: ZuoMasterDeveloper
+	Version: 1.0.19
+	Publish Date: 2018-09-20
+	Rating: 9.1 / 10.0
+Name: Mobile Legends: Bang Bang
+	Author: Moonton
+	Version: 1.3.15.3222
+	Publish Date: 2018-09-19
+	Rating: 8.8 / 10.0
+Name: Garena AOV - Arena of Valor: Action MOBA APK
+	Author: MOBA Games Private Limited
+	Version: 1.24.1.2
+	Publish Date: 2018-08-27
+	Rating: 8.7 / 10.0
+Name: RULES OF SURVIVAL
+	Author: NetEase Games
+	Version: 1.194559.197271
+	Publish Date: 2018-09-19
+	Rating: 8.5 / 10.0
+Name: Arena of Valor: 5v5 Arena Game APK
+	Author: Tencent Games
+	Version: 1.24.1.2
+	Publish Date: 2018-08-30
+	Rating: 8.8 / 10.0
+Name: CrossFire: Legends
+	Author: Tencent Games
+	Version: 1.0.9.9
+	Publish Date: 2018-08-31
+	Rating: 8.8 / 10.0
+Name: Special Forces Group 2 APK
+	Author: ForgeGames
+	Version: 3.5
+	Publish Date: 2018-09-09
+	Rating: 9.4 / 10.0
+Name: Graphic Tool for Battlegrounds
+	Author: tsoml
+	Version: 4.5.1
+	Publish Date: 2018-05-10
+	Rating: 9.5 / 10.0
+Name: Hopeless Land Fight for Survival
+	Author: HERO Game
+	Version: 1.0
+	Publish Date: 2018-08-28
+	Rating: 8.6 / 10.0
+Name: PUBG MOBILE
+	Author: PUBG CORPORATION
+	Version: 0.8.0
+	Publish Date: 2018-09-12
+	Rating: 8.3 / 10.0
+Name: Doodle Army 2 : Mini Militia APK
+	Author: Miniclip.com
+	Version: 4.1.2
+	Publish Date: 2018-06-06
+	Rating: 9.3 / 10.0
+Name: Garena Liên Quân Mobile APK
+	Author: Garena Mobile Private
+	Version: 1.24.1.2
+	Publish Date: 2018-08-28
+	Rating: 8.5 / 10.0
+Name: TEKKEN™ APK
+	Author: BANDAI NAMCO Entertainment Europe
+	Version: 1.3
+	Publish Date: 2018-08-23
+	Rating: 8.7 / 10.0
+Name: BETA PUBG MOBILE Unreleased
+	Author: Tencent Games
+	Version: 0.7.0
+	Publish Date: 2018-08-27
+	Rating: 8.3 / 10.0
+Name: Helix Jump
+	Author: VOODOO
+	Version: 1.1.4
+	Publish Date: 2018-08-21
+	Rating: 8.3 / 10.0
+Name: Graphics Tool for PUBG
+	Author: tsoml
+	Version: 2.3
+	Publish Date: 2018-05-16
+	Rating: 9.5 / 10.0
+Name: Pixel Gun 3D Survival shooter & Battle Royale
+	Author: Pixel Gun 3D
+	Version: 15.2.4
+	Publish Date: 2018-09-21
+	Rating: 9.3 / 10.0
+Name: MORTAL KOMBAT X APK
+	Author: Warner Bros. International Enterprises
+	Version: 1.20.0
+	Publish Date: 2018-09-10
+	Rating: 8.6 / 10.0
+Name: The Grand Wars: San Andreas
+	Author: Super FPS Games
+	Version: 1.15
+	Publish Date: 2017-12-08
+	Rating: 7.9 / 10.0
+Name: Garena RoV: Mobile MOBA APK
+	Author: Good Mobile Games Private Limited
+	Version: 1.24.2.2
+	Publish Date: 2018-09-12
+	Rating: 9.1 / 10.0
+Name: WWE Mayhem
+	Author: Reliance Big Entertainment (UK) Private Limited
+	Version: 1.13.374
+	Publish Date: 2018-09-14
+	Rating: 9.2 / 10.0
+Name: Survival Heroes MOBA Battle Royale
+	Author: Snail Games USA Inc
+	Version: 1.0.8
+	Publish Date: 2018-08-29
+	Rating: 8.2 / 10.0
+Name: Sniper 3D Gun Shooter: Free Shooting Games - FPS
+	Author: Fun Games For Free
+	Version: 2.16.9
+	Publish Date: 2018-09-20
+	Rating: 9.5 / 10.0
+Name: Gangstar New Orleans OpenWorld APK
+	Author: Gameloft
+	Version: 1.5.4b
+	Publish Date: 2018-08-30
+	Rating: 8.5 / 10.0
+Name: PAYDAY: Crime War (Unreleased)
+	Author: Starbreeze
+	Version: 180906.1826
+	Publish Date: 2018-09-17
+	Rating: 8.0 / 10.0
+Name: Bullet Battle
+	Author: FORZA GAMES
+	Version: 1.0.5
+	Publish Date: 2018-09-14
+	Rating: 7.9 / 10.0
+Name: Temple Run 2
+	Author: Imangi Studios
+	Version: 1.50.3
+	Publish Date: 2018-09-10
+	Rating: 9.0 / 10.0
+Name: Brawl Stars
+	Author: Supercell
+	Version: 11.113
+	Publish Date: 2018-07-03
+	Rating: 8.6 / 10.0
+Name: PPSSPP - PSP emulator APK
+	Author: Henrik Rydgård
+	Version: 1.6.3
+	Publish Date: 2018-06-06
+	Rating: 9.0 / 10.0
+Name: Critical Ops APK
+	Author: Critical Force Ltd.
+	Version: 0.9.11.f147
+	Publish Date: 2018-09-05
+	Rating: 8.6 / 10.0
+Name: Identity V
+	Author: NetEase Games
+	Version: 1.0.144431
+	Publish Date: 2018-07-10
+	Rating: 8.7 / 10.0
+Name: Garena 傳說對決 APK
+	Author: Garena Games Online
+	Version: 1.24.2.2
+	Publish Date: 2018-09-10
+	Rating: 8.4 / 10.0
+Name: World War Heroes: WW2 Shooter APK
+	Author: Azur Interactive Games Limited
+	Version: 1.8.3
+	Publish Date: 2018-06-22
+	Rating: 9.0 / 10.0
+Name: Kick the Buddy
+	Author: Playgendary
+	Version: 1.0.4
+	Publish Date: 2018-07-05
+	Rating: 8.8 / 10.0
+Name: Cover Fire: shooting games APK
+	Author: Genera Games
+	Version: 1.8.25
+	Publish Date: 2018-09-21
+	Rating: 9.5 / 10.0
+Name: N.O.V.A. Legacy
+	Author: Gameloft
+	Version: 5.5.0e
+	Publish Date: 2018-08-24
+	Rating: 9.0 / 10.0
+Name: Snipers vs Thieves APK
+	Author: PlayStack
+	Version: 1.19.22110
+	Publish Date: 2018-08-30
+	Rating: 9.1 / 10.0
+Name: FRONTLINE COMMANDO: D-DAY APK
+	Author: Glu
+	Version: 3.0.4
+	Publish Date: 2014-05-16
+	Rating: 9.0 / 10.0
+Name: Last Day on Earth: Survival APK
+	Author: Kefir!
+	Version: 1.9.7
+	Publish Date: 2018-09-19
+	Rating: 9.2 / 10.0
+Name: BLEACH Brave Souls APK
+	Author: KLab Global Pte. Ltd.
+	Version: 7.2.1
+	Publish Date: 2018-09-11
+	Rating: 9.2 / 10.0
+Name: BEYBLADE BURST app APK
+	Author: Hasbro Inc.
+	Version: 6.0.0
+	Publish Date: 2018-09-12
+	Rating: 9.5 / 10.0
+Name: Standoff 2 APK
+	Author: Axlebolt
+	Version: 0.9.5
+	Publish Date: 2018-07-12
+	Rating: 9.1 / 10.0
+Name: Bullet Force APK
+	Author: Blayze Games, L.L.C.
+	Version: 1.46
+	Publish Date: 2018-09-15
+	Rating: 9.2 / 10.0
+Name: TheOne
+	Author: Fat Dragon Studio
+	Version: 0.1.7
+	Publish Date: 2018-09-18
+	Rating: 7.6 / 10.0
+Name: Battlelands Royale
+	Author: Futureplay
+	Version: 0.6.6
+	Publish Date: 2018-09-20
+	Rating: 8.8 / 10.0
+Name: The Last Survivor Stay Alive
+	Author: The Skynet Co., Ltd.
+	Version: 1.6.5.175265
+	Publish Date: 2018-08-16
+	Rating: 8.1 / 10.0
+Name: Real Gangster Crime APK
+	Author: Naxeex Studio
+	Version: 3.7
+	Publish Date: 2018-09-18
+	Rating: 8.5 / 10.0
+Name: Dragon Nest M SEA（Dark Avenger）
+	Author: Shanda
+	Version: 1.3.0
+	Publish Date: 2018-09-19
+	Rating: 8.5 / 10.0
+Name: Diamond Rush Original APK
+	Author: J2Game
+	Version: 1.1
+	Publish Date: 2017-06-26
+	Rating: 9.7 / 10.0
+Name: War Song- A 5vs5 MOBA Anywhere Anytime
+	Author: Sixjoy  Limited
+	Version: 1.1.240
+	Publish Date: 2018-08-01
+	Rating: 8.9 / 10.0
+Name: Star Wars: Rivals™ (Unreleased) APK
+	Author: Disney
+	Version: 6.0.2
+	Publish Date: 2018-01-10
+	Rating: 8.1 / 10.0
+Name: Final Warfare - High Quality (Unreleased)
+	Author: MnM SOFT
+	Version: 1.21
+	Publish Date: 2018-09-12
+	Rating: 7.8 / 10.0
+Name: Ultimate Ninja Storm 4 APK
+	Author: Chocolate Babe Workshop
+	Version: 1.2
+	Publish Date: 2017-05-04
+	Rating: 8.1 / 10.0
+Name: Fighter Adventure Fire Up
+	Author: SUPER EXPERT
+	Version: 1.0.1
+	Publish Date: 2018-08-03
+	Rating: 6.0 / 10.0
+Name: Azur Lane
+	Author: Yostar Limited.
+	Version: 1.2.4
+	Publish Date: 2018-09-09
+	Rating: 8.1 / 10.0
+Name: War Robots
+	Author: PIXONIC
+	Version: 4.2.0
+	Publish Date: 2018-08-28
+	Rating: 9.4 / 10.0
+Name: Modern Combat Versus: New Online Multiplayer FPS APK
+	Author: Gameloft
+	Version: 1.9.8
+	Publish Date: 2018-09-19
+	Rating: 8.4 / 10.0
+Name: Shadow Fight 2
+	Author: NEKKI
+	Version: 1.9.38
+	Publish Date: 2018-07-02
+	Rating: 9.6 / 10.0
+Name: KOF ALLSTAR
+	Author: Netmarble
+	Version: 1.0.3
+	Publish Date: 2018-08-10
+	Rating: 8.8 / 10.0
+Name: Tanks A Lot! - Realtime Multiplayer Battle Arena
+	Author: BoomBit Games
+	Version: 1.30
+	Publish Date: 2018-09-20
+	Rating: 8.8 / 10.0
+Name: Trainer.io
+	Author: Navo Games
+	Version: 1.8
+	Publish Date: 2018-09-15
+	Rating: 8.4 / 10.0
+Name: slither.io APK
+	Author: Lowtech Studios
+	Version: 1.5.0
+	Publish Date: 2017-11-14
+	Rating: 8.8 / 10.0
+Name: Talking Tom Gold Run
+	Author: Outfit7 Limited
+	Version: 2.9.0.94
+	Publish Date: 2018-09-06
+	Rating: 9.4 / 10.0
+Name: Street Fighter IV Champion Edition
+	Author: CAPCOM CO., LTD.
+	Version: 1.01.01
+	Publish Date: 2018-09-07
+	Rating: 7.2 / 10.0
+Name: Heroes Arena APK
+	Author: uCool
+	Version: 2.1.13
+	Publish Date: 2018-09-17
+	Rating: 8.7 / 10.0
+Name: Final Fighter
+	Author: RubyPeng
+	Version: 0.32.5
+	Publish Date: 2018-08-24
+	Rating: 9.1 / 10.0
+Name: Garena Contra: Return
+	Author: Garena Games Online
+	Version: 1.6.49.0727
+	Publish Date: 2018-09-19
+	Rating: 7.8 / 10.0
+Name: Injustice 2
+	Author: Warner Bros. International Enterprises
+	Version: 2.4.1
+	Publish Date: 2018-07-30
+	Rating: 8.5 / 10.0
+Name: World of Tanks Blitz APK
+	Author: Wargaming Group
+	Version: 5.3.0.392
+	Publish Date: 2018-09-11
+	Rating: 9.0 / 10.0
+Name: Survival Squad
+	Author: Shenzhen Bingchuan Network Co.,Ltd.
+	Version: 1.0.20
+	Publish Date: 2018-08-31
+	Rating: 8.2 / 10.0
+Name: Robbery Bob APK
+	Author: Level Eight AB
+	Version: 1.18.3
+	Publish Date: 2018-09-21
+	Rating: 9.3 / 10.0
+Name: Forward Assault APK
+	Author: Blayze Games, L.L.C.
+	Version: 1.1022
+	Publish Date: 2018-08-24
+	Rating: 9.0 / 10.0
+Name: Anger of stick 5 : zombie APK
+	Author: J-PARK
+	Version: 1.1.5
+	Publish Date: 2018-08-24
+	Rating: 9.3 / 10.0
+Name: Arena of Valor: 5v5 Battle
+	Author: Tencent Games
+	Version: 1.24.1.2
+	Publish Date: 2018-09-06
+	Rating: 8.9 / 10.0
+Name: MARVEL Contest of Champions
+	Author: Kabam
+	Version: 20.0.2
+	Publish Date: 2018-09-21
+	Rating: 9.1 / 10.0
+Name: Soul Knight
+	Author: ChillyRoom
+	Version: 1.8.5
+	Publish Date: 2018-09-05
+	Rating: 9.4 / 10.0
+Name: DEAD TRIGGER - Offline Zombie Shooter APK
+	Author: MADFINGER Games
+	Version: 2.0.0
+	Publish Date: 2018-08-09
+	Rating: 9.5 / 10.0
+Name: Call of duty Black Ops III APK
+	Author: Vomica Studio
+	Version: 1.1
+	Publish Date: 2017-07-20
+	Rating: 6.0 / 10.0
+Name: Modern Strike Online: PRO FPS! APK
+	Author: Azur Interactive Games Limited
+	Version: 1.25.4
+	Publish Date: 2018-07-30
+	Rating: 8.5 / 10.0
+Name: 4-Wheel City Drifting
+	Author: RainySam
+	Version: 2.1.0
+	Publish Date: 2018-09-20
+	Rating: 6.3 / 10.0
+Name: Granny Prison Horror Multiplayer
+	Author: Poltro
+	Version: 2.0
+	Publish Date: 2018-07-08
+	Rating: 0 / 10.0
+Name: Block Strike
+	Author: Rexet Studio
+	Version: 5.5.0
+	Publish Date: 2018-09-19
+	Rating: 8.3 / 10.0
+Name: INFINITY OPS: Sci-Fi FPS
+	Author: Azur Interactive Games Limited
+	Version: 1.2.2
+	Publish Date: 2018-08-15
+	Rating: 8.7 / 10.0
+Name: Sling Drift
+	Author: tastypill
+	Version: 2.3
+	Publish Date: 2018-07-27
+	Rating: 8.7 / 10.0
+Name: Maze Shadow of Light
+	Author: THUMBAGE
+	Version: 2.0.3
+	Publish Date: 2018-09-18
+	Rating: 8.4 / 10.0
+Name: MARVEL Spider-Man Unlimited APK
+	Author: Gameloft
+	Version: 4.5.1b
+	Publish Date: 2018-09-05
+	Rating: 8.7 / 10.0
+Name: CrossFire: Legends APK
+	Author: VNG Game Publishing
+	Version: 1.0.38.38
+	Publish Date: 2018-07-12
+	Rating: 8.7 / 10.0
+Name: Point Blank: Strike APK
+	Author: NEXON Company
+	Version: 2.5.2
+	Publish Date: 2018-08-13
+	Rating: 8.3 / 10.0
+Name: FRONTLINE COMMANDO APK
+	Author: Glu
+	Version: 3.0.3
+	Publish Date: 2013-10-28
+	Rating: 8.9 / 10.0
+Name: GUNSHIP BATTLE: Helicopter 3D APK
+	Author: JOYCITY Corp.
+	Version: 2.6.80
+	Publish Date: 2018-09-20
+	Rating: 9.4 / 10.0
+Name: Bowmasters APK
+	Author: Miniclip.com
+	Version: 2.12.4
+	Publish Date: 2018-07-23
+	Rating: 9.5 / 10.0
+Name: Special Forces Group APK
+	Author: ForgeGames
+	Version: 4.9
+	Publish Date: 2016-07-11
+	Rating: 9.4 / 10.0
+Name: Hungry Shark World
+	Author: Ubisoft Entertainment
+	Version: 3.1.0
+	Publish Date: 2018-09-20
+	Rating: 9.5 / 10.0
+Name: Zombie Catchers APK
+	Author: Two Men and a Dog
+	Version: 1.0.27
+	Publish Date: 2018-09-07
+	Rating: 9.5 / 10.0
+Name: Los Angeles UnderCover APK
+	Author: Hyder61112
+	Version: 9.2
+	Publish Date: 2017-05-03
+	Rating: 9.1 / 10.0
+Name: DEAD TRIGGER 2 - Zombie Survival Shooter APK
+	Author: MADFINGER Games
+	Version: 1.5.0
+	Publish Date: 2018-09-17
+	Rating: 9.2 / 10.0
+Name: Sniper Strike – FPS 3D Shooting Game
+	Author: Mobile Gaming Studios Ltd.
+	Version: 3.404
+	Publish Date: 2018-09-11
+	Rating: 8.7 / 10.0
+Name: Pacific Warships World of Naval Armada Warfare
+	Author: GDCompany
+	Version: 0.6.4
+	Publish Date: 2018-08-30
+	Rating: 9.6 / 10.0
+Name: SHADOWGUN LEGENDS
+	Author: MADFINGER Games
+	Version: 0.6.1
+	Publish Date: 2018-09-19
+	Rating: 8.5 / 10.0
+Name: Rope Hero: Vice Town APK
+	Author: Naxeex LLC
+	Version: 2.2
+	Publish Date: 2018-07-01
+	Rating: 9.0 / 10.0
+Name: Last Battleground: Mech
+	Author: Elex
+	Version: 3.3.0
+	Publish Date: 2018-08-21
+	Rating: 8.9 / 10.0
+Name: Honkai Impact 3
+	Author: miHoYo Limited
+	Version: 2.4.0
+	Publish Date: 2018-08-16
+	Rating: 9.4 / 10.0
+Name: Mighty Army World War 2
+	Author: FORZA GAMES
+	Version: 1.0.7
+	Publish Date: 2018-09-19
+	Rating: 7.2 / 10.0
+Name: NARUTO X BORUTO NINJA VOLTAGE
+	Author: BANDAI NAMCO Entertainment Inc.
+	Version: 1.1.8
+	Publish Date: 2018-08-29
+	Rating: 8.7 / 10.0
+Name: BombSquad APK
+	Author: Eric Froemling
+	Version: 1.4.144
+	Publish Date: 2018-09-19
+	Rating: 9.7 / 10.0
+Name: ZombsRoyale.io - 2D Battle Royale
+	Author: End Game
+	Version: 1.4.4
+	Publish Date: 2018-09-23
+	Rating: 8.6 / 10.0
+Name: Rocket Royale
+	Author: OneTonGames
+	Version: 1.3.9
+	Publish Date: 2018-09-06
+	Rating: 8.1 / 10.0
+Name: Crisis Action: 2018 NO.1 FPS APK
+	Author: HERO Game
+	Version: 3.0.3
+	Publish Date: 2018-08-14
+	Rating: 8.4 / 10.0
+Name: Iron Blade APK
+	Author: Gameloft
+	Version: 1.7.1a
+	Publish Date: 2018-08-08
+	Rating: 7.8 / 10.0
+Name: Mad GunZ - shooting games, online, pixel shooter APK
+	Author: Mad Pixel LTD
+	Version: 1.6.3
+	Publish Date: 2018-09-22
+	Rating: 8.1 / 10.0
+Name: King Of Hunters (Unreleased)
+	Author: NetEase Games
+	Version: 1.1.440
+	Publish Date: 2018-08-22
+	Rating: 7.9 / 10.0
+Name: Mobile Battleground Blitz
+	Author: Alchemisted Tech
+	Version: 1.0.22
+	Publish Date: 2018-03-16
+	Rating: 7.6 / 10.0
+Name: CATS: Crash Arena Turbo Stars APK
+	Author: ZeptoLab
+	Version: 2.13
+	Publish Date: 2018-09-19
+	Rating: 9.3 / 10.0
+Name: Counter Terrorist Shoot APK
+	Author: Doing Studio
+	Version: 1.8
+	Publish Date: 2018-07-17
+	Rating: 8.7 / 10.0
+Name: Stickman Legends: Ninja Warriors - Shadow of War APK
+	Author: ZITGA PTE. LTD.
+	Version: 2.3.30
+	Publish Date: 2018-09-20
+	Rating: 9.2 / 10.0
+Name: The Outlived
+	Author: xiaojiao zhang
+	Version: 1.0.7
+	Publish Date: 2018-09-10
+	Rating: 8.6 / 10.0
+Name: LEGO® Ninjago Tournament- free ninja game for kids APK
+	Author: LEGO System A/S
+	Version: 1.05.2.970
+	Publish Date: 2016-09-15
+	Rating: 9.2 / 10.0
+Name: DRAGON BALL Z DOKKAN BATTLE APK
+	Author: BANDAI NAMCO Entertainment Inc.
+	Version: 3.13.1
+	Publish Date: 2018-08-23
+	Rating: 8.0 / 10.0
+Name: Counter Attack - Multiplayer FPS APK
+	Author: Seven Bulls Games
+	Version: 1.2.01
+	Publish Date: 2018-09-18
+	Rating: 7.9 / 10.0
+Name: Ben 10: Alien Experience APK
+	Author: Cartoon Network
+	Version: 2.0
+	Publish Date: 2018-08-09
+	Rating: 8.6 / 10.0
+Name: ジャンプ 実況ジャンジャンスタジアム
+	Author: KONAMI
+	Version: 1.0.5
+	Publish Date: 2018-08-31
+	Rating: 8.9 / 10.0
+Name: BattleField (Attack On Titan) APK
+	Author: kamasu
+	Version: 3.0.0
+	Publish Date: 2015-10-14
+	Rating: 5.6 / 10.0
+Name: Suicide Squad: Special Ops APK
+	Author: Warner Bros. International Enterprises
+	Version: 1.1.3
+	Publish Date: 2016-08-12
+	Rating: 8.8 / 10.0
+Name: PIXEL'S UNKNOWN BATTLE GROUND APK
+	Author: FPS Shooter
+	Version: 1.29.001
+	Publish Date: 2018-08-17
+	Rating: 8.0 / 10.0
+Name: Grand Gangsters 3D APK
+	Author: Doodle Mobile Ltd.
+	Version: 2.0
+	Publish Date: 2018-07-18
+	Rating: 8.9 / 10.0
+Name: アズールレーン APK
+	Author: Yostar, Inc.
+	Version: 1.5.2
+	Publish Date: 2018-09-14
+	Rating: 9.5 / 10.0
+Name: Ben Cosmic Destruction Alien Ultimate APK
+	Author: Bum Producer Studio
+	Version: 2
+	Publish Date: 2017-06-27
+	Rating: 9.4 / 10.0
+Name: Mad Driver
+	Author: Gaijin Distribution KFT
+	Version: 0.0.8.9693
+	Publish Date: 2018-09-13
+	Rating: 6.9 / 10.0
+Name: Mission: Berlin APK
+	Author: Warner Bros. International Enterprises
+	Version: 1.2.2
+	Publish Date: 2015-08-13
+	Rating: 8.9 / 10.0
+Name: Garena AOV - Arena of Valor
+	Author: Garena Games Online
+	Version: 1.24.1.2
+	Publish Date: 2018-08-20
+	Rating: 9.4 / 10.0
+Name: Zombie Frontier 3: Sniper FPS APK
+	Author: FT Games
+	Version: 2.12
 	Publish Date: 2018-08-31
 	Rating: 9.3 / 10.0
+Name: Fatal Raid APK
+	Author: The Binary Mill
+	Version: 1.5.340
+	Publish Date: 2017-10-15
+	Rating: 8.0 / 10.0
+Name: Forces of Freedom (Early Access) APK
+	Author: BRAVOCOMPANY Ltd
+	Version: 3.8.2
+	Publish Date: 2018-08-28
+	Rating: 9.2 / 10.0
+Name: Battle Of Bullet free offline shooting games
+	Author: STJ Games
+	Version: 2.1.0
+	Publish Date: 2018-08-31
+	Rating: 6.2 / 10.0
+Name: DEAD TARGET: FPS Zombie Apocalypse Survival Games APK
+	Author: VNG GAME STUDIOS
+	Version: 4.8.1.1
+	Publish Date: 2018-07-23
+	Rating: 9.3 / 10.0
+Name: Shadow of Death: Dark Knight - Stickman Fighting APK
+	Author: Zonmob Game Studio
+	Version: 1.38.0.0
+	Publish Date: 2018-09-17
+	Rating: 9.0 / 10.0
+Name: Creative Destruction Advance
+	Author: SHALL WE MANAGEMENT SERVICE LIMITED
+	Version: 1.0.18
+	Publish Date: 2018-09-20
+	Rating: 8.4 / 10.0
+Name: Amazing Strange Rope Police - Vice Spider Vegas
+	Author: HGamesArt
+	Version: 1.3.9
+	Publish Date: 2018-09-21
+	Rating: 8.8 / 10.0
+Name: Los Angeles Crimes
+	Author: RAIN CITY STUDIO
+	Version: 1.2.3
+	Publish Date: 2018-09-13
+	Rating: 9.2 / 10.0
+Name: Rope Hero APK
+	Author: Naxeex LLC
+	Version: 2.1
+	Publish Date: 2018-07-09
+	Rating: 9.1 / 10.0
+Name: 백발백중 for kakao APK
+	Author: Netmarble
+	Version: 3.4.0
+	Publish Date: 2018-03-26
+	Rating: 9.0 / 10.0
+Name: Afterpulse APK
+	Author: GAMEVIL Inc.
+	Version: 1.8.0
+	Publish Date: 2017-08-16
+	Rating: 8.1 / 10.0
+Name: Standoff Multiplayer APK
+	Author: Axlebolt
+	Version: 1.22.1
+	Publish Date: 2017-08-10
+	Rating: 8.6 / 10.0
+Name: Black APK
+	Author: Garong Games
+	Version: 1.11
+	Publish Date: 2017-05-20
+	Rating: 8.4 / 10.0
+Name: Ultimate Ninja Blazing APK
+	Author: BANDAI NAMCO Entertainment Inc.
+	Version: 2.9.0
+	Publish Date: 2018-08-28
+	Rating: 9.0 / 10.0
+Name: The Walking Dead: Our World
+	Author: Next Games
+	Version: 1.2.3.6
+	Publish Date: 2018-08-25
+	Rating: 7.7 / 10.0
+Name: Gun War: Shooting Games APK
+	Author: Shooter Studio
+	Version: 2.8.0
+	Publish Date: 2018-06-30
+	Rating: 9.4 / 10.0
+Name: Bullet Strike Sniper Games - Free Shooting PvP
+	Author: Horus Entertainment
+	Version: 0.7.2.6
+	Publish Date: 2018-08-29
+	Rating: 8.0 / 10.0
+Name: Firing Squad Battleground
+	Author: The Game Feast
+	Version: 2.0
+	Publish Date: 2018-09-07
+	Rating: 5.4 / 10.0
+Name: KUBOOM APK
+	Author: nobodyshot
+	Version: 1.70
+	Publish Date: 2018-08-03
+	Rating: 8.7 / 10.0
+Name: FRONTLINE COMMANDO: WW2 APK
+	Author: Glu
+	Version: 1.1.0
+	Publish Date: 2015-06-19
+	Rating: 9.2 / 10.0
+Name: Treatanaut
+	Author: Britannia Industries Ltd.
+	Version: 1.0.5
+	Publish Date: 2018-08-14
+	Rating: 0 / 10.0
+Name: WWE 2K18 APK
+	Author: Manan Shah
+	Version: 1.0
+	Publish Date: 2018-03-15
+	Rating: 6.8 / 10.0
+Name: ▶️Real Crime Auto: Vice City
+	Author: Grando
+	Version: 1.0.6
+	Publish Date: 2018-09-14
+	Rating: 6.3 / 10.0
+Name: Ultimate Ben : Earth protector APK
+	Author: G.Animation
+	Version: 1.0.6
+	Publish Date: 2017-03-23
+	Rating: 9.5 / 10.0
+Name: Tomb of the Mask
+	Author: Playgendary
+	Version: 1.3
+	Publish Date: 2018-08-15
+	Rating: 9.2 / 10.0
+Name: Jump Ball Blast
+	Author: XCHANGE
+	Version: 2.1
+	Publish Date: 2018-09-10
+	Rating: 0 / 10.0
+Name: World of Warships Blitz: MMO Navy Fleet War Game APK
+	Author: Wargaming Group
+	Version: 1.8.2
+	Publish Date: 2018-09-21
+	Rating: 9.1 / 10.0
+Name: Blazing Sniper - offline shooting game APK
+	Author: Happy Fish
+	Version: 1.7.0
+	Publish Date: 2018-06-30
+	Rating: 9.0 / 10.0
+Name: Critical Strike CS: Counter Terrorist Online FPS APK
+	Author: VERTIGO GAMES OÜ
+	Version: 5.02
+	Publish Date: 2018-09-22
+	Rating: 7.3 / 10.0
+Name: Sniper Arena: PvP Army Shooter APK
+	Author: Nordcurrent
+	Version: 0.9.9
+	Publish Date: 2018-07-09
+	Rating: 9.0 / 10.0
+Name: Left to Survive PvP Zombie Shooter
+	Author: My.com B.V.
+	Version: 1.0.3
+	Publish Date: 2018-08-23
+	Rating: 8.0 / 10.0
+Name: Horrorfield Unreleased
+	Author: Skytec Games
+	Version: 0.37
+	Publish Date: 2018-08-22
+	Rating: 8.9 / 10.0
+Name: Fighting Tiger - Liberal APK
+	Author: Jiin Feng
+	Version: 2.5.3.1
+	Publish Date: 2018-09-14
+	Rating: 9.2 / 10.0
+Name: Ultimate Saiyan Battle - Goku Tenkaichi
+	Author: Lindoc Option
+	Version: 2.0
+	Publish Date: 2018-03-28
+	Rating: 8.2 / 10.0
+Name: UNKILLED - Zombie Multiplayer Shooter APK
+	Author: MADFINGER Games
+	Version: 1.0.8
+	Publish Date: 2018-09-20
+	Rating: 9.3 / 10.0
+Name: Fire Force - Fire Up
+	Author: SUPER EXPERT
+	Version: 1.0.3
+	Publish Date: 2018-08-03
+	Rating: 10.0 / 10.0
+Name: Dude Theft Wars Open World Sandbox Simulator BETA
+	Author: Poxel Studios
+	Version: 0.82b
+	Publish Date: 2018-05-21
+	Rating: 9.3 / 10.0
+Name: Armajet Unreleased
+	Author: Super Bit Machine
+	Version: 0.99.31
+	Publish Date: 2018-09-20
+	Rating: 8.5 / 10.0
+Name: THE KING OF FIGHTERS-A 2012(F) APK
+	Author: SNK CORPORATION
+	Version: 1.0.5
+	Publish Date: 2016-10-21
+	Rating: 9.2 / 10.0
+Name: 펜타스톰 for kakao(5v5) APK
+	Author: Netmarble
+	Version: 1.24.1.2
+	Publish Date: 2018-08-30
+	Rating: 8.8 / 10.0
+Name: Bomber Friends APK
+	Author: Hyperkani
+	Version: 3.10
+	Publish Date: 2018-09-21
+	Rating: 9.5 / 10.0
+Name: Prison Escape
+	Author: Words Mobile
+	Version: 1.0.9
+	Publish Date: 2018-06-26
+	Rating: 8.5 / 10.0
+Name: Poke Fight-เอลฟ์สุดน่ารัก
+	Author: FANGZENAN
+	Version: 1.0.3
+	Publish Date: 2018-08-20
+	Rating: 10.0 / 10.0
+Name: Injustice: Gods Among Us APK
+	Author: Warner Bros. International Enterprises
+	Version: 2.21
+	Publish Date: 2018-06-14
+	Rating: 8.5 / 10.0
+Name: WWE Immortals APK
+	Author: Warner Bros. International Enterprises
+	Version: 2.6.3
+	Publish Date: 2017-12-04
+	Rating: 8.7 / 10.0
+Name: Honkai Impact 3rd
+	Author: miHoYo Limited
+	Version: 2.2.3
+	Publish Date: 2018-09-05
+	Rating: 9.3 / 10.0
+Name: League of Ninja: Moba Battle
+	Author: ninja moba studio 2018
+	Version: 2.0.8
+	Publish Date: 2018-05-02
+	Rating: 8.2 / 10.0
+Name: San Andreas City : Auto Theft Car gangster
+	Author: CityOfGames
+	Version: 1.4
+	Publish Date: 2018-07-17
+	Rating: 7.4 / 10.0
+Name: Getting Over It
+	Author: Cheesecake
+	Version: 1.0
+	Publish Date: 2017-11-06
+	Rating: 6.0 / 10.0
+Name: MilkChoco - Online FPS APK
+	Author: GameParadiso
+	Version: 1.5.6
+	Publish Date: 2018-09-23
+	Rating: 7.4 / 10.0
+Name: DC: UNCHAINED
+	Author: FourThirtyThree Inc.
+	Version: 1.1.10
+	Publish Date: 2018-07-12
+	Rating: 8.8 / 10.0
+Name: Hero Hunters APK
+	Author: Hothead Games
+	Version: 1.8
+	Publish Date: 2018-08-28
+	Rating: 8.2 / 10.0
+Name: Hide Online
+	Author: HitRock Games
+	Version: 3.1.0
+	Publish Date: 2018-09-04
+	Rating: 9.1 / 10.0
+Name: Dawn Break Origin
+	Author: Auer Media & Entertainment
+	Version: 1.2.0
+	Publish Date: 2018-09-19
+	Rating: 7.5 / 10.0
+Name: Noblemen 1896
+	Author: Foursaken Media
+	Version: 1.03.01.3
+	Publish Date: 2018-05-23
+	Rating: 8.2 / 10.0
+Name: Light x Shadow APK
+	Author: Electronic Soul
+	Version: 1.0.519
+	Publish Date: 2017-12-28
+	Rating: 8.3 / 10.0
+Name: The Last Stand Battle Royale (Unreleased
+	Author: XTEN LIMITED
+	Version: 0.9.98
+	Publish Date: 2018-09-15
+	Rating: 7.6 / 10.0
+Name: Operation Freedom
+	Author: Coola Games
+	Version: 0.0.9
+	Publish Date: 2018-05-08
+	Rating: 7.3 / 10.0
+Name: 300: Seize Your Glory APK
+	Author: Warner Bros. International Enterprises
+	Version: 1.0.0
+	Publish Date: 2014-02-05
+	Rating: 9.4 / 10.0
+Name: Miraculous Ladybug & Cat Noir - The Official Game
+	Author: Crazy Labs by TabTale
+	Version: 1.0.6
+	Publish Date: 2018-07-30
+	Rating: 9.3 / 10.0
+Name: Ninja Arena
+	Author: ninja studio
+	Version: 1.8.0
+	Publish Date: 2018-04-09
+	Rating: 9.3 / 10.0
+Name: Shoot Hunter-Gun Killer APK
+	Author: RAY3D
+	Version: 1.1.2
+	Publish Date: 2018-08-08
+	Rating: 9.3 / 10.0
+Name: Bomb Heroes-Royal Shooter GO APK
+	Author: E-Do Game Studio
+	Version: 1.4.3
+	Publish Date: 2018-08-02
+	Rating: 8.4 / 10.0
+Name: God War: Ghost Of Sparata APK
+	Author: FigMaster Dev
+	Version: 1.0.2
+	Publish Date: 2017-02-07
+	Rating: 8.7 / 10.0
+Name: 모바일 리그 APK
+	Author: MAKER SOMA
+	Version: 1.242
+	Publish Date: 2017-04-12
+	Rating: 7.6 / 10.0
+Name: Modern Warplanes: Thunder Air Strike PvP warfare APK
+	Author: GDCompany
+	Version: 1.8.1
+	Publish Date: 2018-09-19
+	Rating: 9.2 / 10.0
+Name: 🔫The Grand Rampage: Vice City
+	Author: Super FPS Games
+	Version: 1.6
+	Publish Date: 2018-07-19
+	Rating: 6.0 / 10.0
+Name: Ultimate saiyan fighter universe
+	Author: Wulandari puspita suci
+	Version: 2.8
+	Publish Date: 2018-05-10
+	Rating: 9.0 / 10.0
+Name: Battle Craft Survival
+	Author: PixGames - Crafting And Building Adventure Games
+	Version: 1.0
+	Publish Date: 2018-06-07
+	Rating: 8.9 / 10.0
+Name: Sonic the Hedgehog™ Classic APK
+	Author: SEGA
+	Version: 3.3.0
+	Publish Date: 2018-09-17
+	Rating: 9.3 / 10.0
+Name: Auto Theft Gangsters
+	Author: Doodle Mobile Ltd.
+	Version: 1.18
+	Publish Date: 2018-05-29
+	Rating: 9.1 / 10.0
+Name: Real Steel World Robot Boxing APK
+	Author: Reliance Big Entertainment (UK) Private Limited
+	Version: 35.35.010
+	Publish Date: 2018-06-07
+	Rating: 9.3 / 10.0
+Name: War Machines: Free Multiplayer Tank Shooting Games APK
+	Author: Fun Games For Free
+	Version: 3.3.0
+	Publish Date: 2018-09-17
+	Rating: 8.9 / 10.0
+Name: FRAG Pro Shooter (Unreleased
+	Author: Oh BiBi
+	Version: 1.1.1
+	Publish Date: 2018-09-13
+	Rating: 8.5 / 10.0
+Name: Prey Day Survival - Craft & Zombie
+	Author: Pragmatix
+	Version: 1.38
+	Publish Date: 2018-09-19
+	Rating: 8.4 / 10.0
+Name: GUIDE PUBG Mobile - HD Graphics Tools
+	Author: Trending Games Developer
+	Version: 2.0.0
+	Publish Date: 2018-04-15
+	Rating: 8.2 / 10.0
+Name: Real Steel Boxing Champions APK
+	Author: Reliance Big Entertainment (UK) Private Limited
+	Version: 1.0.487
+	Publish Date: 2018-06-05
+	Rating: 9.2 / 10.0
+Name: Fastlane: Road to Revenge APK
+	Author: Space Ape Games
+	Version: 1.36.0.5319
+	Publish Date: 2018-09-05
+	Rating: 9.6 / 10.0
+Name: Gunship Strike 3D APK
+	Author: Candy Mobile
+	Version: 1.0.9
+	Publish Date: 2018-05-28
+	Rating: 9.5 / 10.0
+Name: Agar.io APK
+	Author: Miniclip.com
+	Version: 2.2.10
+	Publish Date: 2018-08-16
+	Rating: 9.0 / 10.0
+Name: Saiyan Arena Online - Beta APK
+	Author: Mercury Games - Indie Game Development
+	Version: 58.4
+	Publish Date: 2017-12-20
+	Rating: 8.6 / 10.0
+Name: Super Saiyan Goku: Dragon Z Fighter
+	Author: VCOMPANY
+	Version: 1.0.6
+	Publish Date: 2018-02-17
+	Rating: 9.0 / 10.0
+Name: Dead Island Survivors - Zombie Tower Defense
+	Author: Deep Silver
+	Version: 1.0
+	Publish Date: 2018-09-13
+	Rating: 8.0 / 10.0
+Name: Zombie Hunter: Post Apocalypse Survival Games APK
+	Author: Genera Games
+	Version: 2.4.2
+	Publish Date: 2017-07-28
+	Rating: 9.2 / 10.0
+Name: SHADOWGUN: DEADZONE APK
+	Author: MADFINGER Games
+	Version: 2.9.0
+	Publish Date: 2018-03-20
+	Rating: 8.9 / 10.0
+Name: Assassin's Creed Pirates
+	Author: Ubisoft Entertainment
+	Version: 2.9.1
+	Publish Date: 2016-07-11
+	Rating: 9.1 / 10.0
+Name: モンスターストライク APK
+	Author: XFLAG, Inc.
+	Version: 12.2.0
+	Publish Date: 2018-09-05
+	Rating: 7.7 / 10.0
+Name: DEER HUNTER 2018 APK
+	Author: Glu
+	Version: 5.1.4
+	Publish Date: 2018-08-30
+	Rating: 9.2 / 10.0
+Name: Mad Town Mafia Storie 2018
+	Author: CreativeLab Games
+	Version: 1.29
+	Publish Date: 2018-09-17
+	Rating: 8.4 / 10.0
+Name: MiniStrike APK
+	Author: Malo The Toad
+	Version: 2.0
+	Publish Date: 2017-04-16
+	Rating: 8.4 / 10.0
+Name: Grand Battle Royale: Pixel FPS APK
+	Author: GameSpire Ltd.
+	Version: 3.2.3
+	Publish Date: 2018-09-08
+	Rating: 8.7 / 10.0
+Name: Arrow.io APK
+	Author: Cheetah Games
+	Version: 1.2.6
+	Publish Date: 2018-08-06
+	Rating: 9.2 / 10.0
+Name: Gun Shoot War APK
+	Author: WAWOO Studio
+	Version: 3.3
+	Publish Date: 2018-05-16
+	Rating: 9.3 / 10.0
+Name: Dragon Crystal Arena Online
+	Author: Dragon Crystal
+	Version: 14
+	Publish Date: 2018-09-22
+	Rating: 9.0 / 10.0
+Name: PUBG MOBILE
+	Author: Tencent Games
+	Version: 0.8.0
+	Publish Date: 2018-09-12
+	Rating: 8.8 / 10.0
+Name: PUBG MOBILE LITE
+	Author: Tencent Games
+	Version: 0.5.1
+	Publish Date: 2018-09-20
+	Rating: 8.5 / 10.0
+Name: Garena Free Fire
+	Author: GARENA INTERNATIONAL I PRIVATE LIMITED
+	Version: 1.22.1
+	Publish Date: 2018-09-12
+	Rating: 9.0 / 10.0
+Name: Creative Destruction
+	Author: ZuoMasterDeveloper
+	Version: 1.0.19
+	Publish Date: 2018-09-20
+	Rating: 9.1 / 10.0
+Name: Mobile Legends: Bang Bang
+	Author: Moonton
+	Version: 1.3.15.3222
+	Publish Date: 2018-09-19
+	Rating: 8.8 / 10.0
+Name: Garena AOV - Arena of Valor: Action MOBA APK
+	Author: MOBA Games Private Limited
+	Version: 1.24.1.2
+	Publish Date: 2018-08-27
+	Rating: 8.7 / 10.0
+Name: RULES OF SURVIVAL
+	Author: NetEase Games
+	Version: 1.194559.197271
+	Publish Date: 2018-09-19
+	Rating: 8.5 / 10.0
+Name: Arena of Valor: 5v5 Arena Game APK
+	Author: Tencent Games
+	Version: 1.24.1.2
+	Publish Date: 2018-08-30
+	Rating: 8.8 / 10.0
+Name: CrossFire: Legends
+	Author: Tencent Games
+	Version: 1.0.9.9
+	Publish Date: 2018-08-31
+	Rating: 8.8 / 10.0
+Name: Special Forces Group 2 APK
+	Author: ForgeGames
+	Version: 3.5
+	Publish Date: 2018-09-09
+	Rating: 9.4 / 10.0
+Name: Graphic Tool for Battlegrounds
+	Author: tsoml
+	Version: 4.5.1
+	Publish Date: 2018-05-10
+	Rating: 9.5 / 10.0
+Name: Hopeless Land Fight for Survival
+	Author: HERO Game
+	Version: 1.0
+	Publish Date: 2018-08-28
+	Rating: 8.6 / 10.0
+Name: PUBG MOBILE
+	Author: PUBG CORPORATION
+	Version: 0.8.0
+	Publish Date: 2018-09-12
+	Rating: 8.3 / 10.0
+Name: Doodle Army 2 : Mini Militia APK
+	Author: Miniclip.com
+	Version: 4.1.2
+	Publish Date: 2018-06-06
+	Rating: 9.3 / 10.0
+Name: Garena Liên Quân Mobile APK
+	Author: Garena Mobile Private
+	Version: 1.24.1.2
+	Publish Date: 2018-08-28
+	Rating: 8.5 / 10.0
+Name: TEKKEN™ APK
+	Author: BANDAI NAMCO Entertainment Europe
+	Version: 1.3
+	Publish Date: 2018-08-23
+	Rating: 8.7 / 10.0
+Name: BETA PUBG MOBILE Unreleased
+	Author: Tencent Games
+	Version: 0.7.0
+	Publish Date: 2018-08-27
+	Rating: 8.3 / 10.0
+Name: Helix Jump
+	Author: VOODOO
+	Version: 1.1.4
+	Publish Date: 2018-08-21
+	Rating: 8.3 / 10.0
+Name: Graphics Tool for PUBG
+	Author: tsoml
+	Version: 2.3
+	Publish Date: 2018-05-16
+	Rating: 9.5 / 10.0
+Name: Pixel Gun 3D Survival shooter & Battle Royale
+	Author: Pixel Gun 3D
+	Version: 15.2.4
+	Publish Date: 2018-09-21
+	Rating: 9.3 / 10.0
+Name: MORTAL KOMBAT X APK
+	Author: Warner Bros. International Enterprises
+	Version: 1.20.0
+	Publish Date: 2018-09-10
+	Rating: 8.6 / 10.0
+Name: The Grand Wars: San Andreas
+	Author: Super FPS Games
+	Version: 1.15
+	Publish Date: 2017-12-08
+	Rating: 7.9 / 10.0
+Name: Garena RoV: Mobile MOBA APK
+	Author: Good Mobile Games Private Limited
+	Version: 1.24.2.2
+	Publish Date: 2018-09-12
+	Rating: 9.1 / 10.0
+Name: WWE Mayhem
+	Author: Reliance Big Entertainment (UK) Private Limited
+	Version: 1.13.374
+	Publish Date: 2018-09-14
+	Rating: 9.2 / 10.0
+Name: Survival Heroes MOBA Battle Royale
+	Author: Snail Games USA Inc
+	Version: 1.0.8
+	Publish Date: 2018-08-29
+	Rating: 8.2 / 10.0
+Name: Sniper 3D Gun Shooter: Free Shooting Games - FPS
+	Author: Fun Games For Free
+	Version: 2.16.9
+	Publish Date: 2018-09-20
+	Rating: 9.5 / 10.0
+Name: Gangstar New Orleans OpenWorld APK
+	Author: Gameloft
+	Version: 1.5.4b
+	Publish Date: 2018-08-30
+	Rating: 8.5 / 10.0
+Name: PAYDAY: Crime War (Unreleased)
+	Author: Starbreeze
+	Version: 180906.1826
+	Publish Date: 2018-09-17
+	Rating: 8.0 / 10.0
+Name: Bullet Battle
+	Author: FORZA GAMES
+	Version: 1.0.5
+	Publish Date: 2018-09-14
+	Rating: 7.9 / 10.0
+Name: Temple Run 2
+	Author: Imangi Studios
+	Version: 1.50.3
+	Publish Date: 2018-09-10
+	Rating: 9.0 / 10.0
+Name: Brawl Stars
+	Author: Supercell
+	Version: 11.113
+	Publish Date: 2018-07-03
+	Rating: 8.6 / 10.0
+Name: PPSSPP - PSP emulator APK
+	Author: Henrik Rydgård
+	Version: 1.6.3
+	Publish Date: 2018-06-06
+	Rating: 9.0 / 10.0
+Name: Critical Ops APK
+	Author: Critical Force Ltd.
+	Version: 0.9.11.f147
+	Publish Date: 2018-09-05
+	Rating: 8.6 / 10.0
+Name: Identity V
+	Author: NetEase Games
+	Version: 1.0.144431
+	Publish Date: 2018-07-10
+	Rating: 8.7 / 10.0
+Name: Garena 傳說對決 APK
+	Author: Garena Games Online
+	Version: 1.24.2.2
+	Publish Date: 2018-09-10
+	Rating: 8.4 / 10.0
+Name: World War Heroes: WW2 Shooter APK
+	Author: Azur Interactive Games Limited
+	Version: 1.8.3
+	Publish Date: 2018-06-22
+	Rating: 9.0 / 10.0
+Name: Kick the Buddy
+	Author: Playgendary
+	Version: 1.0.4
+	Publish Date: 2018-07-05
+	Rating: 8.8 / 10.0
+Name: Cover Fire: shooting games APK
+	Author: Genera Games
+	Version: 1.8.25
+	Publish Date: 2018-09-21
+	Rating: 9.5 / 10.0
+Name: N.O.V.A. Legacy
+	Author: Gameloft
+	Version: 5.5.0e
+	Publish Date: 2018-08-24
+	Rating: 9.0 / 10.0
+Name: Snipers vs Thieves APK
+	Author: PlayStack
+	Version: 1.19.22110
+	Publish Date: 2018-08-30
+	Rating: 9.1 / 10.0
+Name: FRONTLINE COMMANDO: D-DAY APK
+	Author: Glu
+	Version: 3.0.4
+	Publish Date: 2014-05-16
+	Rating: 9.0 / 10.0
+Name: Last Day on Earth: Survival APK
+	Author: Kefir!
+	Version: 1.9.7
+	Publish Date: 2018-09-19
+	Rating: 9.2 / 10.0
+Name: BLEACH Brave Souls APK
+	Author: KLab Global Pte. Ltd.
+	Version: 7.2.1
+	Publish Date: 2018-09-11
+	Rating: 9.2 / 10.0
+Name: BEYBLADE BURST app APK
+	Author: Hasbro Inc.
+	Version: 6.0.0
+	Publish Date: 2018-09-12
+	Rating: 9.5 / 10.0
+Name: Standoff 2 APK
+	Author: Axlebolt
+	Version: 0.9.5
+	Publish Date: 2018-07-12
+	Rating: 9.1 / 10.0
+Name: Bullet Force APK
+	Author: Blayze Games, L.L.C.
+	Version: 1.46
+	Publish Date: 2018-09-15
+	Rating: 9.2 / 10.0
+Name: TheOne
+	Author: Fat Dragon Studio
+	Version: 0.1.7
+	Publish Date: 2018-09-18
+	Rating: 7.6 / 10.0
+Name: Battlelands Royale
+	Author: Futureplay
+	Version: 0.6.6
+	Publish Date: 2018-09-20
+	Rating: 8.8 / 10.0
+Name: The Last Survivor Stay Alive
+	Author: The Skynet Co., Ltd.
+	Version: 1.6.5.175265
+	Publish Date: 2018-08-16
+	Rating: 8.1 / 10.0
+Name: Real Gangster Crime APK
+	Author: Naxeex Studio
+	Version: 3.7
+	Publish Date: 2018-09-18
+	Rating: 8.5 / 10.0
+Name: Dragon Nest M SEA（Dark Avenger）
+	Author: Shanda
+	Version: 1.3.0
+	Publish Date: 2018-09-19
+	Rating: 8.5 / 10.0
+Name: Diamond Rush Original APK
+	Author: J2Game
+	Version: 1.1
+	Publish Date: 2017-06-26
+	Rating: 9.7 / 10.0
+Name: War Song- A 5vs5 MOBA Anywhere Anytime
+	Author: Sixjoy  Limited
+	Version: 1.1.240
+	Publish Date: 2018-08-01
+	Rating: 8.9 / 10.0
+Name: Star Wars: Rivals™ (Unreleased) APK
+	Author: Disney
+	Version: 6.0.2
+	Publish Date: 2018-01-10
+	Rating: 8.1 / 10.0
+Name: PUBG MOBILE
+	Author: Tencent Games
+	Version: 0.8.0
+	Publish Date: 2018-09-12
+	Rating: 8.8 / 10.0
+Name: PUBG MOBILE LITE
+	Author: Tencent Games
+	Version: 0.5.1
+	Publish Date: 2018-09-20
+	Rating: 8.5 / 10.0
+Name: Garena Free Fire
+	Author: GARENA INTERNATIONAL I PRIVATE LIMITED
+	Version: 1.22.1
+	Publish Date: 2018-09-12
+	Rating: 9.0 / 10.0
+Name: Creative Destruction
+	Author: ZuoMasterDeveloper
+	Version: 1.0.19
+	Publish Date: 2018-09-20
+	Rating: 9.1 / 10.0
+Name: Mobile Legends: Bang Bang
+	Author: Moonton
+	Version: 1.3.15.3222
+	Publish Date: 2018-09-19
+	Rating: 8.8 / 10.0
+Name: Garena AOV - Arena of Valor: Action MOBA APK
+	Author: MOBA Games Private Limited
+	Version: 1.24.1.2
+	Publish Date: 2018-08-27
+	Rating: 8.7 / 10.0
+Name: RULES OF SURVIVAL
+	Author: NetEase Games
+	Version: 1.194559.197271
+	Publish Date: 2018-09-19
+	Rating: 8.5 / 10.0
+Name: Arena of Valor: 5v5 Arena Game APK
+	Author: Tencent Games
+	Version: 1.24.1.2
+	Publish Date: 2018-08-30
+	Rating: 8.8 / 10.0
+Name: CrossFire: Legends
+	Author: Tencent Games
+	Version: 1.0.9.9
+	Publish Date: 2018-08-31
+	Rating: 8.8 / 10.0
+Name: Special Forces Group 2 APK
+	Author: ForgeGames
+	Version: 3.5
+	Publish Date: 2018-09-09
+	Rating: 9.4 / 10.0
+Name: Graphic Tool for Battlegrounds
+	Author: tsoml
+	Version: 4.5.1
+	Publish Date: 2018-05-10
+	Rating: 9.5 / 10.0
+Name: Hopeless Land Fight for Survival
+	Author: HERO Game
+	Version: 1.0
+	Publish Date: 2018-08-28
+	Rating: 8.6 / 10.0
+Name: PUBG MOBILE
+	Author: PUBG CORPORATION
+	Version: 0.8.0
+	Publish Date: 2018-09-12
+	Rating: 8.3 / 10.0
+Name: Doodle Army 2 : Mini Militia APK
+	Author: Miniclip.com
+	Version: 4.1.2
+	Publish Date: 2018-06-06
+	Rating: 9.3 / 10.0
+Name: Garena Liên Quân Mobile APK
+	Author: Garena Mobile Private
+	Version: 1.24.1.2
+	Publish Date: 2018-08-28
+	Rating: 8.5 / 10.0
+Name: TEKKEN™ APK
+	Author: BANDAI NAMCO Entertainment Europe
+	Version: 1.3
+	Publish Date: 2018-08-23
+	Rating: 8.7 / 10.0
+Name: BETA PUBG MOBILE Unreleased
+	Author: Tencent Games
+	Version: 0.7.0
+	Publish Date: 2018-08-27
+	Rating: 8.3 / 10.0
+Name: Helix Jump
+	Author: VOODOO
+	Version: 1.1.4
+	Publish Date: 2018-08-21
+	Rating: 8.3 / 10.0
+Name: Graphics Tool for PUBG
+	Author: tsoml
+	Version: 2.3
+	Publish Date: 2018-05-16
+	Rating: 9.5 / 10.0
+Name: Pixel Gun 3D Survival shooter & Battle Royale
+	Author: Pixel Gun 3D
+	Version: 15.2.4
+	Publish Date: 2018-09-21
+	Rating: 9.3 / 10.0
+Name: MORTAL KOMBAT X APK
+	Author: Warner Bros. International Enterprises
+	Version: 1.20.0
+	Publish Date: 2018-09-10
+	Rating: 8.6 / 10.0
+Name: The Grand Wars: San Andreas
+	Author: Super FPS Games
+	Version: 1.15
+	Publish Date: 2017-12-08
+	Rating: 7.9 / 10.0
+Name: Garena RoV: Mobile MOBA APK
+	Author: Good Mobile Games Private Limited
+	Version: 1.24.2.2
+	Publish Date: 2018-09-12
+	Rating: 9.1 / 10.0
+Name: WWE Mayhem
+	Author: Reliance Big Entertainment (UK) Private Limited
+	Version: 1.13.374
+	Publish Date: 2018-09-14
+	Rating: 9.2 / 10.0
+Name: Survival Heroes MOBA Battle Royale
+	Author: Snail Games USA Inc
+	Version: 1.0.8
+	Publish Date: 2018-08-29
+	Rating: 8.2 / 10.0
+Name: Sniper 3D Gun Shooter: Free Shooting Games - FPS
+	Author: Fun Games For Free
+	Version: 2.16.9
+	Publish Date: 2018-09-20
+	Rating: 9.5 / 10.0
+Name: Gangstar New Orleans OpenWorld APK
+	Author: Gameloft
+	Version: 1.5.4b
+	Publish Date: 2018-08-30
+	Rating: 8.5 / 10.0
+Name: PAYDAY: Crime War (Unreleased)
+	Author: Starbreeze
+	Version: 180906.1826
+	Publish Date: 2018-09-17
+	Rating: 8.0 / 10.0
+Name: Bullet Battle
+	Author: FORZA GAMES
+	Version: 1.0.5
+	Publish Date: 2018-09-14
+	Rating: 7.9 / 10.0
+Name: Temple Run 2
+	Author: Imangi Studios
+	Version: 1.50.3
+	Publish Date: 2018-09-10
+	Rating: 9.0 / 10.0
+Name: Brawl Stars
+	Author: Supercell
+	Version: 11.113
+	Publish Date: 2018-07-03
+	Rating: 8.6 / 10.0
+Name: PPSSPP - PSP emulator APK
+	Author: Henrik Rydgård
+	Version: 1.6.3
+	Publish Date: 2018-06-06
+	Rating: 9.0 / 10.0
+Name: Critical Ops APK
+	Author: Critical Force Ltd.
+	Version: 0.9.11.f147
+	Publish Date: 2018-09-05
+	Rating: 8.6 / 10.0
+Name: Identity V
+	Author: NetEase Games
+	Version: 1.0.144431
+	Publish Date: 2018-07-10
+	Rating: 8.7 / 10.0
+Name: Garena 傳說對決 APK
+	Author: Garena Games Online
+	Version: 1.24.2.2
+	Publish Date: 2018-09-10
+	Rating: 8.4 / 10.0
+Name: World War Heroes: WW2 Shooter APK
+	Author: Azur Interactive Games Limited
+	Version: 1.8.3
+	Publish Date: 2018-06-22
+	Rating: 9.0 / 10.0
+Name: Kick the Buddy
+	Author: Playgendary
+	Version: 1.0.4
+	Publish Date: 2018-07-05
+	Rating: 8.8 / 10.0
+Name: Cover Fire: shooting games APK
+	Author: Genera Games
+	Version: 1.8.25
+	Publish Date: 2018-09-21
+	Rating: 9.5 / 10.0
+Name: N.O.V.A. Legacy
+	Author: Gameloft
+	Version: 5.5.0e
+	Publish Date: 2018-08-24
+	Rating: 9.0 / 10.0
+Name: Snipers vs Thieves APK
+	Author: PlayStack
+	Version: 1.19.22110
+	Publish Date: 2018-08-30
+	Rating: 9.1 / 10.0
+Name: FRONTLINE COMMANDO: D-DAY APK
+	Author: Glu
+	Version: 3.0.4
+	Publish Date: 2014-05-16
+	Rating: 9.0 / 10.0
+Name: Last Day on Earth: Survival APK
+	Author: Kefir!
+	Version: 1.9.7
+	Publish Date: 2018-09-19
+	Rating: 9.2 / 10.0
+Name: BLEACH Brave Souls APK
+	Author: KLab Global Pte. Ltd.
+	Version: 7.2.1
+	Publish Date: 2018-09-11
+	Rating: 9.2 / 10.0
+Name: BEYBLADE BURST app APK
+	Author: Hasbro Inc.
+	Version: 6.0.0
+	Publish Date: 2018-09-12
+	Rating: 9.5 / 10.0
+Name: Standoff 2 APK
+	Author: Axlebolt
+	Version: 0.9.5
+	Publish Date: 2018-07-12
+	Rating: 9.1 / 10.0
+Name: Bullet Force APK
+	Author: Blayze Games, L.L.C.
+	Version: 1.46
+	Publish Date: 2018-09-15
+	Rating: 9.2 / 10.0
+Name: TheOne
+	Author: Fat Dragon Studio
+	Version: 0.1.7
+	Publish Date: 2018-09-18
+	Rating: 7.6 / 10.0
+Name: Battlelands Royale
+	Author: Futureplay
+	Version: 0.6.6
+	Publish Date: 2018-09-20
+	Rating: 8.8 / 10.0
+Name: The Last Survivor Stay Alive
+	Author: The Skynet Co., Ltd.
+	Version: 1.6.5.175265
+	Publish Date: 2018-08-16
+	Rating: 8.1 / 10.0
+Name: Real Gangster Crime APK
+	Author: Naxeex Studio
+	Version: 3.7
+	Publish Date: 2018-09-18
+	Rating: 8.5 / 10.0
+Name: Dragon Nest M SEA（Dark Avenger）
+	Author: Shanda
+	Version: 1.3.0
+	Publish Date: 2018-09-19
+	Rating: 8.5 / 10.0
+Name: PUBG MOBILE
+	Author: Tencent Games
+	Version: 0.8.0
+	Publish Date: 2018-09-12
+	Rating: 8.8 / 10.0
+Name: PUBG MOBILE LITE
+	Author: Tencent Games
+	Version: 0.5.1
+	Publish Date: 2018-09-20
+	Rating: 8.5 / 10.0
+Name: Garena Free Fire
+	Author: GARENA INTERNATIONAL I PRIVATE LIMITED
+	Version: 1.22.1
+	Publish Date: 2018-09-12
+	Rating: 9.0 / 10.0
+Name: Creative Destruction
+	Author: ZuoMasterDeveloper
+	Version: 1.0.19
+	Publish Date: 2018-09-20
+	Rating: 9.1 / 10.0
