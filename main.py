@@ -23,20 +23,16 @@ def getDevPages(url):
     return pagesToVisit
 
 
-
 def getDataTitle(url):
     time.sleep(1)
     r = requests.get(url)
     soup = BeautifulSoup(r.content, "lxml")  # there are faster parsers
     headerContents = soup.find("div", {"class": "site-header-contents"})
 
-    t = headerContents.find("h1", {"class": "marginZero wrapText app-title fontBlack noHover"})
-    return t.text
-
-
-
-
-
+    if headerContents.find("h1", {"class": "marginZero wrapText app-title fontBlack noHover"}):
+        t = headerContents.find("h1", {"class": "marginZero wrapText app-title fontBlack noHover"})
+        return t.text
+    return ""
 
 
 def seeMoreUploads(url):
@@ -92,7 +88,7 @@ def main():
     f = open(outFile, "a")
     i=1
     pagesToVisit = []
-    while i<28:
+    while i<2:
         if i == 1:
             pagesToVisit = getDevPages(url)
         else:
