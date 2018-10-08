@@ -10,21 +10,36 @@ def logErrorApps(outputFile, line):
 
 
 def getCategories(url):
+    outFile = "UpToDown Crawler Output.txt"
+
     r = requests.get(url)
     soup = BeautifulSoup(r.content, "lxml")  # there are faster parsers
 
     categoriesToVisit = []
 
-    categories = soup.find_all("div", {"class": "unit"})
+    generalCategories = soup.find_all("div", {"class": "unit"})
 
-    for links in categories:
-        for a in links.find_all("a", href=True):
-            if a.text == "Family":
-                continue
-            elif a.text:
-                categoriesToVisit.append(url + a["href"])
+    f = open(outFile, "a")
+    f.write("Categories:\n")
 
-    print(categoriesToVisit)
+    for links in generalCategories:
+        for a in links.find_all("a", href=True, title=True):
+            f.write("\t" + a["href"].split('/')[len(a["href"].split('/')) - 1] + "\n")
+
+            r2 = requests.get(a["href"])
+            soup2 = BeautifulSoup(r2.content, "lxml")
+
+            categories = soup2.find_all("div", {"class": "unit"})
+
+            for links2 in categories:
+                for a2 in links2.find_all("a", href=True):
+                    f.write("\t\t" + a2["href"].split('/')[len(a2["href"].split('/')) - 1] + "\n")
+
+                    categoriesToVisit.append(a2["href"])
+
+    f.write("\n\n")
+    f.close()
+
     return categoriesToVisit
 
 
@@ -32,11 +47,13 @@ def getApps(url, baseURL):
     r = requests.get(url)
     soup = BeautifulSoup(r.content, "lxml")  # there are faster parsers
 
-    apps = soup.find_all("div", {"class": "category-template-title"})
+    apps = soup.find_all("div", {"class": "app_card_tit"})
     for links in apps:  # Runs 20 apps at a time
-        linkToVisit = baseURL + links.contents[0].get("href")
-        getAppData(linkToVisit)
-        getAllVersions(url, linkToVisit)
+        for a in links.find_all("a", href=True):
+            linkToVisit = a["href"]
+            getAppData(linkToVisit)
+            getAllVersions(linkToVisit + "/old")
+            return False # limit to one for testing - delete this
 
     if not apps:
         return False
@@ -44,32 +61,35 @@ def getApps(url, baseURL):
         return True
 
 
-def getAllVersions(url, appPage):
+def getAllVersions(appPage):
     r = requests.get(appPage)
     soup = BeautifulSoup(r.content, "lxml")
-    versionList = soup.find("ul", {"class": "ver-wrap"})  # format 1
-    versionListAlt = soup.find("div", {"class": "faq_cat"})  # format 2
-    if versionList:
-        versionList = versionList.findAll("li")
-        for version in versionList:
-            writeAllVersions(version.contents[3].contents[1].contents[1].split(' ')[1],
-                             version.contents[3].contents[3].contents[1].contents[1],
-                             version.contents[3].contents[3].contents[7].contents[1])
-            getAPK(url + version.contents[1].attrs['href'])
-    elif versionListAlt:
-        versionListAlt = versionListAlt.findAll("dd")
-        for version in versionListAlt:
-            downloadLink = version.find("a", {"class": " down"})
-            writeAllVersions(version.contents[1].contents[1].split(' ')[0],
-                             version.contents[3].contents[1],
-                             version.contents[7].contents[1])
-            getAPK(url + downloadLink.attrs['href'])
-    else:
-        logErrorApps("versions.txt", appPage)
+    versionList = soup.find_all("span", {"class": "app_card_version"})
+    for version in versionList:
+        writeAllVersions(version.get_text(), '', '')
+    # versionList = soup.find("ul", {"class": "ver-wrap"})  # format 1
+    # versionListAlt = soup.find("div", {"class": "faq_cat"})  # format 2
+    # if versionList:
+    #     versionList = versionList.findAll("li")
+    #     for version in versionList:
+    #         writeAllVersions(version.contents[3].contents[1].contents[1].split(' ')[1],
+    #                          version.contents[3].contents[3].contents[1].contents[1],
+    #                          version.contents[3].contents[3].contents[7].contents[1])
+    #         getAPK(version.contents[1].attrs['href'])
+    # elif versionListAlt:
+    #     versionListAlt = versionListAlt.findAll("dd")
+    #     for version in versionListAlt:
+    #         downloadLink = version.find("a", {"class": " down"})
+    #         writeAllVersions(version.contents[1].contents[1].split(' ')[0],
+    #                          version.contents[3].contents[1],
+    #                          version.contents[7].contents[1])
+    #         getAPK(downloadLink.attrs['href'])
+    # else:
+    #     logErrorApps("versions.txt", appPage)
 
 
 def getAppData(appPage):
-    r = requests.get(appPage)
+    r = requests.get(appPage + "/download")
     soup = BeautifulSoup(r.content, "lxml")  # there are faster parsers
     flag = 0
     name = ""
@@ -79,19 +99,18 @@ def getAppData(appPage):
     description = ""
 
     # Name -- good
-    breadCrumbs = soup.find("div", {"class": "title bread-crumbs"})
+    breadCrumbs = soup.find("h1", {"class": "name"})
     if breadCrumbs:
-        apkName = breadCrumbs.find("span").text
-        apkName = apkName.replace("\n", "").replace("/", "_").lstrip().rstrip()
-        name = apkName
+        name = breadCrumbs.text
         flag = 1
     else:
         logErrorApps("NameCheck.txt", appPage)
 
     # Author -- good
-    authorSoup = soup.find("p", {"itemtype": "http://schema.org/Organization"})
+    authorSoup = soup.find("div", {"class": "author"})
     if authorSoup:
-        author = authorSoup.text
+        authorSpan = authorSoup.find("span")
+        author = authorSpan.text
     else:
         logErrorApps("AuthorCheck.txt", appPage)
 
@@ -103,18 +122,20 @@ def getAppData(appPage):
     #
 
     # Description -- good
-    descriptionSoup = soup.find("div", {"class": "description"})
+    r2 = requests.get(appPage)
+    soup2 = BeautifulSoup(r2.content, "lxml")
+    descriptionSoup = soup2.find("div", {"class": "text-description"})
     if descriptionSoup:
-        description = descriptionSoup
+        for child in descriptionSoup:
+            if child.name != "div" and child.name != "br":
+                description += str(child).replace('\n', ' ')
     else:
         logErrorApps("DescriptionCheck.txt", appPage)
 
     # Rating -- good
-    ratingSoup = soup.find("span", {"class": "average"})
+    ratingSoup = soup.find("p", {"class": "star"})
     if ratingSoup:
-        ratings = ratingSoup.contents[0]
-    elif flag == 1:
-        ratings = "0.0"
+        ratings = ratingSoup.get_text()
     else:
         logErrorApps("RatingCheck.txt", appPage)
 
@@ -153,23 +174,23 @@ def getAPK(url):
 
 def writeOutput(name, author, reviews, ratings, description):
     # write to file - text for now
-    outFile = "ApkPure Crawler Output.txt"
+    outFile = "UpToDown Crawler Output.txt"
     f = open(outFile, "a")
     f.write(("Name: " + name +
              "\n\tAuthor: " + author +
-             "\n\tRating: " + ratings + " / 10.0" +
-             "\n\tVersions:"
+             "\n\tRating: " + ratings + " / 5.0" +
+             "\n\tDescription: " + description +
              "\n"))
     f.close()
 
 
 def writeAllVersions(version, publishDate, shaValue):
     # write to file - text for now
-    outFile = "ApkPure Crawler Output.txt"
+    outFile = "UpToDown Crawler Output.txt"
     f = open(outFile, "a")
     f.write(("\t\tVersion: " + version +
-             "\n\t\tPublish Date: " + publishDate +
-             "\n\t\tSha Value: " + shaValue +
+            #  "\n\t\tPublish Date: " + publishDate +
+            #  "\n\t\tSha Value: " + shaValue +
              "\n"))
     f.close()
 
@@ -177,16 +198,21 @@ def writeAllVersions(version, publishDate, shaValue):
 def main():
     url = "https://en.uptodown.com/android"
 
-    f = open("UpToDown Crawler Output.txt", "w")
+    outFile = "UpToDown Crawler Output.txt"
+    f = open(outFile, "w")
     f.write("")
     f.close()
+
+    counter = 0
 
     categoriesToVisit = getCategories(url)
     for categories in categoriesToVisit:
 
-        pageNumber = 1
-        while getApps((categories + "?page=" + pageNumber.__str__()), url):
-            pageNumber += 1
+        while getApps(categories + "/free", url):
+            print("")
+        if (counter >= 4):
+            return # only do 5 categories for testing - delete
+        counter += 1
 
 
 if __name__ == '__main__':
