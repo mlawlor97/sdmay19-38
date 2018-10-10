@@ -4,7 +4,7 @@ import time
 import winsound
 
 def getDevPages(url):
-    time.sleep(1)
+    time.sleep(5)
     r = requests.get(url)
     soup = BeautifulSoup(r.content, "lxml")  # there are faster parsers
     urlforPaste = "https://www.apkmirror.com"
@@ -24,19 +24,23 @@ def getDevPages(url):
 
 
 def getDataTitle(url):
-    time.sleep(1)
+    time.sleep(5)
     r = requests.get(url)
     soup = BeautifulSoup(r.content, "lxml")  # there are faster parsers
     headerContents = soup.find("div", {"class": "site-header-contents"})
+    info = []
 
     if headerContents.find("h1", {"class": "marginZero wrapText app-title fontBlack noHover"}):
         t = headerContents.find("h1", {"class": "marginZero wrapText app-title fontBlack noHover"})
-        return t.text
-    return ""
-
+        info.append(t.text)
+    if headerContents.find("h3", {"class": "marginZero dev-title wrapText"}):
+        n = headerContents.find("h3", {"class": "marginZero dev-title wrapText"})
+        a = n.find("a", {"class": None})
+        info.append(a.text)
+    return info
 
 def seeMoreUploads(url):
-    time.sleep(1)
+    time.sleep(5)
     r = requests.get(url)
     urlforPaste = "https://www.apkmirror.com"
     soup = BeautifulSoup(r.content, "lxml")  # there are faster parsers
@@ -55,7 +59,7 @@ def seeMoreUploads(url):
     return morePagesToVisit
 
 def openPages(url):
-    time.sleep(1)
+    time.sleep(5)
     r = requests.get(url)
     soup = BeautifulSoup(r.content, "lxml")  # there are faster parsers
     urlforPaste = "https://www.apkmirror.com"
@@ -85,9 +89,9 @@ def main():
     f.write("")
     f.close()
     outFile = "ApkMirror Crawler Output.txt"
-    f = open(outFile, "a")
     i=1
     pagesToVisit = []
+    info = []
     while i<2:
         if i == 1:
             pagesToVisit = getDevPages(url)
@@ -97,14 +101,30 @@ def main():
         for link in pagesToVisit:
             o = openPages(link)
             for l in o:
-                tit = getDataTitle(l)
-                f.write(tit)
-                f.write("\n")
+                infoTemp = getDataTitle(l)
+                for it in infoTemp:
+                    info.append(it)
         i+=1
         duration = 1000  # millisecond
         freq = 440  # Hz
         winsound.Beep(freq, duration)
+
+
+    f = open(outFile, "a")
+    for idx, item in enumerate(info):
+        if(idx==0):
+            f.write(item + "\n")
+        elif(idx==1):
+            f.write("\t" + item + "\n")
+        else:
+            if(idx%2==0):
+                f.write(item + "\n")
+            else:
+                f.write("\t" + item + "\n")
+
     f.close()
+
+
 
 
 
