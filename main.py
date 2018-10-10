@@ -1,4 +1,3 @@
-
 import requests
 import os.path
 from bs4 import BeautifulSoup
@@ -28,14 +27,15 @@ def getCategories(url):
     return categoriesToVisit
 
 
-def getApps(url, appsToVisit, baseURL):  # also get versions TODO
+def getApps(url, baseURL):
     r = requests.get(url)
     soup = BeautifulSoup(r.content, "lxml")  # there are faster parsers
 
     apps = soup.find_all("div", {"class": "category-template-title"})
     for links in apps:  # Runs 20 apps at a time
-        # appsToVisit.append("https://apkpure.com" + links.contents[0].get("href"))
-        getAppData(baseURL, baseURL + links.contents[0].get("href"))
+        linkToVisit = baseURL + links.contents[0].get("href")
+        appName = getAppData(linkToVisit)
+        getAllVersions(url, linkToVisit, appName)
 
     if not apps:
         return False
@@ -43,18 +43,58 @@ def getApps(url, appsToVisit, baseURL):  # also get versions TODO
         return True
 
 
-def getAppData(url, linksToVisit):
-    r = requests.get(linksToVisit)
+def getAllVersions(url, appPage, appName):
+    savePath = os.getcwd() + "/apks/" + appName + "/"
+    shortPath = "/apks/" + appName + "/"
+
+    try:
+        os.mkdir(savePath)
+    except OSError:
+        print("Creation of the directory %s failed" % shortPath)
+    else:
+        print("Successfully created the directory %s " % shortPath)
+
+    r = requests.get(appPage)
+    soup = BeautifulSoup(r.content, "lxml")
+    moreVersions = soup.find("div", {"class": "ver-title"})
+    if moreVersions and moreVersions.contents[3]:
+        versionPage = appPage + '/versions'
+        r = requests.get(versionPage)
+        soup = BeautifulSoup(r.content, "lxml")
+    versionList = soup.find("ul", {"class": "ver-wrap"})  # format 1
+    versionListAlt = soup.find("div", {"class": "faq_cat"})  # format 2
+    if versionList:
+        versionList = versionList.findAll("li")
+        for version in versionList:
+            downloadLink = version.contents[1].attrs['href']
+            version = version.contents[3]
+            writeAllVersions(version.contents[1].contents[1].split(' ')[1],
+                             version.contents[3].contents[1].contents[1],
+                             version.contents[3].contents[7].contents[1])
+            getAPK(url + downloadLink, savePath)
+    elif versionListAlt:
+        versionListAlt = versionListAlt.findAll("dd")
+        for version in versionListAlt:
+            downloadLink = version.find("a", {"class": " down"}).attrs['href']
+            writeAllVersions(version.contents[1].contents[1].split(' ')[0],
+                             version.contents[3].contents[1],
+                             version.contents[7].contents[1])
+            getAPK(url + downloadLink, savePath)
+    else:
+        logErrorApps("versions.txt", appPage)
+
+
+def getAppData(appPage):
+    r = requests.get(appPage)
     soup = BeautifulSoup(r.content, "lxml")  # there are faster parsers
     flag = 0
-    apkName = ""
     name = ""
     author = ""
-    version = ""
-    publishDate = ""
     reviews = ""
     ratings = ""
     description = ""
+    packageName = ""
+    category = ""
 
     # Name -- good
     breadCrumbs = soup.find("div", {"class": "title bread-crumbs"})
@@ -64,34 +104,22 @@ def getAppData(url, linksToVisit):
         name = apkName
         flag = 1
     else:
-        logErrorApps("NameCheck.txt", linksToVisit)
+        logErrorApps("NameCheck.txt", appPage)
 
     # Author -- good
     authorSoup = soup.find("p", {"itemtype": "http://schema.org/Organization"})
     if authorSoup:
         author = authorSoup.text
     else:
-        logErrorApps("AuthorCheck.txt", linksToVisit)
+        logErrorApps("AuthorCheck.txt", appPage)
 
-    # Version -- good
-    versionSoup = soup.find("ul", {"class": "version-ul"})
-    versionSoupAlt = soup.find("div", {"class": "details-sdk"})
-    if versionSoup:
-        version = versionSoup.contents[3].contents[3].text.split(" ", 1)[0]
-    elif versionSoupAlt:
-        version = versionSoupAlt.text.split(" ", 1)[0]
+    # Category -- good
+    categorySoup = soup.find("div", {"class": "additional"})
+    if categorySoup:
+        categorySoup = categorySoup.find("a")
+        category = categorySoup.contents[2].text
     else:
-        logErrorApps("VersionCheck.txt", linksToVisit)
-
-    # Publish Date -- good
-    publishSoup = versionSoup
-    publishSoupAlt = soup.find("div", {"class", "additional"})
-    if publishSoup:
-        publishDate = publishSoup.contents[5].contents[3].text
-    elif publishSoupAlt:
-        publishDate = publishSoupAlt.contents[1].contents[5].contents[3].text
-    else:
-        logErrorApps("PublishCheck.txt", linksToVisit)
+        logErrorApps("CategoryCheck.txt", appPage)
 
     # Reviews -- TODO
     #
@@ -103,9 +131,9 @@ def getAppData(url, linksToVisit):
     # Description -- good
     descriptionSoup = soup.find("div", {"class": "description"})
     if descriptionSoup:
-        description = descriptionSoup
+        description = descriptionSoup.contents[3].text
     else:
-        logErrorApps("DescriptionCheck.txt", linksToVisit)
+        logErrorApps("DescriptionCheck.txt", appPage)
 
     # Rating -- good
     ratingSoup = soup.find("span", {"class": "average"})
@@ -114,34 +142,35 @@ def getAppData(url, linksToVisit):
     elif flag == 1:
         ratings = "0.0"
     else:
-        logErrorApps("RatingCheck.txt", linksToVisit)
+        logErrorApps("RatingCheck.txt", appPage)
 
-    getAPK(linksToVisit, apkName)
+    # Package Name
+    packageName = appPage.split("/")[4]
+
+    # getAPK(linksToVisit)
 
     # write to db when available
-    writeOutput(name, author, version, publishDate, reviews, ratings, description)
+    writeOutput(name, author, reviews, ratings, description, packageName, category)
 
-# APk -- sha info TODO
-def getAPK(url, name):
-    savePath = "./apks"
+    return name
+
+
+def getAPK(url, savePath):
     r = requests.get(url)
     soup = BeautifulSoup(r.content, "html5lib")  # there are faster parsers
+    linkToDownload = soup.find("a", {"id": "download_link"})
 
-    if (soup.find("a", {"class": " da"})):
-        linkToDownload =  soup.find("a", {"class": " da"}).get("href")
-        newRequest = requests.get("https://apkpure.com" + linkToDownload)
-        newSoup = BeautifulSoup(newRequest.content, "html5lib")
-        if (newSoup.find("a", {"id": "download_link"})):
-            apk = newSoup.find("a", {"id": "download_link"})["href"]
-            fileName = newSoup.find("span", {"class": "file"}).contents[0]
+    if linkToDownload:
+        apk = linkToDownload.get("href")
+        fileName = soup.find("span", {"class": "file"}).contents[0]
 
-            session = requests.Session()
-            s = session.get(apk)
+        session = requests.Session()
+        s = session.get(apk)
 
-            completeName = os.path.join(savePath, fileName)
-            file = open(completeName, "wb")
-            file.write(s.content)
-            file.close()
+        completeName = os.path.join(savePath, fileName)
+        file = open(completeName, "wb")
+        file.write(s.content)
+        file.close()
     else:
         outFile = "APKCheck.txt"
         f = open(outFile, "a")
@@ -149,23 +178,34 @@ def getAPK(url, name):
         f.close()
 
 
-
-def writeOutput(name, author, version, publishDate, reviews, ratings, description):
+def writeOutput(name, author, reviews, ratings, description, packageName, category):
     # write to file - text for now
     outFile = "ApkPure Crawler Output.txt"
     f = open(outFile, "a")
     f.write(("Name: " + name +
              "\n\tAuthor: " + author +
-             "\n\tVersion: " + version +
-             "\n\tPublish Date: " + publishDate +
+             "\n\tCategory: " + category +
              "\n\tRating: " + ratings + " / 10.0" +
+             "\n\tPackage Name: " + packageName +
+             "\n\tDescription: " + description +
+             "\n\tVersions:"
+             "\n"))
+    f.close()
+
+
+def writeAllVersions(version, publishDate, shaValue):
+    # write to file - text for now
+    outFile = "ApkPure Crawler Output.txt"
+    f = open(outFile, "a")
+    f.write(("\t\tVersion: " + version +
+             "\n\t\tPublish Date: " + publishDate +
+             "\n\t\tSha Value: " + shaValue +
              "\n"))
     f.close()
 
 
 def main():
     url = "https://apkpure.com"
-    appsToVisit = []
 
     f = open("ApkPure Crawler Output.txt", "w")
     f.write("")
@@ -175,12 +215,8 @@ def main():
     for categories in categoriesToVisit:
 
         pageNumber = 1
-        while getApps((categories + "?page=" + pageNumber.__str__()), appsToVisit, url):
+        while getApps((categories + "?page=" + pageNumber.__str__()), url):
             pageNumber += 1
-
-        # print(categories + ":\t" + len(appsToVisit).__str__())
-        # for app in appsToVisit:
-        #     getAppData(url, app)
 
 
 if __name__ == '__main__':
