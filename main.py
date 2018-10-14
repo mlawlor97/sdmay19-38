@@ -26,7 +26,7 @@ def makeDirectory(appName):
         os.mkdir(savePath + "reviews/")
         os.mkdir(savePath + "apks/")
     except OSError:
-        print("")
+        print("Failed to create directory %s " % savePath)
     else:
         print("Successfully created the directory %s " % savePath)
 
@@ -34,7 +34,7 @@ def makeDirectory(appName):
         os.mkdir(savePath + "reviews/" + appName)
         os.mkdir(savePath + "apks/" + appName)
     except OSError:
-        print("")
+        print("Failed to create directory %s " % savePath)
     else:
         print("Successfully created the directory %s " % savePath)
 
@@ -64,18 +64,12 @@ def getApps(url, baseURL):
     soup = BeautifulSoup(r.content, "lxml")  # there are faster parsers
 
     apps = soup.find_all("div", {"class": "category-template-title"})
-    # for links in apps:  # Runs 20 apps at a time
-    #     linkToVisit = baseURL + links.contents[0].get("href")
-    #     appName = getAppData(linkToVisit)
-    #     savePath = makeDirectory(appName)
-    #     getAllVersions(baseURL, linkToVisit, savePath + "apks/" + appName)
-    #     getAllReviews(baseURL, appName, savePath + "reviews/" + appName)
-
-    linkToVisit = 'https://apkpure.com/dealspure/com.dealspure.wild'
-    appName = getAppData(linkToVisit)
-    savePath = makeDirectory(appName)
-    getAllVersions(baseURL, linkToVisit, savePath + "apks/" + appName)
-    getAllReviews(baseURL, appName, savePath + "reviews/" + appName)
+    for links in apps:  # Runs 20 apps at a time
+        linkToVisit = baseURL + links.contents[0].get("href")
+        appName = getAppData(linkToVisit)
+        savePath = makeDirectory(appName)
+        getAllVersions(baseURL, linkToVisit, savePath + "apks/" + appName)
+        getAllReviews(baseURL, appName, savePath + "reviews/" + appName)
 
     if apps:
         return True
@@ -84,7 +78,6 @@ def getApps(url, baseURL):
 
 
 def getAllVersions(url, appPage, savePath):
-    print(savePath)
     r = requests.get(appPage)
     soup = BeautifulSoup(r.content, "lxml")
     moreVersions = soup.find("div", {"class": "ver-title"})
@@ -234,10 +227,7 @@ def getAPK(url, savePath):
         file.write(s.content)
         file.close()
     else:
-        outFile = "APKCheck.txt"
-        f = open(outFile, "a")
-        f.write(url + "\n")
-        f.close()
+        logErrorApps("APKCheck.txt", url)
 
 
 def writeOutput(name, author, ratings, description, packageName, category):
@@ -279,7 +269,6 @@ def main():
         pageNumber = 1
         while getApps((categories + "?page=" + pageNumber.__str__()), url):
             pageNumber += 1
-            # return
 
 
 if __name__ == '__main__':

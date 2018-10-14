@@ -14,18 +14,3 @@ Download the DealsPure app and start saving today!
 - Find online coupons by brands or stores, and easily copy and apply them at checkout.
 - Share your favorite finds on Facebook, twitter, etc.
 	Versions:
-		Version: 1.0.3
-		Publish Date: 2018-08-15
-		Sha Value: 132ea95886dae4c38182936dfb025faf7a2dc275
-		Version: 1.0.2
-		Publish Date: 2018-08-01
-		Sha Value: e0d2ef15b697f5dc599487b946970caa516866e4
-		Version: 1.0.1
-		Publish Date: 2018-07-24
-		Sha Value: 53e8faf485b1ebc77068a19544f9f5164c071ae2
-		Version: 1.0.1
-		Publish Date: 2018-07-18
-		Sha Value: a877f03692106318c75bae93a1fbfda4960592e1
-		Version: 1.0.0
-		Publish Date: 2018-07-13
-		Sha Value: 5a41c8b88aa264f609d7450d9097329e89dc18ef
