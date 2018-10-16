@@ -2,6 +2,20 @@ import requests
 import re
 import os
 from bs4 import BeautifulSoup
+from selenium import webdriver
+import time
+
+
+# TODO Fix. Will work with browser specified
+def click(url, tag, index):
+    phantom = webdriver.Safari()
+    phantom.get(url)
+    element = phantom.find_elements_by_class_name(tag)[index]
+    element.click()
+    time.sleep(1)
+    soup = BeautifulSoup(phantom.page_source, 'lxml')
+    phantom.close()
+    return soup
 
 
 def createPath(path, *paths):

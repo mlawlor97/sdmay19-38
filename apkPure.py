@@ -23,15 +23,15 @@ def getAppsOnPage(url, baseUrl):
     for app in apps:
         # Test Data
         # link = 'https://apkpure.com/frontline-commando-d-day/com.glu.flcn_new'
+        # link = 'https://apkpure.com/call-of-duty-black-ops-iii/com.waqardev.shooting3'
         link = 'https://apkpure.com/dealspure/com.dealspure.wild'
-        # appName = 'FRONTLINE COMMANDO: D-DAY'
 
         # link = baseUrl + app.contents[0].get('href')
         appName = scrapeAppData(link)
         savePath = makeDirectory(appName)
 
         collectAllVersions(baseUrl, link, savePath + 'apks/' + appName)
-        collectAllReviews(baseUrl, appName, savePath + 'reviews/' + appName)
+        # collectAllReviews(baseUrl, appName, savePath + 'reviews/' + appName)
         # TODO Remove after testing
         return True
 
@@ -51,7 +51,7 @@ def scrapeAppData(appPage):
     breadCrumbs = soup.find("div", {"class": "title bread-crumbs"})
     if breadCrumbs:
         apkName = breadCrumbs.find("span").text
-        apkName = apkName.replace("\n", "").replace("/", "_").lstrip().rstrip()
+        apkName = apkName.replace("\n", "").replace("/", "_").strip()
         name = apkName
         flag = 1
     else:
@@ -123,45 +123,80 @@ def collectAllVersions(url, appPage, savePath):
     format2 = soup.find('div', {'class': 'faq_cat'})
 
     if format1:
-        scrapeVersionsA(url, format1, savePath)
+        scrapeVersionsA(url, format1, savePath, appPage)
     elif format2:
         scrapeVersionsB(url, format2, savePath)
     else:
         logToFile('versions.txt', appPage + '\n')
 
 
-# TODO Changelog
-def scrapeVersionsA(url, versionList, savePath):
+def scrapeVersionsA(url, versionList, savePath, appPage):
     versionList = versionList.find_all('li')
+    index = 0
     for v in versionList:
         downloadLink = v.contents[1].attrs['href']
         v = v.contents[3]
         version = v.contents[1].contents[1].split(' ')[1]
         v = v.contents[3]
 
+        soup = click(appPage, 'ver-item-m', index)
+
+        try:
+            changelog = soup.find_all('div', {'class': 'ver-whats-new'})[0].text
+        except IndexError:
+            changelog = ''
+        index += 1
+
         writeOutput('DB', 'a',
                     Version=version,
                     FileSize=v.contents[9].contents[1],
+                    Requirements=v.contents[3].contents[1],
                     PublishDate=v.contents[1].contents[1],
                     Signature=v.contents[5].contents[1].strip(),
-                    SHA=v.contents[7].contents[1])
+                    SHA=v.contents[7].contents[1],
+                    Changelog=changelog)
 
         # TODO I want to thread this
         scrapeApk(url + downloadLink, savePath)
 
 
-# TODO All of the data collection (apks are good)
 def scrapeVersionsB(url, versionList, savePath):
     versionList = versionList.find_all('dd')
     for v in versionList:
-        downloadLinks = scrapeVersionsA().find_all('a', {'class': 'down'})
-        v = v.find_all('p')
+        downloadLinks = v.find_all('a', {'class': 'down'})
+        v = v.find_all('strong')
+        tags = []
+        index = 0
+
         for tag in v:
-            print(tag.text.strip())
+            try:
+                tag.parent.contents[1].text
+            except AttributeError:
+                tags.append(tag.parent.contents[1].strip())
+
+        try:
+            changelog = v[-1].parent.contents[1].text
+        except AttributeError:
+            changelog = ''
 
         for link in downloadLinks:
+            size = link.contents[1].text.replace('(', '').replace(')', '')
+
+            if tags.__len__() == 4:
+                sha = tags[3]
+            else:
+                sha = tags[3 + index]
+            index += 1
+
+            writeOutput('DB', 'a',
+                        Version=tags[0].split(' ')[0],
+                        FileSize=size,
+                        Requirements=tags[0].split('for ')[1],
+                        PublishDate=tags[1],
+                        Signature=tags[2],
+                        SHA=sha,
+                        Changelog=changelog)
             scrapeApk(url + link.attrs['href'], savePath)
-    return
 
 
 def collectAllReviews(url, appName, savePath):
