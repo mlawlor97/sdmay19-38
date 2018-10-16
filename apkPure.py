@@ -188,6 +188,7 @@ def scrapeVersionsB(url, versionList, savePath):
                         Signature=tags[2],
                         SHA=sha,
                         Changelog=changelog)
+
             scrapeApk(url + link.attrs['href'], savePath)
 
 
