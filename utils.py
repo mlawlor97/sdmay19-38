@@ -7,7 +7,11 @@ import time
 
 
 # TODO Fix. Will work with browser specified
-def click(url, tag, index):
+def click(url, tag, *args):
+    if args:
+        index = args[0]
+    else:
+        index = 0
     phantom = webdriver.Safari()
     phantom.get(url)
     element = phantom.find_elements_by_class_name(tag)[index]
