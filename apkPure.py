@@ -24,16 +24,14 @@ def getAppsOnPage(url, baseUrl):
         # Test Data
         # link = 'https://apkpure.com/frontline-commando-d-day/com.glu.flcn_new'
         # link = 'https://apkpure.com/call-of-duty-black-ops-iii/com.waqardev.shooting3'
-        link = 'https://apkpure.com/dealspure/com.dealspure.wild'
+        # link = 'https://apkpure.com/dealspure/com.dealspure.wild'
 
-        # link = baseUrl + app.contents[0].get('href')
+        link = baseUrl + app.contents[0].get('href')
         appName = scrapeAppData(link)
         savePath = makeDirectory(appName)
 
         collectAllVersions(baseUrl, link, savePath + 'apks/' + appName)
-        # collectAllReviews(baseUrl, appName, savePath + 'reviews/' + appName)
-        # TODO Remove after testing
-        return True
+        collectAllReviews(baseUrl, appName, savePath + 'reviews/' + appName)
 
     if apps:
         return True
@@ -263,7 +261,6 @@ def main():
         pageNumber = 1
         while getAppsOnPage(category + '?page=' + pageNumber.__str__(), siteURL):
             pageNumber += 1
-            return
 
 
 if __name__ == '__main__':
