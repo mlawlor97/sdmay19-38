@@ -50,7 +50,9 @@ def scrapeAppData(appPage):
     # Name -- good
     breadCrumbs = soup.find("div", {"class": "title bread-crumbs"})
     if breadCrumbs:
-        name = breadCrumbs.find("span").text.replace("/", "_").strip()
+        apkName = breadCrumbs.find("span").text
+        apkName = apkName.replace("\n", "").replace("/", "_").strip()
+        name = apkName
         flag = 1
     else:
         logToFile("NameCheck.txt", appPage + '\n')
@@ -65,7 +67,8 @@ def scrapeAppData(appPage):
     # Category -- good
     categorySoup = soup.find("div", {"class": "additional"})
     if categorySoup:
-        category = categorySoup.find("a").contents[2].text
+        categorySoup = categorySoup.find("a")
+        category = categorySoup.contents[2].text
     else:
         logToFile("CategoryCheck.txt", appPage + '\n')
 
@@ -179,7 +182,10 @@ def scrapeVersionsB(url, versionList, savePath):
         for link in downloadLinks:
             size = link.contents[1].text.replace('(', '').replace(')', '')
 
-            sha = tags[3] if tags.__len__() == 4 else tags[3 + index]
+            if tags.__len__() == 4:
+                sha = tags[3]
+            else:
+                sha = tags[3 + index]
             index += 1
 
             writeOutput('DB', 'a',
