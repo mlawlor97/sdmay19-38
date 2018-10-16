@@ -2,6 +2,11 @@ from utils import *
 
 
 def getCategories(url):
+    """Gets list of all categories on ApkPure
+
+    :param url: Url to search
+    :return: List of Categories
+    """
     soup = requestHTML(url + '/app')
 
     categoriesToVisit = []
@@ -17,6 +22,12 @@ def getCategories(url):
 
 
 def getAppsOnPage(url, baseUrl):
+    """Gets of list of the apps displayed on a page and visits each one
+
+    :param url: Url of the page to search
+    :param baseUrl: Url of ApkPure
+    :return: False if the page has no applications, True otherwise
+    """
     soup = requestHTML(url)
 
     apps = soup.find_all('div', {'class': 'category-template-title'})
@@ -33,13 +44,15 @@ def getAppsOnPage(url, baseUrl):
         collectAllVersions(baseUrl, link, savePath + 'apks/' + appName)
         collectAllReviews(baseUrl, appName, savePath + 'reviews/' + appName)
 
-    if apps:
-        return True
-    else:
-        return False
+    return apps is not None
 
 
 def scrapeAppData(appPage):
+    """Scrapes all information from the given page that pertains to the application
+
+    :param appPage: Url of the application to scrape
+    :return: The name of the application
+    """
     soup = requestHTML(appPage)
     flag = 0
     name = author = ratings = description = packageName = category = ''
@@ -48,9 +61,7 @@ def scrapeAppData(appPage):
     # Name -- good
     breadCrumbs = soup.find("div", {"class": "title bread-crumbs"})
     if breadCrumbs:
-        apkName = breadCrumbs.find("span").text
-        apkName = apkName.replace("\n", "").replace("/", "_").strip()
-        name = apkName
+        name = breadCrumbs.find("span").text.replace("\n", "").replace("/", "_").strip()
         flag = 1
     else:
         logToFile("NameCheck.txt", appPage + '\n')
@@ -65,8 +76,7 @@ def scrapeAppData(appPage):
     # Category -- good
     categorySoup = soup.find("div", {"class": "additional"})
     if categorySoup:
-        categorySoup = categorySoup.find("a")
-        category = categorySoup.contents[2].text
+        category = categorySoup.find("a").contents[2].text
     else:
         logToFile("CategoryCheck.txt", appPage + '\n')
 
@@ -87,16 +97,13 @@ def scrapeAppData(appPage):
         logToFile("RatingCheck.txt", appPage + '\n')
 
     # Package Name
-    if appPage.split('/').__len__() >= 5:
-        packageName = appPage.split("/")[4]
+    packageName = appPage.split("/")[-1]
 
     # Application Tags
-    tagList = soup.find("ul", {"class": "tag_list"})
-    if tagList:
-        tagList = tagList.find_all("li")
-        for tag in tagList:
-            if tag.text:
-                tags.append(tag.text)
+    tagList = soup.find("ul", {"class": "tag_list"}).find_all('li')
+    for tag in tagList:
+        if tag.text:
+            tags.append(tag.text)
 
     writeOutput('DB',
                 Name=name,
@@ -111,6 +118,12 @@ def scrapeAppData(appPage):
 
 
 def collectAllVersions(url, appPage, savePath):
+    """Collects all versions of the specified application
+
+    :param url: Url of ApkPure
+    :param appPage: Url of the application
+    :param savePath: Where to save apk files
+    """
     soup = requestHTML(appPage)
     moreVersions = soup.find('div', {'class': 'ver-title'})
 
@@ -129,6 +142,13 @@ def collectAllVersions(url, appPage, savePath):
 
 
 def scrapeVersionsA(url, versionList, savePath, appPage):
+    """Collects all versions of the specified application that has formatA
+
+    :param url: Url of ApkPure
+    :param versionList: list of all versions
+    :param appPage: Url of the application
+    :param savePath: Where to save apk files
+    """
     versionList = versionList.find_all('li')
     index = 0
     for v in versionList:
@@ -142,7 +162,7 @@ def scrapeVersionsA(url, versionList, savePath, appPage):
         try:
             changelog = soup.find_all('div', {'class': 'ver-whats-new'})[0].text
         except IndexError:
-            changelog = ''
+            changelog = 'NO CHANGELOG PRESENT'
         index += 1
 
         writeOutput('DB', 'a',
@@ -154,11 +174,16 @@ def scrapeVersionsA(url, versionList, savePath, appPage):
                     SHA=v.contents[7].contents[1],
                     Changelog=changelog)
 
-        # TODO I want to thread this
         scrapeApk(url + downloadLink, savePath)
 
 
 def scrapeVersionsB(url, versionList, savePath):
+    """Collects all versions of the specified application that is in formatB
+
+        :param url: Url of ApkPure
+        :param versionList: list of all versions
+        :param savePath: Where to save apk files
+        """
     versionList = versionList.find_all('dd')
     for v in versionList:
         downloadLinks = v.find_all('a', {'class': 'down'})
@@ -179,12 +204,7 @@ def scrapeVersionsB(url, versionList, savePath):
 
         for link in downloadLinks:
             size = link.contents[1].text.replace('(', '').replace(')', '')
-
-            if tags.__len__() == 4:
-                sha = tags[3]
-            else:
-                sha = tags[3 + index]
-            index += 1
+            sha = tags[3] if tags.__len__() == 4 else tags[3 + index]
 
             writeOutput('DB', 'a',
                         Version=tags[0].split(' ')[0],
@@ -199,6 +219,12 @@ def scrapeVersionsB(url, versionList, savePath):
 
 
 def collectAllReviews(url, appName, savePath):
+    """Collects all reviews for specified application
+
+    :param url: Url for ApkPure
+    :param appName: Url for the application
+    :param savePath: Where to save the reviews
+    """
     groupName = removeSpecialChars(appName.lower())
     groupName = groupName.replace(' ', '-')
 
@@ -210,28 +236,33 @@ def collectAllReviews(url, appName, savePath):
 
 
 def scrapeReviewsOnPage(url, pageNumber, savePath):
+    """Gets all reviews on the specified page
+
+    :param url: Url for application's reviews
+    :param pageNumber: Page to scrape
+    :param savePath: Where to save reviews
+    :return: False if there are no reviews present, True otherwise
+    """
     url = url + pageNumber.__str__()
     soup = requestHTML(url)
 
     reviews = soup.find_all('li', {'class': 'cmt-root'})
 
     for review in reviews:
-        review = review.contents[1]
-        user = review.contents[1].contents[3].contents[1].text.strip()
-        message = review.contents[1].contents[5].text.strip()
-        rating = review.contents[1].contents[3].contents[1].contents[3].attrs['data-score']
-        publishDate = review.contents[3].contents[1].contents[1].text.strip()
+        publishDate = review.contents[1].contents[3].contents[1].contents[1].text.strip()
 
         try:
-            msgRating = int(review.contents[3].contents[1].contents[7].text.strip())
+            msgRating = int(review.contents[1].contents[3].contents[1].contents[7].text.strip())
         except ValueError:
             msgRating = 0
+        review = review.contents[1].contents[1]
+        user = review.contents[3].contents[1].text.strip()
 
         destination = savePath + '/' + publishDate + '~' + user.replace('/', '') + '.txt'
         writeOutput(destination,
                     User=user,
-                    Message=message,
-                    Rating=rating,
+                    Message=review.contents[5].text.strip(),
+                    Rating=review.contents[3].contents[1].contents[3].attrs['data-score'],
                     PublishDate=publishDate,
                     MessageRating=msgRating)
 
@@ -242,6 +273,11 @@ def scrapeReviewsOnPage(url, pageNumber, savePath):
 
 
 def scrapeApk(url, savePath):
+    """Finds download link for the apk file and downloads it
+
+    :param url: Url of download page
+    :param savePath: Where to save the apk file
+    """
     soup = requestHTML(url)
 
     downloadLink = soup.find('a', {'id': 'download_link'})
@@ -249,10 +285,8 @@ def scrapeApk(url, savePath):
         apk = downloadLink.get('href')
         fileName = soup.find('span', {'class': 'file'}).contents[0]
 
-        s = downloadApk(apk)
-
         fullPath = createPath(savePath, fileName)
-        logToFile(fullPath, s, 'wb')
+        downloadApk(apk, fullPath)
     else:
         logToFile('APKCheck.txt', url + '\n')
 
@@ -262,6 +296,7 @@ def main():
     outputDestination = 'ApkPure Crawler Output.txt'
 
     logToFile(outputDestination, '', 'w')
+    setRateLimit(0, 0)  # ApkPure has no rate limit
 
     categories = getCategories(siteURL)
     for category in categories:
