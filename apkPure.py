@@ -32,11 +32,6 @@ def getAppsOnPage(url, baseUrl):
 
     apps = soup.find_all('div', {'class': 'category-template-title'})
     for app in apps:
-        # Test Data
-        # link = 'https://apkpure.com/frontline-commando-d-day/com.glu.flcn_new'
-        # link = 'https://apkpure.com/call-of-duty-black-ops-iii/com.waqardev.shooting3'
-        # link = 'https://apkpure.com/dealspure/com.dealspure.wild'
-
         link = baseUrl + app.contents[0].get('href')
         appName = scrapeAppData(link)
         savePath = makeDirectory(appName)
