@@ -3,6 +3,9 @@ import re
 import os
 from bs4 import BeautifulSoup
 from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 import time
 from threading import Thread
 
@@ -42,9 +45,8 @@ def setRateLimit(maxPages, waitTime):
     rl = RateLimiter(maxPages, waitTime)
 
 
-# TODO Fix. Will work with browser specified
 def click(url, tag, *args):
-    """Clicks on given element. Useful for activating pop-ups
+    """Clicks on given element. Useful for activating pop-ups. Chrome Driver is needed to use
 
     Args:
         :param url: url containing the link to the pop-up
@@ -55,11 +57,16 @@ def click(url, tag, *args):
         BeautifulSoup format of html of the page with the pop-up enabled
     """
     index = 0 if not args else args[0]
-    phantom = webdriver.Safari()
+
+    options = webdriver.ChromeOptions().add_argument('--headless')
+    phantom = webdriver.Chrome(chrome_options=options,
+                               executable_path=createPath(os.getcwd(), 'chromedriver'))
+
     phantom.get(url)
+    WebDriverWait(phantom, 10).until(EC.visibility_of_element_located((By.CLASS_NAME, tag)))
     element = phantom.find_elements_by_class_name(tag)[index]
-    element.click()
-    time.sleep(1)
+    phantom.execute_script('arguments[0].click();', element)
+    time.sleep(0.1)  # Time to load pop-up
     soup = requestHTML(url, phantom.page_source)
     phantom.close()
     return soup

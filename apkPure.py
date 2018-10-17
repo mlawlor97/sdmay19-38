@@ -55,7 +55,7 @@ def scrapeAppData(appPage):
     """
     soup = requestHTML(appPage)
     flag = 0
-    name = author = ratings = description = packageName = category = ''
+    name = author = ratings = description = category = ''
     tags = []
 
     # Name -- good
