@@ -1,4 +1,16 @@
 from utils import *
+from SupportFiles.apkPureData import GetPureData
+from SupportFiles.crawlerBase import CrawlerBase
+
+
+class ApkPure(CrawlerBase):
+
+    def crawl(self):
+        categories = getCategories(self.siteUrl)
+        for category in categories:
+            pageNumber = 1
+            while getAppsOnPage(category + '?page=' + pageNumber.__str__(), self.siteUrl):
+                pageNumber += 1
 
 
 def getCategories(url):
@@ -32,10 +44,13 @@ def getAppsOnPage(url, baseUrl):
 
     apps = soup.find_all('div', {'class': 'category-template-title'})
     for app in apps:
-        link = baseUrl + app.contents[0].get('href')
+        link = app.find('a', href=True)
+        link = baseUrl + link.get('href')
         appName = scrapeAppData(link)
-        savePath = makeDirectory(appName)
+        if not appName:
+            continue
 
+        savePath = makeDirectory(appName)
         collectAllVersions(baseUrl, link, savePath + 'apks/' + appName)
         collectAllReviews(baseUrl, appName, savePath + 'reviews/' + appName)
 
@@ -49,67 +64,24 @@ def scrapeAppData(appPage):
     :return: The name of the application
     """
     soup = requestHTML(appPage)
-    flag = 0
-    name = author = ratings = description = category = ''
-    tags = []
 
-    # Name -- good
-    breadCrumbs = soup.find("div", {"class": "title bread-crumbs"})
-    if breadCrumbs:
-        name = breadCrumbs.find("span").text.replace("\n", "").replace("/", "_").strip()
-        flag = 1
-    else:
-        logToFile("NameCheck.txt", appPage + '\n')
+    dataSite = GetPureData(appPage, soup)
+    metaData = dataSite.getAll()
+    if not metaData:
+        return False
+    print(metaData.items())
 
-    # Author -- good
-    authorSoup = soup.find("p", {"itemtype": "http://schema.org/Organization"})
-    if authorSoup:
-        author = authorSoup.text
-    else:
-        logToFile("AuthorCheck.txt", appPage + '\n')
-
-    # Category -- good
-    categorySoup = soup.find("div", {"class": "additional"})
-    if categorySoup:
-        category = categorySoup.find("a").contents[2].text
-    else:
-        logToFile("CategoryCheck.txt", appPage + '\n')
-
-    # Description -- good
-    descriptionSoup = soup.find("div", {"class": "description"})
-    if descriptionSoup:
-        description = descriptionSoup.contents[3].text
-    else:
-        logToFile("DescriptionCheck.txt", appPage + '\n')
-
-    # Rating -- good
-    ratingSoup = soup.find("span", {"class": "average"})
-    if ratingSoup:
-        ratings = ratingSoup.contents[0]
-    elif flag == 1:
-        ratings = "0.0"
-    else:
-        logToFile("RatingCheck.txt", appPage + '\n')
-
-    # Package Name
-    packageName = appPage.split("/")[-1]
-
-    # Application Tags
-    tagList = soup.find("ul", {"class": "tag_list"}).find_all('li')
-    for tag in tagList:
-        if tag.text:
-            tags.append(tag.text)
-
+    # Want to change to somehow work with list of value pairs
     writeOutput('DB',
-                Name=name,
-                Developer=author,
-                Rating=ratings,
-                Description=description,
-                Package=packageName,
-                Category=category,
-                Tags=tags)
+                Name=metaData.get('Name'),
+                Developer=metaData.get('Developer'),
+                Rating=metaData.get('Rating'),
+                Description=metaData.get('Description'),
+                Package=metaData.get('Package'),
+                Category=metaData.get('Category'),
+                Tags=metaData.get('Tags'))
 
-    return name
+    return metaData.get('Name')
 
 
 def collectAllVersions(url, appPage, savePath):
@@ -152,7 +124,7 @@ def scrapeVersionsA(url, versionList, savePath, appPage):
         version = v.contents[1].contents[1].split(' ')[1]
         v = v.contents[3]
 
-        soup = click(appPage, 'ver-item-m', index)
+        soup = click(appPage + '/versions', 'ver-item-m', index)
 
         try:
             changelog = soup.find_all('div', {'class': 'ver-whats-new'})[0].text
@@ -287,17 +259,9 @@ def scrapeApk(url, savePath):
 
 
 def main():
-    siteURL = 'https://apkpure.com'
-    outputDestination = 'ApkPure Crawler Output.txt'
-
-    logToFile(outputDestination, '', 'w')
-    setRateLimit(0, 0)  # ApkPure has no rate limit
-
-    categories = getCategories(siteURL)
-    for category in categories:
-        pageNumber = 1
-        while getAppsOnPage(category + '?page=' + pageNumber.__str__(), siteURL):
-            pageNumber += 1
+    limiter = RateLimiter(0, 0)
+    url = 'https://apkpure.com'
+    ApkPure(url, limiter).crawl()
 
 
 if __name__ == '__main__':
