@@ -10,6 +10,7 @@ import time
 from threading import Thread
 from urllib.request import urlopen
 from os.path import basename
+import wget
 
 
 class RateLimiter:
@@ -60,13 +61,16 @@ def click(url, tag, *args):
     """
     index = 0 if not args else args[0]
 
-    options = webdriver.ChromeOptions().add_argument('--headless')
+    options = webdriver.ChromeOptions()
+    options.add_argument('--headless')
+    options.add_argument('--disable-gpu')
+    options.binary_location = "C:/Program Files (x86)/Google/Chrome/Application/chrome.exe"
     phantom = webdriver.Chrome(chrome_options=options,
-                               executable_path=createPath(os.getcwd(), 'chromedriver'))
+                               executable_path=createPath(os.getcwd(), 'chromedriver').replace('\\', '/'))
 
     phantom.get(url)
     WebDriverWait(phantom, 10).until(EC.visibility_of_element_located((By.CLASS_NAME, tag)))
-    element = phantom.find_elements_by_class_name(tag)[index]
+    element = phantom.find_element_by_class_name(tag)
     phantom.execute_script('arguments[0].click();', element)
     time.sleep(0.1)  # Time to load pop-up
     soup = requestHTML(url, phantom.page_source)
@@ -169,13 +173,15 @@ def apkThread(apk, savePath):
     :param apk: APK to be downloaded
     :param savePath: Where to save APK files
     """
-    session = requests.Session()
-    s = session.get(apk).content
-    response = urlopen(apk)
-    logToFile(savePath + basename(response.url), s, 'wb')
+
+    wget.download(apk, savePath)
+    # session = requests.Session()
+    # s = session.get(apk).content
+    # response = urlopen(apk)
+    # logToFile(savePath + basename(response.url), s, 'wb')
 
 
-def writeOutput(destination, *args, **kwargs):
+def writeToDatabase(destination, *args, **kwargs):
     """Writes Output into given destination
 
     :param destination: Where to write to

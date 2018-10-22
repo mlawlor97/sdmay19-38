@@ -66,802 +66,855 @@ Name: WhatsApp Messenger
 	License: Free
 	Operating System: Android
 	Requires Android: 4.0.3, 4.0.4 and up
-	Language: English (9 more)
+	Language: English, Japanese, Arabic, Polish, Hindi, Korean, Hungarian, Slovenian, Lithuanian, Hebrew
 	Size: 32.02MB
-	Permissions: 52
-	Downloads: 448,309,756
+	Downloads: 448,413,467
 	Date: 10.19.18
 	Signature (MD5): 556c6019249bbc0cab70495178d3a9d1
-	Description:   WhatsApp Messenger is the most convenient way of quickly sending messages on your mobile phone to any contact or friend on your contacts list. The only requirement is that the other people must have the app installed on their own device.  Currently, WhatsApp is compatible with just about all mobile operating systems on the market: Android, iOS, Symbian and Windows Phone. So this basically means you’ll be able to use WhatsApp to communicate with any friend, regardless of what model of device they have.  WhatsApp users can send text messages, voice messages, links and images to any other user. Automatic image compression makes transferring files very easy (although there is obviously some quality loss).  One of the most interesting and most used tools on WhatsApp is the one that lets you easily create and manage groups. Any user can enter any group, as long as they’ve been invited by the group’s creator, and they can leave it whenever they want.  WhatsApp is the perfect communication tool for Android users because with it, you can forget about paying for text messages ever again. It’s also important to keep in mind that WhatsApp is fully compatible with WhatsApp PLUS (in so far as sending and receiving messages is concerned). 
-		Version: 2.18.319 
-		Version: 2.18.318 
-		Version: 2.18.317 
-		Version: 2.18.316 
-		Version: 2.18.315 
-		Version: 2.18.314 
-		Version: 2.18.312 
-		Version: 2.18.308 
-		Version: 2.18.307 
-		Version: 2.18.306 
-		Version: 2.18.303 
-		Version: 2.18.301 
-		Version: 2.18.300 
-		Version: 2.18.299 
-		Version: 2.18.298 
-		Version: 2.18.297 
-		Version: 2.18.295 
-		Version: 2.18.294 
-		Version: 2.18.290 
-		Version: 2.18.288 
-		Version: 2.18.286 
-		Version: 2.18.278 
-		Version: 2.18.277 
-		Version: 2.18.276 
-		Version: 2.18.273 
-		Version: 2.18.271 
-		Version: 2.18.268 
-		Version: 2.18.267 
-		Version: 2.18.264 
-		Version: 2.18.262 
-		Version: 2.18.261 
-		Version: 2.18.260 
-		Version: 2.18.258 
-		Version: 2.18.257 
-		Version: 2.18.256 
-		Version: 2.18.254 
-		Version: 2.18.251 
-		Version: 2.18.249 
-		Version: 2.18.247 
-		Version: 2.18.246 
-		Version: 2.18.243 
-		Version: 2.18.241 
-		Version: 2.18.239 
-		Version: 2.18.238 
-		Version: 2.18.236 
-		Version: 2.18.234 
-		Version: 2.18.232 
-		Version: 2.18.230 
-		Version: 2.18.229 
-		Version: 2.18.228 
-		Version: 2.18.226 
-		Version: 2.18.225 
-		Version: 2.18.224 
-		Version: 2.18.222 
-		Version: 2.18.221 
-		Version: 2.18.220 
-		Version: 2.18.219 
-		Version: 2.18.218 
-		Version: 2.18.215 
-		Version: 2.18.214 
-		Version: 2.18.212 
-		Version: 2.18.210 
-		Version: 2.18.205 
-		Version: 2.18.204 
-		Version: 2.18.203 
-		Version: 2.18.202
-		Version: 2.18.201
-		Version: 2.18.200
-		Version: 2.18.199
-		Version: 2.18.197
-		Version: 2.18.193
-		Version: 2.18.191
-		Version: 2.18.190
-		Version: 2.18.189
-		Version: 2.18.188
-		Version: 2.18.186
-		Version: 2.18.185
-		Version: 2.18.184
-		Version: 2.18.183
-		Version: 2.18.182
-		Version: 2.18.180
-		Version: 2.18.179
-		Version: 2.18.172
-		Version: 2.18.171
-		Version: 2.18.168
-		Version: 2.18.167
-		Version: 2.18.166
-		Version: 2.18.164
-		Version: 2.18.162
-		Version: 2.18.159
-		Version: 2.18.158
-		Version: 2.18.157
-		Version: 2.18.156
-		Version: 2.18.155
-		Version: 2.18.154
-		Version: 2.18.153
-		Version: 2.18.152
-		Version: 2.18.151
-		Version: 2.18.150
-		Version: 2.18.149
-		Version: 2.18.145
-		Version: 2.18.144
-		Version: 2.18.143
-		Version: 2.18.140
-		Version: 2.18.139
-		Version: 2.18.138
-		Version: 2.18.136
-		Version: 2.18.135
-		Version: 2.18.133
-		Version: 2.18.132
-		Version: 2.18.129
-		Version: 2.18.128
-		Version: 2.18.127
-		Version: 2.18.125
-		Version: 2.18.124
-		Version: 2.18.121
-		Version: 2.18.118
-		Version: 2.18.117
-		Version: 2.18.115
-		Version: 2.18.113
-		Version: 2.18.110
-		Version: 2.18.109
-		Version: 2.18.108
-		Version: 2.18.106
-		Version: 2.18.103
-		Version: 2.18.102
-		Version: 2.18.101
-		Version: 2.18.100
-		Version: 2.18.98
-		Version: 2.18.97
-		Version: 2.18.95
-		Version: 2.18.93
-		Version: 2.18.90
-		Version: 2.18.89
-		Version: 2.18.87
-		Version: 2.18.86
-		Version: 2.18.85
-		Version: 2.18.84
-		Version: 2.18.83
-		Version: 2.18.82
-		Version: 2.18.80
-		Version: 2.18.79
-		Version: 2.18.75
-		Version: 2.18.74
-		Version: 2.18.73
-		Version: 2.18.71
-		Version: 2.18.69
-		Version: 2.18.68
-		Version: 2.18.66
-		Version: 2.18.64
-		Version: 2.18.63
-		Version: 2.18.61
-		Version: v2.18.60
-		Version: v2.18.59
-		Version: v2.18.58
-		Version: v2.18.57
-		Version: v2.18.56
-		Version: v2.18.54
-		Version: v2.18.53
-		Version: v2.18.51
-		Version: v2.18.50
-		Version: v2.18.47
-		Version: v2.18.44
-		Version: v2.18.41
-		Version: v2.18.39
-		Version: v2.18.36
-		Version: v2.18.33
-		Version: v2.18.31
-		Version: v2.18.30
-		Version: v2.18.28
-		Version: v2.18.24
-		Version: v2.18.21
-		Version: v2.18.19
-		Version: v2.18.17
-		Version: v2.18.16
-		Version: v2.18.15
-		Version: v2.18.13
-		Version: v2.18.12
-		Version: v2.18.11
-		Version: v2.18.10
-		Version: v2.18.9
-		Version: v2.18.7
-		Version: v2.18.5
-		Version: v2.18.4
-		Version: v2.18.3
-		Version: v2.18.1
-		Version: 2.17.443
-		Version: 2.17.442
-		Version: 2.17.441
-		Version: 2.17.440
-		Version: 2.17.436
-		Version: 2.17.434
-		Version: 2.17.431
-		Version: 2.17.430
-		Version: 2.17.429
-		Version: 2.17.428
-		Version: 2.17.427
-		Version: 2.17.425
-		Version: 2.17.422
-		Version: 2.17.421
-		Version: 2.17.419
-		Version: 2.17.417
-		Version: 2.17.414
-		Version: 2.17.412
-		Version: 2.17.411
-		Version: 2.17.409
-		Version: 2.17.408
-		Version: 2.17.407
-		Version: 2.17.406
-		Version: 2.17.405
-		Version: 2.17.403
-		Version: 2.17.402
-		Version: 2.17.401
-		Version: 2.17.400
-		Version: 2.17.397
-		Version: 2.17.395
-		Version: 2.17.394
-		Version: 2.17.392
-		Version: 2.17.390
-		Version: 2.17.389
-		Version: 2.17.387
-		Version: 2.17.386
-		Version: 2.17.385
-		Version: 2.17.382
-		Version: 2.17.381
-		Version: 2.17.380
-		Version: 2.17.379
-		Version: 2.17.378
-		Version: 2.17.375
-		Version: 2.17.374
-		Version: 2.17.373
-		Version: 2.17.371
-		Version: 2.17.369
-		Version: 2.17.368
-		Version: 2.17.367
-		Version: 2.17.366
-		Version: 2.17.365
-		Version: 2.17.364
-		Version: 2.17.363
-		Version: 2.17.361
-		Version: 2.17.358
-		Version: 2.17.357
-		Version: 2.17.356
-		Version: 2.17.352
-		Version: 2.17.351
-		Version: 2.17.347
-		Version: 2.17.345
-		Version: 2.17.343
-		Version: 2.17.341
-		Version: 2.17.339
-		Version: 2.17.336
-		Version: 2.17.335
-		Version: 2.17.334
-		Version: 2.17.333
-		Version: 2.17.332
-		Version: 2.17.330
-		Version: 2.17.325
-		Version: 2.17.324
-		Version: 2.17.321
-		Version: 2.17.316
-		Version: 2.17.313
-		Version: 2.17.311
-		Version: 2.17.309
-		Version: 2.17.307
-		Version: 2.17.305
-		Version: 2.17.303
-		Version: 2.17.302
-		Version: 2.17.300
-		Version: 2.17.299
-		Version: 2.17.297
-		Version: 2.17.295
-		Version: 2.17.294
-		Version: 2.17.293
-		Version: 2.17.289
-		Version: 2.17.287
-		Version: 2.17.286
-		Version: 2.17.283
-		Version: 2.17.282
-		Version: 2.17.280
-		Version: 2.17.277
-		Version: 2.17.275
-		Version: 2.17.272
-		Version: 2.17.271
-		Version: 2.17.269
-		Version: 2.17.267
-		Version: 2.17.266
-		Version: 2.17.265
-		Version: 2.17.264
-		Version: 2.17.263
-		Version: 2.17.262
-		Version: 2.17.261
-		Version: 2.17.260
-		Version: 2.17.258
-		Version: 2.17.257
-		Version: 2.17.256
-		Version: 2.17.255
-		Version: 2.17.251
-		Version: 2.17.249
-		Version: 2.17.248
-		Version: 2.17.246
-		Version: 2.17.245
-		Version: 2.17.243
-		Version: 2.17.238
-		Version: 2.17.237
-		Version: 2.17.235
-		Version: 2.17.234
-		Version: 2.17.233
-		Version: 2.17.232
-		Version: 2.17.231
-		Version: 2.17.230
-		Version: 2.17.229
-		Version: 2.17.228
-		Version: 2.17.226
-		Version: 2.17.224
-		Version: 2.17.220
-		Version: 2.17.219
-		Version: 2.17.215
-		Version: 2.17.213
-		Version: 2.17.209
-		Version: 2.17.207
-		Version: 2.17.205
-		Version: 2.17.203
-		Version: 2.17.202
-		Version: 2.17.201
-		Version: 2.17.200
-		Version: 2.17.199
-		Version: 2.17.198
-		Version: 2.17.195
-		Version: 2.17.193
-		Version: 2.17.192
-		Version: 2.17.190
-		Version: 2.17.188
-		Version: 2.17.187
-		Version: 2.17.185
-		Version: 2.17.184
-		Version: 2.17.181
-		Version: 2.17.178
-		Version: 2.17.177
-		Version: 2.17.174
-		Version: 2.17.170
-		Version: 2.17.166
-		Version: 2.17.163
-		Version: 2.17.161
-		Version: 2.17.160
-		Version: 2.17.158
-		Version: 2.17.151
-		Version: 2.17.150
-		Version: 2.17.147
-		Version: 2.17.143
-		Version: 2.17.136
-		Version: 2.17.132
-		Version: 2.17.131
-		Version: 2.17.130
-		Version: 2.17.129
-		Version: 2.17.125
-		Version: 2.17.124
-		Version: 2.17.123
-		Version: 2.17.121
-		Version: 2.17.120
-		Version: 2.17.119
-		Version: 2.17.118
-		Version: 2.17.116
-		Version: 2.17.115
-		Version: 2.17.114
-		Version: 2.17.113
-		Version: 2.17.112
-		Version: 2.17.110
-		Version: 2.17.109
-		Version: 2.17.106
-		Version: 2.17.104
-		Version: 2.17.101
-		Version: 2.17.99
-		Version: 2.17.98
-		Version: 2.17.97
-		Version: 2.17.96
-		Version: 2.17.95
-		Version: 2.17.93
-		Version: 2.17.92
-		Version: 2.17.90
-		Version: 2.17.88
-		Version: 2.17.87
-		Version: 2.17.86
-		Version: 2.17.85
-		Version: 2.17.83
-		Version: 2.17.82
-		Version: 2.17.81
-		Version: 2.17.77
-		Version: 2.17.76
-		Version: 2.17.75
-		Version: 2.17.73
-		Version: 2.17.70
-		Version: 2.17.68
-		Version: 2.17.66
-		Version: 2.17.62
-		Version: v2.17.60
-		Version: v2.17.58
-		Version: v2.17.55
-		Version: v2.17.53
-		Version: v2.17.52
-		Version: v2.17.50
-		Version: v2.17.49
-		Version: v2.17.48
-		Version: v2.17.47
-		Version: v2.17.45
-		Version: v2.17.44
-		Version: v2.17.43
-		Version: v2.17.42
-		Version: v2.17.41
-		Version: v2.17.40
-		Version: v2.17.39
-		Version: v2.17.38
-		Version: v2.17.37
-		Version: v2.17.33
-		Version: v2.17.32
-		Version: v2.17.29
-		Version: v2.17.28
-		Version: v2.17.27
-		Version: v2.17.25
-		Version: v2.17.24
-		Version: v2.17.23
-		Version: v2.17.22
-		Version: v2.17.21
-		Version: v2.17.19
-		Version: v2.17.18
-		Version: v2.17.16
-		Version: v2.17.14
-		Version: v2.17.12
-		Version: v2.17.10
-		Version: v2.17.8
-		Version: v2.17.7
-		Version: v2.17.6
-		Version: v2.17.5
-		Version: v2.17.4
-		Version: v2.17.1
-		Version: 2.16.399
-		Version: 2.16.396
-		Version: 2.16.392
-		Version: 2.16.380
-		Version: 2.16.373
-		Version: 2.16.367
-		Version: 2.16.363
-		Version: 2.16.352
-		Version: 2.16.346
-		Version: 2.16.329
-		Version: 2.16.317
-		Version: 2.16.309
-		Version: 2.16.306
-		Version: 2.16.297
-		Version: 2.16.293
-		Version: 2.16.278
-		Version: 2.16.275
-		Version: 2.16.262
-		Version: 2.16.260
-		Version: 2.16.258
-		Version: 2.16.254
-		Version: 2.16.252
-		Version: 2.16.247
-		Version: 2.16.241
-		Version: 2.16.238
-		Version: 2.16.225
-		Version: 2.16.222
-		Version: 2.16.220
-		Version: 2.16.216
-		Version: 2.16.213
-		Version: 2.16.198
-		Version: 2.16.193
-		Version: 2.16.182
-		Version: 2.16.178
-		Version: 2.16.170
-		Version: 2.16.155
-		Version: 2.16.151
-		Version: 2.16.148
-		Version: 2.16.146
-		Version: 2.16.144
-		Version: 2.16.142
-		Version: 2.16.136
-		Version: 2.16.133
-		Version: 2.16.131
-		Version: 2.16.126
-		Version: 2.16.125
-		Version: 2.16.122
-		Version: 2.16.116
-		Version: 2.16.113
-		Version: 2.16.109
-		Version: 2.16.107
-		Version: 2.16.105
-		Version: 2.16.103
-		Version: 2.16.99
-		Version: 2.16.95
-		Version: 2.16.93
-		Version: 2.16.91
-		Version: 2.16.89
-		Version: 2.16.84
-		Version: 2.16.79
-		Version: 2.16.77
-		Version: 2.16.74
-		Version: 2.16.70
-		Version: 2.16.66
-		Version: 2.16.64
-		Version: v2.16.57
-		Version: v2.16.53
-		Version: v2.16.51
-		Version: v2.16.47
-		Version: v2.16.44
-		Version: v2.16.42
-		Version: v2.16.41
-		Version: v2.16.37
-		Version: v2.16.35
-		Version: v2.16.31
-		Version: v2.16.25
-		Version: v2.16.24
-		Version: v2.16.22
-		Version: v2.16.18
-		Version: v2.16.17
-		Version: v2.16.16
-		Version: v2.16.15
-		Version: v2.16.10
-		Version: v2.16.7
-		Version: v2.16.4
-		Version: v2.16.2
-		Version: 2.12.561
-		Version: 2.12.559
-		Version: 2.12.545
-		Version: 2.12.544
-		Version: 2.12.542
-		Version: 2.12.540
-		Version: 2.12.539
-		Version: 2.12.534
-		Version: 2.12.529
-		Version: 2.12.526
-		Version: 2.12.523
-		Version: 2.12.522
-		Version: 2.12.518
-		Version: 2.12.515
-		Version: 2.12.512
-		Version: 2.12.509
-		Version: 2.12.505
-		Version: 2.12.503
-		Version: 2.12.500
-		Version: 2.12.496
-		Version: 2.12.493
-		Version: 2.12.489
-		Version: 2.12.485
-		Version: 2.12.483
-		Version: 2.12.475
-		Version: 2.12.471
-		Version: 2.12.468
-		Version: 2.12.465
-		Version: 2.12.462
-		Version: 2.12.453
-		Version: 2.12.451
-		Version: 2.12.445
-		Version: 2.12.440
-		Version: 2.12.437
-		Version: 2.12.432
-		Version: 2.12.429
-		Version: 2.12.424
-		Version: 2.12.421
-		Version: 2.12.418
-		Version: 2.12.415
-		Version: 2.12.411
-		Version: 2.12.407
-		Version: 2.12.405
-		Version: 2.12.402
-		Version: 2.12.399
-		Version: 2.12.395
-		Version: 2.12.394
-		Version: 2.12.391
-		Version: 2.12.390
-		Version: 2.12.386
-		Version: 2.12.385
-		Version: 2.12.382
-		Version: 2.12.374
-		Version: 2.12.373
-		Version: 2.12.371
-		Version: 2.12.370
-		Version: 2.12.367
-		Version: 2.12.366
-		Version: 2.12.364
-		Version: 2.12.363
-		Version: 2.12.360
-		Version: 2.12.357
-		Version: 2.12.347
-		Version: 2.12.338
-		Version: 2.12.333
-		Version: 2.12.330
-		Version: 2.12.325
-		Version: 2.12.312
-		Version: 2.12.303
-		Version: 2.12.288
-		Version: 2.12.287
-		Version: 2.12.286
-		Version: 2.12.285
-		Version: 2.12.282
-		Version: 2.12.281
-		Version: 2.12.278
-		Version: 2.12.277
-		Version: 2.12.276
-		Version: 2.12.275
-		Version: 2.12.272
-		Version: 2.12.271
-		Version: 2.12.269
-		Version: 2.12.266
-		Version: 2.12.265
-		Version: 2.12.264
-		Version: 2.12.262
-		Version: 2.12.259
-		Version: 2.12.258
-		Version: 2.12.257
-		Version: 2.12.255
-		Version: 2.12.254
-		Version: 2.12.252
-		Version: 2.12.244
-		Version: 2.12.241
-		Version: 2.12.240
-		Version: 2.12.239
-		Version: 2.12.235
-		Version: 2.12.232
-		Version: 2.12.231
-		Version: 2.12.228
-		Version: 2.12.227
-		Version: 2.12.226
-		Version: 2.12.224
-		Version: 2.12.222
-		Version: 2.12.221
-		Version: 2.12.220
-		Version: 2.12.219
-		Version: 2.12.217
-		Version: 2.12.216
-		Version: 2.12.215
-		Version: 2.12.214
-		Version: 2.12.213
-		Version: 2.12.211
-		Version: 2.12.210
-		Version: 2.12.208
-		Version: 2.12.207
-		Version: 2.12.199
-		Version: 2.12.197
-		Version: 2.12.196
-		Version: 2.12.194
-		Version: 2.12.193
-		Version: 2.12.190
-		Version: 2.12.189
-		Version: 2.12.183
-		Version: 2.12.180
-		Version: 2.12.179
-		Version: 2.12.178
-		Version: 2.12.171
-		Version: 2.12.170
-		Version: 2.12.168
-		Version: 2.12.166
-		Version: 2.12.165
-		Version: 2.12.161
-		Version: 2.12.159
-		Version: 2.12.157
-		Version: 2.12.155
-		Version: 2.12.154
-		Version: 2.12.153
-		Version: 2.12.152
-		Version: 2.12.151
-		Version: 2.12.149
-		Version: 2.12.148
-		Version: 2.12.143
-		Version: 2.12.142
-		Version: 2.12.141
-		Version: 2.12.140
-		Version: 2.12.139
-		Version: 2.12.138
-		Version: 2.12.136
-		Version: 2.12.134
-		Version: 2.12.132
-		Version: 2.12.130
-		Version: 2.12.126
-		Version: 2.12.122
-		Version: 2.12.121
-		Version: 2.12.114
-		Version: 2.12.111
-		Version: 2.12.110
-		Version: 2.12.109
-		Version: 2.12.108
-		Version: 2.12.107
-		Version: 2.12.105
-		Version: 2.12.104
-		Version: 2.12.103
-		Version: 2.12.102
-		Version: 2.12.101
-		Version: 2.12.100
-		Version: v2.12.99
-		Version: v2.12.96
-		Version: v2.12.93
-		Version: v2.12.92
-		Version: v2.12.90
-		Version: v2.12.87
-		Version: v2.12.82
-		Version: v2.12.79
-		Version: v2.12.73
-		Version: v2.12.67
-		Version: v2.12.66
-		Version: v2.12.65
-		Version: v2.12.64
-		Version: v2.12.61
-		Version: v2.12.60
-		Version: v2.12.58
-		Version: v2.12.57
-		Version: v2.12.56
-		Version: v2.12.55
-		Version: v2.12.53
-		Version: v2.12.51
-		Version: v2.12.50
-		Version: v2.12.49
-		Version: v2.12.48
-		Version: v2.12.47
-		Version: v2.12.45
-		Version: v2.12.44
-		Version: v2.12.42
-		Version: v2.12.38
-		Version: v2.12.36
-		Version: v2.12.30
-		Version: v2.12.26
-		Version: v2.12.25
-		Version: v2.12.23
-		Version: v2.12.22
-		Version: v2.12.19
-		Version: v2.12.16
-		Version: v2.12.14
-		Version: v2.12.13
-		Version: v2.12.12
-		Version: v2.12.10
-		Version: v2.12.8
-		Version: v2.12.7
-		Version: 2.11.560
-		Version: 2.11.543
-		Version: 2.11.542
-		Version: 2.11.531
-		Version: 2.11.527
-		Version: 2.11.520
-		Version: 2.11.514
-		Version: 2.11.508
-		Version: 2.11.498
-		Version: 2.11.491
-		Version: 2.11.487
-		Version: 2.11.486
-		Version: 2.11.481
-		Version: 2.11.473
-		Version: 2.11.471
-		Version: 2.11.452
-		Version: 2.11.444
-		Version: 2.11.432
-		Version: 2.11.426
-		Version: 2.11.418
-		Version: 2.11.407
-		Version: 2.11.399
-		Version: 2.11.395
-		Version: 2.11.375
-		Version: 2.11.355
-		Version: 2.11.328
-		Version: 2.11.315
-		Version: 2.11.305
-		Version: 2.11.294
-		Version: 2.11.238
-		Version: 2.11.205
-		Version: 2.11.193
-		Version: 2.11.186
-		Version: 2.11.181
-		Version: 2.11.169
-		Version: 2.11.152
-		Version: 2.11.135
-		Version: 2.11.106
-		Version: v2.11.96
-		Version: v2.11.93
-		Version: v2.11.86
-		Version: v2.11.23
-		Version: v2.11.12
-		Version: 2.10.768
-		Version: 2.10.750
-		Version: v2.9.5196
-		Version: v2.9.2239
-		Version: v2.8.9108
-		Version: v2.8.7326
-		Version: v2.8.5732
-		Version: v2.8.5310
-		Version: v2.8.4980
-		Version: v2.8.4771
-		Version: v2.8.1504
-		Version: v2.7.9946
-		Version: v2.7.9736
-		Version: v2.7.8509
-		Version: v2.7.7532
-		Version: v2.7.5813
+	Description:   WhatsApp Messenger is the most convenient way of quickly sending messages on your mobile phone to any contact or friend on your contacts list. The only requirement is that the other people must have the app installed on their own device.  Currently, WhatsApp is compatible with just about all mobile operating systems on the market: Android, iOS, Symbian and Windows Phone. So this basically means youâ€™ll be able to use WhatsApp to communicate with any friend, regardless of what model of device they have.  WhatsApp users can send text messages, voice messages, links and images to any other user. Automatic image compression makes transferring files very easy (although there is obviously some quality loss).  One of the most interesting and most used tools on WhatsApp is the one that lets you easily create and manage groups. Any user can enter any group, as long as theyâ€™ve been invited by the groupâ€™s creator, and they can leave it whenever they want.  WhatsApp is the perfect communication tool for Android users because with it, you can forget about paying for text messages ever again. Itâ€™s also important to keep in mind that WhatsApp is fully compatible with WhatsApp PLUS (in so far as sending and receiving messages is concerned). 
+	Permissions: 52
+		android.permission.ACCESS_COARSE_LOCATION
+		android.permission.ACCESS_FINE_LOCATION
+		android.permission.AUTHENTICATE_ACCOUNTS
+		android.permission.CAMERA
+		android.permission.CHANGE_WIFI_STATE
+		android.permission.GET_ACCOUNTS
+		android.permission.GET_TASKS
+		android.permission.INTERNET
+		android.permission.MANAGE_ACCOUNTS
+		android.permission.READ_CONTACTS
+		android.permission.READ_PHONE_STATE
+		android.permission.READ_PROFILE
+		android.permission.RECEIVE_SMS
+		android.permission.RECORD_AUDIO
+		android.permission.SEND_SMS
+		android.permission.WRITE_CONTACTS
+		android.permission.WRITE_EXTERNAL_STORAGE
+		android.permission.ACCESS_NETWORK_STATE
+		android.permission.ACCESS_WIFI_STATE
+		android.permission.BLUETOOTH
+		android.permission.BROADCAST_STICKY
+		android.permission.INSTALL_SHORTCUT
+		android.permission.MODIFY_AUDIO_SETTINGS
+		android.permission.NFC
+		android.permission.READ_EXTERNAL_STORAGE
+		android.permission.READ_SYNC_SETTINGS
+		android.permission.READ_SYNC_STATS
+		android.permission.RECEIVE_BOOT_COMPLETED
+		android.permission.REQUEST_INSTALL_PACKAGES
+		android.permission.USE_CREDENTIALS
+		android.permission.VIBRATE
+		android.permission.WAKE_LOCK
+		android.permission.WRITE_SYNC_SETTINGS
+		com.android.launcher.permission.INSTALL_SHORTCUT
+		com.android.launcher.permission.UNINSTALL_SHORTCUT
+		com.google.android.c2dm.permission.RECEIVE
+		com.google.android.providers.gsf.permission.READ_GSERVICES
+		com.htc.launcher.permission.READ_SETTINGS
+		com.htc.launcher.permission.UPDATE_SHORTCUT
+		com.huawei.android.launcher.permission.CHANGE_BADGE
+		com.huawei.android.launcher.permission.READ_SETTINGS
+		com.huawei.android.launcher.permission.WRITE_SETTINGS
+		com.sec.android.provider.badge.permission.READ
+		com.sec.android.provider.badge.permission.WRITE
+		com.sonyericsson.home.permission.BROADCAST_BADGE
+		com.sonymobile.home.permission.PROVIDER_INSERT_BADGE
+		com.whatsapp.permission.BROADCAST
+		com.whatsapp.permission.C2D_MESSAGE
+		com.whatsapp.permission.MAPS_RECEIVE
+		com.whatsapp.permission.REGISTRATION
+		com.whatsapp.permission.VOIP_CALL
+		com.whatsapp.sticker.READ
+Versions:
+		2.18.319 
+		2.18.318 
+		2.18.317 
+		2.18.316 
+		2.18.315 
+		2.18.314 
+		2.18.312 
+		2.18.308 
+		2.18.307 
+		2.18.306 
+		2.18.303 
+		2.18.301 
+		2.18.300 
+		2.18.299 
+		2.18.298 
+		2.18.297 
+		2.18.295 
+		2.18.294 
+		2.18.290 
+		2.18.288 
+		2.18.286 
+		2.18.278 
+		2.18.277 
+		2.18.276 
+		2.18.273 
+		2.18.271 
+		2.18.268 
+		2.18.267 
+		2.18.264 
+		2.18.262 
+		2.18.261 
+		2.18.260 
+		2.18.258 
+		2.18.257 
+		2.18.256 
+		2.18.254 
+		2.18.251 
+		2.18.249 
+		2.18.247 
+		2.18.246 
+		2.18.243 
+		2.18.241 
+		2.18.239 
+		2.18.238 
+		2.18.236 
+		2.18.234 
+		2.18.232 
+		2.18.230 
+		2.18.229 
+		2.18.228 
+		2.18.226 
+		2.18.225 
+		2.18.224 
+		2.18.222 
+		2.18.221 
+		2.18.220 
+		2.18.219 
+		2.18.218 
+		2.18.215 
+		2.18.214 
+		2.18.212 
+		2.18.210 
+		2.18.205 
+		2.18.204 
+		2.18.203 
+		2.18.202
+		2.18.201
+		2.18.200
+		2.18.199
+		2.18.197
+		2.18.193
+		2.18.191
+		2.18.190
+		2.18.189
+		2.18.188
+		2.18.186
+		2.18.185
+		2.18.184
+		2.18.183
+		2.18.182
+		2.18.180
+		2.18.179
+		2.18.172
+		2.18.171
+		2.18.168
+		2.18.167
+		2.18.166
+		2.18.164
+		2.18.162
+		2.18.159
+		2.18.158
+		2.18.157
+		2.18.156
+		2.18.155
+		2.18.154
+		2.18.153
+		2.18.152
+		2.18.151
+		2.18.150
+		2.18.149
+		2.18.145
+		2.18.144
+		2.18.143
+		2.18.140
+		2.18.139
+		2.18.138
+		2.18.136
+		2.18.135
+		2.18.133
+		2.18.132
+		2.18.129
+		2.18.128
+		2.18.127
+		2.18.125
+		2.18.124
+		2.18.121
+		2.18.118
+		2.18.117
+		2.18.115
+		2.18.113
+		2.18.110
+		2.18.109
+		2.18.108
+		2.18.106
+		2.18.103
+		2.18.102
+		2.18.101
+		2.18.100
+		2.18.98
+		2.18.97
+		2.18.95
+		2.18.93
+		2.18.90
+		2.18.89
+		2.18.87
+		2.18.86
+		2.18.85
+		2.18.84
+		2.18.83
+		2.18.82
+		2.18.80
+		2.18.79
+		2.18.75
+		2.18.74
+		2.18.73
+		2.18.71
+		2.18.69
+		2.18.68
+		2.18.66
+		2.18.64
+		2.18.63
+		2.18.61
+		v2.18.60
+		v2.18.59
+		v2.18.58
+		v2.18.57
+		v2.18.56
+		v2.18.54
+		v2.18.53
+		v2.18.51
+		v2.18.50
+		v2.18.47
+		v2.18.44
+		v2.18.41
+		v2.18.39
+		v2.18.36
+		v2.18.33
+		v2.18.31
+		v2.18.30
+		v2.18.28
+		v2.18.24
+		v2.18.21
+		v2.18.19
+		v2.18.17
+		v2.18.16
+		v2.18.15
+		v2.18.13
+		v2.18.12
+		v2.18.11
+		v2.18.10
+		v2.18.9
+		v2.18.7
+		v2.18.5
+		v2.18.4
+		v2.18.3
+		v2.18.1
+		2.17.443
+		2.17.442
+		2.17.441
+		2.17.440
+		2.17.436
+		2.17.434
+		2.17.431
+		2.17.430
+		2.17.429
+		2.17.428
+		2.17.427
+		2.17.425
+		2.17.422
+		2.17.421
+		2.17.419
+		2.17.417
+		2.17.414
+		2.17.412
+		2.17.411
+		2.17.409
+		2.17.408
+		2.17.407
+		2.17.406
+		2.17.405
+		2.17.403
+		2.17.402
+		2.17.401
+		2.17.400
+		2.17.397
+		2.17.395
+		2.17.394
+		2.17.392
+		2.17.390
+		2.17.389
+		2.17.387
+		2.17.386
+		2.17.385
+		2.17.382
+		2.17.381
+		2.17.380
+		2.17.379
+		2.17.378
+		2.17.375
+		2.17.374
+		2.17.373
+		2.17.371
+		2.17.369
+		2.17.368
+		2.17.367
+		2.17.366
+		2.17.365
+		2.17.364
+		2.17.363
+		2.17.361
+		2.17.358
+		2.17.357
+		2.17.356
+		2.17.352
+		2.17.351
+		2.17.347
+		2.17.345
+		2.17.343
+		2.17.341
+		2.17.339
+		2.17.336
+		2.17.335
+		2.17.334
+		2.17.333
+		2.17.332
+		2.17.330
+		2.17.325
+		2.17.324
+		2.17.321
+		2.17.316
+		2.17.313
+		2.17.311
+		2.17.309
+		2.17.307
+		2.17.305
+		2.17.303
+		2.17.302
+		2.17.300
+		2.17.299
+		2.17.297
+		2.17.295
+		2.17.294
+		2.17.293
+		2.17.289
+		2.17.287
+		2.17.286
+		2.17.283
+		2.17.282
+		2.17.280
+		2.17.277
+		2.17.275
+		2.17.272
+		2.17.271
+		2.17.269
+		2.17.267
+		2.17.266
+		2.17.265
+		2.17.264
+		2.17.263
+		2.17.262
+		2.17.261
+		2.17.260
+		2.17.258
+		2.17.257
+		2.17.256
+		2.17.255
+		2.17.251
+		2.17.249
+		2.17.248
+		2.17.246
+		2.17.245
+		2.17.243
+		2.17.238
+		2.17.237
+		2.17.235
+		2.17.234
+		2.17.233
+		2.17.232
+		2.17.231
+		2.17.230
+		2.17.229
+		2.17.228
+		2.17.226
+		2.17.224
+		2.17.220
+		2.17.219
+		2.17.215
+		2.17.213
+		2.17.209
+		2.17.207
+		2.17.205
+		2.17.203
+		2.17.202
+		2.17.201
+		2.17.200
+		2.17.199
+		2.17.198
+		2.17.195
+		2.17.193
+		2.17.192
+		2.17.190
+		2.17.188
+		2.17.187
+		2.17.185
+		2.17.184
+		2.17.181
+		2.17.178
+		2.17.177
+		2.17.174
+		2.17.170
+		2.17.166
+		2.17.163
+		2.17.161
+		2.17.160
+		2.17.158
+		2.17.151
+		2.17.150
+		2.17.147
+		2.17.143
+		2.17.136
+		2.17.132
+		2.17.131
+		2.17.130
+		2.17.129
+		2.17.125
+		2.17.124
+		2.17.123
+		2.17.121
+		2.17.120
+		2.17.119
+		2.17.118
+		2.17.116
+		2.17.115
+		2.17.114
+		2.17.113
+		2.17.112
+		2.17.110
+		2.17.109
+		2.17.106
+		2.17.104
+		2.17.101
+		2.17.99
+		2.17.98
+		2.17.97
+		2.17.96
+		2.17.95
+		2.17.93
+		2.17.92
+		2.17.90
+		2.17.88
+		2.17.87
+		2.17.86
+		2.17.85
+		2.17.83
+		2.17.82
+		2.17.81
+		2.17.77
+		2.17.76
+		2.17.75
+		2.17.73
+		2.17.70
+		2.17.68
+		2.17.66
+		2.17.62
+		v2.17.60
+		v2.17.58
+		v2.17.55
+		v2.17.53
+		v2.17.52
+		v2.17.50
+		v2.17.49
+		v2.17.48
+		v2.17.47
+		v2.17.45
+		v2.17.44
+		v2.17.43
+		v2.17.42
+		v2.17.41
+		v2.17.40
+		v2.17.39
+		v2.17.38
+		v2.17.37
+		v2.17.33
+		v2.17.32
+		v2.17.29
+		v2.17.28
+		v2.17.27
+		v2.17.25
+		v2.17.24
+		v2.17.23
+		v2.17.22
+		v2.17.21
+		v2.17.19
+		v2.17.18
+		v2.17.16
+		v2.17.14
+		v2.17.12
+		v2.17.10
+		v2.17.8
+		v2.17.7
+		v2.17.6
+		v2.17.5
+		v2.17.4
+		v2.17.1
+		2.16.399
+		2.16.396
+		2.16.392
+		2.16.380
+		2.16.373
+		2.16.367
+		2.16.363
+		2.16.352
+		2.16.346
+		2.16.329
+		2.16.317
+		2.16.309
+		2.16.306
+		2.16.297
+		2.16.293
+		2.16.278
+		2.16.275
+		2.16.262
+		2.16.260
+		2.16.258
+		2.16.254
+		2.16.252
+		2.16.247
+		2.16.241
+		2.16.238
+		2.16.225
+		2.16.222
+		2.16.220
+		2.16.216
+		2.16.213
+		2.16.198
+		2.16.193
+		2.16.182
+		2.16.178
+		2.16.170
+		2.16.155
+		2.16.151
+		2.16.148
+		2.16.146
+		2.16.144
+		2.16.142
+		2.16.136
+		2.16.133
+		2.16.131
+		2.16.126
+		2.16.125
+		2.16.122
+		2.16.116
+		2.16.113
+		2.16.109
+		2.16.107
+		2.16.105
+		2.16.103
+		2.16.99
+		2.16.95
+		2.16.93
+		2.16.91
+		2.16.89
+		2.16.84
+		2.16.79
+		2.16.77
+		2.16.74
+		2.16.70
+		2.16.66
+		2.16.64
+		v2.16.57
+		v2.16.53
+		v2.16.51
+		v2.16.47
+		v2.16.44
+		v2.16.42
+		v2.16.41
+		v2.16.37
+		v2.16.35
+		v2.16.31
+		v2.16.25
+		v2.16.24
+		v2.16.22
+		v2.16.18
+		v2.16.17
+		v2.16.16
+		v2.16.15
+		v2.16.10
+		v2.16.7
+		v2.16.4
+		v2.16.2
+		2.12.561
+		2.12.559
+		2.12.545
+		2.12.544
+		2.12.542
+		2.12.540
+		2.12.539
+		2.12.534
+		2.12.529
+		2.12.526
+		2.12.523
+		2.12.522
+		2.12.518
+		2.12.515
+		2.12.512
+		2.12.509
+		2.12.505
+		2.12.503
+		2.12.500
+		2.12.496
+		2.12.493
+		2.12.489
+		2.12.485
+		2.12.483
+		2.12.475
+		2.12.471
+		2.12.468
+		2.12.465
+		2.12.462
+		2.12.453
+		2.12.451
+		2.12.445
+		2.12.440
+		2.12.437
+		2.12.432
+		2.12.429
+		2.12.424
+		2.12.421
+		2.12.418
+		2.12.415
+		2.12.411
+		2.12.407
+		2.12.405
+		2.12.402
+		2.12.399
+		2.12.395
+		2.12.394
+		2.12.391
+		2.12.390
+		2.12.386
+		2.12.385
+		2.12.382
+		2.12.374
+		2.12.373
+		2.12.371
+		2.12.370
+		2.12.367
+		2.12.366
+		2.12.364
+		2.12.363
+		2.12.360
+		2.12.357
+		2.12.347
+		2.12.338
+		2.12.333
+		2.12.330
+		2.12.325
+		2.12.312
+		2.12.303
+		2.12.288
+		2.12.287
+		2.12.286
+		2.12.285
+		2.12.282
+		2.12.281
+		2.12.278
+		2.12.277
+		2.12.276
+		2.12.275
+		2.12.272
+		2.12.271
+		2.12.269
+		2.12.266
+		2.12.265
+		2.12.264
+		2.12.262
+		2.12.259
+		2.12.258
+		2.12.257
+		2.12.255
+		2.12.254
+		2.12.252
+		2.12.244
+		2.12.241
+		2.12.240
+		2.12.239
+		2.12.235
+		2.12.232
+		2.12.231
+		2.12.228
+		2.12.227
+		2.12.226
+		2.12.224
+		2.12.222
+		2.12.221
+		2.12.220
+		2.12.219
+		2.12.217
+		2.12.216
+		2.12.215
+		2.12.214
+		2.12.213
+		2.12.211
+		2.12.210
+		2.12.208
+		2.12.207
+		2.12.199
+		2.12.197
+		2.12.196
+		2.12.194
+		2.12.193
+		2.12.190
+		2.12.189
+		2.12.183
+		2.12.180
+		2.12.179
+		2.12.178
+		2.12.171
+		2.12.170
+		2.12.168
+		2.12.166
+		2.12.165
+		2.12.161
+		2.12.159
+		2.12.157
+		2.12.155
+		2.12.154
+		2.12.153
+		2.12.152
+		2.12.151
+		2.12.149
+		2.12.148
+		2.12.143
+		2.12.142
+		2.12.141
+		2.12.140
+		2.12.139
+		2.12.138
+		2.12.136
+		2.12.134
+		2.12.132
+		2.12.130
+		2.12.126
+		2.12.122
+		2.12.121
+		2.12.114
+		2.12.111
+		2.12.110
+		2.12.109
+		2.12.108
+		2.12.107
+		2.12.105
+		2.12.104
+		2.12.103
+		2.12.102
+		2.12.101
+		2.12.100
+		v2.12.99
+		v2.12.96
+		v2.12.93
+		v2.12.92
+		v2.12.90
+		v2.12.87
+		v2.12.82
+		v2.12.79
+		v2.12.73
+		v2.12.67
+		v2.12.66
+		v2.12.65
+		v2.12.64
+		v2.12.61
+		v2.12.60
+		v2.12.58
+		v2.12.57
+		v2.12.56
+		v2.12.55
+		v2.12.53
+		v2.12.51
+		v2.12.50
+		v2.12.49
+		v2.12.48
+		v2.12.47
+		v2.12.45
+		v2.12.44
+		v2.12.42
+		v2.12.38
+		v2.12.36
+		v2.12.30
+		v2.12.26
+		v2.12.25
+		v2.12.23
+		v2.12.22
+		v2.12.19
+		v2.12.16
+		v2.12.14
+		v2.12.13
+		v2.12.12
+		v2.12.10
+		v2.12.8
+		v2.12.7
+		2.11.560
+		2.11.543
+		2.11.542
+		2.11.531
+		2.11.527
+		2.11.520
+		2.11.514
+		2.11.508
+		2.11.498
+		2.11.491
+		2.11.487
+		2.11.486
+		2.11.481
+		2.11.473
+		2.11.471
+		2.11.452
+		2.11.444
+		2.11.432
+		2.11.426
+		2.11.418
+		2.11.407
+		2.11.399
+		2.11.395
+		2.11.375
+		2.11.355
+		2.11.328
+		2.11.315
+		2.11.305
+		2.11.294
+		2.11.238
+		2.11.205
+		2.11.193
+		2.11.186
+		2.11.181
+		2.11.169
+		2.11.152
+		2.11.135
+		2.11.106
+		v2.11.96
+		v2.11.93
+		v2.11.86
+		v2.11.23
+		v2.11.12
+		2.10.768
+		2.10.750
+		v2.9.5196
+		v2.9.2239
+		v2.8.9108
+		v2.8.7326
+		v2.8.5732
+		v2.8.5310
+		v2.8.4980
+		v2.8.4771
+		v2.8.1504
+		v2.7.9946
+		v2.7.9736
+		v2.7.8509
+		v2.7.7532
+		v2.7.5813
 Name: Instagram
 	Author: Instagram
 	Category: Social
@@ -870,606 +923,372 @@ Name: Instagram
 	License: Free
 	Operating System: Android
 	Requires Android: 4.4 and up
-	Language: English (47 more)
+	Language: Spanish, English, Portuguese, French, German, Italian, Chinese, Japanese, Arabic, Russian, Dutch, Polish, Czech, Danish, Finnish, Greek, Hindi, Korean, Norwegian, Swedish, Turkish, CatalÃ , Indonesian, Hungarian, Thai, Malaysian, Vietnamese, Romanian, Slovenian, Farsi, Byelorussian, Afrikaans, Bulgarian, Slovak, Ukrainian, Tagalog, Amharic, Croatian, Serbian, Estonian, Lithuanian, Zulu, Latvian, Hebrew, Swahili, Armenian, Icelandic, Kazakh
 	Size: 40.13MB
-	Permissions: 29
-	Downloads: 104,437,670
+	Downloads: 104,487,801
 	Date: 10.21.18
 	Signature (MD5): f9cf2124dfaaccc45e7e3f739eca55ae
-	Description:   Not too long ago Instagram was just your regular über-popular photo app that was only on iOS. Nowadays the infamous platform is a daily event in millions of people's lives. After evolving from a simple photo filter app it took on a myriad of features to add a more social aspect to sharing your photos--quickly emerging as one of the top social networks among young and old alike.   Initially Instagram's main function revolved around embellishing your photos with a series of filters and unique frames like: XPro-II, Earlybird, Lo-fi, Sutro, Toaster, Brannan, Inkwell, Walden, Hefe, Nashville or 1977. But now, Instagram has scooped up features that originated on Snapchat; including facial filters (masks), live-streaming video, stories and the new release of IGTV.   Despite its many attributes, Instagram's ubiquitousness truly lies in its capacity to cause interaction among users who are endlessly supplied with heaps of the best videos, pictures, and moments on the internet. Easily find content relating to any of your interests by running a quick search, and tag your posts to make them more visible by adding hashtags. Now you can experience a different view of the world from a more local perspective, and instantly glance at other users' snapshots no matter where they're located.   You can also plug in your Instagram account to any other of your favorite social networks like: Twitter, Facebook, Tumblr or Foursquare simply by tapping on the social share button.   Obviously for many users, Instagram will always be a simple photo sharing app at heart. But it's also a new way to express yourself and explore the world, while keeping in close contact with people you care about and those who you share common ground with. For others, it'll continue providing hours of trendsetting activities for them to pursue. 
-		Version: 68.0.0.8.99 
-		Version: 67.0.0.25.100 
-		Version: 67.0.0.24.100 
-		Version: 67.0.0.17.100 
-		Version: 66.0.0.11.101 
-		Version: 65.0.0.12.86 
-		Version: 63.0.0.17.94 
-		Version: 62.0.0.19.93 
-		Version: 62.0.0.16.93 
-		Version: 62.0.0.3.93 
-		Version: 61.0.0.15.86 
-		Version: 61.0.0.13.86 
-		Version: 61.0.0.9.86 
-		Version: 60.1.0.17.79 
-		Version: 60.0.0.16.79 
-		Version: 60.0.0.8.79 
-		Version: 59.0.0.23.76 
-		Version: 59.0.0.15.76 
-		Version: 59.0.0.5.76 
-		Version: 58.0.0.11.73 
-		Version: 58.0.0.6.73 
-		Version: 58.0.0.3.73 
-		Version: 57.0.0.9.80 
-		Version: 56.0.0.13.78 
-		Version: 55.0.0.12.79 
-		Version: 55.0.0.9.79 
-		Version: 55.0.0.5.79 
-		Version: 54.0.0.14.82 
-		Version: 54.0.0.3.82 
-		Version: 53.0.0.13.84 
-		Version: 53.0.0.4.84 
-		Version: 52.0.0.8.83 
-		Version: 51.0.0.20.85
-		Version: 52.0.0.0.35
-		Version: 50.1.0.43.119
-		Version: 50.1.0.43.119
-		Version: 50.0.0.41.119
-		Version: 50.0.0.18.119
-		Version: 49.0.0.15.89
-		Version: 49.0.0.7.89
-		Version: 49.0.0.5.89
-		Version: 48.0.0.11.98
-		Version: 47.0.0.16.96
-		Version: 47.0.0.7.96
-		Version: 47.0.0.3.96
-		Version: 45.0.0.17.93
-		Version: 44.0.0.9.93
-		Version: 44.0.0.9.93
-		Version: 44.0.0.4.93
-		Version: 43.0.0.9.97
-		Version: 43.0.0.4.97
-		Version: 42.0.0.19.95
-		Version: 43.0.0.0.71
-		Version: 42.0.0.17.95
-		Version: 42.0.0.8.95
-		Version: 42.0.0.2.95
-		Version: 41.0.0.13.92
-		Version: 41.0.0.10.92
-		Version: 41.0.0.5.92
-		Version: 41.0.0.2.92
-		Version: 40.0.0.14.95
-		Version: 40.0.0.12.95
-		Version: 40.0.0.7.95
-		Version: 41.0.0.0.12
-		Version: 40.0.0.3.95
-		Version: 39.0.0.12.93
-		Version: 38.0.0.12.95
-		Version: 39.0.0.0.36
-		Version: 38.0.0.7.95
-		Version: 38.0.0.3.95
-		Version: 37.0.0.15.97
-		Version: 38.0.0.0.38
-		Version: 37.0.0.9.97
-		Version: 38.0.0.0.17
-		Version: 37.0.0.5.97
-		Version: 36.0.0.13.91
-		Version: 36.0.0.13.91
-		Version: 36.0.0.7.91
-		Version: 37.0.0.0.12
-		Version: 36.0.0.0.36
-		Version: 35.0.0.7.96
-		Version: 35.0.0.3.96
-		Version: 34.0.0.10.93
-		Version: 35.0.0.0.39
-		Version: 34.0.0.4.93
-		Version: 33.0.0.11.92
-		Version: 33.0.0.8.92
-		Version: 33.0.0.5.92
-		Version: 34.0.0.0.9
-		Version: 33.0.0.1.92
-		Version: 33.0.0.0.36
-		Version: 32.0.0.1.94
-		Version: 32.0.0.0.36
-		Version: 31.0.0.1.94
-		Version: 30.0.0.1.95
-		Version: 29.0.0.7.95
-		Version: 29.0.0.3.95
-		Version: 29.0.0.1.95
-		Version: 28.0.0.7.284
-		Version: 29.0.0.0.44
-		Version: 29.0.0.0.18
-		Version: 28.0.0.2.284
-		Version: 28.0.0.0.8
-		Version: 27.0.0.11.97
-		Version: 27.0.0.9.97
-		Version: 27.0.0.7.97
-		Version: 27.0.0.2.97
-		Version: 26.0.0.10.86
-		Version: 26.0.0.5.86
-		Version: 25.0.0.26.136
-		Version: 25.0.0.20.136
-		Version: 25.0.0.1.136
-		Version: 24.0.0.12.201
-		Version: 24.0.0.11.201
-		Version: 24.0.0.8.201
-		Version: 23.0.0.14.135
-		Version: 23.0.0.12.135
-		Version: 23.0.0.2.135
-		Version: 22.0.0.17.68
-		Version: 22.0.0.15.68
-		Version: 21.0.0.11.62
-		Version: 21.0.0.3.62
-		Version: 21.0.0.1.62
-		Version: 20.0.0.29.75
-		Version: 20.0.0.10.75
-		Version: 19.0.0.12.91
-		Version: 19.0.0.6.91
-		Version: 18.0.0.16.85
-		Version: 18.0.0.14.85
-		Version: 18.0.0.8.85
-		Version: 17.0.0.14.91
-		Version: 16.0.0.11.90
-		Version: 16.0.0.5.90
-		Version: 16.0.0.1.90
-		Version: 15.0.0.5.90
-		Version: 15.0.0.2.90
-		Version: 14.0.0.4.91
-		Version: 13.0.0.7.91
-		Version: 13.0.0.6.91
-		Version: 13.0.0.4.91
-		Version: 13.0.0.1.91
-		Version: 12.0.0.5.91
-		Version: 12.0.0.4.91
-		Version: 12.0.0.2.91
-		Version: 11.0.0.12.20
-		Version: 11.0.0.3.20
-		Version: v10.34.0
-		Version: v10.34.0
-		Version: v10.33.0
-		Version: v10.33.0
-		Version: v10.32.0
-		Version: v10.32.0
-		Version: v10.31.0
-		Version: v10.30.0
-		Version: v10.30.0
-		Version: v10.29.0
-		Version: v10.29.0
-		Version: v10.28.0
-		Version: v10.27.1
-		Version: v10.27.0
-		Version: v10.26.0
-		Version: v10.25.1
-		Version: v10.25.0
-		Version: v10.24.0
-		Version: v10.24.0
-		Version: v10.23.0
-		Version: v10.23.0
-		Version: v10.22.0
-		Version: v10.22.0
-		Version: v10.21.0
-		Version: v10.21.0
-		Version: v10.21.0
-		Version: v10.20.0
-		Version: v10.20.0
-		Version: v10.20.0
-		Version: v10.19.0
-		Version: v10.19.0
-		Version: v10.18.0
-		Version: v10.18.0
-		Version: v10.17.0
-		Version: v10.17.0
-		Version: v10.17.0
-		Version: v10.16.0
-		Version: v10.16.0
-		Version: v10.15.0
-		Version: v10.15.0
-		Version: v10.14.0
-		Version: v10.14.0
-		Version: v10.14.0
-		Version: v10.13.0
-		Version: v10.13.0
-		Version: v10.12.0
-		Version: v10.12.0
-		Version: v10.11.0
-		Version: v10.11.0
-		Version: v10.10.0
-		Version: v10.10.0
-		Version: v10.9.0
-		Version: v10.9.0
-		Version: v10.8.0
-		Version: v10.7.0
-		Version: v10.6.0
-		Version: v10.6.0
-		Version: v10.5.0
-		Version: v10.4.0
-		Version: v10.4.0
-		Version: v10.3.2
-		Version: v10.3.1
-		Version: v10.3.0
-		Version: v10.2.1
-		Version: v10.2.0
-		Version: v10.2.0
-		Version: v10.1.0
-		Version: v10.1.0
-		Version: v10.1.0
-		Version: v10.0.1
-		Version: v10.0.0
-		Version: v9.8.5
-		Version: v9.8.5
-		Version: v9.8.0
-		Version: v9.8.0
-		Version: v9.7.5
-		Version: v9.6.7
-		Version: v9.7.0
-		Version: v9.6.6
-		Version: v9.6.5
-		Version: v9.6.0
-		Version: v9.5.5
-		Version: v9.5.0
-		Version: v9.5.0
-		Version: v9.5.0
-		Version: v9.4.5
-		Version: v9.4.5
-		Version: v9.4.0
-		Version: v9.3.5
-		Version: v9.3.5
-		Version: v9.3.0
-		Version: v9.3.0
-		Version: v9.2.5
-		Version: v9.2.5
-		Version: v9.2.5
-		Version: v9.2.0
-		Version: v9.1.5
-		Version: v9.1.0
-		Version: v9.0.0
-		Version: v9.0.0
-		Version: v8.5.1
-		Version: v8.5.0
-		Version: v8.5.0
-		Version: v8.4.0
-		Version: v8.3.0
-		Version: v8.3.0
-		Version: v8.2.0
-		Version: v8.1.0
-		Version: v8.0.0
-		Version: v7.22.0
-		Version: v7.21.0
-		Version: v8.0.0
-		Version: v7.20.0
-		Version: v7.7.0
-		Version: v7.6.0
-		Version: v7.5.1
-		Version: v7.4.0
-		Version: v7.3.0
-		Version: v7.2.4
-		Version: v7.2.1
-		Version: v7.1.1
-		Version: v7.1.0
-		Version: v7.0.0
-		Version: v6.24.0
-		Version: v6.23.0
-		Version: v6.22.0
-		Version: v6.21.2
-		Version: v6.20.2
-		Version: v6.20.1
-		Version: v6.19.0
-		Version: v6.18.0
-		Version: v6.17.1
-		Version: v6.16.1
-		Version: v6.16.0
-		Version: v6.15.0
-		Version: v6.13.1
-		Version: v6.12.2
-		Version: v6.12.1
-		Version: v6.11.2
-		Version: v6.11.1
-		Version: v6.10.1
-		Version: v6.10.0
-		Version: v6.9.1
-		Version: v6.8.1
-		Version: v6.7.1
-		Version: v6.6.2
-		Version: v6.6.1
-		Version: v6.6.0
-		Version: v6.5.0
-		Version: v6.4.4
-		Version: v6.4.1
-		Version: v6.3.1
-		Version: v6.2.2
-		Version: v6.1.0
-		Version: v6.0.2
-		Version: v6.0.1
-		Version: v5.3.0
-		Version: v5.2.1
-		Version: v5.1.4
-		Version: v5.1.4
-		Version: v5.1.2
-		Version: v5.0.8
-		Version: v5.0.6
-		Version: v5.0.5
-		Version: v5.0.1
-		Version: v4.2.6
-		Version: v4.2.2
-		Version: v4.1.2
-		Version: v4.0.1
-		Version: v3.5.3
-		Version: v3.4.0
-		Version: v3.2.0
-		Version: v3.1.0
-		Version: v1.1.8
-		Version: v1.1.7
-		Version: v1.1.5
-		Version: v1.1.4
-		Version: v1.1.3
-		Version: v1.1.2
-		Version: v1.1.1
-		Version: v1.1.0
-		Version: v1.0.6
-		Version: v1.0.5
-		Version: v1.0.4
-		Version: v1.0.3
-		Version: v1.0.1
-Name: Gmail
-	Author: Google Inc.
-	Category: Utilities
-	Rating: 4.8 / 5.0
-	Package Name: com.google.android.gm
-	License: Free
-	Operating System: Android
-	Requires Android: 4.1, 4.1.1 and up
-	Language: English (47 more)
-	Size: 22.32MB
-	Permissions: 41
-	Downloads: 6,016,675
-	Date: 10.19.18
-	Signature (MD5): cde9f6208d672b54b1dacc0b7029f5eb
-	Description:   Gmail is the official app for the Google email client that lets you manage you email account (and any other account you may have) using a clean and user-friendly interface.  The first thing users will note is that, apart from having your regular email account, you can also associate other, different accounts to the app. Thanks to this feature you’ll be able to get all of your emails in a single place, without having to resort to any other email manager.  Gmail’s interface is very similar to the desktop browser client which just about all users are already use to: on the left column you have different tags and categories, while in the center of the screen you get to read all of your emails. Gmail’s intelligent management system also separates promotions, from social emails, and both of these from the truly important emails.  Thanks to the all of the widgets installed in the Gmail app, you can monitor email tags on your device’s main screen, or simply see your latest incoming emails (and answer them if you want).  Gmail’s official app is, like its desktop version, a must-have service for any regular Android user. There may be better ways of managing your email from a mobile device, but finding them won’t be easy. 
-		Version: 8.10.7.217358673.release 
-		Version: 8.9.23.215020111.release 
-		Version: 8.9.9.213351932.release 
-		Version: 8.8.26.211559306.release 
-		Version: 8.8.12.210495220.release 
-		Version: 8.8.12.209077217.release 
-		Version: 8.7.15.206199545.release 
-		Version: 8.7.1.204805656.release 
-		Version: 8.7.1.204044209.release 
-		Version: 8.6.17.201756049.release 
-		Version: 8.6.3.200445973.release
-		Version: 8.5.20.198487710.release
-		Version: 8.5.6.197055160.release
-		Version: 8.5.6.196732569.release
-		Version: 8.4.22.196188478.release
-		Version: 8.4.22.195987212.release
-		Version: 8.4.22.195693014.release
-		Version: 8.4.22.195123082.release
-		Version: 8.4.8.194949231.release
-		Version: 8.4.8.194339277.release
-		Version: 8.4.8.193578708.release
-		Version: 8.3.25.192150130.release
-		Version: 8.3.12.190002434.release
-		Version: 8.2.25.188905562.release
-		Version: 8.2.25.188352351.release
-		Version: 8.2.11.186835846.release
-		Version: 8.2.11.186381768.release
-		Version: 8.1.28.185234908.release
-		Version: 8.1.28.185070215.release
-		Version: 8.1.7.183725757.release
-		Version: 8.1.7.182107449.release
-		Version: 7.12.17.180932182.release
-		Version: 7.12.17.180216423.release
-		Version: 7.11.26.178924330.release
-		Version: 7.11.26.178295602.release
-		Version: 7.11.26.178202566.release
-		Version: 7.11.5.177402951.release
-		Version: 7.11.5.176133587.release
-		Version: 7.10.22.174510681.release
-		Version: 7.10.22.174268706.release
-		Version: 7.10.22.174201711.release
-		Version: 7.9.24.172525262.release
-		Version: 7.9.24.170548882.release
-		Version: 7.8.27.168289052.release
-		Version: 7.8.27.167795811.release
-		Version: 7.8.13.166937981.release
-		Version: 7.8.13.166374524.release
-		Version: 7.7.30.165541385.release
-		Version: 7.7.16.164685024.release
-		Version: 7.7.16.163886392.release
-		Version: 7.7.16.163771160.release
-		Version: 7.7.16.163274243.release
-		Version: 7.7.2.162644686.release
-		Version: 7.6.18.160170480.release
-		Version: 7.6.4.158567011.release
-		Version: 7.5.21.158049789.release
-		Version: 7.5.21.157181495.release
-		Version: 7.5.7.156101332.release
-		Version: 7.4.23.154506495.release
-		Version: 7.4.9.154371932.release
-		Version: 7.4.9.153522397.release
-		Version: 7.3.26.153522445.release
-		Version: 7.3.26.152772569.release
-		Version: 7.3.26.152435783.release
-		Version: 7.3.26.152255180.release
-		Version: 7.3.13.151698241.release
-		Version: 7.3.13.150916540.release
-		Version: 7.2.26.149804060.release
-		Version: 7.1.29.147605088.release
-		Version: 7.1.29.147402395.release
-		Version: 7.1.29.146854545.release
-		Version: 7.1.1.144151060.release
-		Version: 6.11.27.141872707.release
-		Version: 6.11.27.141390502.release
-		Version: 6.11.6.140557227.release
-		Version: 6.11.6.139646260.release
-		Version: 6.10.23.137993986.release
-		Version: 6.10.9.136347105.release
-		Version: 6.9.25.134833125.release
-		Version: 6.9.11.134426830.release
-		Version: 6.9.132235263.release
-		Version: 6.9.131693372.release
-		Version: 6.8.130963407.release
-		Version: 6.7.128801648.release
-		Version: 6.7.128016773.release
-		Version: 6.6.126913422.release
-		Version: 6.6.125515238.release
-		Version: 6.5-1.123769152.release
-		Version: 6.5.123664905.release
-		Version: 6.4.120195329.release
-		Version: 6.3.117716127.release
-		Version: 6.0.115979076.release
-		Version: 6.0.115234454.release
-		Version: 5.11.115209765.release
-		Version: 5.11.114210608.release
-		Version: 5.10.112808100.release
-		Version: 5.10.112725722.release
-		Version: 5.10.111001387.dogfood
-		Version: 5.9.109452737.release
-		Version: 5.8.107203005.release
-		Version: 5.7.105901136.release
-		Version: 5.7.105345578.release
-		Version: 5.7.104875269.release
-		Version: 5.6.103338659.release
-		Version: 5.6.102685581.release
-		Version: 5.5.101116392.release
-		Version: 5.4.97372923.release
-		Version: v5.3.95312851
-		Version: v5.2.93937770
-		Version: v5.1.90765967
-		Version: v5.1.89985675
-		Version: v5.1.89745174
-		Version: 5.0.1 (1642443)
-		Version: 5.0.1 (1618411)
-		Version: 5.0 (1569867)
-		Version: 5.0 (1520254)
-		Version: 4.9 (1271612)
-		Version: 4.9 (1266230)
-		Version: 4.8 (1167183)
-		Version: v4.7.2
-		Version: 4.7.1 (946962)
-		Version: v4.6
-		Version: v4.5
-		Version: 
-		Version: 2.3.5.2
-Name: PUBG MOBILE LITE
-	Author: Tencent Games
-	Category: Action/Adventure
-	Rating: 4.1 / 5.0
-	Package Name: com.tencent.iglite
-	License: Free
-	Operating System: Android
-	Requires Android: 
-	Language: English
-	Size: 266.91MB
-	Permissions: 
-	Downloads: 2,794,341
-	Date: 09.28.18
-	Signature (MD5): 04036cbbb14d7419ac783f58dfc0fe9c
-	Description:   PUBG MOBILE LITE is a tiny version of the legendary PUBG Mobile made specifically for smartphones and tablets that are lower on resources. Its compatibility suits more android versions (4.0.3 or higher), and it weighs in at a much smaller size so more devices than ever can now experience the exciting world of Playersunknown's Battlegrounds.  PUBG MOBILE LITE has the same gameplay as the rest of the games from this Battle Royale franchise: fight to survive in a closed environment until there's only one player left standing. Which is no easy task, but there's plenty of weapons, vehicles and equipment you can use to battle other players and try to become the sole survivor.   This lighter version of PUBG Mobile only lets you play in games of up to forty people, but it keeps in line with the true essence of the original game. Created with Unreal Engine 4, it also has the highest quality graphics possible for a lite app.  PUBG MOBILE LITE is a fantastic game that brings all the excitement of PUBG Mobile to devices with less RAM. Fight thrilling battles either alone or with friends, and see if you'll be the last one standing. 
-		Version: v0.5.1
-		Version: v0.5.1
-		Version: v0.5.0
-		Version: v0.5.0
-Name: Subway Surfers
-	Author: Kiloo
-	Category: Arcade
-	Rating: 4.5 / 5.0
-	Package Name: com.kiloo.subwaysurf
-	License: Free
-	Operating System: Android
-	Requires Android: 4.1, 4.1.1 and up
-	Language: English
-	Size: 79.89MB
-	Permissions: 12
-	Downloads: 40,832,170
-	Date: 10.11.18
-	Signature (MD5): 50dcb8f95024113f3c6761e543c3e185
-	Description:   Subway Surfers is a platformer/action game with a mechanic very similar to Temple Run, where you have to flee the police in a dangerous and apparently abandoned train station, with trains passing by at full speed. You had better be careful!   Unlike Temple Run, in Subway Surfers you do not control your character with the accelerometer. Instead, you have to move your character between three 'lanes' by swiping your finger across the screen. Of course, you can jump over obstacles and roll on the ground to dodge some others. You can also use different gadgets like jetpacks or skateboards to help you in your unending race.   Like you'd expect in this sort of game, you have to complete various missions where you can get coins to buy upgrades. This is nothing new, but it is still fun.   The graphics of Subway Surfers are impressive. So much that at times it will lag in terminals that are not very powerful. It's true, the character models and textures are a real treat.   Subway Surfers is a very entertaining game with a simple and addictive mechanic. It keeps you glued to the screen for hours while trying to beat our friends records, which you can check over the internet. 
-		Version: 1.94.0 
-		Version: 1.93.0 
-		Version: 1.92.0 
-		Version: 1.91.2 
-		Version: 1.91.1 
-		Version: 1.90.0 
-		Version: 1.89.0
-		Version: 1.88.0
-		Version: 1.87.0
-		Version: 1.86.0
-		Version: 1.85.0
-		Version: 1.84.0
-		Version: 1.83.0
-		Version: 1.82.0
-		Version: 1.81.0
-		Version: 1.80.1
-		Version: 1.79.1
-		Version: 1.78.0
-		Version: 1.77.0
-		Version: 1.76.0
-		Version: 1.75.0
-		Version: 1.74.0
-		Version: 1.73.1
-		Version: 1.72.1
-		Version: 1.71.1
-		Version: 1.70.0
-		Version: 1.69.0
-		Version: 1.68.1
-		Version: 1.68.0
-		Version: 1.67.0
-		Version: 1.66.0
-		Version: 1.65.0
-		Version: 1.64.1
-		Version: 1.64.0
-		Version: 1.63.1
-		Version: 1.63.0
-		Version: 1.62.1
-		Version: 1.62.0
-		Version: 1.61.0
-		Version: 1.60.0
-		Version: v1.59.1
-		Version: v1.58.0
-		Version: v1.57.0
-		Version: v1.56.0
-		Version: v1.55.1
-		Version: v1.54.0
-		Version: v1.53.1
-		Version: v1.53.0
-		Version: v1.52.0
-		Version: v1.51.0
-		Version: v1.50.2
-		Version: v1.49.2
-		Version: v1.49.1
-		Version: v1.48.3
-		Version: v1.47.1
-		Version: v1.47.0
-		Version: v1.46.0
-		Version: v1.45.0
-		Version: v1.44.1
-		Version: v1.43.0
-		Version: v1.38.0
-		Version: v1.37.0
-		Version: v1.36.1
-		Version: v1.36.0
-		Version: v1.35.0
-		Version: v1.34.0
-		Version: v1.33.0
-		Version: v1.32.0
-		Version: v1.31.0
-		Version: v1.30.0
-		Version: v1.29.0
-		Version: v1.27.0
-		Version: v1.26.0
-		Version: v1.25.0
-		Version: v1.24.0
-		Version: v1.23.1
-		Version: v1.23
-		Version: v1.22.0
-		Version: v1.21
-		Version: v1.20.0
-		Version: v1.18.0
-		Version: v1.17.1
-		Version: v1.17
-		Version: v1.16.1
-		Version: v1.16.0
-		Version: v1.15.0
-		Version: v1.13.0
-		Version: v1.12.1
-		Version: v1.10.3
-		Version: v1.9.0
+	Description:   Not too long ago Instagram was just your regular Ã¼ber-popular photo app that was only on iOS. Nowadays the infamous platform is a daily event in millions of people's lives. After evolving from a simple photo filter app it took on a myriad of features to add a more social aspect to sharing your photos--quickly emerging as one of the top social networks among young and old alike.   Initially Instagram's main function revolved around embellishing your photos with a series of filters and unique frames like: XPro-II, Earlybird, Lo-fi, Sutro, Toaster, Brannan, Inkwell, Walden, Hefe, Nashville or 1977. But now, Instagram has scooped up features that originated on Snapchat; including facial filters (masks), live-streaming video, stories and the new release of IGTV.   Despite its many attributes, Instagram's ubiquitousness truly lies in its capacity to cause interaction among users who are endlessly supplied with heaps of the best videos, pictures, and moments on the internet. Easily find content relating to any of your interests by running a quick search, and tag your posts to make them more visible by adding hashtags. Now you can experience a different view of the world from a more local perspective, and instantly glance at other users' snapshots no matter where they're located.   You can also plug in your Instagram account to any other of your favorite social networks like: Twitter, Facebook, Tumblr or Foursquare simply by tapping on the social share button.   Obviously for many users, Instagram will always be a simple photo sharing app at heart. But it's also a new way to express yourself and explore the world, while keeping in close contact with people you care about and those who you share common ground with. For others, it'll continue providing hours of trendsetting activities for them to pursue. 
+	Permissions: 29
+		android.permission.ACCESS_FINE_LOCATION
+		android.permission.CAMERA
+		android.permission.GET_ACCOUNTS
+		android.permission.INTERNET
+		android.permission.READ_CONTACTS
+		android.permission.READ_PHONE_STATE
+		android.permission.READ_PROFILE
+		android.permission.RECEIVE_SMS
+		android.permission.RECORD_AUDIO
+		android.permission.WRITE_EXTERNAL_STORAGE
+		.permission.C2D_MESSAGE
+		.permission.RECEIVE_ADM_MESSAGE
+		android.permission.ACCESS_NETWORK_STATE
+		android.permission.MODIFY_AUDIO_SETTINGS
+		android.permission.READ_EXTERNAL_STORAGE
+		android.permission.RECEIVE_BOOT_COMPLETED
+		android.permission.USE_CREDENTIALS
+		android.permission.VIBRATE
+		android.permission.WAKE_LOCK
+		com.amazon.device.messaging.permission.RECEIVE
+		com.android.launcher.permission.INSTALL_SHORTCUT
+		com.android.launcher.permission.UNINSTALL_SHORTCUT
+		com.google.android.c2dm.permission.RECEIVE
+		com.htc.launcher.permission.READ_SETTINGS
+		com.htc.launcher.permission.UPDATE_SHORTCUT
+		com.huawei.android.launcher.permission.CHANGE_BADGE
+		com.instagram.direct.permission.DIRECT_APP_THREAD_STORE_SERVICE
+		com.instagram.direct.permission.PROTECTED_DEEPLINKING
+		com.sonyericsson.home.permission.BROADCAST_BADGE
+Versions:
+		68.0.0.8.99 
+		67.0.0.25.100 
+		67.0.0.24.100 
+		67.0.0.17.100 
+		66.0.0.11.101 
+		65.0.0.12.86 
+		63.0.0.17.94 
+		62.0.0.19.93 
+		62.0.0.16.93 
+		62.0.0.3.93 
+		61.0.0.15.86 
+		61.0.0.13.86 
+		61.0.0.9.86 
+		60.1.0.17.79 
+		60.0.0.16.79 
+		60.0.0.8.79 
+		59.0.0.23.76 
+		59.0.0.15.76 
+		59.0.0.5.76 
+		58.0.0.11.73 
+		58.0.0.6.73 
+		58.0.0.3.73 
+		57.0.0.9.80 
+		56.0.0.13.78 
+		55.0.0.12.79 
+		55.0.0.9.79 
+		55.0.0.5.79 
+		54.0.0.14.82 
+		54.0.0.3.82 
+		53.0.0.13.84 
+		53.0.0.4.84 
+		52.0.0.8.83 
+		51.0.0.20.85
+		52.0.0.0.35
+		50.1.0.43.119
+		50.1.0.43.119
+		50.0.0.41.119
+		50.0.0.18.119
+		49.0.0.15.89
+		49.0.0.7.89
+		49.0.0.5.89
+		48.0.0.11.98
+		47.0.0.16.96
+		47.0.0.7.96
+		47.0.0.3.96
+		45.0.0.17.93
+		44.0.0.9.93
+		44.0.0.9.93
+		44.0.0.4.93
+		43.0.0.9.97
+		43.0.0.4.97
+		42.0.0.19.95
+		43.0.0.0.71
+		42.0.0.17.95
+		42.0.0.8.95
+		42.0.0.2.95
+		41.0.0.13.92
+		41.0.0.10.92
+		41.0.0.5.92
+		41.0.0.2.92
+		40.0.0.14.95
+		40.0.0.12.95
+		40.0.0.7.95
+		41.0.0.0.12
+		40.0.0.3.95
+		39.0.0.12.93
+		38.0.0.12.95
+		39.0.0.0.36
+		38.0.0.7.95
+		38.0.0.3.95
+		37.0.0.15.97
+		38.0.0.0.38
+		37.0.0.9.97
+		38.0.0.0.17
+		37.0.0.5.97
+		36.0.0.13.91
+		36.0.0.13.91
+		36.0.0.7.91
+		37.0.0.0.12
+		36.0.0.0.36
+		35.0.0.7.96
+		35.0.0.3.96
+		34.0.0.10.93
+		35.0.0.0.39
+		34.0.0.4.93
+		33.0.0.11.92
+		33.0.0.8.92
+		33.0.0.5.92
+		34.0.0.0.9
+		33.0.0.1.92
+		33.0.0.0.36
+		32.0.0.1.94
+		32.0.0.0.36
+		31.0.0.1.94
+		30.0.0.1.95
+		29.0.0.7.95
+		29.0.0.3.95
+		29.0.0.1.95
+		28.0.0.7.284
+		29.0.0.0.44
+		29.0.0.0.18
+		28.0.0.2.284
+		28.0.0.0.8
+		27.0.0.11.97
+		27.0.0.9.97
+		27.0.0.7.97
+		27.0.0.2.97
+		26.0.0.10.86
+		26.0.0.5.86
+		25.0.0.26.136
+		25.0.0.20.136
+		25.0.0.1.136
+		24.0.0.12.201
+		24.0.0.11.201
+		24.0.0.8.201
+		23.0.0.14.135
+		23.0.0.12.135
+		23.0.0.2.135
+		22.0.0.17.68
+		22.0.0.15.68
+		21.0.0.11.62
+		21.0.0.3.62
+		21.0.0.1.62
+		20.0.0.29.75
+		20.0.0.10.75
+		19.0.0.12.91
+		19.0.0.6.91
+		18.0.0.16.85
+		18.0.0.14.85
+		18.0.0.8.85
+		17.0.0.14.91
+		16.0.0.11.90
+		16.0.0.5.90
+		16.0.0.1.90
+		15.0.0.5.90
+		15.0.0.2.90
+		14.0.0.4.91
+		13.0.0.7.91
+		13.0.0.6.91
+		13.0.0.4.91
+		13.0.0.1.91
+		12.0.0.5.91
+		12.0.0.4.91
+		12.0.0.2.91
+		11.0.0.12.20
+		11.0.0.3.20
+		v10.34.0
+		v10.34.0
+		v10.33.0
+		v10.33.0
+		v10.32.0
+		v10.32.0
+		v10.31.0
+		v10.30.0
+		v10.30.0
+		v10.29.0
+		v10.29.0
+		v10.28.0
+		v10.27.1
+		v10.27.0
+		v10.26.0
+		v10.25.1
+		v10.25.0
+		v10.24.0
+		v10.24.0
+		v10.23.0
+		v10.23.0
+		v10.22.0
+		v10.22.0
+		v10.21.0
+		v10.21.0
+		v10.21.0
+		v10.20.0
+		v10.20.0
+		v10.20.0
+		v10.19.0
+		v10.19.0
+		v10.18.0
+		v10.18.0
+		v10.17.0
+		v10.17.0
+		v10.17.0
+		v10.16.0
+		v10.16.0
+		v10.15.0
+		v10.15.0
+		v10.14.0
+		v10.14.0
+		v10.14.0
+		v10.13.0
+		v10.13.0
+		v10.12.0
+		v10.12.0
+		v10.11.0
+		v10.11.0
+		v10.10.0
+		v10.10.0
+		v10.9.0
+		v10.9.0
+		v10.8.0
+		v10.7.0
+		v10.6.0
+		v10.6.0
+		v10.5.0
+		v10.4.0
+		v10.4.0
+		v10.3.2
+		v10.3.1
+		v10.3.0
+		v10.2.1
+		v10.2.0
+		v10.2.0
+		v10.1.0
+		v10.1.0
+		v10.1.0
+		v10.0.1
+		v10.0.0
+		v9.8.5
+		v9.8.5
+		v9.8.0
+		v9.8.0
+		v9.7.5
+		v9.6.7
+		v9.7.0
+		v9.6.6
+		v9.6.5
+		v9.6.0
+		v9.5.5
+		v9.5.0
+		v9.5.0
+		v9.5.0
+		v9.4.5
+		v9.4.5
+		v9.4.0
+		v9.3.5
+		v9.3.5
+		v9.3.0
+		v9.3.0
+		v9.2.5
+		v9.2.5
+		v9.2.5
+		v9.2.0
+		v9.1.5
+		v9.1.0
+		v9.0.0
+		v9.0.0
+		v8.5.1
+		v8.5.0
+		v8.5.0
+		v8.4.0
+		v8.3.0
+		v8.3.0
+		v8.2.0
+		v8.1.0
+		v8.0.0
+		v7.22.0
+		v7.21.0
+		v8.0.0
+		v7.20.0
+		v7.7.0
+		v7.6.0
+		v7.5.1
+		v7.4.0
+		v7.3.0
+		v7.2.4
+		v7.2.1
+		v7.1.1
+		v7.1.0
+		v7.0.0
+		v6.24.0
+		v6.23.0
+		v6.22.0
+		v6.21.2
+		v6.20.2
+		v6.20.1
+		v6.19.0
+		v6.18.0
+		v6.17.1
+		v6.16.1
+		v6.16.0
+		v6.15.0
+		v6.13.1
+		v6.12.2
+		v6.12.1
+		v6.11.2
+		v6.11.1
+		v6.10.1
+		v6.10.0
+		v6.9.1
+		v6.8.1
+		v6.7.1
+		v6.6.2
+		v6.6.1
+		v6.6.0
+		v6.5.0
+		v6.4.4
+		v6.4.1
+		v6.3.1
+		v6.2.2
+		v6.1.0
+		v6.0.2
+		v6.0.1
+		v5.3.0
+		v5.2.1
+		v5.1.4
+		v5.1.4
+		v5.1.2
+		v5.0.8
+		v5.0.6
+		v5.0.5
+		v5.0.1
+		v4.2.6
+		v4.2.2
+		v4.1.2
+		v4.0.1
+		v3.5.3
+		v3.4.0
+		v3.2.0
+		v3.1.0
+		v1.1.8
+		v1.1.7
+		v1.1.5
+		v1.1.4
+		v1.1.3
+		v1.1.2
+		v1.1.1
+		v1.1.0
+		v1.0.6
+		v1.0.5
+		v1.0.4
+		v1.0.3
+		v1.0.1

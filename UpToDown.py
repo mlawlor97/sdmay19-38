@@ -1,8 +1,9 @@
 from utils import *
 
-maxCategories = 5
+# these are for testing purposes only, delete later
+maxCategories = 3
 maxApps = 1
-maxVersions = 3
+maxVersions = 5
 
 downloadPath = "C:/CrawlerDownloads/"
 
@@ -100,9 +101,10 @@ def getAppData(appPage):
     license = ""
     operatingSystem = ""
     requiresAndroid = ""
-    language = ""
+    languages = ""
     size = ""
-    permissions = ""
+    permissionCount = ""
+    permissions = []
     downloads = ""
     date = ""
     signatureMD5 = ""
@@ -152,23 +154,25 @@ def getAppData(appPage):
     if requiresAndroidSoup:
         requiresAndroid = requiresAndroidSoup.parent.find("dd").text
 
-    # Language -- TODO
+    # Language -- good
     languageSoup = soup.find("dt", {"class": "left"}, text="Language")
     if languageSoup:
-        language = languageSoup.parent.find("span").text
         moreLanguages = languageSoup.parent.find("a")
         if moreLanguages:
-            language += " " + moreLanguages.text
+            moreLanguagesBoxSoup = click(appPage + "/download", "more_lang")
+            if moreLanguagesBoxSoup:
+                moreLanguagesBox = moreLanguagesBoxSoup.find("div", {"id": "jbox"})
+                moreLanguagesList = moreLanguagesBox.find_all("li")
+                for ml in moreLanguagesList:
+                    languages += ", " + ml.text
+                languages = languages[2:]
+        else:
+            languages = languageSoup.parent.find("span").text
 
     # Size -- good
     sizeSoup = soup.find("dt", {"class": "left"}, text="Size")
     if sizeSoup:
         size = sizeSoup.parent.find("dd").text
-
-    # Permissions -- TODO
-    permissionsSoup = soup.find("dt", {"class": "left"}, text="Permissions")
-    if permissionsSoup:
-        permissions = permissionsSoup.parent.find("dd").text
 
     # Downloads -- good
     downloadsSoup = soup.find("dt", {"class": "left"}, text="Downloads")
@@ -185,9 +189,6 @@ def getAppData(appPage):
     if signatureMD5Soup:
         signatureMD5 = signatureMD5Soup.parent.find("dd").text.replace('\n', '')
 
-
-
-
     # Description -- good
     r2 = requests.get(appPage)
     soup2 = BeautifulSoup(r2.content, "lxml")
@@ -199,42 +200,26 @@ def getAppData(appPage):
     else:
         logErrorApps("DescriptionCheck.txt", appPage)
 
+    # Permissions -- good
+    permissionsSoup = soup.find("dt", {"class": "left"}, text="Permissions")
+    if permissionsSoup:
+        permissionCount = permissionsSoup.parent.find("dd").text
+    permissionsBoxSoup = click(appPage + "/download", "clickable")
+    if permissionsBoxSoup:
+        permissionBox = permissionsBoxSoup.find("div", {"id": "jbox"})
+        permissionList = permissionBox.find_all("div")
+        for p in permissionList:
+            permissions.append(p.text)
+
     # write to db when available
-    writeOutput(name, author, category, rating, packageName, license, operatingSystem, requiresAndroid, language, size, permissions, downloads, date, signatureMD5, description)
+    writeOutput(name, author, category, rating, packageName, license, operatingSystem, requiresAndroid, languages, size, downloads, date, signatureMD5, description, permissionCount, permissions)
 
     return name
 
-def getAPK(url):
-    savePath = "./apks"
-    r = requests.get(url)
-    soup = BeautifulSoup(r.content, "html5lib")  # there are faster parsers
-
-    if soup.find("a", {"class": " da"}):
-        linkToDownload = soup.find("a", {"class": " da"}).get("href")
-        newRequest = requests.get("https://apkpure.com" + linkToDownload)
-        newSoup = BeautifulSoup(newRequest.content, "html5lib")
-        if newSoup.find("a", {"id": "download_link"}):
-            apk = newSoup.find("a", {"id": "download_link"})["href"]
-            fileName = newSoup.find("span", {"class": "file"}).contents[0]
-
-            session = requests.Session()
-            s = session.get(apk)
-
-            completeName = os.path.join(savePath, fileName)
-            file = open(completeName, "wb")
-            file.write(s.content)
-            file.close()
-    else:
-        outFile = "APKCheck.txt"
-        f = open(outFile, "a")
-        f.write(url + "\n")
-        f.close()
-
-
-def writeOutput(name, author, category, rating, packageName, license, operatingSystem, requiresAndroid, language, size, permissions, downloads, date, signatureMD5, description):
+def writeOutput(name, author, category, rating, packageName, license, operatingSystem, requiresAndroid, languages, size, downloads, date, signatureMD5, description, permissionCount, permissions):
     # write to file - text for now
     outFile = "UpToDown Crawler Output.txt"
-    f = open(outFile, "a")
+    f = open(outFile, "a", encoding="utf-8")
     f.write(("Name: " + name +
              "\n\tAuthor: " + author +
              "\n\tCategory: " + category +
@@ -243,14 +228,16 @@ def writeOutput(name, author, category, rating, packageName, license, operatingS
              "\n\tLicense: " + license +
              "\n\tOperating System: " + operatingSystem +
              "\n\tRequires Android: " + requiresAndroid +
-             "\n\tLanguage: " + language +
+             "\n\tLanguage: " + languages +
              "\n\tSize: " + size +
-             "\n\tPermissions: " + permissions +
              "\n\tDownloads: " + downloads +
              "\n\tDate: " + date +
              "\n\tSignature (MD5): " + signatureMD5 +
              "\n\tDescription: " + description +
-             "\n"))
+             "\n\tPermissions: " + permissionCount + "\n"))
+    for p in permissions:
+        f.write(("\t\t" + p + "\n"))
+    f.write(("\tVersions:\n"))
     f.close()
 
 
@@ -258,10 +245,7 @@ def writeVersion(version, publishDate, shaValue):
     # write to file - text for now
     outFile = "UpToDown Crawler Output.txt"
     f = open(outFile, "a")
-    f.write(("\t\tVersion: " + version +
-            #  "\n\t\tPublish Date: " + publishDate +
-            #  "\n\t\tSha Value: " + shaValue +
-             "\n"))
+    f.write(("\t\t" + version + "\n"))
     f.close()
 
 
@@ -281,7 +265,7 @@ def main():
         while getApps(categories + "/free", url):
             print("")
         if (counter >= maxCategories - 1):
-            return # only do 5 categories for testing - delete
+            return # limit categories for testing - delete
         counter += 1
 
 
