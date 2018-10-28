@@ -1,0 +1,75 @@
+Application Name: A&E - Watch Full Episodes of TV Shows 3.1.6 (Android 4.4+)
+	Author: A&E Television Networks Mobile
+	Version: 3.1.6 (34897)arm64-v8a + armeabi + armeabi-v7a + mips + mips64 + x86 + x86_64 
+	Package: com.aetn.aetv.watch
+	39 downloads 
+	Size: 19.3 MB (20,233,255 bytes) 
+	Min: Android 4.4 (Kitkat, API 19) Target: Android 8.0 (Oreo, API 26)
+	Supported DPIs: nodpi
+	Uploaded October 15, 2018 at 2:52PM UTC by HoldTheDoor
+	SHA-1:  87ee1e1fba4db6402c61756cf178cd128293b900
+	SHA-256:  9ef9b567e6490f8aabffd20739d0c7776bd61d25a369922160ab7bb973e5db6c
+	MD5:  d496f2652656f769914961f9bf7c34ed
+	SHA-1:  94a605fd4990e8b9baa69f7155a605a8fc538e5b
+	SHA-256:  2751f5a457bae917c088e9c09b8f584da95de8e2f10282af8aad285691a7254a
+
+Application Name: A&E - Watch Full Episodes of TV Shows 3.1.5 (Android 4.4+)
+	Author: A&E Television Networks Mobile
+	Version: 3.1.5 (34744)arm64-v8a + armeabi + armeabi-v7a + mips + mips64 + x86 + x86_64 
+	Package: com.aetn.aetv.watch
+	43 downloads 
+	Size: 19.29 MB (20,223,803 bytes) 
+	Min: Android 4.4 (Kitkat, API 19) Target: Android 8.0 (Oreo, API 26)
+	Supported DPIs: nodpi
+	Uploaded September 12, 2018 at 8:45PM UTC by HoldTheDoor
+	SHA-1:  87ee1e1fba4db6402c61756cf178cd128293b900
+	SHA-256:  9ef9b567e6490f8aabffd20739d0c7776bd61d25a369922160ab7bb973e5db6c
+	MD5:  ba541847eba93118f6065eb64fed9ab2
+	SHA-1:  617b3278de3e799c1aead78370b45de6a01c5f29
+	SHA-256:  73dfb4e1fd899a111e421ffe1b989dfcc6ecd8465c40b39cd23d71098359d9ce
+
+Application Name: A&E - Watch Full Episodes of TV Shows 3.1.1 (Android 4.4+)
+	Author: A&E Television Networks Mobile
+	Version: 3.1.1 (34173)arm64-v8a + armeabi + armeabi-v7a + mips + mips64 + x86 + x86_64 
+	Package: com.aetn.aetv.watch
+	199 downloads 
+	Size: 18.72 MB (19,624,616 bytes) 
+	Min: Android 4.4 (Kitkat, API 19) Target: Android 7.1 (Nougat MR1, API 25)
+	Supported DPIs: nodpi
+	Uploaded April 19, 2018 at 11:30PM UTC by Mike
+	SHA-1:  87ee1e1fba4db6402c61756cf178cd128293b900
+	SHA-256:  9ef9b567e6490f8aabffd20739d0c7776bd61d25a369922160ab7bb973e5db6c
+	MD5:  4c00e4ac504f9432776268349eeb9104
+	SHA-1:  c5c768bee955e9fd467944de34bf8dcacafb9307
+	SHA-256:  07e7c43076fa58309ff4fa4e4b554f1c31c2f1a8985bc61a36dfd68a810cef44
+
+Application Name: A&E - Watch Full Episodes of TV Shows 3.0.3 (Android 4.4+)
+	Author: A&E Television Networks Mobile
+	Version: 3.0.3 (33910)arm64-v8a + armeabi + armeabi-v7a + mips + mips64 + x86 + x86_64 
+	Package: com.aetn.aetv.watch
+	74 downloads 
+	Size: 17.26 MB (18,094,321 bytes) 
+	Min: Android 4.4 (Kitkat, API 19) Target: Android 7.1 (Nougat MR1, API 25)
+	Supported DPIs: nodpi
+	Uploaded February 22, 2018 at 12:45AM UTC by Mike
+	SHA-1:  87ee1e1fba4db6402c61756cf178cd128293b900
+	SHA-256:  9ef9b567e6490f8aabffd20739d0c7776bd61d25a369922160ab7bb973e5db6c
+	MD5:  568615e20027f510abce6bde3907f8e1
+	SHA-1:  a18e7afa56db36f8ac96e6a6fbd49307d71ba921
+	SHA-256:  b2199edfe2accec3bcaa211c356516200c9bbf5ad43dc592ed07bf6d4baf4d3c
+
+Application Name: A&E - Watch Full Episodes of TV Shows 2.3.6 (Android 4.1+)
+	Author: A&E Television Networks Mobile
+	Version: 2.3.6 (19132)armeabi + armeabi-v7a + x86 
+	Package: com.aetn.aetv.watch
+	345 downloads 
+	Size: 19.62 MB (20,574,030 bytes) 
+	Min: Android 4.1 (Jelly Bean, API 16) Target: Android 6.0 (Marshmallow, API 23)
+	Supported DPIs: nodpi
+	Uploaded January 1, 2018 at 5:50AM UTC by Luis
+	SHA-1:  87ee1e1fba4db6402c61756cf178cd128293b900
+	SHA-256:  9ef9b567e6490f8aabffd20739d0c7776bd61d25a369922160ab7bb973e5db6c
+	MD5:  e13d0a651f7bb49c8482f03b98045f3f
+	SHA-1:  38249316c6113b42cc3a3088b08df89c651a40d0
+	SHA-256:  f2c0db12ca2a5bf7ef2a35b21d2167cd003493040d9544267fcf5415d58df567
+
