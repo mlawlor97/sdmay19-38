@@ -1,13 +1,15 @@
 import requests
 import re
 import os
+import json
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
-from threading import Thread
+from threading import Thread, Lock
+from boxsdk import DevelopmentClient
 
 
 class RateLimiter:
@@ -32,6 +34,7 @@ class RateLimiter:
 
 # Global variable to keep from rate limiting websites
 rl = RateLimiter(0, 0)
+client = DevelopmentClient()
 
 
 def setRateLimit(maxPages, waitTime):
@@ -58,9 +61,11 @@ def click(url, tag, *args):
     """
     index = 0 if not args else args[0]
 
-    options = webdriver.ChromeOptions().add_argument('--headless')
+    options = webdriver.ChromeOptions()
+    options.add_argument('--headless')
+    options.add_argument('--disable-gpu')
     phantom = webdriver.Chrome(chrome_options=options,
-                               executable_path=createPath(os.getcwd(), 'chromedriver'))
+                               executable_path=createPath(os.getcwd(), 'SupportFiles', 'chromedriver'))
 
     phantom.get(url)
     WebDriverWait(phantom, 10).until(EC.visibility_of_element_located((By.CLASS_NAME, tag)))
@@ -124,52 +129,30 @@ def logToFile(outputFile, line, *args):
     f.write(line)
     f.close()
 
-
-def makeDirectory(appName):
-    """Makes directories for apk files and reviews
-
-    :param appName: Name of the application
-    :return: File path of the parent directory
-    """
-    savePath = os.getcwd() + '/'
-
-    tryMakeDir(savePath + 'reviews/' + appName)
-    tryMakeDir(savePath + 'apks/' + appName)
-
-    return savePath
-
-
-def tryMakeDir(savePath):
-    """Helper method to make a directory
-
-    :param savePath: File path of the new directory
-    """
-    try:
-        os.mkdir(savePath)
-    except OSError:
-        print('Failed to create directory %s ' % savePath)
-    else:
-        print('Successfully created the directory %s ' % savePath)
-
-
-def downloadApk(apk, savePath):
+def downloadApk(apk, savePath, fileName, directoryName):
     """Downloads given apk in the background to reduce time
 
     :param apk: APK to be downloaded
     :param savePath: Where the apk will be stored
     """
-    Thread(target=apkThread, args=(apk, savePath)).start()
+    Thread(target=apkThread, args=(apk, savePath, fileName, directoryName)).start()
 
 
-def apkThread(apk, savePath):
+def apkThread(apk, savePath, fileName, directoryName):
     """Process to download APK files
 
     :param apk: APK to be downloaded
     :param savePath: Where to save APK files
     """
+    time.sleep(0.5)
     session = requests.Session()
     s = session.get(apk).content
     logToFile(savePath, s, 'wb')
+    try:
+        uploadAPK(savePath, fileName, directoryName)
+        os.remove(savePath)
+    except:
+        os.remove(savePath)
 
 
 def writeOutput(destination, *args, **kwargs):
@@ -190,3 +173,14 @@ def writeOutput(destination, *args, **kwargs):
 
     for key, value in kwargs.items():
         logToFile(destination, key + ': ' + value.__str__() + '\n')
+
+
+def uploadAPK(filePath, fileName, directoryName):
+    # search_term = "apks"
+    # type = 'folder'
+    # limit = 1
+    # offset = 0
+    #
+    # content = client.search(search_term, result_type=type, limit=limit, offset=offset, )
+    folder_id = '54833153949'
+    client.folder(folder_id).upload(filePath, fileName)

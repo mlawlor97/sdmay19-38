@@ -1,16 +1,91 @@
-Name: DealsPure
-	Author: PromoPure
-	Category: Shopping APP
-	Rating: 9.8 / 10.0
-	Package Name: com.dealspure.wild
-	Description: Still pay full price when shopping online? The DealsPure app is here to help you spend less and save more!
-
-DealsPure scours the web everyday for discounted items. On the app, you could search the best deals and coupons from your favorite brands and stores. If you're looking for today's hottest deals, we suggest you check out our Frontpage first and shop more than 100 best deals in every category. Please note that DealsPure may not sell or ship any item directly, we only offer free service that collect the best deals and coupons in one place.
-
-Download the DealsPure app and start saving today!
-
-- Today's hottest deals, sales, gift cards, freebies and more on the frontpage.
-- Search deals by keyword, brand, store and other combination.
-- Find online coupons by brands or stores, and easily copy and apply them at checkout.
-- Share your favorite finds on Facebook, twitter, etc.
-	Versions:
+Name: PUBG MOBILE LITE
+Developer: Tencent Games
+Rating: 8.4
+Description: PUBG MOBILE LITE is here! Built with Unreal Engine 4, this version of PUBG MOBILE is compatible with even more devices and optimized for devices with less RAM without compromising the gameplay experience that has attracted millions of fans around the world. PUBG MOBILE LITE features a smaller map made for 40 players, which means a faster-paced game that still keeps the traditional PUBG style of play!1. PUBG MOBILE LITE40 players parachute onto a graphically rich 2x2 km island for a winner-takes-all showdown. Players have to scavenge for their own weapons, vehicles, and supplies, while battling it out in an ever-shrinking play zone to be the last player standing. Get ready to land, loot, and do whatever it takes to survive.. This Is Battle Royale!2. High-quality Graphics and HD Audio The powerful Unreal Engine 4 creates a jaw-dropping visual experience with stunning detail, realistic gameplay effects and a massive HD map, perfect for Battle Royale. Immerse yourself in the world as you play with high-quality audio and rich 3D sound effects.3. Realistic WeaponsChoose from a constantly growing arsenal of lethal firearms, melee weapons, and throwables, each with realistic ballistics and travel trajectories, that give you the option to shoot, beat down, or incinerate your adversaries. Oh, and PUBG’s signature pan? We’ve got the pan.4. Team Up with FriendsInvite and team up with your friends to coordinate your battle plan through voice chat and set up the perfect ambush for your enemies. 5. Fair Gaming EnvironmentPowerful anti-cheat mechanisms ensure a fun and fair environment for all PUBG MOBILE LITE players.Not Just A Game. This Is Battle Royale.Contact UsThe game is still in beta testing and the gameplay experience may change in the final version. Your progress will be carried over to future beta tests.If you enjoy the game, please join the discussion on the PUBG MOBILE LITE Official Facebook Group: https://www.facebook.com/groups/pubgmobileliteIf you have any questions or concerns, please contact our customer service team at PUBGMOBILElite_CS@tencentgames.com
+Package: com.tencent.iglite
+Category: Action GAME
+Tags: ['PUBG', 'Online', 'Battle Royale', 'Action', 'Shooting', 'Survival']
+Version: 0.9.0
+FileSize: 352.0 MB
+Requirements: Android 4.0.3+ (Ice Cream Sandwich MR1, API 15)
+PublishDate: 2018-10-27
+Signature: 13a167fd357b890cb427e28f9bf83ea9835379be
+SHA: b24eaffbfeb61bd0a70d620e39452d01eba3f908
+Changelog: loading...
+Version: 0.9.0
+FileSize: 33.7 MB
+Requirements: Android 4.0.3+ (Ice Cream Sandwich MR1, API 15)
+PublishDate: 2018-10-27
+Signature: 13a167fd357b890cb427e28f9bf83ea9835379be
+SHA: bfaac3a4bf74c83c5648fcdf2eef6ed1ad43ec54
+Changelog: loading...
+Version: 0.9.0
+FileSize: 351.9 MB
+Requirements: Android 4.0.3+ (Ice Cream Sandwich MR1, API 15)
+PublishDate: 2018-10-25
+Signature: 13a167fd357b890cb427e28f9bf83ea9835379be
+SHA: eeb7369dcc5010fc93563c5860e27ef2c96084d8
+Changelog: loading...
+Version: 0.9.0
+FileSize: 33.7 MB
+Requirements: Android 4.0.3+ (Ice Cream Sandwich MR1, API 15)
+PublishDate: 2018-10-25
+Signature: 13a167fd357b890cb427e28f9bf83ea9835379be
+SHA: 377173105849ae793c45308654f6a23773c651d6
+Changelog: loading...
+Version: 0.5.1
+FileSize: 266.9 MB
+Requirements: Android 4.0.3+ (Ice Cream Sandwich MR1, API 15)
+PublishDate: 2018-09-28
+Signature: 13a167fd357b890cb427e28f9bf83ea9835379be
+SHA: 6169cf16e0d956fba10dce8f594f9c12c051e1cc
+Changelog: loading...
+Version: 0.5.1
+FileSize: 32.8 MB
+Requirements: Android 4.0.3+ (Ice Cream Sandwich MR1, API 15)
+PublishDate: 2018-09-28
+Signature: 13a167fd357b890cb427e28f9bf83ea9835379be
+SHA: 0b4556b3eda5e668f41b98a2d429382e930f6dca
+Changelog: loading...
+Version: 0.5.1
+FileSize: 266.9 MB
+Requirements: Android 4.0.3+ (Ice Cream Sandwich MR1, API 15)
+PublishDate: 2018-09-12
+Signature: 13a167fd357b890cb427e28f9bf83ea9835379be
+SHA: bda8fde90b35bfef57b3e4fea39427d5fd9ecc74
+Changelog: loading...
+Version: 0.5.1
+FileSize: 32.8 MB
+Requirements: Android 4.0.3+ (Ice Cream Sandwich MR1, API 15)
+PublishDate: 2018-09-12
+Signature: 13a167fd357b890cb427e28f9bf83ea9835379be
+SHA: ee26e8957a1a7d26856bf91967c381b62363a45f
+Changelog: loading...
+Version: 0.5.0
+FileSize: 247.9 MB
+Requirements: Android 4.0.3+ (Ice Cream Sandwich MR1, API 15)
+PublishDate: 2018-08-19
+Signature: 13a167fd357b890cb427e28f9bf83ea9835379be
+SHA: 6e42a3512367ecbb7a35c307ad2f02597ca329a8
+Changelog: loading...
+Version: 0.5.0
+FileSize: 30.4 MB
+Requirements: Android 4.0.3+ (Ice Cream Sandwich MR1, API 15)
+PublishDate: 2018-08-19
+Signature: 13a167fd357b890cb427e28f9bf83ea9835379be
+SHA: 0df822cfeec3397e04dd888e73ab07bc53e97ff5
+Changelog: loading...
+Version: 0.5.0
+FileSize: 247.9 MB
+Requirements: Android 4.0.3+ (Ice Cream Sandwich MR1, API 15)
+PublishDate: 2018-08-09
+Signature: 13a167fd357b890cb427e28f9bf83ea9835379be
+SHA: ee204c1c5207b2c995e65fe349a5ccbd0ceb5d26
+Changelog: loading...
+Version: 0.5.0
+FileSize: 30.4 MB
+Requirements: Android 4.0.3+ (Ice Cream Sandwich MR1, API 15)
+PublishDate: 2018-08-09
+Signature: 13a167fd357b890cb427e28f9bf83ea9835379be
+SHA: 6ec655d9b0278c33271aa81ad8e2c18720d3d550
+Changelog: loading...

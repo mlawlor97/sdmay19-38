@@ -50,9 +50,8 @@ def getAppsOnPage(url, baseUrl):
         if not appName:
             continue
 
-        savePath = makeDirectory(appName)
-        collectAllVersions(baseUrl, link, savePath + 'apks/' + appName)
-        collectAllReviews(baseUrl, appName, savePath + 'reviews/' + appName)
+        collectAllVersions(baseUrl, link, './apks/')
+        collectAllReviews(baseUrl, appName, './reviews/')
 
     return apps is not None
 
@@ -69,7 +68,7 @@ def scrapeAppData(appPage):
     metaData = dataSite.getAll()
     if not metaData:
         return False
-    print(metaData.items())
+    # print(metaData.items())
 
     # Want to change to somehow work with list of value pairs
     writeOutput('DB',
@@ -226,12 +225,12 @@ def scrapeReviewsOnPage(url, pageNumber, savePath):
         user = review.contents[3].contents[1].text.strip()
 
         destination = savePath + '/' + publishDate + '~' + user.replace('/', '') + '.txt'
-        writeOutput(destination,
-                    User=user,
-                    Message=review.contents[5].text.strip(),
-                    Rating=review.contents[3].contents[1].contents[3].attrs['data-score'],
-                    PublishDate=publishDate,
-                    MessageRating=msgRating)
+        # writeOutput(destination,
+        #             User=user,
+        #             Message=review.contents[5].text.strip(),
+        #             Rating=review.contents[3].contents[1].contents[3].attrs['data-score'],
+        #             PublishDate=publishDate,
+        #             MessageRating=msgRating)
 
     if reviews:
         return True
@@ -250,10 +249,10 @@ def scrapeApk(url, savePath):
     downloadLink = soup.find('a', {'id': 'download_link'})
     if downloadLink:
         apk = downloadLink.get('href')
-        fileName = soup.find('span', {'class': 'file'}).contents[0]
+        fileName = soup.find('span', {'class': 'file'}).contents[0].lstrip().rstrip()
 
         fullPath = createPath(savePath, fileName)
-        downloadApk(apk, fullPath)
+        downloadApk(apk, fullPath, fileName, savePath.split('/')[-1])
     else:
         logToFile('APKCheck.txt', url + '\n')
 
