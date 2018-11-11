@@ -48,18 +48,18 @@ def setRateLimit(maxPages, waitTime):
     rl = RateLimiter(maxPages, waitTime)
 
 
-def click(url, tag, *args):
+def click(url, tag, *index):
     """Clicks on given element. Useful for activating pop-ups. Chrome Driver is needed to use
 
     Args:
         :param url: url containing the link to the pop-up
         :param tag: tag of the element that opens the pop-up
-        :param args: optional argument that specifies which element you want to click if multiple contain given tag
+        :param index: optional argument that specifies which element you want to click if multiple contain given tag
 
     Returns:
         BeautifulSoup format of html of the page with the pop-up enabled
     """
-    index = 0 if not args else args[0]
+    elementIndex = 0 if not index else index[0]
 
     options = webdriver.ChromeOptions()
     options.add_argument('--headless')
@@ -69,7 +69,7 @@ def click(url, tag, *args):
 
     phantom.get(url)
     WebDriverWait(phantom, 10).until(EC.visibility_of_element_located((By.CLASS_NAME, tag)))
-    element = phantom.find_elements_by_class_name(tag)[index]
+    element = phantom.find_elements_by_class_name(tag)[elementIndex]
     phantom.execute_script('arguments[0].click();', element)
     time.sleep(0.1)  # Time to load pop-up
     soup = requestHTML(url, phantom.page_source)
@@ -77,14 +77,18 @@ def click(url, tag, *args):
     return soup
 
 
-def createPath(path, *paths):
+def createPath(basePath, *extensions):
     """Helper method to map strings into a path
 
-    :param path: Base path
-    :param paths: path extension
+    :param basePath: Base path
+    :param extensions: path extension
     :return: full file path
     """
-    return os.path.join(path, *paths)
+    return os.path.join(basePath, *extensions)
+
+
+def getWorkingDirectory():
+    return os.getcwd()
 
 
 def removeSpecialChars(string):
@@ -129,24 +133,29 @@ def logToFile(outputFile, line, *args):
     f.write(line)
     f.close()
 
-def downloadApk(apk, savePath, fileName, directoryName):
+
+def downloadApk(apkDownloadLink, savePath, fileName, directoryName):
     """Downloads given apk in the background to reduce time
 
-    :param apk: APK to be downloaded
+    :param apkDownloadLink: APK to be downloaded
     :param savePath: Where the apk will be stored
+    :param fileName:
+    :param directoryName:
     """
-    Thread(target=apkThread, args=(apk, savePath, fileName, directoryName)).start()
+    Thread(target=apkThread, args=(apkDownloadLink, savePath, fileName, directoryName)).start()
 
 
-def apkThread(apk, savePath, fileName, directoryName):
+def apkThread(apkDownloadLink, savePath, fileName, directoryName):
     """Process to download APK files
 
-    :param apk: APK to be downloaded
+    :param apkDownloadLink: APK to be downloaded
     :param savePath: Where to save APK files
+    :param fileName:
+    :param directoryName:
     """
     time.sleep(0.5)
     session = requests.Session()
-    s = session.get(apk).content
+    s = session.get(apkDownloadLink).content
     logToFile(savePath, s, 'wb')
     try:
         uploadAPK(savePath, fileName, directoryName)
