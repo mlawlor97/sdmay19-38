@@ -63,16 +63,16 @@ def click(url, tag, *args):
 
     options = webdriver.ChromeOptions()
     options.add_argument('--headless')
-    options.add_argument('--disable-gpu')
+    # options.add_argument('--disable-gpu')
     options.binary_location = "C:/Program Files (x86)/Google/Chrome/Application/chrome.exe"
     phantom = webdriver.Chrome(chrome_options=options,
                                executable_path=createPath(os.getcwd(), 'chromedriver').replace('\\', '/'))
 
     phantom.get(url)
-    WebDriverWait(phantom, 10).until(EC.visibility_of_element_located((By.CLASS_NAME, tag)))
+    WebDriverWait(phantom, 20).until(EC.visibility_of_element_located((By.CLASS_NAME, tag)))
     element = phantom.find_element_by_class_name(tag)
     phantom.execute_script('arguments[0].click();', element)
-    time.sleep(0.1)  # Time to load pop-up
+    time.sleep(2)  # Time to load pop-up
     soup = requestHTML(url, phantom.page_source)
     phantom.close()
     return soup

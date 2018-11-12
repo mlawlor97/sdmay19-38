@@ -1,11 +1,11 @@
 from utils import *
 
 # these are for testing purposes only, delete later
-maxCategories = 3
-maxApps = 1
-maxVersions = 5
+maxCategories = 1
+maxApps = 4
+maxVersions = 2
 
-downloadPath = "C:/CrawlerDownloads/"
+downloadPath = "./APK Files"
 
 def logErrorApps(outputFile, line):
     f = open(outputFile, "a")
@@ -58,8 +58,11 @@ def getApps(url, baseURL):
     for links in apps:  # Runs 20 apps at a time
         for a in links.find_all("a", href=True):
             linkToVisit = a["href"]
-            appName = getAppData(linkToVisit)
-            getAllVersions(linkToVisit + "/old", appName)
+            getAppData(linkToVisit)
+            # try:
+            getAllVersions(linkToVisit)
+            # except:
+                # getSingleVersion(linkToVisit)
             if counter >= maxApps - 1: # limit for testing - delete this
                 return False
             counter += 1
@@ -69,22 +72,83 @@ def getApps(url, baseURL):
     else:
         return True
 
-def getPermissions(soup):
-    soup = 'x'
-
-def getAllVersions(appPage, appName):
+def getSingleVersion(appPage):
     r = requests.get(appPage)
+    soup = BeautifulSoup(r.content, "lxml")
+
+    versionBox = soup.find("a", {"class": "data download"})
+    versionName = versionBox.find("p", {"class": "version"}).text
+
+    r2 = requests.get(appPage + "/download")
+    soup2 = BeautifulSoup(r2.content, "lxml")
+
+    # Languages - good
+    languages = ""
+    languageSoup = soup2.find("dt", {"class": "left"}, text="Language")
+    if languageSoup:
+        languages = languageSoup.parent.find("span").text
+        moreLanguageSoup = languageSoup.parent.parent.find("ul", {"class": "list-language"})
+        if moreLanguageSoup:
+            moreLanguages = moreLanguageSoup.find_all("li")
+            for ml in moreLanguages:
+                languages += ", " + ml.text
+
+    # Permissions - good
+    permissions = []
+    permissionsBoxSoup = click(appPage + "/download", "clickable")
+    if permissionsBoxSoup:
+        permissionBox = permissionsBoxSoup.find("div", {"id": "jbox"})
+        permissionList = permissionBox.find_all("div")
+        for p in permissionList:
+            permissions.append(p.text)
+
+    writeVersion(versionName, languages, permissions)
+
+    downloadLink = soup2.find("a", {"class": "data download"})["href"]
+    downloadApk(downloadLink, downloadPath)
+
+def getAllVersions(appPage):
+    r = requests.get(appPage + "/old")
     soup = BeautifulSoup(r.content, "lxml")
     versionList = soup.find_all("div", {"class": "item"})
 
     counter = 0
 
     for version in versionList:
-        versionName = version.find("span", {"class": "app_card_version"}).text
-        writeVersion(versionName, '', '')
+        if counter == 0:
+            getSingleVersion(appPage)
+            counter += 1
+            continue
         if counter < maxVersions: # limit for testing - delete this
-            r2 = requests.get("http:" + version.find("a")["href"])
+            versionName = version.find("span", {"class": "app_card_version"}).text
+            downloadPageName = "http:" + version.find("a")["href"]
+            try:
+                r2 = requests.get(downloadPageName)
+            except:
+                return
             downloadPage = BeautifulSoup(r2.content, "lxml")
+
+            # Languages - good
+            languages = ""
+            languageSoup = downloadPage.find("dt", {"class": "left"}, text="Language")
+            if languageSoup:
+                languages = languageSoup.parent.find("span").text
+                moreLanguageSoup = languageSoup.parent.parent.find("ul", {"class": "list-language"})
+                if moreLanguageSoup:
+                    moreLanguages = moreLanguageSoup.find_all("li")
+                    for ml in moreLanguages:
+                        languages += ", " + ml.text
+
+            # Permissions - good
+            permissions = []
+            permissionsBoxSoup = click(downloadPageName, "clickable")
+            if permissionsBoxSoup:
+                permissionBox = permissionsBoxSoup.find("div", {"id": "jbox"})
+                permissionList = permissionBox.find_all("div")
+                for p in permissionList:
+                    permissions.append(p.text)
+
+            writeVersion(versionName, languages, permissions)
             downloadLink = downloadPage.find("a", {"class": "data download"})["href"]
             downloadApk(downloadLink, downloadPath)
         counter += 1
@@ -104,7 +168,7 @@ def getAppData(appPage):
     languages = ""
     size = ""
     permissionCount = ""
-    permissions = []
+    # permissions = []
     downloads = ""
     date = ""
     signatureMD5 = ""
@@ -157,17 +221,12 @@ def getAppData(appPage):
     # Language -- good
     languageSoup = soup.find("dt", {"class": "left"}, text="Language")
     if languageSoup:
-        moreLanguages = languageSoup.parent.find("a")
-        if moreLanguages:
-            moreLanguagesBoxSoup = click(appPage + "/download", "more_lang")
-            if moreLanguagesBoxSoup:
-                moreLanguagesBox = moreLanguagesBoxSoup.find("div", {"id": "jbox"})
-                moreLanguagesList = moreLanguagesBox.find_all("li")
-                for ml in moreLanguagesList:
-                    languages += ", " + ml.text
-                languages = languages[2:]
-        else:
-            languages = languageSoup.parent.find("span").text
+        languages = languageSoup.parent.find("span").text
+        moreLanguageSoup = languageSoup.parent.parent.find("ul", {"class": "list-language"})
+        if moreLanguageSoup:
+            moreLanguages = moreLanguageSoup.find_all("li")
+            for ml in moreLanguages:
+                languages += ", " + ml.text
 
     # Size -- good
     sizeSoup = soup.find("dt", {"class": "left"}, text="Size")
@@ -204,19 +263,11 @@ def getAppData(appPage):
     permissionsSoup = soup.find("dt", {"class": "left"}, text="Permissions")
     if permissionsSoup:
         permissionCount = permissionsSoup.parent.find("dd").text
-    permissionsBoxSoup = click(appPage + "/download", "clickable")
-    if permissionsBoxSoup:
-        permissionBox = permissionsBoxSoup.find("div", {"id": "jbox"})
-        permissionList = permissionBox.find_all("div")
-        for p in permissionList:
-            permissions.append(p.text)
 
     # write to db when available
-    writeOutput(name, author, category, rating, packageName, license, operatingSystem, requiresAndroid, languages, size, downloads, date, signatureMD5, description, permissionCount, permissions)
+    writeOutput(name, author, category, rating, packageName, license, operatingSystem, requiresAndroid, languages, size, downloads, date, signatureMD5, description, permissionCount)
 
-    return name
-
-def writeOutput(name, author, category, rating, packageName, license, operatingSystem, requiresAndroid, languages, size, downloads, date, signatureMD5, description, permissionCount, permissions):
+def writeOutput(name, author, category, rating, packageName, license, operatingSystem, requiresAndroid, languages, size, downloads, date, signatureMD5, description, permissionCount):
     # write to file - text for now
     outFile = "UpToDown Crawler Output.txt"
     f = open(outFile, "a", encoding="utf-8")
@@ -228,26 +279,29 @@ def writeOutput(name, author, category, rating, packageName, license, operatingS
              "\n\tLicense: " + license +
              "\n\tOperating System: " + operatingSystem +
              "\n\tRequires Android: " + requiresAndroid +
-             "\n\tLanguage: " + languages +
+             "\n\tLanguages: " + languages +
              "\n\tSize: " + size +
              "\n\tDownloads: " + downloads +
              "\n\tDate: " + date +
              "\n\tSignature (MD5): " + signatureMD5 +
              "\n\tDescription: " + description +
              "\n\tPermissions: " + permissionCount + "\n"))
-    for p in permissions:
-        f.write(("\t\t" + p + "\n"))
     f.write(("\tVersions:\n"))
     f.close()
 
 
-def writeVersion(version, publishDate, shaValue):
+def writeVersion(version, languages, permissions):
     # write to file - text for now
     outFile = "UpToDown Crawler Output.txt"
     f = open(outFile, "a")
     f.write(("\t\t" + version + "\n"))
+    if languages:
+        f.write(("\t\t\tLanguages: " + languages + "\n"))
+    if permissions:
+        f.write(("\t\t\tPermissions: " + str(len(permissions)) + "\n"))
+        for permission in permissions:
+            f.write(("\t\t\t" + permission + "\n"))
     f.close()
-
 
 def main():
     url = "https://en.uptodown.com/android"
