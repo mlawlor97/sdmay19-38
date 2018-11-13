@@ -217,6 +217,7 @@ pip-selfcheck.json
 *.log
 *.html
 *.json
+.idea
 
 #Temporary editor files
 *.bak
