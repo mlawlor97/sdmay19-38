@@ -218,6 +218,8 @@ pip-selfcheck.json
 *.html
 *.json
 
+*.idea
+
 #Temporary editor files
 *.bak
 *~
