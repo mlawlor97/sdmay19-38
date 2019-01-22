@@ -1,14 +1,10 @@
 import requests
 import re
 import os
-import json
 from bs4 import BeautifulSoup
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-import time
-from threading import Thread, Lock
+
+from time import sleep
+from threading import Thread
 from boxsdk import DevelopmentClient
 
 
@@ -48,35 +44,6 @@ def setRateLimit(maxPages, waitTime):
     rl = RateLimiter(maxPages, waitTime)
 
 
-def click(url, tag, *index):
-    """Clicks on given element. Useful for activating pop-ups. Chrome Driver is needed to use
-
-    Args:
-        :param url: url containing the link to the pop-up
-        :param tag: tag of the element that opens the pop-up
-        :param index: optional argument that specifies which element you want to click if multiple contain given tag
-
-    Returns:
-        BeautifulSoup format of html of the page with the pop-up enabled
-    """
-    elementIndex = 0 if not index else index[0]
-
-    options = webdriver.ChromeOptions()
-    options.add_argument('--headless')
-    options.add_argument('--disable-gpu')
-    phantom = webdriver.Chrome(chrome_options=options,
-                               executable_path=createPath(os.getcwd(), 'SupportFiles', 'chromedriver'))
-
-    phantom.get(url)
-    WebDriverWait(phantom, 10).until(EC.visibility_of_element_located((By.CLASS_NAME, tag)))
-    element = phantom.find_elements_by_class_name(tag)[elementIndex]
-    phantom.execute_script('arguments[0].click();', element)
-    time.sleep(0.1)  # Time to load pop-up
-    soup = requestHTML(url, phantom.page_source)
-    phantom.close()
-    return soup
-
-
 def createPath(basePath, *extensions):
     """Helper method to map strings into a path
 
@@ -84,6 +51,7 @@ def createPath(basePath, *extensions):
     :param extensions: path extension
     :return: full file path
     """
+    basePath = os.getcwd() if basePath == "HOME" else basePath
     return os.path.join(basePath, *extensions)
 
 
@@ -111,7 +79,8 @@ def requestHTML(url, *args):
     rl.visited += 1
     if rl.visited >= rl.rate:
         rl.visited = 0
-        time.sleep(rl.timeOut)
+        sleep(rl.timeOut)
+        print("waiting")
     if args:
         return BeautifulSoup(args[0], 'lxml')
     return BeautifulSoup(requests.get(url).content, 'lxml')
@@ -153,7 +122,7 @@ def apkThread(apkDownloadLink, savePath, fileName, directoryName):
     :param fileName:
     :param directoryName:
     """
-    time.sleep(0.5)
+    sleep(0.5)
     session = requests.Session()
     s = session.get(apkDownloadLink).content
     logToFile(savePath, s, 'wb')
@@ -184,12 +153,6 @@ def writeOutput(destination, *args, **kwargs):
         logToFile(destination, key + ': ' + value.__str__() + '\n')
 
 
-def uploadAPK(filePath, fileName, directoryName):
-    # search_term = "apks"
-    # type = 'folder'
-    # limit = 1
-    # offset = 0
-    #
-    # content = client.search(search_term, result_type=type, limit=limit, offset=offset, )
+def uploadAPK(filePath, fileName):
     folder_id = '54833153949'
     client.folder(folder_id).upload(filePath, fileName)
