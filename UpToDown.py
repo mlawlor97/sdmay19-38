@@ -1,4 +1,7 @@
 from utils import *
+import unittest
+import six
+import mock
 
 # these are for testing purposes only, delete later
 maxCategories = 1
@@ -13,8 +16,8 @@ def logErrorApps(outputFile, line):
     f.close()
 
 
-def getCategories(url):
-    outFile = "UpToDown Crawler Output.txt"
+def getCategories(url, outFile):
+    # outFile = "UpToDown Crawler Output.txt"
 
     r = requests.get(url)
     soup = BeautifulSoup(r.content, "lxml")  # there are faster parsers
@@ -47,7 +50,7 @@ def getCategories(url):
     return categoriesToVisit
 
 
-def getApps(url, baseURL):
+def getApps(url, outFile, appLimit, versionLimit):
     r = requests.get(url)
     soup = BeautifulSoup(r.content, "lxml")  # there are faster parsers
 
@@ -58,12 +61,12 @@ def getApps(url, baseURL):
     for links in apps:  # Runs 20 apps at a time
         for a in links.find_all("a", href=True):
             linkToVisit = a["href"]
-            getAppData(linkToVisit)
+            getAppData(linkToVisit, outFile)
             # try:
-            getAllVersions(linkToVisit)
+            getAllVersions(linkToVisit, outFile, versionLimit)
             # except:
                 # getSingleVersion(linkToVisit)
-            if counter >= maxApps - 1: # limit for testing - delete this
+            if counter >= appLimit - 1: # limit for testing - delete this
                 return False
             counter += 1
 
@@ -72,7 +75,7 @@ def getApps(url, baseURL):
     else:
         return True
 
-def getSingleVersion(appPage):
+def getSingleVersion(appPage, outFile):
     r = requests.get(appPage)
     soup = BeautifulSoup(r.content, "lxml")
 
@@ -102,12 +105,12 @@ def getSingleVersion(appPage):
         for p in permissionList:
             permissions.append(p.text)
 
-    writeVersion(versionName, languages, permissions)
+    writeVersion(outFile, versionName, languages, permissions)
 
     downloadLink = soup2.find("a", {"class": "data download"})["href"]
     downloadApk(downloadLink, downloadPath)
 
-def getAllVersions(appPage):
+def getAllVersions(appPage, outFile, versionLimit):
     r = requests.get(appPage + "/old")
     soup = BeautifulSoup(r.content, "lxml")
     versionList = soup.find_all("div", {"class": "item"})
@@ -116,10 +119,10 @@ def getAllVersions(appPage):
 
     for version in versionList:
         if counter == 0:
-            getSingleVersion(appPage)
+            getSingleVersion(appPage, outFile)
             counter += 1
             continue
-        if counter < maxVersions: # limit for testing - delete this
+        if counter < versionLimit: # limit for testing - delete this
             versionName = version.find("span", {"class": "app_card_version"}).text
             downloadPageName = "http:" + version.find("a")["href"]
             try:
@@ -148,13 +151,13 @@ def getAllVersions(appPage):
                 for p in permissionList:
                     permissions.append(p.text)
 
-            writeVersion(versionName, languages, permissions)
+            writeVersion(outFile, versionName, languages, permissions)
             downloadLink = downloadPage.find("a", {"class": "data download"})["href"]
             downloadApk(downloadLink, downloadPath)
         counter += 1
 
 
-def getAppData(appPage):
+def getAppData(appPage, outFile):
     r = requests.get(appPage + "/download")
     soup = BeautifulSoup(r.content, "lxml")  # there are faster parsers
     name = ""
@@ -265,11 +268,11 @@ def getAppData(appPage):
         permissionCount = permissionsSoup.parent.find("dd").text
 
     # write to db when available
-    writeOutput(name, author, category, rating, packageName, license, operatingSystem, requiresAndroid, languages, size, downloads, date, signatureMD5, description, permissionCount)
+    writeOutput(outFile, name, author, category, rating, packageName, license, operatingSystem, requiresAndroid, languages, size, downloads, date, signatureMD5, description, permissionCount)
 
-def writeOutput(name, author, category, rating, packageName, license, operatingSystem, requiresAndroid, languages, size, downloads, date, signatureMD5, description, permissionCount):
+def writeOutput(outFile, name, author, category, rating, packageName, license, operatingSystem, requiresAndroid, languages, size, downloads, date, signatureMD5, description, permissionCount):
     # write to file - text for now
-    outFile = "UpToDown Crawler Output.txt"
+    # outFile = "UpToDown Crawler Output.txt"
     f = open(outFile, "a", encoding="utf-8")
     f.write(("Name: " + name +
              "\n\tAuthor: " + author +
@@ -290,9 +293,9 @@ def writeOutput(name, author, category, rating, packageName, license, operatingS
     f.close()
 
 
-def writeVersion(version, languages, permissions):
+def writeVersion(outFile, version, languages, permissions):
     # write to file - text for now
-    outFile = "UpToDown Crawler Output.txt"
+    # outFile = "UpToDown Crawler Output.txt"
     f = open(outFile, "a")
     f.write(("\t\t" + version + "\n"))
     if languages:
@@ -305,23 +308,78 @@ def writeVersion(version, languages, permissions):
 
 def main():
     url = "https://en.uptodown.com/android"
-
     outFile = "UpToDown Crawler Output.txt"
+
     f = open(outFile, "w")
     f.write("")
     f.close()
 
-    counter = 0
+    crawl(url, outFile)
 
-    categoriesToVisit = getCategories(url)
+
+def crawl(url, outFile, **limits):
+    
+    counter = 0
+    categoryLimit = maxCategories
+    appLimitPerCategory = maxApps
+    versionLimit = maxVersions
+
+    if ('categoryLimit' in limits):
+        categoryLimit = limits['categoryLimit']
+    if ('appLimitPerCategory' in limits):
+        appLimitPerCategory = limits['appLimitPerCategory']
+    if ('versionLimit' in limits):
+        versionLimit = limits['versionLimit']
+
+    categoriesToVisit = getCategories(url, outFile)
     for categories in categoriesToVisit:
 
-        while getApps(categories + "/free", url):
-            print("")
-        if (counter >= maxCategories - 1):
+        while getApps(categories + "/free", outFile, appLimitPerCategory, versionLimit):
+            pass
+        if (counter == categoryLimit - 1):
             return # limit categories for testing - delete
         counter += 1
 
+class TestCategoryCrawling(unittest.TestCase):
+    @mock.patch('requests.get')
+    def local_get(self, url):
+        "Fetch a stream from local files."
+        p_url = six.moves.urllib.parse.urlparse(url)
+        if p_url.scheme != 'file':
+            raise ValueError("Expected file scheme")
+
+        filename = six.moves.urllib.request.url2pathname(p_url.path)
+        return open(filename, 'rb')
+
+    url = "UpToDown_homepage.html"
+    outFile = "UpToDown Test.txt"
+
+    f = open(outFile, "w")
+    f.write("")
+    f.close()
+
+    crawl(url, outFile, categoryLimit=-1, appLimitPerCategory=0, versionLimit=0)
+
+class TestMetaData(unittest.TestCase):
+    @mock.patch('requests.get')
+    def local_get(self, url):
+        "Fetch a stream from local files."
+        p_url = six.moves.urllib.parse.urlparse(url)
+        if p_url.scheme != 'file':
+            raise ValueError("Expected file scheme")
+
+        filename = six.moves.urllib.request.url2pathname(p_url.path)
+        return open(filename, 'rb')
+
+    url = "UpToDown_homepage.html"
+    outFile = "UpToDown Test.txt"
+
+    f = open(outFile, "w")
+    f.write("")
+    f.close()
+
+    crawl(url, outFile, categoryLimit=3, appLimitPerCategory=1, versionLimit=0)
 
 if __name__ == '__main__':
+    unittest.main()
     main()
