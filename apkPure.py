@@ -2,9 +2,9 @@ from utils import RateLimiter, requestHTML, logToFile, removeSpecialChars, creat
 from utils import writeAppDB, writeVersionDB  # DB Connectors
 from SupportFiles.webDriverUtils import WebDriver
 from SupportFiles.metaDataBase import DataCollectionBase
-from SupportFiles.crawlerBase import CrawlerBase
-from os import fork, getpid, waitpid, kill
-from signal import SIGKILL
+from SupportFiles.crawlerBase import CrawlerBase, ThreadHelper
+
+from threading import Thread
 
 class GetPureData(DataCollectionBase):
 
@@ -21,7 +21,8 @@ class GetPureData(DataCollectionBase):
         self.tryCollection('Description', lambda: self.soup.find(class_="content").text)
 
     def getRating(self):
-        self.tryCollection('Rating', lambda: self.soup.find(class_="rating").text.strip())
+        rating = self.soup.find(class_="rating")
+        self.tryCollection('Rating', lambda: rating.text.strip() if rating else 0.0)
 
     def getTags(self):
         self.tryCollection('Tags', lambda: [tag.text for tag in self.soup.find(class_="tag_list")('li') if tag.text])
@@ -80,125 +81,120 @@ class ApkPure(CrawlerBase):
 
     def __init__(self, siteUrl="https://apkpure.com", rateLimiter=RateLimiter()):
         super().__init__(siteUrl, rateLimiter)
-        self.webDriver      = None
         self.categoryLinks  = []
-        self.subCategories  = []
-        self.currUrl        = siteUrl
-        self.AppName        = None
-        self.children       = []
-
-    def __del__(self):
-        [kill(child, SIGKILL) for child in self.children]
+        self.threads        = []
 
     def crawl(self):
+        def categoryThread(pure, category):
+            tHelper = ThreadHelper(driver=WebDriver())
+            pageNumber = 1
+            while pure.getAppsOnPage(pure.siteUrl + category + '?page=' + str(pageNumber), tHelper):
+                pageNumber += 1
+            print('Finished: ' + category)
+
         self.getCategories()
         for category in self.categoryLinks:
-            pid = fork()
-            if pid > 0:
-                continue
-            else:
-                self.children.append(pid)
-                self.webDriver = WebDriver()
-                pageNumber = 1
-                while self.getAppsOnPage(self.siteUrl + category + '?page=' + pageNumber.__str__()):
-                    pageNumber += 1
-                self.children.remove(pid)
-                return
-        while self.children is not []:
-            continue
+            self.threads.append(Thread(target=categoryThread, args=(self, category, )))
 
-    def loadPage(self, url, verifier):
-        self.webDriver.loadPage(url, 'class name', verifier)
-        self.webDriver.driver.execute_script('policy_review.setReview();')  # Gets rid of cookie agreement
-        self.webDriver.driver.execute_script('document.getElementById("ad-aegon-side").remove()') # Removes QR code
+        print(self.threads.__len__())
+        [t.start() for t in self.threads]
+        [t.join() for t in self.threads]
+
+    @staticmethod
+    def loadPage(driver, url, verifier):
+        driver.loadPage(url, 'class name', verifier)
+        driver.driver.execute_script('policy_review.setReview();')  # Gets rid of cookie agreement
+        driver.driver.execute_script('document.getElementById("ad-aegon-side").remove()') # Removes QR code
     
     def getCategories(self):
         cats = requestHTML(self.siteUrl + '/app')(class_="index-category")
         [[self.categoryLinks.append(cat['href']) for cat in sect(href=True)] for sect in cats]
 
-    def getAppsOnPage(self, url):
+    def getAppsOnPage(self, url, tHelper):
         apps = requestHTML(url)(class_='category-template-title')
         for app in apps:
-            self.currUrl = self.siteUrl + app.find('a', href=True)['href']
-            self.scrapeAppData(requestHTML(self.currUrl))
+            tHelper.url = self.siteUrl + app.find('a', href=True)['href']
+            self.scrapeAppData(requestHTML(tHelper.url), tHelper)
 
-            if self.AppName:
-                self.currUrl += '/versions'
-                self.collectAllVersions()
-                # self.collectAllReviews()
+            if tHelper.app:
+                tHelper.url += '/versions'
+                self.collectAllVersions(tHelper)
+                # self.collectAllReviews(tHelper)
 
         return None if apps.__len__() is 0 else not None
 
-    def scrapeAppData(self, soup):
+    def scrapeAppData(self, soup, tHelper):
         try:
-            self.AppName = soup.find(class_='title-like').find('h1').text.strip()
+            tHelper.app = soup.find(class_='title-like').find('h1').text.strip()
         except AttributeError:
-            self.AppName = None
+            tHelper.app = None
 
-        pureData = GetPureData(self.currUrl, soup).getAll()
+        pureData = GetPureData(tHelper.url, soup).getAll()
 
-        id = writeAppDB('ApkPure', self.AppName, pureData.metaData)
+        id = writeAppDB('ApkPure', tHelper.app, pureData.metaData)
         print(id)
 
-    def collectAllVersions(self):
-        soup = requestHTML(self.currUrl)
+    def collectAllVersions(self, tHelper):
+        soup = requestHTML(tHelper.url)
         versionList = soup.find(class_='ver')('li')
-        self.scrapeVersions(versionList) if 'Page Deleted' not in soup.title.text else logToFile('versions.txt', self.currUrl + '\n')
+        if 'Page Deleted' not in soup.title.text:
+            self.scrapeVersions(versionList, tHelper)
+        else:
+            logToFile('Versions.txt', tHelper.url + '\n')
 
-    def scrapeVersions(self, versionList):
+    def scrapeVersions(self, versionList, tHelper):
         index = 0
-        self.loadPage(self.currUrl, 'ver')
+        self.loadPage(tHelper.driver, tHelper.url, 'ver')
 
         for v in versionList:
             if v.find(class_="ver-whats-new"):
-                v = self.webDriver.clickPopUp("ver-item-m", "mfp-close", index=index)
+                v = tHelper.driver.clickPopUp("ver-item-m", "mfp-close", index=index)
                 while 'loading..' in v.find(class_='ver-whats-new').text:
-                    v = self.webDriver.fetchPage()
-                self.webDriver.clickAway("mfp-close", "class name")
+                    v = tHelper.driver.fetchPage()
+                tHelper.driver.clickAway("mfp-close", "class name")
                 v = v.find(class_='ver-wrap')('li')[index]
                 
             version = v.find('span').text.lstrip('V')
-            pureVersion = GetPureVersion(self.currUrl, v).getAll()
-            writeVersionDB('ApkPure', self.AppName, version, pureVersion.metaData)
+            pureVersion = GetPureVersion(tHelper.url, v).getAll()
+            writeVersionDB('ApkPure', app, version, pureVersion.metaData)
 
             index += 1
             # self.scrapeApk(self.siteUrl + v.find(href=True)['href'], './apks/')  # TODO Uncomment when collecting APKs
 
-    def collectAllReviews(self):
-        groupName = removeSpecialChars(self.AppName.lower()).replace(' ', '-')
+    def collectAllReviews(self, tHelper):
+        groupName = removeSpecialChars(tHelper.app.lower()).replace(' ', '-')
         reviewsUrl = self.siteUrl + '/group/' + groupName + '?reviews=1&page='
-        self.currUrl = self.siteUrl + '/group/' + groupName + '/'
+        tHelper.url = self.siteUrl + '/group/' + groupName + '/'
 
         pageNumber = 1
-        while self.scrapeReviews(reviewsUrl + pageNumber.__str__()):
+        while self.scrapeReviews(reviewsUrl + pageNumber.__str__(), tHelper):
             pageNumber += 1
 
-    def scrapeReviews(self, url):
+    def scrapeReviews(self, url, tHelper):
         reviews = requestHTML(url)('li', class_='cmt-root')
         for review in reviews:
-            self.loadPage(self.currUrl + review['id'].lstrip('c'), 'bread-crumbs')
-            self.webDriver.loadMore('cmt-more-btn')
-            soup = self.webDriver.fetchPage()
+            self.loadPage(tHelper.driver, tHelper.url + review['id'].lstrip('c'), 'bread-crumbs')
+            tHelper.driver.loadMore('cmt-more-btn')
+            soup = tHelper.driver.fetchPage()
 
             reviewData = GetPureReview(url, soup.select_one('.author')).getAll()
             reviewData.tryCollection('Rating', lambda: review.select_one('.cmt-icon-s-stars')['data-score'], True)
-            reviewData.tryCollection('Responses', lambda: self.scrapeResponses(soup.find(id="cmt-reply-data"), []))
-            print(reviewData.getJSON())
+            reviewData.tryCollection('Responses', lambda: self.scrapeResponses(soup.find(id="cmt-reply-data"), [], tHelper.url))
 
-            # TODO Get rid of once it writes to DB or keep???
             publishDate, user = reviewData.metaData.get('Publish Date'), reviewData.metaData.get('User').replace('/', '')
             destination = './reviews/' + publishDate + '~' + user + '.txt'  # TODO Better naming convention???
             writeOutput(destination=destination, dataDict=reviewData.metaData)
 
         return None if reviews.__len__() is 0 else not None
 
-    def scrapeResponses(self, soup, responses):
+    @staticmethod
+    def scrapeResponses(soup, responses, url):
         soup = soup.find('ul', recursive=False)
         if not soup:
             return []
         for response in soup(id=True, recursive=False):
-            data = GetPureReview(soup=requestHTML(self.currUrl + response['id'].lstrip('c'))).getAll()
-            data.tryCollection('Responses', lambda: self.scrapeResponses(response, []))
+            data = GetPureReview(soup=requestHTML(url + response['id'].lstrip('c'))).getAll()
+            data.tryCollection('Responses', lambda: ApkPure.scrapeResponses(response, [], url))
             responses.append(data.metaData)
         return responses
 
