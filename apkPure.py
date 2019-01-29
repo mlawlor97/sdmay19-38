@@ -1,4 +1,5 @@
-from utils import RateLimiter, requestHTML, logToFile, removeSpecialChars, createPath, downloadApk, writeOutput, writeAppDB
+from utils import RateLimiter, requestHTML, logToFile, removeSpecialChars, createPath, downloadApk, writeOutput
+from utils import writeAppDB, writeVersionDB
 from SupportFiles.webDriverUtils import WebDriver
 from SupportFiles.metaDataBase import DataCollectionBase
 from SupportFiles.crawlerBase import CrawlerBase
@@ -30,10 +31,6 @@ class GetPureData(DataCollectionBase):
 
 
 class GetPureVersion(DataCollectionBase):
-
-    def getVersion(self):
-        self.tryCollection('Version', lambda: self.soup.find('span').text.lstrip('V'))
-        self.soup = self.soup.find(class_="ver-info-m")
 
     def getFileSize(self):
         self.tryCollection('File Size', lambda: str(self.soup.find('strong', string="File Size: ").next_sibling))
@@ -85,6 +82,7 @@ class ApkPure(CrawlerBase):
         self.categoryLinks = []
         self.subCategories = []
         self.currUrl = siteUrl
+        self.currAppName = None
 
     def crawl(self):
         self.getCategories()
@@ -106,25 +104,26 @@ class ApkPure(CrawlerBase):
         apps = requestHTML(url)(class_='category-template-title')
         for app in apps:
             self.currUrl = self.siteUrl + app.find('a', href=True)['href']
-            appName = self.scrapeAppData()
-            if not appName:
+            self.scrapeAppData()
+            if not self.currAppName:
                 continue
 
             self.currUrl += '/versions'
-            # self.collectAllVersions()
-            self.collectAllReviews(appName)
+            self.collectAllVersions()
+            # self.collectAllReviews()
 
         return None if apps.__len__() is 0 else not None
 
     def scrapeAppData(self):
         pureData = GetPureData(self.currUrl, requestHTML(self.currUrl)).getAll()
         if pureData is Exception:
+            self.currAppName = None
             return None
-        pureData.uploadJSON()
-        # id = writeAppDB('ApkPure', pureData.metaData.get('Name'), pureData.metaData)
-        # print(id)
 
-        return pureData.metaData.get('Name')
+        id = writeAppDB('ApkPure', pureData.metaData.get('Name'), pureData.metaData)
+        print(id)
+
+        self.currAppName = pureData.metaData.get('Name')
 
     def collectAllVersions(self):
         soup = requestHTML(self.currUrl)
@@ -143,14 +142,15 @@ class ApkPure(CrawlerBase):
                 self.webDriver.clickAway("mfp-close", "class name")
 
             v = v.find(class_='ver-wrap')('li')[index]
-            pureVersion = GetPureVersion(self.currUrl, v).getAll()
-            pureVersion.uploadJSON()
+            version = v.find('span').text.lstrip('V')
+            pureVersion = GetPureVersion(self.currUrl, v.find(class_="ver-info-m")).getAll()
+            writeVersionDB('ApkPure', self.currAppName, version, pureVersion.metaData)
 
             index += 1
             # self.scrapeApk(self.siteUrl + v.find(href=True)['href'], './apks/')  # TODO Uncomment when collecting APKs
 
-    def collectAllReviews(self, appName):
-        groupName = removeSpecialChars(appName.lower()).replace(' ', '-')
+    def collectAllReviews(self):
+        groupName = removeSpecialChars(self.currAppName.lower()).replace(' ', '-')
         reviewsUrl = self.siteUrl + '/group/' + groupName + '?reviews=1&page='
         self.currUrl = self.siteUrl + '/group/' + groupName + '/'
 

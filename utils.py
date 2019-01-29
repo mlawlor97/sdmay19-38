@@ -35,7 +35,9 @@ class MongoConnector:
     def __init__(self):
         self.client = MongoClient('mongodb://localhost:27017')
         self.db = self.client.test
-        self.applications = self.db.applications
+        self.applications = self.db.Applications
+        self.versions = self.db.Versions
+
 
 # Global variable to keep from rate limiting websites
 rl = RateLimiter(0, 0)
@@ -148,11 +150,30 @@ def writeOutput(destination='DB', writeType='w', dataDict={}):
         logToFile(destination, writeType=writeType)
         logToFile(destination, json.dumps(dataDict, indent=4) + '\n')
 
-def writeAppDB(storeName='', appName='', data={}):
+
+def writeAppDB(storeName='', appName='', data=None):
+    if data is None:
+        data = dict({})
+
     global db
     appDict = {
         "store_id"  : storeName,
         "app_name"  : appName,
+        "metadata"  : data
+    }
+    result = db.applications.insert_one(appDict)
+    return result
+
+
+def writeVersionDB(storeName='', appName='', version='', data=None):
+    if data is None:
+        data = dict({})
+
+    global db
+    appDict = {
+        "store_id"  : storeName,
+        "app_name"  : appName,
+        "version"   : version,
         "metadata"  : data
     }
     result = db.applications.insert_one(appDict)
