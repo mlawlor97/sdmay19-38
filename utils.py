@@ -135,20 +135,18 @@ def apkThread(apkDownloadLink, savePath, fileName, directoryName):
         os.remove(savePath)
 
 
-def writeOutput(destination='DB', writeType='w', dataDict={}):
+def writeOutput(destination='DB', writeType='w', dataDict=None):
     """Writes Output into given destination
 
     :param destination: Where to write to
-    :param args: Optional argument that specifies write type
+    :param writeType: Optional argument that specifies write type
     :param dataDict: Information to be writen in the format of 'key: value'
     """
     if destination == 'DB':
-        # TODO Change to DB location
-        global db
         destination = 'ApkPure Crawler Output.txt'
-    else:
-        logToFile(destination, writeType=writeType)
-        logToFile(destination, json.dumps(dataDict, indent=4) + '\n')
+
+    logToFile(destination, writeType=writeType)
+    logToFile(destination, json.dumps(dataDict, indent=4) + '\n')
 
 
 def writeAppDB(storeName='', appName='', data=None):
@@ -176,7 +174,7 @@ def writeVersionDB(storeName='', appName='', version='', data=None):
         "version"   : version,
         "metadata"  : data
     }
-    result = db.applications.insert_one(appDict)
+    result = db.versions.insert_one(appDict)
     return result
 
 # def uploadAPK(filePath, fileName):

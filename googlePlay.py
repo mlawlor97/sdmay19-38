@@ -128,7 +128,7 @@ class GooglePlay(CrawlerBase):
             soup = self.webDriver.loadPage(appPage, 'xpath', "//h1[@itemprop='name']", True)
             playData = GoogleData(appPage, soup).getAll()
 
-        playData.uploadJSON()
+        print(playData.getJSON())
 
         if playData.metaData.get('Price') == "$0.00":
             print('Free')

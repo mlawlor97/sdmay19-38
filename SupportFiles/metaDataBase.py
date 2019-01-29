@@ -66,6 +66,7 @@ class DataCollectionBase:
             try:
                 getattr(self.__class__, x)(self)
             except TypeError:
+                print(x + ': Failed')
                 return Exception
         return self
 
@@ -74,10 +75,6 @@ class DataCollectionBase:
             self.metaData.update({data: func()})
         except AttributeError:
             logToFile(self.__class__.__name__ + 'Check.txt', data + ':\t' + self.url + '\n') if not noLog else None
-
-    def uploadJSON(self, destination='DB'):  # TODO Change to write to DB
-        # writeOutput(destination=destination, ataDict=self.metaData)
-        print(json.dumps(self.metaData, indent=4))
 
     def getJSON(self):  # Temp function
         return json.dumps(self.metaData, indent=4)
