@@ -2,10 +2,12 @@ import requests
 import re
 import os
 from bs4 import BeautifulSoup
+from pymongo import MongoClient
 
+import json
 from time import sleep
 from threading import Thread
-from boxsdk import DevelopmentClient
+# from boxsdk import DevelopmentClient
 
 
 class RateLimiter:
@@ -16,7 +18,7 @@ class RateLimiter:
         waitTime: How long the crawler should wait to keep from being rate-limited
         visited: The number of links visited in the current cycle
     """
-    def __init__(self, maxPages, waitTime):
+    def __init__(self, maxPages=0, waitTime=0):
         """Sets rate limit for visiting web pages. Will wait given time when threshold is reached
 
         Args:
@@ -28,9 +30,17 @@ class RateLimiter:
         self.visited = 0
 
 
+class MongoConnector:
+
+    def __init__(self):
+        self.client = MongoClient('mongodb://localhost:27017')
+        self.db = self.client.test
+        self.applications = self.db.applications
+
 # Global variable to keep from rate limiting websites
 rl = RateLimiter(0, 0)
-client = DevelopmentClient()
+db = MongoConnector()
+# client = DevelopmentClient()
 
 
 def setRateLimit(maxPages, waitTime):
@@ -44,19 +54,14 @@ def setRateLimit(maxPages, waitTime):
     rl = RateLimiter(maxPages, waitTime)
 
 
-def createPath(basePath, *extensions):
+def createPath(*extensions, basePath=os.getcwd()):
     """Helper method to map strings into a path
 
-    :param basePath: Base path
     :param extensions: path extension
+    :param basePath: Base path
     :return: full file path
     """
-    basePath = os.getcwd() if basePath == "HOME" else basePath
     return os.path.join(basePath, *extensions)
-
-
-def getWorkingDirectory():
-    return os.getcwd()
 
 
 def removeSpecialChars(string):
@@ -65,14 +70,14 @@ def removeSpecialChars(string):
     :param string: String to be worked on
     :return: Given string with special characters removed
     """
-    return re.sub('\W+', ' ', string.lower())
+    return re.sub(r'\W+', ' ', string.lower())
 
 
-def requestHTML(url, *args):
+def requestHTML(url='', *html):
     """Gets formatted HTML of given url
 
     :param url:  Url to get the HTML of
-    :param args: Optional argument to input pure HTML
+    :param html: Optional passing of pure HTML
     :return: BeautifulSoup format of the url's HTML
     """
     global rl
@@ -80,25 +85,20 @@ def requestHTML(url, *args):
     if rl.visited >= rl.rate:
         rl.visited = 0
         sleep(rl.timeOut)
-        print("waiting")
-    if args:
-        return BeautifulSoup(args[0], 'lxml')
-    return BeautifulSoup(requests.get(url).content, 'lxml')
+        print("waiting") if rl.rate > 0 else None
+    if html:
+        return BeautifulSoup(html[0], 'html.parser')
+    return BeautifulSoup(requests.get(url).content, 'html.parser')
 
 
-def logToFile(outputFile, line, *args):
+def logToFile(outputFile, line='', writeType='a'):
     """Writes given input to specified file
 
     :param outputFile: File to be written to
     :param line: What to write into file
-    :param args: Optional argument that specifies write options
+    :param writeType: Optional argument that specifies write options
     """
-    if args:
-        options = args[0]
-    else:
-        options = 'a'
-
-    f = open(outputFile, options)
+    f = open(outputFile, writeType)
     f.write(line)
     f.close()
 
@@ -127,32 +127,37 @@ def apkThread(apkDownloadLink, savePath, fileName, directoryName):
     s = session.get(apkDownloadLink).content
     logToFile(savePath, s, 'wb')
     try:
-        uploadAPK(savePath, fileName, directoryName)
+        # uploadAPK(savePath, fileName, directoryName)
         os.remove(savePath)
-    except:
+    except Exception:
         os.remove(savePath)
 
 
-def writeOutput(destination, *args, **kwargs):
+def writeOutput(destination='DB', writeType='w', dataDict={}):
     """Writes Output into given destination
 
     :param destination: Where to write to
     :param args: Optional argument that specifies write type
-    :param kwargs: Information to be writen in the format of 'key: value'
+    :param dataDict: Information to be writen in the format of 'key: value'
     """
     if destination == 'DB':
         # TODO Change to DB location
+        global db
         destination = 'ApkPure Crawler Output.txt'
-
-    if args:
-        logToFile(destination, '', args[0])
     else:
-        logToFile(destination, '', 'w')
+        logToFile(destination, writeType=writeType)
+        logToFile(destination, json.dumps(dataDict, indent=4) + '\n')
 
-    for key, value in kwargs.items():
-        logToFile(destination, key + ': ' + value.__str__() + '\n')
+def writeAppDB(storeName='', appName='', data={}):
+    global db
+    appDict = {
+        "store_id"  : storeName,
+        "app_name"  : appName,
+        "metadata"  : data
+    }
+    result = db.applications.insert_one(appDict)
+    return result
 
-
-def uploadAPK(filePath, fileName):
-    folder_id = '54833153949'
-    client.folder(folder_id).upload(filePath, fileName)
+# def uploadAPK(filePath, fileName):
+    # folder_id = '54833153949'
+    # client.folder(folder_id).upload(filePath, fileName)

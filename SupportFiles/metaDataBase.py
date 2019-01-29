@@ -1,16 +1,16 @@
 from types import FunctionType
-from utils import logToFile
+from utils import logToFile, writeOutput
 import json
 
 
 class DataCollectionBase:
 
-    def __init__(self, appUrl, soup, **moreSoup):
+    def __init__(self, appUrl='', soup=None, **moreSoup):
         self.url = appUrl
         self.soup = soup
         self.additionalSoups = moreSoup
-        self.validApplication = False
         self.metaData = {}
+        self.methods = [_ for _, y in self.__class__.__dict__.items() if type(y) == FunctionType]
 
     def getName(self):
         pass
@@ -54,7 +54,7 @@ class DataCollectionBase:
     def getRequirements(self):
         pass
 
-    def getUpdatedOn(self):
+    def getPublishDate(self):
         pass
 
     def getAll(self):
@@ -62,17 +62,22 @@ class DataCollectionBase:
 
         :return: metaData Map of all the collected information
         """
-        for x, y in self.__class__.__dict__.items():
-            if type(y) == FunctionType and x is not 'getAll' and x is not 'tryCollection':
-                func = getattr(self.__class__, x)
-                func(self)
-        if self.validApplication is False:
-            return False
-        else:
-            return json.dumps(self.metaData, indent=4)
+        for x in self.methods:
+            try:
+                getattr(self.__class__, x)(self)
+            except TypeError:
+                return Exception
+        return self
 
-    def tryCollection(self, data, func):
+    def tryCollection(self, data, func, *noLog):
         try:
             self.metaData.update({data: func()})
         except AttributeError:
-            logToFile('AppCheck.txt', data + ': ' + self.url + '\n')
+            logToFile(self.__class__.__name__ + 'Check.txt', data + ':\t' + self.url + '\n') if not noLog else None
+
+    def uploadJSON(self, destination='DB'):  # TODO Change to write to DB
+        # writeOutput(destination=destination, ataDict=self.metaData)
+        print(json.dumps(self.metaData, indent=4))
+
+    def getJSON(self):  # Temp function
+        return json.dumps(self.metaData, indent=4)

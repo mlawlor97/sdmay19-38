@@ -1,266 +1,209 @@
-from utils import *
-from SupportFiles.apkPureData import GetPureData
+from utils import RateLimiter, requestHTML, logToFile, removeSpecialChars, createPath, downloadApk, writeOutput, writeAppDB
+from SupportFiles.webDriverUtils import WebDriver
+from SupportFiles.metaDataBase import DataCollectionBase
 from SupportFiles.crawlerBase import CrawlerBase
 
 
+class GetPureData(DataCollectionBase):
+
+    def getName(self):
+        self.tryCollection('Name', lambda: self.soup.find(class_='title-like').find('h1').text.strip())
+        return TypeError if self.metaData.get('Name') is '' else None
+
+    def getDeveloper(self):
+        self.tryCollection('Developer', lambda: self.soup.find(class_="details-author").find('a').text.strip())
+
+    def getPackage(self):
+        self.tryCollection('Package', lambda: self.url.split('/')[-1])
+
+    def getCategory(self):
+        self.tryCollection('Category', lambda: self.soup.find(class_="additional")('span')[-1].text.strip())
+
+    def getDescription(self):
+        self.tryCollection('Description', lambda: self.soup.find(class_="content").text)
+
+    def getRating(self):
+        self.tryCollection('Rating', lambda: self.soup.find(class_="rating").text.strip())
+
+    def getTags(self):
+        self.tryCollection('Tags', lambda: [tag.text for tag in self.soup.find(class_="tag_list")('li') if tag.text])
+
+
+class GetPureVersion(DataCollectionBase):
+
+    def getVersion(self):
+        self.tryCollection('Version', lambda: self.soup.find('span').text.lstrip('V'))
+        self.soup = self.soup.find(class_="ver-info-m")
+
+    def getFileSize(self):
+        self.tryCollection('File Size', lambda: str(self.soup.find('strong', string="File Size: ").next_sibling))
+
+    def getRequirements(self):
+        self.tryCollection('Requirements', lambda: str(self.soup.find('strong', string="Requires Android: ").next_sibling))
+
+    def getPublishDate(self):
+        self.tryCollection('Publish Date', lambda: str(self.soup.find('strong', string="Update on: ").next_sibling))
+
+    def getSignature(self):
+        self.tryCollection('Signature', lambda: str(self.soup.find('strong', string="Signature: ").next_sibling).strip())
+
+    def getSHA(self):
+        self.tryCollection('SHA', lambda: str(self.soup.find('strong', string="File SHA1: ").next_sibling))
+
+    def getPatchNotes(self):
+        self.tryCollection('Patch Notes ' + self.metaData.get('Version'), lambda: self.soup.find(class_='ver-whats-new').text)
+
+
+class GetPureReview(DataCollectionBase):
+
+    def getUser(self):
+        self.tryCollection('User', lambda: self.soup.find(class_="author-name").find('span').text.strip())
+        return None if self.metaData.get('User') else TypeError
+
+    def getTitle(self):
+        self.tryCollection('Title', lambda: self.soup.find(class_="article-title").text.strip(), True)
+
+    def getPublishDate(self):  # TODO Needs work for ...ago times
+        self.tryCollection('Publish Date', lambda: self.soup.find(class_="author-time").find('span').text.strip())
+
+    def getReview(self):  # TODO Get emojis (important) and links
+        emotes = []
+        [emotes.append(emote['alt']) for emote in self.soup.find(class_="article")(class_="emojione")]
+        self.tryCollection('Message', lambda: self.soup.find(class_="article").text.strip() + ''.join(emotes))
+
+    def getMessageRating(self):
+        rating = self.soup.find(class_="cmt-vote")
+        self.tryCollection('Message Rating', lambda: 0 if 'Like' in rating.text else int(rating.text.strip()))
+
+
+# noinspection PyCompatibility
 class ApkPure(CrawlerBase):
 
+    def __init__(self, siteUrl="https://apkpure.com", rateLimiter=RateLimiter()):
+        super().__init__(siteUrl, rateLimiter)
+        self.webDriver = WebDriver()
+        self.categoryLinks = []
+        self.subCategories = []
+        self.currUrl = siteUrl
+
     def crawl(self):
-        categories = getCategories(self.siteUrl)
-        for category in categories:
+        self.getCategories()
+        for category in self.categoryLinks:
             pageNumber = 1
-            while getAppsOnPage(category + '?page=' + pageNumber.__str__(), self.siteUrl):
+            while self.getAppsOnPage(self.siteUrl + category + '?page=' + pageNumber.__str__()):
                 pageNumber += 1
 
+    def loadPage(self, url, verifier):
+        self.webDriver.loadPage(url, 'class name', verifier)
+        self.webDriver.driver.execute_script('policy_review.setReview();')  # Gets rid of cookie agreement
+        self.webDriver.driver.execute_script('document.getElementById("ad-aegon-side").remove()') # Removes QR code
+    
+    def getCategories(self):
+        cats = requestHTML(self.siteUrl + '/app')(class_="index-category")
+        [[self.categoryLinks.append(cat['href']) for cat in sect(href=True)] for sect in cats]
 
-def getCategories(url):
-    """Gets list of all categories on ApkPure
+    def getAppsOnPage(self, url):
+        apps = requestHTML(url)(class_='category-template-title')
+        for app in apps:
+            self.currUrl = self.siteUrl + app.find('a', href=True)['href']
+            appName = self.scrapeAppData()
+            if not appName:
+                continue
 
-    :param url: Url to search
-    :return: List of Categories
-    """
-    soup = requestHTML(url + '/app')
+            self.currUrl += '/versions'
+            # self.collectAllVersions()
+            self.collectAllReviews(appName)
 
-    categoriesToVisit = []
-    categories = soup.find_all('ul', {'class': 'index-category'})
+        return None if apps.__len__() is 0 else not None
 
-    for section in categories:
-        sectionList = section.find_all('a', href=True)
-        for category in sectionList:
-            if category.text != 'Family':
-                categoriesToVisit.append(url + category['href'])
+    def scrapeAppData(self):
+        pureData = GetPureData(self.currUrl, requestHTML(self.currUrl)).getAll()
+        if pureData is Exception:
+            return None
+        pureData.uploadJSON()
+        # id = writeAppDB('ApkPure', pureData.metaData.get('Name'), pureData.metaData)
+        # print(id)
 
-    return categoriesToVisit
+        return pureData.metaData.get('Name')
 
+    def collectAllVersions(self):
+        soup = requestHTML(self.currUrl)
+        versionList = soup.find(class_='ver')('li')
+        self.scrapeVersions(versionList) if 'Page Deleted' not in soup.title.text else logToFile('versions.txt', self.currUrl + '\n')
 
-def getAppsOnPage(url, baseUrl):
-    """Gets of list of the apps displayed on a page and visits each one
-
-    :param url: Url of the page to search
-    :param baseUrl: Url of ApkPure
-    :return: False if the page has no applications, True otherwise
-    """
-    soup = requestHTML(url)
-
-    apps = soup.find_all('div', {'class': 'category-template-title'})
-    for app in apps:
-        link = app.find('a', href=True)
-        link = baseUrl + link.get('href')
-        appName = scrapeAppData(link)
-        if not appName:
-            continue
-
-        collectAllVersions(baseUrl, link, './apks/')
-        collectAllReviews(baseUrl, appName, './reviews/')
-
-    return apps is not None
-
-
-def scrapeAppData(appPage):
-    """Scrapes all information from the given page that pertains to the application
-
-    :param appPage: Url of the application to scrape
-    :return: The name of the application
-    """
-    soup = requestHTML(appPage)
-
-    dataSite = GetPureData(appPage, soup)
-    metaData = dataSite.getAll()
-    if not metaData:
-        return False
-    # print(metaData.items())
-
-    # Want to change to somehow work with list of value pairs
-    writeOutput('DB',
-                Name=metaData.get('Name'),
-                Developer=metaData.get('Developer'),
-                Rating=metaData.get('Rating'),
-                Description=metaData.get('Description'),
-                Package=metaData.get('Package'),
-                Category=metaData.get('Category'),
-                Tags=metaData.get('Tags'))
-
-    return metaData.get('Name')
-
-
-def collectAllVersions(url, appPage, savePath):
-    """Collects all versions of the specified application
-
-    :param url: Url of ApkPure
-    :param appPage: Url of the application
-    :param savePath: Where to save apk files
-    """
-    soup = requestHTML(appPage)
-    moreVersions = soup.find('div', {'class': 'ver-title'})
-
-    if moreVersions and moreVersions.contents[3]:
-        soup = requestHTML(appPage + '/versions')
-
-    format1 = soup.find('ul', {'class': 'ver-wrap'})
-    format2 = soup.find('div', {'class': 'faq_cat'})
-
-    if format1:
-        scrapeVersionsA(url, format1, savePath, appPage)
-    elif format2:
-        scrapeVersionsB(url, format2, savePath)
-    else:
-        logToFile('versions.txt', appPage + '\n')
-
-
-def scrapeVersionsA(url, versionList, savePath, appPage):
-    """Collects all versions of the specified application that has formatA
-
-    :param url: Url of ApkPure
-    :param versionList: list of all versions
-    :param appPage: Url of the application
-    :param savePath: Where to save apk files
-    """
-    versionList = versionList.find_all('li')
-    index = 0
-    for v in versionList:
-        downloadLink = v.contents[1].attrs['href']
-        v = v.contents[3]
-        version = v.contents[1].contents[1].split(' ')[1]
-        v = v.contents[3]
-
-        soup = click(appPage + '/versions', 'ver-item-m', index)
-
-        try:
-            changelog = soup.find_all('div', {'class': 'ver-whats-new'})[0].text
-        except IndexError:
-            changelog = 'NO CHANGELOG PRESENT'
-        index += 1
-
-        writeOutput('DB', 'a',
-                    Version=version,
-                    FileSize=v.contents[9].contents[1],
-                    Requirements=v.contents[3].contents[1],
-                    PublishDate=v.contents[1].contents[1],
-                    Signature=v.contents[5].contents[1].strip(),
-                    SHA=v.contents[7].contents[1],
-                    Changelog=changelog)
-
-        scrapeApk(url + downloadLink, savePath)
-
-
-def scrapeVersionsB(url, versionList, savePath):
-    """Collects all versions of the specified application that is in formatB
-
-        :param url: Url of ApkPure
-        :param versionList: list of all versions
-        :param savePath: Where to save apk files
-        """
-    versionList = versionList.find_all('dd')
-    for v in versionList:
-        downloadLinks = v.find_all('a', {'class': 'down'})
-        v = v.find_all('strong')
-        tags = []
+    def scrapeVersions(self, versionList):
         index = 0
+        self.loadPage(self.currUrl, 'ver')
 
-        for tag in v:
-            try:
-                tag.parent.contents[1].text
-            except AttributeError:
-                tags.append(tag.parent.contents[1].strip())
+        for v in versionList:
+            if v.find(class_="ver-whats-new"):
+                v = self.webDriver.clickPopUp("ver-item-m", "mfp-close", index=index)
+                while 'loading..' in v.find(class_='ver-whats-new').text:
+                    v = self.webDriver.fetchPage()
+                self.webDriver.clickAway("mfp-close", "class name")
 
-        try:
-            changelog = v[-1].parent.contents[1].text
-        except AttributeError:
-            changelog = ''
+            v = v.find(class_='ver-wrap')('li')[index]
+            pureVersion = GetPureVersion(self.currUrl, v).getAll()
+            pureVersion.uploadJSON()
 
-        for link in downloadLinks:
-            size = link.contents[1].text.replace('(', '').replace(')', '')
-            sha = tags[3] if tags.__len__() == 4 else tags[3 + index]
+            index += 1
+            # self.scrapeApk(self.siteUrl + v.find(href=True)['href'], './apks/')  # TODO Uncomment when collecting APKs
 
-            writeOutput('DB', 'a',
-                        Version=tags[0].split(' ')[0],
-                        FileSize=size,
-                        Requirements=tags[0].split('for ')[1],
-                        PublishDate=tags[1],
-                        Signature=tags[2],
-                        SHA=sha,
-                        Changelog=changelog)
+    def collectAllReviews(self, appName):
+        groupName = removeSpecialChars(appName.lower()).replace(' ', '-')
+        reviewsUrl = self.siteUrl + '/group/' + groupName + '?reviews=1&page='
+        self.currUrl = self.siteUrl + '/group/' + groupName + '/'
 
-            scrapeApk(url + link.attrs['href'], savePath)
+        pageNumber = 1
+        while self.scrapeReviews(reviewsUrl + pageNumber.__str__()):
+            pageNumber += 1
 
+    def scrapeReviews(self, url):
+        reviews = requestHTML(url)('li', class_='cmt-root')
+        for review in reviews:
+            self.loadPage(self.currUrl + review['id'].lstrip('c'), 'bread-crumbs')
+            self.webDriver.loadMore('cmt-more-btn')
+            soup = self.webDriver.fetchPage()
 
-def collectAllReviews(url, appName, savePath):
-    """Collects all reviews for specified application
+            reviewData = GetPureReview(url, soup.select_one('.author')).getAll()
+            reviewData.tryCollection('Rating', lambda: review.select_one('.cmt-icon-s-stars')['data-score'], True)
+            reviewData.tryCollection('Responses', lambda: self.scrapeResponses(soup.find(id="cmt-reply-data"), []))
+            reviewData.uploadJSON()
 
-    :param url: Url for ApkPure
-    :param appName: Url for the application
-    :param savePath: Where to save the reviews
-    """
-    groupName = removeSpecialChars(appName.lower())
-    groupName = groupName.replace(' ', '-')
+            # TODO Get rid of once it writes to DB or keep???
+            publishDate, user = reviewData.metaData.get('Publish Date'), reviewData.metaData.get('User').replace('/', '')
+            destination = './reviews/' + publishDate + '~' + user + '.txt'  # TODO Better naming convention???
+            # writeOutput(destination=destination, dataDict=reviewData.metaData)
+            reviewData.uploadJSON(destination=destination)
 
-    pageNumber = 1
-    reviewsUrl = url + '/group/' + groupName + '?reviews=1&page='
+        return None if reviews.__len__() is 0 else not None
 
-    while scrapeReviewsOnPage(reviewsUrl, pageNumber, savePath):
-        pageNumber += 1
+    def scrapeResponses(self, soup, responses):
+        soup = soup.find('ul', recursive=False)
+        if not soup:
+            return []
+        for response in soup(id=True, recursive=False):
+            data = GetPureReview(soup=requestHTML(self.currUrl + response['id'].lstrip('c'))).getAll()
+            data.tryCollection('Responses', lambda: self.scrapeResponses(response, []))
+            responses.append(data.metaData)
+        return responses
 
+    @staticmethod
+    def scrapeApk(downloadUrl, savePath):
+        soup = requestHTML(url=downloadUrl)
 
-def scrapeReviewsOnPage(url, pageNumber, savePath):
-    """Gets all reviews on the specified page
+        downloadLink = soup.find(id="download_link")
+        if downloadLink:
+            fileName = soup.find(class_="file").text.strip()  # TODO Change to better naming convention
 
-    :param url: Url for application's reviews
-    :param pageNumber: Page to scrape
-    :param savePath: Where to save reviews
-    :return: False if there are no reviews present, True otherwise
-    """
-    url = url + pageNumber.__str__()
-    soup = requestHTML(url)
-
-    reviews = soup.find_all('li', {'class': 'cmt-root'})
-
-    for review in reviews:
-        publishDate = review.contents[1].contents[3].contents[1].contents[1].text.strip()
-
-        try:
-            msgRating = int(review.contents[1].contents[3].contents[1].contents[7].text.strip())
-        except ValueError:
-            msgRating = 0
-        review = review.contents[1].contents[1]
-        user = review.contents[3].contents[1].text.strip()
-
-        destination = savePath + '/' + publishDate + '~' + user.replace('/', '') + '.txt'
-        # writeOutput(destination,
-        #             User=user,
-        #             Message=review.contents[5].text.strip(),
-        #             Rating=review.contents[3].contents[1].contents[3].attrs['data-score'],
-        #             PublishDate=publishDate,
-        #             MessageRating=msgRating)
-
-    if reviews:
-        return True
-    else:
-        return False
-
-
-def scrapeApk(url, savePath):
-    """Finds download link for the apk file and downloads it
-
-    :param url: Url of download page
-    :param savePath: Where to save the apk file
-    """
-    soup = requestHTML(url)
-
-    downloadLink = soup.find('a', {'id': 'download_link'})
-    if downloadLink:
-        apk = downloadLink.get('href')
-        fileName = soup.find('span', {'class': 'file'}).contents[0].lstrip().rstrip()
-
-        fullPath = createPath(savePath, fileName)
-        downloadApk(apk, fullPath, fileName, savePath.split('/')[-1])
-    else:
-        logToFile('APKCheck.txt', url + '\n')
+            fullPath = createPath(fileName, savePath)
+            downloadApk(downloadLink.get('href'), fullPath, fileName, savePath.split('/')[-1])
+        else:
+            logToFile('APKCheck.txt', downloadUrl + '\n')
 
 
 def main():
-    limiter = RateLimiter(0, 0)
-    url = 'https://apkpure.com'
-    ApkPure(url, limiter).crawl()
+    ApkPure().crawl()
 
 
 if __name__ == '__main__':

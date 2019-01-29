@@ -1,7 +1,6 @@
 from utils import createPath, requestHTML
 
 from selenium import webdriver
-from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
@@ -19,80 +18,82 @@ class WebDriver:
 
         self.driver = webdriver.Chrome(
             chrome_options=options,
-            executable_path=createPath("HOME", 'SupportFiles', 'chromedriver'))
+            executable_path=createPath('SupportFiles', 'chromedriver'))
+
+        self.Url = None
 
         # Shorthand functions
-        self.present = EC.presence_of_element_located
-        self.visible = EC.visibility_of_element_located
-        self.invisible = EC.invisibility_of_element_located
-        self.find_class = self.driver.find_element_by_class_name
-        self.find_id = self.driver.find_element_by_id
+        self.present    = EC.presence_of_element_located
+        self.visible    = EC.visibility_of_element_located
+        self.invisible  = EC.invisibility_of_element_located
+
+        self.find       = lambda by='class name', tag='': self.driver.find_element(by, tag)
+        self.find_all   = lambda by='class name', tag='': self.driver.find_elements(by, tag)
+
+        self.scrollTo   = lambda element: ActionChains(self.driver).move_to_element(element).perform()
+        self.fetchPage  = lambda: requestHTML(self.Url, self.driver.page_source)
 
     def __del__(self):
         print('destroying driver')
         self.driver.quit()
 
-    def scrollTo(self, element):
-        ActionChains(self.driver).move_to_element(element).perform()
-
     def waitFor(self, condition):
         try:
-            WebDriverWait(self.driver, 5).until(condition)
+            WebDriverWait(self.driver, 1).until(condition)
         except TimeoutException:
             return TimeoutException
         sleep(0.01)
 
-    def clickAway(self, target):
+    def clickAway(self, target, *selector):
+        target = target if not selector else self.find(selector[0], target)
         target.click()
         self.waitFor(self.invisible(target))
 
-    def clickPopUp(self, url, target, verifier, *index):
-        elementIndex = 0 if not index else index[0]
-        self.waitFor(self.visible((By.CLASS_NAME, target)))
+    def clickPopUp(self, target, verifier, index=0):
+        self.waitFor(self.visible(('class name', target)))
 
-        element = self.find_class(target)[elementIndex]
+        self.find_all(tag=target)[index].click()
+        self.waitFor(self.visible(('class name', verifier)))
+
+        return self.fetchPage()
+
+    def oldClick(self, tag, index=0):
+        self.waitFor(self.visible(('class name', tag)))
+
+        element = self.find_all(tag=tag)[index]
+        self.scrollTo(element)
         element.click()
-        self.waitFor(self.present((By.CLASS_NAME, verifier)))
+        sleep(0.25)
 
-        return requestHTML(url, self.driver.page_source)
+        return self.fetchPage()
 
-    def oldClick(self, url, tag, *index):
-            elementIndex = 0 if not index else index[0]
-            self.waitFor(self.visible((By.CLASS_NAME, tag)))
-
-            element = self.find_class(tag)[elementIndex]
-            element.click()
-            sleep(0.25)
-
-            return requestHTML(url, self.driver.page_source)
-
-    def loadPage(self, url, validator):
-        self.driver.get(url)
-        self.waitFor(self.present((By.XPATH, validator)))
-        return requestHTML(url, self.driver.page_source)
+    def loadPage(self, url, searchBy, validator, getSoup=None):
+        self.Url = url
+        self.driver.get(self.Url)
+        return self.waitFor(self.present((searchBy, validator))) if not getSoup else self.fetchPage()
 
     # Very specific task
     # Should probable change
-    def googleScroller(self, url):
+    def googleScroller(self):
         def bounce():
             self.scrollTo(footer)
             self.scrollTo(heading)
             self.waitFor(self.invisible(loader))
 
-        self.driver.get(url)
-        self.waitFor(self.present((By.CLASS_NAME, 'loaded')))
-
-        footer = self.find_class('footer')
-        loader = self.find_class('bottom-loading')
-        heading = self.find_class('cluster-heading')
-        end = self.find_class('contains-text-link')
-        more = self.find_id('show-more-button')
+        footer  = self.find(tag='footer')
+        loader  = self.find(tag='bottom-loading')
+        heading = self.find(tag='cluster-heading')
+        end     = self.find(tag='contains-text-link')
+        more    = self.find(by='id', tag='show-more-button')
 
         bounce()
-        while end.get_attribute('style').strip() == '':
-            bounce()
-            if more.is_displayed():
-                print("clicking")
-                self.clickAway(more)
+        while end.is_displayed():
+            bounce() if not more.is_displayed() else self.clickAway(more)
 
-        return requestHTML(url, self.driver.page_source)
+        return self.fetchPage()
+
+    def loadMore(self, tag, selector='class name'):
+        element = self.find(selector, tag)
+        while element.is_displayed():
+            self.clickAway(element)
+        return self.fetchPage()
