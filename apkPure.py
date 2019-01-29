@@ -3,7 +3,8 @@ from utils import writeAppDB, writeVersionDB  # DB Connectors
 from SupportFiles.webDriverUtils import WebDriver
 from SupportFiles.metaDataBase import DataCollectionBase
 from SupportFiles.crawlerBase import CrawlerBase
-
+from os import fork, getpid, waitpid, kill
+from signal import SIGKILL
 
 class GetPureData(DataCollectionBase):
 
@@ -79,18 +80,32 @@ class ApkPure(CrawlerBase):
 
     def __init__(self, siteUrl="https://apkpure.com", rateLimiter=RateLimiter()):
         super().__init__(siteUrl, rateLimiter)
-        self.webDriver      = WebDriver()
+        self.webDriver      = None
         self.categoryLinks  = []
         self.subCategories  = []
         self.currUrl        = siteUrl
         self.AppName        = None
+        self.children       = []
+
+    def __del__(self):
+        [kill(child, SIGKILL) for child in self.children]
 
     def crawl(self):
         self.getCategories()
         for category in self.categoryLinks:
-            pageNumber = 1
-            while self.getAppsOnPage(self.siteUrl + category + '?page=' + pageNumber.__str__()):
-                pageNumber += 1
+            pid = fork()
+            if pid > 0:
+                continue
+            else:
+                self.children.append(pid)
+                self.webDriver = WebDriver()
+                pageNumber = 1
+                while self.getAppsOnPage(self.siteUrl + category + '?page=' + pageNumber.__str__()):
+                    pageNumber += 1
+                self.children.remove(pid)
+                return
+        while self.children is not []:
+            continue
 
     def loadPage(self, url, verifier):
         self.webDriver.loadPage(url, 'class name', verifier)
@@ -202,7 +217,11 @@ class ApkPure(CrawlerBase):
 
 
 def main():
-    ApkPure().crawl()
+    try:
+        ApkPure().crawl()
+    except KeyboardInterrupt:
+        print('Ended Early')
+    print('Finished')
 
 
 if __name__ == '__main__':
