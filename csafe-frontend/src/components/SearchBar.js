@@ -2,10 +2,10 @@ import React from 'react'
 
 function SearchBar(props) {
   return (
-    <form>
+    <form onSubmit={props.onSubmit}>
       <label>
-        Name:
-        <input type="text" name="name" />
+        Keyword:
+        <input type="text" value={props.value} onChange={props.onChange} />
       </label>
       <input type="submit" value="Submit" />
     </form>
