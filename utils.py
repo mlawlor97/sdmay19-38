@@ -1,6 +1,7 @@
 import requests
 import re
 import os
+from subprocess import Popen, PIPE, STDOUT
 from bs4 import BeautifulSoup
 from pymongo import MongoClient
 
@@ -163,14 +164,14 @@ def writeAppDB(storeName='', appName='', data=None):
     return result
 
 
-def writeVersionDB(storeName='', appName='', version='', data=None):
+def writeVersionDB(storeName='', appId='', version='', data=None):
     if data is None:
         data = dict({})
 
     global db
     appDict = {
         "store_id"  : storeName,
-        "app_name"  : appName,
+        "app_id"  : appId,
         "version"   : version,
         "metadata"  : data
     }
@@ -180,3 +181,8 @@ def writeVersionDB(storeName='', appName='', version='', data=None):
 # def uploadAPK(filePath, fileName):
     # folder_id = '54833153949'
     # client.folder(folder_id).upload(filePath, fileName)
+
+def getPermissions(apkFilePath, permList=[]):
+    p = Popen(['java', '-jar', 'SupportFiles/Permissions.jar', apkFilePath], stdout=PIPE, stderr=STDOUT)
+    [permList.append(line.strip().decode('ascii')) for line in p.stdout]
+    return permList

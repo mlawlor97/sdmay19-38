@@ -44,18 +44,18 @@ class WebDriver:
             return TimeoutException
         sleep(0.01)
 
-    def clickAway(self, target, *selector):
-        target = target if not selector else self.find(selector[0], target)
+    def clickAway(self, target, selector=None):
+        target = target if not selector else self.find(selector, target)
         target.click()
         self.waitFor(self.invisible(target))
 
-    def clickPopUp(self, target, verifier, index=0):
+    def clickPopUp(self, target, verifier, index=0, getSoup=True):
         self.waitFor(self.visible(('class name', target)))
 
         self.find_all(tag=target)[index].click()
         self.waitFor(self.visible(('class name', verifier)))
 
-        return self.fetchPage()
+        return self.fetchPage() if getSoup == True else None
 
     def oldClick(self, tag, index=0):
         self.waitFor(self.visible(('class name', tag)))
