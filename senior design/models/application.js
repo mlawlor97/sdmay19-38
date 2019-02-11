@@ -8,7 +8,7 @@ let MetadataSchema = new Schema ({
     category: String,
     description: String,
     rating: Number,
-    tags: [String]
+    Tags: [String]
 });
 
 let ApplicationSchema = new Schema ({

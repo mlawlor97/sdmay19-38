@@ -7,7 +7,7 @@ let VersionModel = require('../models/version');
 router.get('/', function (req, res, next) {
     ApplicationModel.find({
         app_name: req.query.keyword
-    }).then(doc => {
+    }).lean().exec( function(err, doc){
         doc.forEach(function (application) {
             VersionModel.find({
                 app_id: application._id
@@ -18,8 +18,6 @@ router.get('/', function (req, res, next) {
             })
         });
         res.json(doc)
-    }).catch(err => {
-        console.log(err)
     });
 });
 
