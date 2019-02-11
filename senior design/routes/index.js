@@ -5,9 +5,10 @@ let ApplicationModel = require('../models/application');
 /* GET home page. */
 router.get('/', function(req, res, next) {
   ApplicationModel.find({
-        name: req.body.name
+        app_name: 'PUBG MOBILE'
       })
       .then(doc => {
+          console.log(doc);
         res.json(doc)
       })
       .catch(err => {

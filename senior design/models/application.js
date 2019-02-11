@@ -12,8 +12,8 @@ let MetadataSchema = new Schema ({
 });
 
 let ApplicationSchema = new Schema ({
-    name: String,
-    store: String,
+    app_name: String,
+    store_id: String,
     metadata : MetadataSchema
 });
 
