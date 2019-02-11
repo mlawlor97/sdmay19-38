@@ -17,4 +17,4 @@ let ApplicationSchema = new Schema ({
     metadata : MetadataSchema
 });
 
-module.exports = mongoose.model('Application', ApplicationSchema);
+module.exports = mongoose.model('Application', ApplicationSchema, 'Applications');
