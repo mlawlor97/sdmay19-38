@@ -111,7 +111,7 @@ class ApkPure(CrawlerBase):
         cats = self.getCategories()
         threads = []
 
-        for cat in cats[0:2]:
+        for cat in cats:
             threads.append(Thread(target=self._crawlCategory, args=(cat, )))
             threads[-1].start()
 
