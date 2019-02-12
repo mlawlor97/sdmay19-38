@@ -5,10 +5,7 @@ import SearchBar from './components/SearchBar'
 import Table from './components/Table'
 import DropDownOrganizer from './components/DropDownOrganizer'
 
-import versioncompare from './components/versionCompare'
-
 const axios = require('axios')
-const semver = require('semver')
 const defaultColumns = [
   {
     Header: 'Store',
@@ -89,52 +86,6 @@ class App extends Component {
     this.handleCategoryChange = this.handleCategoryChange.bind(this)
     this.handleVersionChange = this.handleVersionChange.bind(this)
     this.handleDateChange = this.handleDateChange.bind(this)
-    this.versionCompare = this.versionCompare.bind(this)
-  }
-
-  versionCompare(v1, v2, options) {
-    var lexicographical = options && options.lexicographical,
-      zeroExtend = options && options.zeroExtend,
-      v1parts = v1.split('.'),
-      v2parts = v2.split('.')
-
-    function isValidPart(x) {
-      return (lexicographical ? /^\d+[A-Za-z]*$/ : /^\d+$/).test(x)
-    }
-
-    if (!v1parts.every(isValidPart) || !v2parts.every(isValidPart)) {
-      return NaN
-    }
-
-    if (zeroExtend) {
-      while (v1parts.length < v2parts.length) v1parts.push('0')
-      while (v2parts.length < v1parts.length) v2parts.push('0')
-    }
-
-    if (!lexicographical) {
-      v1parts = v1parts.map(Number)
-      v2parts = v2parts.map(Number)
-    }
-
-    for (var i = 0; i < v1parts.length; ++i) {
-      if (v2parts.length == i) {
-        return 1
-      }
-
-      if (v1parts[i] == v2parts[i]) {
-        continue
-      } else if (v1parts[i] > v2parts[i]) {
-        return 1
-      } else {
-        return -1
-      }
-    }
-
-    if (v1parts.length != v2parts.length) {
-      return -1
-    }
-
-    return 0
   }
 
   onKeywordChange(event) {
@@ -155,170 +106,37 @@ class App extends Component {
 
   onSubmit(event) {
     event.preventDefault()
-    if (this.state.keyword && this.state.versionFilter) {
-      //"SOOOOOO GROSS" - Matt
-      // Turn into function and import
-      const dataArray = []
-      this.state.versionFilter.forEach(filter => {
-        this.state.response.forEach(element => {
-          element.versions.forEach(version => {
-            if (filter.value === '1') {
-              const compare = versioncompare('1.0.0', version.version)
-              if (compare) {
-                // add to data
-                const dataObj = {
-                  store_id: version['store_id'],
-                  app_name: element['app_name'],
-                  version: version['version'],
-                  Apk_Type: version.metadata['Apk Type'],
-                  File_Size: version.metadata['File Size'],
-                  Publish_Date: version.metadata['Publish Date'],
-                  Signature: version.metadata['Signature'],
-                  SHA: version.metadata['SHA']
-                }
-
-                dataArray.push(dataObj)
-              }
-            }
-
-            if (filter.value === '1_2') {
-              const lessThan = versioncompare('2.0.1', version.version)
-              const greaterThan = versioncompare('1.0.0', version.version)
-              if (lessThan && !greaterThan) {
-                // add to data
-                const dataObj = {
-                  store_id: version['store_id'],
-                  app_name: element['app_name'],
-                  version: version['version'],
-                  Apk_Type: version.metadata['Apk Type'],
-                  File_Size: version.metadata['File Size'],
-                  Publish_Date: version.metadata['Publish Date'],
-                  Signature: version.metadata['Signature'],
-                  SHA: version.metadata['SHA']
-                }
-
-                dataArray.push(dataObj)
-              }
-            }
-
-            if (filter.value === '2_3') {
-              const lessThan = versioncompare('3.0.1', version.version)
-              const greaterThan = versioncompare('2.0.0', version.version)
-              if (lessThan && !greaterThan) {
-                // add to data
-                const dataObj = {
-                  store_id: version['store_id'],
-                  app_name: element['app_name'],
-                  version: version['version'],
-                  Apk_Type: version.metadata['Apk Type'],
-                  File_Size: version.metadata['File Size'],
-                  Publish_Date: version.metadata['Publish Date'],
-                  Signature: version.metadata['Signature'],
-                  SHA: version.metadata['SHA']
-                }
-
-                dataArray.push(dataObj)
-              }
-            }
-
-            if (filter.value === '3_4') {
-              const lessThan = versioncompare('4.0.1', version.version)
-              const greaterThan = versioncompare('3.0.0', version.version)
-              if (lessThan && !greaterThan) {
-                // add to data
-                const dataObj = {
-                  store_id: version['store_id'],
-                  app_name: element['app_name'],
-                  version: version['version'],
-                  Apk_Type: version.metadata['Apk Type'],
-                  File_Size: version.metadata['File Size'],
-                  Publish_Date: version.metadata['Publish Date'],
-                  Signature: version.metadata['Signature'],
-                  SHA: version.metadata['SHA']
-                }
-
-                dataArray.push(dataObj)
-              }
-            }
-
-            if (filter.value === '4_5') {
-              const lessThan = versioncompare('5.0.1', version.version)
-              const greaterThan = versioncompare('4.0.0', version.version)
-              if (lessThan && !greaterThan) {
-                // add to data
-                const dataObj = {
-                  store_id: version['store_id'],
-                  app_name: element['app_name'],
-                  version: version['version'],
-                  Apk_Type: version.metadata['Apk Type'],
-                  File_Size: version.metadata['File Size'],
-                  Publish_Date: version.metadata['Publish Date'],
-                  Signature: version.metadata['Signature'],
-                  SHA: version.metadata['SHA']
-                }
-
-                dataArray.push(dataObj)
-              }
-            }
-
-            if (filter.value === '5+') {
-              const compare = versioncompare('5.0.1', version.version)
-              if (compare) {
-                // add to data
-                const dataObj = {
-                  store_id: version['store_id'],
-                  app_name: element['app_name'],
-                  version: version['version'],
-                  Apk_Type: version.metadata['Apk Type'],
-                  File_Size: version.metadata['File Size'],
-                  Publish_Date: version.metadata['Publish Date'],
-                  Signature: version.metadata['Signature'],
-                  SHA: version.metadata['SHA']
-                }
-
-                console.log(dataObj)
-
-                dataArray.push(dataObj)
-              }
-            }
-          })
-        })
+    axios
+      .get('http://sdmay19-18-windows.ece.iastate.edu:3000/', {
+        params: {
+          keyword: this.state.keyword
+        }
       })
+      .then(res => {
+        const dataArray = []
+        res.data.forEach(element => {
+          element.versions.forEach(version => {
+            const dataObj = {
+              store_id: element['store_id'],
+              app_name: element['app_name'],
+              Developer: element.metadata['Developer'],
+              Package: element.metadata['Package'],
+              Category: element.metadata['Category'],
+              version: version['version']
+              // Apk_Type: version.metadata['Apk Type'],
+              // File_Size: version.metadata['File Size'],
+              // Publish_Date: version.metadata['Publish Date'],
+              // Signature: version.metadata['Signature'],
+              // SHA: version.metadata['SHA']
+            }
 
-      this.setState({ tableData: dataArray })
-    } else {
-      axios
-        .get('http://sdmay19-18-windows.ece.iastate.edu:3000/', {
-          params: {
-            keyword: this.state.keyword
-          }
-        })
-        .then(res => {
-          const dataArray = []
-          res.data.forEach(element => {
-            element.versions.forEach(version => {
-              const dataObj = {
-                store_id: element['store_id'],
-                app_name: element['app_name'],
-                Developer: element.metadata['Developer'],
-                Package: element.metadata['Package'],
-                Category: element.metadata['Category'],
-                version: version['version']
-                // Apk_Type: version.metadata['Apk Type'],
-                // File_Size: version.metadata['File Size'],
-                // Publish_Date: version.metadata['Publish Date'],
-                // Signature: version.metadata['Signature'],
-                // SHA: version.metadata['SHA']
-              }
-
-              dataArray.push(dataObj)
-            })
+            dataArray.push(dataObj)
           })
-          this.setState({ click: false })
-          this.setState({ tableData: dataArray })
-          this.setState({ response: res.data })
         })
-    }
+        this.setState({ click: false })
+        this.setState({ tableData: dataArray })
+        this.setState({ response: res.data })
+      })
   }
 
   render() {
