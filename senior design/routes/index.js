@@ -7,18 +7,28 @@ let VersionModel = require('../models/version');
 router.get('/', function (req, res, next) {
     ApplicationModel.find({
         app_name: req.query.keyword
-    }).lean().exec( function(err, doc){
-        doc.forEach(function (application) {
+    }).lean().then( doc =>{
+        getVersions(doc).then( applications => {
+            res.json(applications)
+        });
+    }).catch( err => {
+        console.log(err);
+    })
+});
+
+function getVersions(applications) {
+    return new Promise(function (resolve, reject){
+        for(let i = 0; i < applications.length; i++) {
             VersionModel.find({
-                app_id: application._id
+                app_id: applications[i]._id
             }).then(vDoc => {
-                application.versions = vDoc;
+                applications[i].versions = vDoc;
             }).catch(err => {
                 console.log(err);
             })
-        });
-        res.json(doc)
-    });
-});
+        }
+        resolve(applications)
+    })
+}
 
 module.exports = router;
