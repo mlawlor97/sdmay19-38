@@ -52,11 +52,8 @@ class WebDriver:
     def clickPopUp(self, target, verifier, index=0, getSoup=True):
         self.waitFor(self.visible(('class name', target)))
 
-        try:
-            self.find_all(tag=target)[index].click()
-            self.waitFor(self.visible(('class name', verifier)))
-        except:
-            pass
+        self.find_all(tag=target)[index].click()
+        self.waitFor(self.visible(('class name', verifier)))
 
         return self.fetchPage() if getSoup == True else None
 
