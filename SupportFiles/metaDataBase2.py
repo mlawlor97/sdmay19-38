@@ -23,5 +23,5 @@ class DataCollectionBase:
     def tryCollection(self, data, func, log=None):
         try:
             self.metaData.update({data: func(self)})
-        except AttributeError:
+        except:
             logToFile(f"{self.__class__.__name__}Check.txt", f"{data}:\t{self.url}\n") if log else None

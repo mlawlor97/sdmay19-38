@@ -159,7 +159,7 @@ class ApkPure(CrawlerBase):
         soup = requestHTML(url)
         versionList = soup.find(class_='ver')
 
-        if 'Page Deleted' not in soup.title.text and versionList:
+        if versionList:
             self._scrapeVersions(name, id_, url, versionList('li'))
         else:
             logToFile('Versions.txt', f"{url}\n")
@@ -239,12 +239,11 @@ class ApkPure(CrawlerBase):
 
 
 def main():
-    # try:
-    #     ApkPure().crawl()
-    # except KeyboardInterrupt:
-    #     print("Ended Early")
-    # print("Finished")
-    ApkPure()._collectAllVersions('name', '0', 'https://apkpure.com/clash-of-clans-coc/com.supercell.clashofclans/versions')
+    try:
+        ApkPure().crawl()
+    except KeyboardInterrupt:
+        print("Ended Early")
+    print("Finished")
 
 
 if __name__ == '__main__':
