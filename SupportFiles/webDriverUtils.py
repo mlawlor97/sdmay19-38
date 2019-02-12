@@ -46,8 +46,11 @@ class WebDriver:
 
     def clickAway(self, target, selector=None):
         target = target if not selector else self.find(selector, target)
-        target.click()
-        self.waitFor(self.invisible(target))
+        try:
+            target.click()
+            self.waitFor(self.invisible(target))
+        except:
+            pass
 
     def clickPopUp(self, target, verifier, index=0, getSoup=True):
         self.waitFor(self.visible(('class name', target)))
