@@ -15,12 +15,12 @@ class GetPureData(DataCollectionBase):
         rating = self.soup.find(class_='rating')
         return rating.text.strip() if rating else 0.0
 
-    _getDev     = ("Developer",     lambda _: _.soup.find(class_='details-author').find('a').text.strip())
-    _getPkg     = ("Package",       lambda _: _.url.split('/')[-1])
-    _getCat     = ("Category",      lambda _: _.soup.find(class_='additional')('span')[-1].text.strip())
-    _getDesc    = ("Description",   lambda _: _.soup.find(class_='content').text)
-    _getRating  = ("Rating",        lambda _: _.rating())
-    _getTags    = ("Tags",          lambda _: [tag.text for tag in _.soup.find(class_="tag_list")('li') if tag.text])
+    _getDev     = ("developer",     lambda _: _.soup.find(class_='details-author').find('a').text.strip())
+    _getPkg     = ("package",       lambda _: _.url.split('/')[-1])
+    _getCat     = ("category",      lambda _: _.soup.find(class_='additional')('span')[-1].text.strip())
+    _getDesc    = ("description",   lambda _: _.soup.find(class_='content').text)
+    _getRating  = ("rating",        lambda _: _.rating())
+    _getTags    = ("tags",          lambda _: [tag.text for tag in _.soup.find(class_="tag_list")('li') if tag.text])
 
 
 class GetPureVersion(DataCollectionBase):
@@ -29,13 +29,17 @@ class GetPureVersion(DataCollectionBase):
         log = self.soup.find(class_='ver-whats-new')
         return log.text if log and log.text.strip() != '' else "No Patch Notes"
 
-    _getType    = ("Apk Type",      lambda _: _.soup.find(class_='ver-item-t').text)
-    _getSize    = ("File Size",     lambda _: str(_.soup.find(class_='ver-item-s').text))
-    _getReqs    = ("Requirements",  lambda _: str(_.soup.find('strong', string='Requires Android: ').next_sibling))
-    _getPubDate = ("Publish Date",  lambda _: str(_.soup.find(class_='update-on').text))
-    _getPatch   = ("Patch Notes",   lambda _: _.changeLog())
-    _getSign    = ("Signature",     lambda _: str(_.soup.find('strong', string='Signature: ').next_sibling).strip())
-    _getSha     = ("SHA",           lambda _: str(_.soup.find('strong', string='File SHA1: ').next_sibling).strip())
+    def date(self):
+        date = str(self.soup.find(class_='update-on').text)
+        return datetime.strptime(date, "%Y-%m-%d").isoformat()
+
+    _getType    = ("apk_type",      lambda _: _.soup.find(class_='ver-item-t').text)
+    _getSize    = ("file_size",     lambda _: str(_.soup.find(class_='ver-item-s').text))
+    _getReqs    = ("requirements",  lambda _: str(_.soup.find('strong', string='Requires Android: ').next_sibling))
+    _getPubDate = ("publish_date",  lambda _: _.date())
+    _getPatch   = ("patch_notes",   lambda _: _.changeLog())
+    _getSign    = ("signature",     lambda _: str(_.soup.find('strong', string='Signature: ').next_sibling).strip())
+    _getSha     = ("sha",           lambda _: str(_.soup.find('strong', string='File SHA1: ').next_sibling).strip())
 
 
 # noinspection PyCompatibility
@@ -111,7 +115,7 @@ class ApkPure(CrawlerBase):
         cats = self.getCategories()
         threads = []
 
-        for cat in cats[0:2]:
+        for cat in cats:
             threads.append(Thread(target=self._crawlCategory, args=(cat, )))
             threads[-1].start()
 
@@ -134,61 +138,58 @@ class ApkPure(CrawlerBase):
             appName, id_ = self._scrapeAppData(currUrl)
 
             if appName:
-                self._collectAllVersions(id_, currUrl + '/versions')
+                self._collectAllVersions(appName, id_, currUrl + '/versions')
                 # self._collectAllReviews()
-            return None
 
         return None if apps.__len__() == 0 else not None
 
     def _scrapeAppData(self, url):
-        soup = requestHTML(url)
         try:
+            soup = requestHTML(url)
             appName = soup.find(class_='title-like').find('h1').text.strip()
         except AttributeError:
-            appName = None
-            return
+            return (None, None)
 
         pureData = GetPureData(url, soup).getAll()
-
-        id_ = writeAppDB('ApkPure', appName, pureData.metaData)
-        print(id_)
+        id_ = writeAppDB('ApkPure', appName, url, pureData.metaData)
 
         return (appName, id_)
 
-    def _collectAllVersions(self, id_, url):
+    def _collectAllVersions(self, name, id_, url):
         soup = requestHTML(url)
-        versionList = soup.find(class_='ver')('li')
+        versionList = soup.find(class_='ver')
 
-        if 'Page Deleted' not in soup.title.text:
-            self._scrapeVersions(id_, url, versionList)
-            pass
+        if 'Page Deleted' not in soup.title.text and versionList:
+            self._scrapeVersions(name, id_, url, versionList('li'))
         else:
             logToFile('Versions.txt', f"{url}\n")
 
-    def _scrapeVersions(self, id_, url, versionList):
+    def _scrapeVersions(self, name, id_, url, versionList):
         index = 0
 
-        if versionList[0].find(class_="ver-whats-new"):
-            self.lock.acquire() 
-            self._loadPage(url, 'ver')
-            for v in versionList:
-                self.webDriver.clickPopUp("ver-item-m", "mfp-close", index, False)
-                self.webDriver.clickAway("mfp-close", "class name")
-                index += 1
+        self.lock.acquire() 
+        self._loadPage(url, 'ver')
+        for v in versionList:
+            self.webDriver.clickPopUp("ver-item-m", "mfp-close", index, False)
+            self.webDriver.clickAway("mfp-close", "class name")
+            index += 1
 
-            sleep(0.1)
+        sleep(0.1)
+        v = self.webDriver.fetchPage()
+        while 'loading..' in v.find(class_='ver-whats-new'):
             v = self.webDriver.fetchPage()
-            while 'loading..' in v.find(class_='ver-whats-new'):
-                v = self.webDriver.fetchPage()
-            versionList = v.find(class_='ver')('li')
-            self.lock.release()
+        versionList = v.find(class_='ver')('li')
+        self.lock.release()
         
         for v in versionList:
-            version = v.find('span').text.lstrip('V')
+            try:
+                version = v.find('span').text.lstrip('V')
+            except:
+                print(f"{url} has version problems")
+            
             pureVersion = GetPureVersion(url, v).getAll()
-
-            writeVersionDB("ApkPure", id_, version, pureVersion.metaData)
-            self.scrapeApk(f"{self.siteUrl}{v.find(href=True)['href']}", './apks/')
+            writeVersionDB("ApkPure", name, id_, version, pureVersion.metaData)
+            # self.scrapeApk(f"{self.siteUrl}{v.find(href=True)['href']}", './apks/')
 
     def _collectAllReviews(self, appName):
         groupName = removeSpecialChars(appName.lower()).replace(' ', '-').rstrip('-')
@@ -238,11 +239,12 @@ class ApkPure(CrawlerBase):
 
 
 def main():
-    try:
-        ApkPure().crawl()
-    except KeyboardInterrupt:
-        print("Ended Early")
-    print("Finished")
+    # try:
+    #     ApkPure().crawl()
+    # except KeyboardInterrupt:
+    #     print("Ended Early")
+    # print("Finished")
+    ApkPure()._collectAllVersions('name', '0', 'https://apkpure.com/clash-of-clans-coc/com.supercell.clashofclans/versions')
 
 
 if __name__ == '__main__':

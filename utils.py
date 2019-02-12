@@ -150,7 +150,7 @@ def writeOutput(destination='DB', writeType='w', dataDict=None):
     logToFile(destination, json.dumps(dataDict, indent=4) + '\n')
 
 
-def writeAppDB(storeName='', appName='', data=None):
+def writeAppDB(storeName='', appName='', appUrl='', data=None):
     if data is None:
         data = dict({})
 
@@ -158,25 +158,27 @@ def writeAppDB(storeName='', appName='', data=None):
     appDict = {
         "store_id"  : storeName,
         "app_name"  : appName,
+        "app_url"   : appUrl,
         "metadata"  : data
     }
     result = db.applications.insert_one(appDict)
-    return result
+    return result.inserted_id
 
 
-def writeVersionDB(storeName='', appId='', version='', data=None):
+def writeVersionDB(storeName='', appName='', appId='', version='', data=None):
     if data is None:
         data = dict({})
 
     global db
     appDict = {
         "store_id"  : storeName,
-        "app_id"  : appId,
+        "app_name"  : appName,
+        "app_id"    : appId,
         "version"   : version,
         "metadata"  : data
     }
     result = db.versions.insert_one(appDict)
-    return result
+    return result.inserted_id
 
 # def uploadAPK(filePath, fileName):
     # folder_id = '54833153949'
