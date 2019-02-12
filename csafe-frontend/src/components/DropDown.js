@@ -8,8 +8,10 @@ function DropDown(props) {
       onChange={props.onChange}
       options={props.options}
       placeholder={props.placeholder}
+      formatGroupLabel={props.formatGroupLabel}
       isClearable={true}
       isSearchable={true}
+      isMulti={true}
     />
   )
 }

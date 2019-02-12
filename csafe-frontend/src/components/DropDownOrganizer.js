@@ -3,50 +3,60 @@ import DropDown from './DropDown'
 
 import categoryOptions from '../dropdownOptions/categories'
 import versionOptions from '../dropdownOptions/versions'
+import dateOptions from '../dropdownOptions/date'
 
-class DropDownOrganizer extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = { selectedCategoryOption: null, selectedVersionOption: null }
-    this.handleCategoryChange = this.handleCategoryChange.bind(this)
-    this.handleVersionChange = this.handleVersionChange.bind(this)
+function DropDownOrganizer(props) {
+  const groupStyles = {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between'
   }
 
-  handleCategoryChange(selectedOption) {
-    this.setState({ selectedCategoryOption: selectedOption }, () =>
-      console.log(
-        `Categroy option selected:`,
-        this.state.selectedCategoryOption
-      )
-    )
+  const groupBadgeStyles = {
+    backgroundColor: '#EBECF0',
+    borderRadius: '2em',
+    color: '#172B4D',
+    display: 'inline-block',
+    fontSize: 12,
+    fontWeight: 'normal',
+    lineHeight: '1',
+    minWidth: 1,
+    padding: '0.16666666666667em 0.5em',
+    textAlign: 'center'
   }
 
-  handleVersionChange(selectedOption) {
-    this.setState({ selectedVersionOption: selectedOption }, () =>
-      console.log(`Version option selected:`, this.state.selectedVersionOption)
-    )
-  }
+  const formatGroupLabel = data => (
+    <div style={groupStyles}>
+      <span>{data.label}</span>
+      <span style={groupBadgeStyles}>{data.options.length}</span>
+    </div>
+  )
 
-  render() {
-    const { selectedCategoryOption, selectedVersionOption } = this.state
-
-    return (
-      <div>
-        <DropDown
-          value={selectedCategoryOption}
-          onChange={this.handleCategoryChange}
-          options={categoryOptions}
-          placeholder={'Categories'}
-        />
-        <DropDown
-          value={selectedVersionOption}
-          onChange={this.handleVersionChange}
-          options={versionOptions}
-          placeholder={'Versions'}
-        />
-      </div>
-    )
-  }
+  return (
+    <div>
+      <DropDown
+        value={props.categoryValue}
+        onChange={props.onCategoryChange}
+        options={categoryOptions}
+        formatGroupLabel={formatGroupLabel}
+        placeholder={'Categories'}
+      />
+      <DropDown
+        value={props.versionValue}
+        onChange={props.onVersionChange}
+        options={versionOptions}
+        formatGroupLabel={formatGroupLabel}
+        placeholder={'Versions'}
+      />
+      <DropDown
+        value={props.dateValue}
+        onChange={props.onDateChange}
+        options={dateOptions}
+        formatGroupLabel={formatGroupLabel}
+        placeholder={'Date'}
+      />
+    </div>
+  )
 }
 
 export default DropDownOrganizer
