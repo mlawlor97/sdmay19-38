@@ -1,58 +1,59 @@
-from utils import RateLimiter, requestHTML
+from utils import RateLimiter, requestHTML, writeAppDB
 from SupportFiles.webDriverUtils import WebDriver
 from SupportFiles.crawlerBase import CrawlerBase
 from SupportFiles.metaDataBase import DataCollectionBase
-
+# from googleplayapi.googleplay import GooglePlayAPI
+from PlayCrawlerMaster.googleplayapi.googleplay import GooglePlayAPI
 
 class GoogleData(DataCollectionBase):
 
-    def getName(self):
-        self.tryCollection('Name', lambda: self.soup.find(itemprop='name').text.strip(), True)
-        return False if self.metaData.get('Name') is ('' or None) else None
+    # def getName(self):
+    #     self.tryCollection('name', lambda: self.soup.find(itemprop='name').text.strip(), True)
+    #     return False if self.metaData.get('Name') is ('' or None) else None
 
     def getPackage(self):
-        self.tryCollection('Package', lambda: self.url.split('=')[-1])
+        self.tryCollection('package', lambda: self.url.split('id=')[-1].split('&')[0])
         # self.soup = self.soup.select('[data-p~=\"' + self.metaData.get('Package') + '\"]')
 
     def getDeveloper(self):
-        self.tryCollection('Developer', lambda: self.soup.select('a[href*=apps/dev]')[0].text.strip())
+        self.tryCollection('developer', lambda: self.soup.select('a[href*=apps/dev]')[0].text.strip())
 
     def getCategory(self):
-        self.tryCollection('Category', lambda: self.soup.find(itemprop='genre').text)
+        self.tryCollection('category', lambda: self.soup.find(itemprop='genre').text)
 
     def getPrice(self):
         def func():
             price = self.soup.find(itemprop='price')['content']
             return price if price is not '0' else '$0.00'
 
-        self.tryCollection('Price', func)
+        self.tryCollection('price', func)
 
     def getContentRating(self):
-        self.tryCollection('Content Rating', lambda: self.soup.find(itemprop='contentRating')['content'])
+        self.tryCollection('content_rating', lambda: self.soup.find(itemprop='contentRating')['content'])
 
     def getDescription(self):
-        self.tryCollection('Description', lambda: self.soup.find(itemprop='description')['content'])
+        self.tryCollection('description', lambda: self.soup.find(itemprop='description')['content'])
 
     def getRating(self):
-        self.tryCollection('Rating', lambda: float("{0:.2f}".format(float(self.soup.find(itemprop='ratingValue')['content']))))
+        self.tryCollection('rating', lambda: float("{0:.2f}".format(float(self.soup.find(itemprop='ratingValue')['content']))))
 
     def getVersion(self):
-        self.tryCollection('Version', lambda: self.soup.find('div', string="Current Version").next_sibling.find('span').text)
+        self.tryCollection('version', lambda: self.soup.find('div', string="Current Version").next_sibling.find('span').text)
 
     def getNumDownloads(self):
-        self.tryCollection('Downloads', lambda: self.soup.find('div', string="Installs").next_sibling.find('span').text)
+        self.tryCollection('downloads', lambda: self.soup.find('div', string="Installs").next_sibling.find('span').text)
 
     def getSize(self):
-        self.tryCollection('Size', lambda: self.soup.find('div', string="Size").next_sibling.find('span').text)
+        self.tryCollection('size', lambda: self.soup.find('div', string="Size").next_sibling.find('span').text)
 
     def getRequirements(self):
-        self.tryCollection('Requirements', lambda: self.soup.find('div', string='Requires Android').next_sibling.find('span').text)
+        self.tryCollection('requirements', lambda: self.soup.find('div', string='Requires Android').next_sibling.find('span').text)
 
     def getPublishDate(self):
-        self.tryCollection('Publish Date', lambda: self.soup.find('div', string='Updated').next_sibling.find('span').text)
+        self.tryCollection('publish_date', lambda: self.soup.find('div', string='Updated').next_sibling.find('span').text)
 
     def getPatchNotes(self):
-        self.tryCollection('Patch Notes ' + self.metaData.get('Version'), lambda: self.soup.find('h2', string="What's New").parent.next_sibling.find('content').text)
+        self.tryCollection('patch_notes', lambda: self.soup.find('h2', string="What's New").parent.next_sibling.find('content').text)
 
 
 # noinspection PyCompatibility
@@ -71,6 +72,8 @@ class GooglePlay(CrawlerBase):
             "/collection/topselling_new_free"
         ]
         self.appList = dict({})  # May toss after getting DB connection / will get very big
+        # self.gpa = GooglePlayAPI(androidId="551F187F79FC41F3", lang="en_us")
+        # self.gpa.login("sdmay19@gmail.com", "Forensics4", "ya29.GluuBvrVmzeVYn1HxKQ_61nKGKjDfSXB_7uQ_LPvg8EWceabszVZn5e5VDHuZNF_Zbh_R3BviPmrMV-DSDSR0Ipc_qfmVU3NX8C31RZi34ecakBd4NJEJZpp8brY")
 
     def crawl(self):
         # Get categories
@@ -121,23 +124,40 @@ class GooglePlay(CrawlerBase):
 
     def scrapeApp(self, appPage):
         soup = requestHTML(appPage)
+        name = soup.find(itemprop='name')
+
+        if not name:
+            soup = self.webDriver.loadPage(appPage, 'xpath', "//h1[@itemprop='name']", True)
+            name = soup.find(itemprop='name')
+        name = name.text.strip()
         playData = GoogleData(appPage, soup).getAll()
 
-        # if playData.metaData.__len__() is not playData.methods.__len__():
-        if playData is Exception:
-            soup = self.webDriver.loadPage(appPage, 'xpath', "//h1[@itemprop='name']", True)
-            playData = GoogleData(appPage, soup).getAll()
+        print((playData.metaData))
+        # package = playData.metaData.get("package")
 
-        print(playData.getJSON())
+        id_ = writeAppDB("GooglePlay", name, appPage, playData.metaData) 
+        print(id_)       
 
-        if playData.metaData.get('Price') == "$0.00":
+        if playData.metaData.get('price') == "$0.00":
             print('Free')
+            # details = self.gpa.details(package)
+            # print(details)
         #     downloadGoogleApk(playData.metaData.get('Package'))
 
 
 def main():
-    GooglePlay().crawl()
-    # GooglePlay().scrapeApp('https://play.google.com/store/apps/details?id=com.google.vr.expeditions')
+    # GooglePlay()
+    # GooglePlay().scrapeApp('https://play.google.com/store/apps/details?id=com.snapchat.android')
+    url = 'https://play.google.com/store/apps/details?id=de.ritterit.lukes&hl=en'
+    # url = 'https://play.google.com/store/apps/details?id=com.thomson.cxn&feature=more_from_developer#?t=W251bGwsMSwyLDEwMiwiY29tLnRob21zb24uY3huIl0.'
+    # url = 'https://play.google.com/store/apps/details?id=com.salamandertechnologies.track&hl=en_US'
+    # url = 'https://play.google.com/store/apps/details?id=com.harris.rf.beonptt.android.ui&hl=en'
+    # url = 'https://play.google.com/store/apps/details?id=gov.nih.nlm.erg2012&hl=en_US'
+    # url = 'https://play.google.com/store/apps/details?id=com.cube.arc.hfa'
+    # url = 'https://play.google.com/store/apps/details?id=gov.fema.mobile.android'
+    # url = 'https://play.google.com/store/apps/details?id=com.snap.android.apis'
+    # url = 'https://play.google.com/store/apps/details?id=com.intergraph.mobileresponder'
+    GooglePlay().scrapeApp(url)
 
 
 if __name__ == '__main__':
