@@ -1,9 +1,11 @@
+#!usr/bin/env python3
+
 from utils import RateLimiter, requestHTML, writeAppDB
 from SupportFiles.webDriverUtils import WebDriver
 from SupportFiles.crawlerBase import CrawlerBase
 from SupportFiles.metaDataBase import DataCollectionBase
 # from googleplayapi.googleplay import GooglePlayAPI
-from PlayCrawlerMaster.googleplayapi.googleplay import GooglePlayAPI
+# from PlayCrawlerMaster.googleplayapi.googleplay import GooglePlayAPI
 
 class GoogleData(DataCollectionBase):
 
@@ -16,7 +18,7 @@ class GoogleData(DataCollectionBase):
         # self.soup = self.soup.select('[data-p~=\"' + self.metaData.get('Package') + '\"]')
 
     def getDeveloper(self):
-        self.tryCollection('developer', lambda: self.soup.select('a[href*=apps/dev]')[0].text.strip())
+        self.tryCollection('developer', lambda: self.soup.select('a[href*="apps/dev"]')[0].text.strip())
 
     def getCategory(self):
         self.tryCollection('category', lambda: self.soup.find(itemprop='genre').text)
@@ -75,6 +77,9 @@ class GooglePlay(CrawlerBase):
         # self.gpa = GooglePlayAPI(androidId="551F187F79FC41F3", lang="en_us")
         # self.gpa.login("sdmay19@gmail.com", "Forensics4", "ya29.GluuBvrVmzeVYn1HxKQ_61nKGKjDfSXB_7uQ_LPvg8EWceabszVZn5e5VDHuZNF_Zbh_R3BviPmrMV-DSDSR0Ipc_qfmVU3NX8C31RZi34ecakBd4NJEJZpp8brY")
 
+    def __del__(self):
+        self.webDriver.__del__()
+
     def crawl(self):
         # Get categories
         self.getCategories(requestHTML(self.siteUrl + '/store/apps'))
@@ -97,8 +102,8 @@ class GooglePlay(CrawlerBase):
         self.appList.clear()
 
     def getCategories(self, soup):
-        soup = soup.find(class_='action-bar')
-        [self.categoryLinks.append(self.siteUrl + cat['href']) for cat in soup(class_='child-submenu-link')]
+        soup = soup.find(id="action-dropdown-children-Categories")
+        [self.categoryLinks.append(cat['href']) for cat in soup(href=True)]
 
     def getSubCategories(self, categoryPage):
         soup = requestHTML(categoryPage)
@@ -120,7 +125,10 @@ class GooglePlay(CrawlerBase):
                 self.appList[name] = self.appList[name] + 1
             else:
                 self.appList[name] = 1
-                self.scrapeApp(self.siteUrl + app.attrs['href'])
+                try:
+                    self.scrapeApp(self.siteUrl + app.attrs['href'])
+                except:
+                    continue
 
     def scrapeApp(self, appPage):
         soup = requestHTML(appPage)
@@ -132,23 +140,23 @@ class GooglePlay(CrawlerBase):
         name = name.text.strip()
         playData = GoogleData(appPage, soup).getAll()
 
-        print((playData.metaData))
+        # print((playData.metaData))
         # package = playData.metaData.get("package")
 
         id_ = writeAppDB("GooglePlay", name, appPage, playData.metaData) 
         print(id_)       
 
-        if playData.metaData.get('price') == "$0.00":
-            print('Free')
+        # if playData.metaData.get('price') == "$0.00":
+            # print('Free')
             # details = self.gpa.details(package)
             # print(details)
         #     downloadGoogleApk(playData.metaData.get('Package'))
 
 
 def main():
-    # GooglePlay()
+    GooglePlay().crawl()
     # GooglePlay().scrapeApp('https://play.google.com/store/apps/details?id=com.snapchat.android')
-    url = 'https://play.google.com/store/apps/details?id=de.ritterit.lukes&hl=en'
+    # url = 'https://play.google.com/store/apps/details?id=de.ritterit.lukes&hl=en'
     # url = 'https://play.google.com/store/apps/details?id=com.thomson.cxn&feature=more_from_developer#?t=W251bGwsMSwyLDEwMiwiY29tLnRob21zb24uY3huIl0.'
     # url = 'https://play.google.com/store/apps/details?id=com.salamandertechnologies.track&hl=en_US'
     # url = 'https://play.google.com/store/apps/details?id=com.harris.rf.beonptt.android.ui&hl=en'
@@ -157,7 +165,7 @@ def main():
     # url = 'https://play.google.com/store/apps/details?id=gov.fema.mobile.android'
     # url = 'https://play.google.com/store/apps/details?id=com.snap.android.apis'
     # url = 'https://play.google.com/store/apps/details?id=com.intergraph.mobileresponder'
-    GooglePlay().scrapeApp(url)
+    # GooglePlay().scrapeApp(url)
 
 
 if __name__ == '__main__':
