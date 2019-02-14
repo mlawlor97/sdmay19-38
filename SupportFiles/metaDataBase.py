@@ -73,7 +73,7 @@ class DataCollectionBase:
     def tryCollection(self, data, func, *noLog):
         try:
             self.metaData.update({data: func()})
-        except AttributeError:
+        except:
             logToFile(self.__class__.__name__ + 'Check.txt', data + ':\t' + self.url + '\n') if not noLog else None
 
     def getJSON(self):  # Temp function

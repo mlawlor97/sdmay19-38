@@ -85,6 +85,7 @@ def requestHTML(url='', *html):
     """
     global rl
     rl.visited += 1
+    sleep(1)
     if rl.visited >= rl.rate:
         rl.visited = 0
         sleep(rl.timeOut)
