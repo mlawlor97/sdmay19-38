@@ -6,8 +6,11 @@ let VersionModel = require('../models/version');
 /* GET home page. */
 router.get('/', function (req, res, next) {
     ApplicationModel.find({
-        app_name: req.query.keyword
+        "app_name" : { "$regex": req.query.keyword, "$options": "i" }
     }).lean().then( doc =>{
+        if(doc.length == 0){
+            res.status(302).json({'error': req.query.keyword + ' is available'})
+        }
         getVersions(doc).then( applications => {
             res.json(applications)
         });
