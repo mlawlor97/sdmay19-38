@@ -4,7 +4,7 @@ let ApplicationModel = require('../models/application');
 let VersionModel = require('../models/version');
 
 /* GET home page. */
-router.get('/', function (req, res, next) {
+router.get('/appName', function (req, res, next) {
     ApplicationModel.find({
         "app_name" : { "$regex": req.query.keyword, "$options": "i" }
     }).lean().then( doc =>{
@@ -13,6 +13,21 @@ router.get('/', function (req, res, next) {
         }
         getVersions(doc).then( applications => {
 		res.json(applications);
+        });
+    }).catch( err => {
+        console.log(err);
+    })
+});
+
+router.get('/packageName', function (req, res, next) {
+    ApplicationModel.find({
+        "metadata.developer" : { "$regex": req.query.keyword, "$options": "i" }
+    }).lean().then( doc =>{
+        if(doc.length == 0){
+            res.status(302).json({'error': req.query.keyword + ' is available'})
+        }
+        getVersions(doc).then( applications => {
+            res.json(applications);
         });
     }).catch( err => {
         console.log(err);
