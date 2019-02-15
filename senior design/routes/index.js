@@ -9,7 +9,7 @@ router.get('/appName', function (req, res, next) {
         "app_name" : { "$regex": req.query.keyword, "$options": "i" }
     }).lean().then( doc =>{
         if(doc.length == 0){
-            res.status(302).json({'error': req.query.keyword + ' is available'})
+            res.status(302).json({'error': req.query.keyword + ' is not available'})
         }
         getVersions(doc).then( applications => {
 		res.json(applications);
@@ -21,10 +21,10 @@ router.get('/appName', function (req, res, next) {
 
 router.get('/packageName', function (req, res, next) {
     ApplicationModel.find({
-        "metadata.developer" : { "$regex": req.query.keyword, "$options": "i" }
+        "metadata.package" : { "$regex": req.query.keyword, "$options": "i" }
     }).lean().then( doc =>{
         if(doc.length == 0){
-            res.status(302).json({'error': req.query.keyword + ' is available'})
+            res.status(302).json({'error': req.query.keyword + ' is not available'})
         }
         getVersions(doc).then( applications => {
             res.json(applications);
