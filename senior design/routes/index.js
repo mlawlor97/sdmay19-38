@@ -9,7 +9,7 @@ router.get('/', function (req, res, next) {
         app_name: req.query.keyword
     }).lean().then( doc =>{
         getVersions(doc).then( applications => {
-            res.json(applications)
+		res.json(applications);
         });
     }).catch( err => {
         console.log(err);
@@ -23,11 +23,13 @@ function getVersions(applications) {
                 app_id: applications[i]._id
             }).then(vDoc => {
                 applications[i].versions = vDoc;
+		if( i == applications.length-1){
+			resolve(applications);
+		}
             }).catch(err => {
                 console.log(err);
             })
         }
-        resolve(applications)
     })
 }
 
