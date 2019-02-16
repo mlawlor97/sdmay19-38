@@ -7,7 +7,7 @@ let VersionModel = require('../models/version');
 router.get('/appName', function (req, res, next) {
     ApplicationModel.find({
         "app_name" : { "$regex": req.query.keyword, "$options": "i" }
-    }).lean().then( doc =>{
+    }).lean().limit(20).then( doc =>{
         if(doc.length == 0){
             res.status(302).json({'error': req.query.keyword + ' is not available'})
         }
@@ -22,7 +22,7 @@ router.get('/appName', function (req, res, next) {
 router.get('/packageName', function (req, res, next) {
     ApplicationModel.find({
         "metadata.package" : { "$regex": req.query.keyword, "$options": "i" }
-    }).lean().then( doc =>{
+    }).lean().limit(20).then( doc =>{
         if(doc.length == 0){
             res.status(302).json({'error': req.query.keyword + ' is not available'})
         }
