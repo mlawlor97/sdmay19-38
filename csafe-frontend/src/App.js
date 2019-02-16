@@ -24,16 +24,17 @@ const defaultColumns = [
     accessor: 'Package'
   },
   {
+    Header: 'Version',
+    accessor: 'Version'
+  },
+  {
     Header: 'Category',
     accessor: 'Category'
   },
   {
-    Header: 'URL',
-    accessor: 'url'
-  },
-  {
     Header: 'Download',
-    accessor: 'download'
+    accessor: 'url',
+    Cell: e => <a href={e.value}> {e.value} </a>
   }
 ]
 
@@ -124,8 +125,11 @@ class App extends Component {
               Developer: element.metadata['developer'],
               Package: element.metadata['package'],
               Category: element.metadata['category'],
-              url: element['app_url'],
-              download: 'Download Here'
+              url: element['app_url']
+            }
+
+            if (element.versions) {
+              dataObj['Version'] = element.versions[0].version
             }
 
             dataArray.push(dataObj)
@@ -154,8 +158,11 @@ class App extends Component {
               Developer: element.metadata['developer'],
               Package: element.metadata['package'],
               Category: element.metadata['category'],
-              url: element['app_url'],
-              download: 'Download Here'
+              url: element['app_url']
+            }
+
+            if (element.versions) {
+              dataObj['Version'] = element.versions[0].version
             }
 
             dataArray.push(dataObj)
@@ -185,8 +192,11 @@ class App extends Component {
                   Developer: element.metadata['developer'],
                   Package: element.metadata['package'],
                   Category: element.metadata['category'],
-                  url: element['app_url'],
-                  download: 'Download Here'
+                  url: element['app_url']
+                }
+
+                if (element.versions) {
+                  dataObj['Version'] = element.versions[0].version
                 }
 
                 dataArray.push(dataObj)
