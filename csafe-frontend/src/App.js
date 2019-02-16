@@ -28,43 +28,35 @@ const defaultColumns = [
     accessor: 'Category'
   },
   {
-    Header: 'Version',
-    accessor: 'version'
+    Header: 'URL',
+    accessor: 'url'
+  },
+  {
+    Header: 'Download',
+    accessor: 'download'
   }
 ]
 
 const clickedColumns = [
   {
-    Header: 'Store',
-    accessor: 'store_id'
-  },
-  {
-    Header: 'App Name',
-    accessor: 'app_name'
+    Header: 'App Package Name',
+    accessor: 'app_package_name'
   },
   {
     Header: 'Version',
     accessor: 'version'
   },
   {
-    Header: 'File Type',
-    accessor: 'Apk_Type' //Apk Type
+    Header: 'Finish Timestamp',
+    accessor: 'finish_timestamp'
   },
   {
-    Header: 'File Size',
-    accessor: 'File_Size' //File Size
+    Header: 'File Path',
+    accessor: 'path'
   },
   {
-    Header: 'Publish Date',
-    accessor: 'Publish_Date' //Publish Date
-  },
-  {
-    Header: 'Signature',
-    accessor: 'Signature'
-  },
-  {
-    Header: 'SHA',
-    accessor: 'SHA'
+    Header: 'Evidence Types',
+    accessor: 'evidence_types'
   }
 ]
 
@@ -75,6 +67,7 @@ class App extends Component {
       keyword: '',
       categoryFilter: null,
       versionFilter: null,
+      keywordFilter: 'appName',
       dateFilter: null,
       tableData: [],
       response: null,
@@ -85,6 +78,7 @@ class App extends Component {
     this.onSubmit = this.onSubmit.bind(this)
     this.handleCategoryChange = this.handleCategoryChange.bind(this)
     this.handleVersionChange = this.handleVersionChange.bind(this)
+    this.handleKeywordTypeChange = this.handleKeywordTypeChange.bind(this)
     this.handleDateChange = this.handleDateChange.bind(this)
   }
 
@@ -104,91 +98,122 @@ class App extends Component {
     this.setState({ dateFilter: selectedOption })
   }
 
+  handleKeywordTypeChange(selectedOption) {
+    this.setState({ keywordFilter: selectedOption.value })
+  }
+
   onSubmit(event) {
     event.preventDefault()
-    axios
-      .get('http://sdmay19-18-windows.ece.iastate.edu:3000/', {
-        params: {
-          keyword: this.state.keyword
-        }
-      })
-      .then(res => {
-        const dataArray = []
-        res.data.forEach(element => {
-          element.versions.forEach(version => {
+    if (this.state.keywordFilter === 'appName') {
+      axios
+        .get('http://sdmay19-18-windows.ece.iastate.edu:3000/appName/', {
+          params: {
+            keyword: this.state.keyword
+          }
+        })
+        .then(res => {
+          const dataArray = []
+          res.data.forEach(element => {
             const dataObj = {
               store_id: element['store_id'],
               app_name: element['app_name'],
-              Developer: element.metadata['Developer'],
-              Package: element.metadata['Package'],
-              Category: element.metadata['Category'],
-              version: version['version']
-              // Apk_Type: version.metadata['Apk Type'],
-              // File_Size: version.metadata['File Size'],
-              // Publish_Date: version.metadata['Publish Date'],
-              // Signature: version.metadata['Signature'],
-              // SHA: version.metadata['SHA']
+              Developer: element.metadata['developer'],
+              Package: element.metadata['package'],
+              Category: element.metadata['category'],
+              url: element['app_url'],
+              download: 'Download Here'
             }
 
             dataArray.push(dataObj)
           })
+          this.setState({ click: false })
+          this.setState({ tableData: dataArray })
+          this.setState({ response: res.data })
         })
-        this.setState({ click: false })
-        this.setState({ tableData: dataArray })
-        this.setState({ response: res.data })
-      })
+        .catch(err => {
+          console.log(err)
+          this.setState({ tableData: [] })
+        })
+    } else if (this.state.keywordFilter === 'packageName') {
+      axios
+        .get('http://sdmay19-18-windows.ece.iastate.edu:3000/packageName/', {
+          params: {
+            keyword: this.state.keyword
+          }
+        })
+        .then(res => {
+          const dataArray = []
+          res.data.forEach(element => {
+            const dataObj = {
+              store_id: element['store_id'],
+              app_name: element['app_name'],
+              Developer: element.metadata['developer'],
+              Package: element.metadata['package'],
+              Category: element.metadata['category'],
+              url: element['app_url'],
+              download: 'Download Here'
+            }
+
+            dataArray.push(dataObj)
+          })
+          this.setState({ click: false })
+          this.setState({ tableData: dataArray })
+          this.setState({ response: res.data })
+        })
+        .catch(err => {
+          console.log(err)
+          this.setState({ tableData: [] })
+        })
+    }
   }
 
   render() {
     const onRowClick = (state, rowInfo, column, instance) => {
       return {
         onClick: e => {
-          // console.log('A Td Element was clicked!')
-          // console.log('it produced this event:', e)
-          // console.log('It was in this column:', column)
-          //console.log('It was in this row:', rowInfo)
-          // console.log('It was in this table instance:', instance)
-
-          // Does not target specific app at the moment
-          // Needs to be implemented later!!!
           if (this.state.response) {
             if (this.state.click) {
               const dataArray = []
               this.state.response.forEach(element => {
-                element.versions.forEach(version => {
-                  const dataObj = {
-                    store_id: element['store_id'],
-                    app_name: element['app_name'],
-                    Developer: element.metadata['Developer'],
-                    Package: element.metadata['Package'],
-                    Category: element.metadata['Category'],
-                    version: version['version']
-                  }
+                const dataObj = {
+                  store_id: element['store_id'],
+                  app_name: element['app_name'],
+                  Developer: element.metadata['developer'],
+                  Package: element.metadata['package'],
+                  Category: element.metadata['category'],
+                  url: element['app_url'],
+                  download: 'Download Here'
+                }
 
-                  dataArray.push(dataObj)
-                })
+                dataArray.push(dataObj)
               })
 
               this.setState({ tableData: dataArray })
             } else {
-              const dataArray = []
-              this.state.response.forEach(element => {
-                element.versions.forEach(version => {
-                  const dataObj = {
-                    store_id: version['store_id'],
-                    app_name: element['app_name'],
-                    version: version['version'],
-                    Apk_Type: version.metadata['Apk Type'],
-                    File_Size: version.metadata['File Size'],
-                    Publish_Date: version.metadata['Publish Date'],
-                    Signature: version.metadata['Signature'],
-                    SHA: version.metadata['SHA']
-                  }
-
-                  dataArray.push(dataObj)
-                })
+              const found = []
+              this.state.response.forEach((element, i) => {
+                if (element.app_name === rowInfo.original.app_name) {
+                  found.push(this.state.response[i])
+                }
               })
+              const dataArray = []
+              if (found[0].versions[0].report) {
+                found[0].versions[0].report.app_evidence[1].file_system.forEach(
+                  element => {
+                    const dataObj = {
+                      app_package_name:
+                        found[0].versions[0].report.app_package_name,
+                      version: found[0].versions[0].report.version,
+                      finish_timestamp:
+                        found[0].versions[0].report.finish_timestamp,
+                      path: element.path,
+                      evidence_types: element.evidence_types[0]
+                    }
 
+                    dataArray.push(dataObj)
+                  }
+                )
+              }
               this.setState({ tableData: dataArray })
             }
           }
@@ -226,12 +251,13 @@ class App extends Component {
             onChange={this.onKeywordChange}
           />
           <DropDownOrganizer
-            categoryValue={this.state.categoryFilter}
-            versionValue={this.state.versionFilter}
-            dateValue={this.state.dateFilter}
-            onCategoryChange={this.handleCategoryChange}
-            onVersionChange={this.handleVersionChange}
-            onDateChange={this.handleDateChange}
+            // categoryValue={this.state.categoryFilter}
+            // versionValue={this.state.versionFilter}
+            // dateValue={this.state.dateFilter}
+            // onCategoryChange={this.handleCategoryChange}
+            // onVersionChange={this.handleVersionChange}
+            // onDateChange={this.handleDateChange}
+            onKeywordChange={this.handleKeywordTypeChange}
           />
           {screen}
         </header>

@@ -4,6 +4,7 @@ import DropDown from './DropDown'
 import categoryOptions from '../dropdownOptions/categories'
 import versionOptions from '../dropdownOptions/versions'
 import dateOptions from '../dropdownOptions/date'
+import keywordOptions from '../dropdownOptions/keywordOptions'
 
 function DropDownOrganizer(props) {
   const groupStyles = {
@@ -34,7 +35,7 @@ function DropDownOrganizer(props) {
 
   return (
     <div>
-      <DropDown
+      {/* <DropDown
         value={props.categoryValue}
         onChange={props.onCategoryChange}
         options={categoryOptions}
@@ -54,6 +55,12 @@ function DropDownOrganizer(props) {
         options={dateOptions}
         formatGroupLabel={formatGroupLabel}
         placeholder={'Date'}
+      /> */}
+      <DropDown
+        defaultValue={keywordOptions[0].options[0]}
+        onChange={props.onKeywordChange}
+        options={keywordOptions}
+        formatGroupLabel={formatGroupLabel}
       />
     </div>
   )

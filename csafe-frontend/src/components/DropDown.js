@@ -4,14 +4,15 @@ import Select from 'react-select'
 function DropDown(props) {
   return (
     <Select
-      value={props.value}
+      defaultValue={props.defaultValue}
+      //value={props.value}
       onChange={props.onChange}
       options={props.options}
-      placeholder={props.placeholder}
+      //placeholder={props.placeholder}
       formatGroupLabel={props.formatGroupLabel}
-      isClearable={true}
-      isSearchable={true}
-      isMulti={true}
+      // isClearable={true}
+      // isSearchable={true}
+      // isMulti={true}
     />
   )
 }
