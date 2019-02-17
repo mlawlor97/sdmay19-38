@@ -1,69 +1,13 @@
 import React, { Component } from 'react'
-//import './CSS/App.css'
+import './CSS/App.css'
 
 import SearchBar from './components/SearchBar'
 import Table from './components/Table'
 import DropDownOrganizer from './components/DropDownOrganizer'
+import defaultColumns from './tableColumns/defaultColumns'
+import clickedColumns from './tableColumns/clickedColumns'
 
 const axios = require('axios')
-const defaultColumns = [
-  {
-    Header: 'Store',
-    accessor: 'store_id'
-  },
-  {
-    Header: 'App Name',
-    accessor: 'app_name'
-  },
-  {
-    Header: 'Developer',
-    accessor: 'Developer'
-  },
-  {
-    Header: 'Package',
-    accessor: 'Package'
-  },
-  {
-    Header: 'Version',
-    accessor: 'Version'
-  },
-  {
-    Header: 'Category',
-    accessor: 'Category'
-  },
-  {
-    Header: 'Download',
-    accessor: 'url',
-    Cell: e => <a href={e.value}> {e.value} </a>
-  }
-]
-
-const clickedColumns = [
-  {
-    Header: 'App Package Name',
-    accessor: 'app_package_name'
-  },
-  {
-    Header: 'Version',
-    accessor: 'version'
-  },
-  {
-    Header: 'File System File Path',
-    accessor: 'f_path'
-  },
-  {
-    Header: 'File System Evidence Types',
-    accessor: 'f_evidence_types'
-  },
-  {
-    Header: 'Network File Path',
-    accessor: 'n_path'
-  },
-  {
-    Header: 'Network Evidence Types',
-    accessor: 'n_evidence_types'
-  }
-]
 
 class App extends Component {
   constructor(props) {
@@ -76,7 +20,8 @@ class App extends Component {
       dateFilter: null,
       tableData: [],
       response: null,
-      click: false
+      click: false,
+      error: false
     }
 
     this.onKeywordChange = this.onKeywordChange.bind(this)
@@ -137,9 +82,10 @@ class App extends Component {
           this.setState({ click: false })
           this.setState({ tableData: dataArray })
           this.setState({ response: res.data })
+          this.setState({ error: false })
         })
         .catch(err => {
-          console.log(err)
+          this.setState({ error: true })
           this.setState({ tableData: [] })
         })
     } else if (this.state.keywordFilter === 'packageName') {
@@ -170,9 +116,10 @@ class App extends Component {
           this.setState({ click: false })
           this.setState({ tableData: dataArray })
           this.setState({ response: res.data })
+          this.setState({ error: false })
         })
         .catch(err => {
-          console.log(err)
+          this.setState({ error: true })
           this.setState({ tableData: [] })
         })
     }
@@ -299,6 +246,19 @@ class App extends Component {
       )
     }
 
+    let errorScreen
+    if (this.state.error) {
+      errorScreen = (
+        <div className="query">
+          <form>
+            <label>Keyword Not Found</label>
+          </form>
+        </div>
+      )
+    } else {
+      errorScreen = <div />
+    }
+
     return (
       <div className="App">
         <header className="App-header">
@@ -316,7 +276,8 @@ class App extends Component {
             // onDateChange={this.handleDateChange}
             onKeywordChange={this.handleKeywordTypeChange}
           />
-          {screen}
+          <div className="cell">{screen}</div>
+          {errorScreen}
         </header>
       </div>
     )

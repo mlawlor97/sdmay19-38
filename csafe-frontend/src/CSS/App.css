@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -29,4 +29,19 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+.query {
+  color: red;
+  text-align: center;
+  margin: auto;
+  width: 25%;
+  border: 3px solid red;
+  padding: 10px;
+}
+
+.cell {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
