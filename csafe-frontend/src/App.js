@@ -151,74 +151,79 @@ class App extends Component {
 
               this.setState({ tableData: dataArray })
             } else {
-              const found = []
-              this.state.response.forEach((element, i) => {
-                if (element.app_name === rowInfo.original.app_name) {
-                  found.push(this.state.response[i])
-                }
-              })
-              const dataArray = []
-              if (found[0].versions[0].report) {
-                const app_package_name =
-                  found[0].versions[0].report.app_package_name
-                const version = found[0].versions[0].version
-
-                const fileSystemArray = []
-                const networkArray = []
-                if (
-                  found[0].versions[0].report.app_evidence[1].file_system.length
-                ) {
-                  found[0].versions[0].report.app_evidence[1].file_system.forEach(
-                    element => {
-                      const fileSystemObj = {
-                        path: element.path,
-                        evidence_types: element.evidence_types
-                      }
-
-                      fileSystemArray.push(fileSystemObj)
-                    }
-                  )
-                }
-
-                if (
-                  found[0].versions[0].report.app_evidence[2].network.length
-                ) {
-                  found[0].versions[0].report.app_evidence[2].network.forEach(
-                    element => {
-                      const networkObj = {
-                        path: element.path,
-                        evidence_types: element.evidence_types
-                      }
-
-                      networkArray.push(networkObj)
-                    }
-                  )
-                }
-
-                fileSystemArray.forEach((e, i) => {
-                  const dataObj = {
-                    app_package_name: app_package_name,
-                    version: version
+              if (rowInfo) {
+                const found = []
+                this.state.response.forEach((element, i) => {
+                  if (element.app_name === rowInfo.original.app_name) {
+                    found.push(this.state.response[i])
                   }
-                  if (fileSystemArray[i]) {
-                    dataObj['f_path'] = fileSystemArray[i].path
-                    dataObj['f_evidence_types'] = fileSystemArray[
-                      i
-                    ].evidence_types.toString()
-                  }
-
-                  if (networkArray[i]) {
-                    dataObj['n_path'] = fileSystemArray[i].path
-                    dataObj['n_evidence_types'] = fileSystemArray[
-                      i
-                    ].evidence_types.toString()
-                  }
-
-                  dataArray.push(dataObj)
                 })
-              }
+                const dataArray = []
+                if (found[0].versions[0].report) {
+                  const app_package_name =
+                    found[0].versions[0].report.app_package_name
+                  const version = found[0].versions[0].version
 
-              this.setState({ tableData: dataArray })
+                  const fileSystemArray = []
+                  const networkArray = []
+                  if (
+                    found[0].versions[0].report.app_evidence[1].file_system
+                      .length
+                  ) {
+                    found[0].versions[0].report.app_evidence[1].file_system.forEach(
+                      element => {
+                        const fileSystemObj = {
+                          path: element.path,
+                          evidence_types: element.evidence_types
+                        }
+
+                        fileSystemArray.push(fileSystemObj)
+                      }
+                    )
+                  }
+
+                  if (
+                    found[0].versions[0].report.app_evidence[2].network.length
+                  ) {
+                    found[0].versions[0].report.app_evidence[2].network.forEach(
+                      element => {
+                        const networkObj = {
+                          path: element.path,
+                          evidence_types: element.evidence_types
+                        }
+
+                        networkArray.push(networkObj)
+                      }
+                    )
+                  }
+
+                  fileSystemArray.forEach((e, i) => {
+                    const dataObj = {
+                      app_package_name: app_package_name,
+                      version: version
+                    }
+                    if (fileSystemArray[i]) {
+                      dataObj['f_path'] = fileSystemArray[i].path
+                      dataObj['f_evidence_types'] = fileSystemArray[
+                        i
+                      ].evidence_types.toString()
+                    }
+
+                    if (networkArray[i]) {
+                      dataObj['n_path'] = fileSystemArray[i].path
+                      dataObj['n_evidence_types'] = fileSystemArray[
+                        i
+                      ].evidence_types.toString()
+                    }
+
+                    dataArray.push(dataObj)
+                  })
+                }
+
+                this.setState({ tableData: dataArray })
+              } else {
+                this.setState({ tableData: [] })
+              }
             }
           }
 
