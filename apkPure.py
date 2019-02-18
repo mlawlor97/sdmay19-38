@@ -1,12 +1,12 @@
-from utils import RateLimiter, requestHTML, logToFile, removeSpecialChars, createPath, downloadApk, writeOutput
-from utils import writeAppDB, writeVersionDB  # DB Connectors
+from utils import RateLimiter, requestHTML, logToFile, removeSpecialChars, createPath, downloadApk, writeOutput, safeExecute
+from utils import writeAppDB, writeVersionDB, checkAppDB, checkVersionDB  # DB Connectors
 from SupportFiles.webDriverUtils import WebDriver
 from SupportFiles.metaDataBase2 import DataCollectionBase
 from SupportFiles.crawlerBase import CrawlerBase
 
 from threading import Thread, Lock
 from datetime import datetime, timedelta
-from time import sleep
+from time import sleep, time
 
 
 class GetPureData(DataCollectionBase):
@@ -18,7 +18,7 @@ class GetPureData(DataCollectionBase):
     _getDev     = ("developer",     lambda _: _.soup.find(class_='details-author').find('a').text.strip())
     _getPkg     = ("package",       lambda _: _.url.split('/')[-1])
     _getCat     = ("category",      lambda _: _.soup.find(class_='additional')('span')[-1].text.strip())
-    _getDesc    = ("description",   lambda _: _.soup.find(class_='content').text)
+    # _getDesc    = ("description",   lambda _: _.soup.find(class_='content').text)
     _getRating  = ("rating",        lambda _: _.rating())
     _getTags    = ("tags",          lambda _: [tag.text for tag in _.soup.find(class_="tag_list")('li') if tag.text])
 
@@ -31,7 +31,8 @@ class GetPureVersion(DataCollectionBase):
 
     def date(self):
         date = str(self.soup.find(class_='update-on').text)
-        return datetime.strptime(date, "%Y-%m-%d").isoformat()
+        date = datetime.strptime(date, "%Y-%m-%d")
+        return date
 
     _getType    = ("apk_type",      lambda _: _.soup.find(class_='ver-item-t').text)
     _getSize    = ("file_size",     lambda _: str(_.soup.find(class_='ver-item-s').text))
@@ -39,7 +40,7 @@ class GetPureVersion(DataCollectionBase):
     _getPubDate = ("publish_date",  lambda _: _.date())
     _getPatch   = ("patch_notes",   lambda _: _.changeLog())
     _getSign    = ("signature",     lambda _: str(_.soup.find('strong', string='Signature: ').next_sibling).strip())
-    _getSha     = ("sha",           lambda _: str(_.soup.find('strong', string='File SHA1: ').next_sibling).strip())
+    _getSha     = ("sha1",           lambda _: str(_.soup.find('strong', string='File SHA1: ').next_sibling).strip())
 
 
 # noinspection PyCompatibility
@@ -58,7 +59,7 @@ class GetPureReview(DataCollectionBase):
         article = self.soup.find(class_='article')
         return ''.join(self._msg(article, []))
 
-    def _msg(self, soup, msg: list):
+    def _msg(self, soup, msg):
         for content in soup.contents:
             if content.string:
                 msg.append(content.string)
@@ -112,7 +113,7 @@ class ApkPure(CrawlerBase):
         self.categories = []
 
     def crawl(self):
-        cats = self.getCategories()
+        cats = self.getCategories([])
         threads = []
 
         for cat in cats:
@@ -126,28 +127,41 @@ class ApkPure(CrawlerBase):
         [[list_.append(cat['href']) for cat in sect(href=True)] for sect in cats]
         return list_
 
-    def _crawlCategory(self, category, pageNumber=1):
-        while self._getAppsOnPage(f"{self.siteUrl}{category}?page={pageNumber}"):
+    def _crawlCategory(self, category):
+        pageNumber = 1
+        while True:
+            page = f"{category}?page={pageNumber}"
+
+            appList = self.getAppsOnPage(page)
+            for app in appList:
+                currUrl = self.siteUrl + app
+                appName, id_ = self.scrapeAppData(currUrl)
+
+                if appName:
+                    self._collectAllVersions(appName, id_, currUrl + '/versions')
+                    # self._collectAllReviews()   
+
+            if appList.__len__() is 0:
+                break             
+
             pageNumber += 1
+
         print(f"Finished: {category}")
 
-    def _getAppsOnPage(self, url):
+    @staticmethod
+    def getAppsOnPage(url):
         apps = requestHTML(url)(class_='category-template-title')
-        for app in apps:
-            currUrl = self.siteUrl + app.find('a', href=True)['href']
-            appName, id_ = self._scrapeAppData(currUrl)
+        return [] if apps is None else [app['href'] for app in [a.find('a', href=True) for a in apps]]
 
-            if appName:
-                self._collectAllVersions(appName, id_, currUrl + '/versions')
-                # self._collectAllReviews()
+    @staticmethod
+    def scrapeAppData(url):
+        entry = checkAppDB(appUrl=url)
+        if entry:
+            return (entry.get('app_name'), entry.get('_id'))
 
-        return None if apps.__len__() == 0 else not None
-
-    def _scrapeAppData(self, url):
-        try:
-            soup = requestHTML(url)
-            appName = soup.find(class_='title-like').find('h1').text.strip()
-        except AttributeError:
+        soup = safeExecute(requestHTML, url)
+        appName = safeExecute(soup.find(class_='title-like').find('h1').text.strip)
+        if appName is None:
             return (None, None)
 
         pureData = GetPureData(url, soup).getAll()
@@ -165,26 +179,34 @@ class ApkPure(CrawlerBase):
             logToFile('Versions.txt', f"{url}\n")
 
     def _scrapeVersions(self, name, id_, url, versionList):
-        index = 0
+        def _loadVersions(index):
+            for v in versionList[0: difference]:
+                self.webDriver.clickPopUp("ver-item-m", "mfp-close", index, False)
+                self.webDriver.clickAway("mfp-close", "class name")
+                index += 1
+
+            sleep(0.1)
+            v = self.webDriver.fetchPage()
+            whatsNew = v.find(class_='ver-whats-new')
+            if whatsNew:
+                while 'loading..' in v.find(class_='ver-whats-new'):
+                    print('loading...')
+                    v = self.webDriver.fetchPage()
+            return v.find(class_='ver')('li')
+
+        versionsLogged = checkVersionDB(id_)
+        difference = versionList.__len__() - versionsLogged.__len__()
+        if difference is 0:
+            return
 
         self.lock.acquire() 
-        self._loadPage(url, 'ver')
-        for v in versionList:
-            self.webDriver.clickPopUp("ver-item-m", "mfp-close", index, False)
-            self.webDriver.clickAway("mfp-close", "class name")
-            index += 1
-
-        sleep(0.1)
-        v = self.webDriver.fetchPage()
-        while 'loading..' in v.find(class_='ver-whats-new'):
-            v = self.webDriver.fetchPage()
-        versionList = v.find(class_='ver')('li')
+        safeExecute(self._loadPage, url, 'ver')
+        versionList = safeExecute(_loadVersions, 0, default=versionList)
         self.lock.release()
         
-        for v in versionList:
-            try:
-                version = v.find('span').text.lstrip('V')
-            except:
+        for v in versionList[0: difference]:
+            version = safeExecute(v.find('span').text.lstrip, 'V', default=None)
+            if version is None:
                 print(f"{url} has version problems")
             
             pureVersion = GetPureVersion(url, v).getAll()
@@ -239,11 +261,12 @@ class ApkPure(CrawlerBase):
 
 
 def main():
-    try:
-        ApkPure().crawl()
-    except KeyboardInterrupt:
-        print("Ended Early")
-    print("Finished")
+    ApkPure()._crawlCategory('https://apkpure.com/game_action')
+    # try:
+    #     ApkPure().crawl()
+    # except KeyboardInterrupt:
+    #     print("Ended Early")
+    # print("Finished")
 
 
 if __name__ == '__main__':

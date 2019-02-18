@@ -158,7 +158,7 @@ def writeAppDB(storeName='', appName='', appUrl='', data=None):
     global db
     appDict = {
         "store_id"  : storeName,
-        "app_name"  : appName,
+        "app_name"  : appName.lower(),
         "app_url"   : appUrl,
         "metadata"  : data
     }
@@ -181,6 +181,15 @@ def writeVersionDB(storeName='', appName='', appId='', version='', data=None):
     result = db.versions.insert_one(appDict)
     return result.inserted_id
 
+def checkAppDB(appUrl=None):
+    global db
+    return db.applications.find_one({"app_url": appUrl})
+
+def checkVersionDB(appId, version=None):
+    global db
+    body = {"app_id": appId, "version": version} if version else {"app_id": appId}
+    return list(db.versions.find(body))
+
 # def uploadAPK(filePath, fileName):
     # folder_id = '54833153949'
     # client.folder(folder_id).upload(filePath, fileName)
@@ -189,3 +198,9 @@ def getPermissions(apkFilePath, permList=[]):
     p = Popen(['java', '-jar', 'SupportFiles/Permissions.jar', apkFilePath], stdout=PIPE, stderr=STDOUT)
     [permList.append(line.strip().decode('ascii')) for line in p.stdout]
     return permList
+
+def safeExecute(func, *args, default=None, error=BaseException):
+    try:
+        return func(*args)
+    except error:
+        return default

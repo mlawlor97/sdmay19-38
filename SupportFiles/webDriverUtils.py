@@ -1,4 +1,4 @@
-from utils import createPath, requestHTML
+from utils import createPath, requestHTML, safeExecute
 
 from selenium import webdriver
 from selenium.webdriver.common.action_chains import ActionChains
@@ -13,12 +13,14 @@ class WebDriver:
 
     def __init__(self):
         print('creating driver')
+
         options = webdriver.ChromeOptions()
         options.add_argument('--headless')
 
         self.driver = webdriver.Chrome(
             chrome_options=options,
-            executable_path=createPath('SupportFiles', 'chromedriver.exe'))
+            executable_path=createPath("SupportFiles", "chromedriver")
+        )
 
         self.Url = None
 
@@ -38,28 +40,25 @@ class WebDriver:
         self.driver.quit()
 
     def waitFor(self, condition):
-        try:
-            WebDriverWait(self.driver, 1).until(condition)
-        except TimeoutException:
-            return TimeoutException
+        val = safeExecute(WebDriverWait(self.driver, 1).until, condition)
         sleep(0.01)
+        return val
 
     def clickAway(self, target, selector=None):
-        try:
+        def _func():
             target = target if not selector else self.find(selector, target)
             target.click()
             self.waitFor(self.invisible(target))
-        except:
-            pass
+        
+        safeExecute(_func)
 
     def clickPopUp(self, target, verifier, index=0, getSoup=True):
-        try:
+        def _func():
             self.waitFor(self.visible(('class name', target)))
             self.find_all(tag=target)[index].click()
             self.waitFor(self.visible(('class name', verifier)))
-        except:
-            pass
-
+        
+        safeExecute(_func)
         return self.fetchPage() if getSoup == True else None
 
     def oldClick(self, tag, index=0):
@@ -91,8 +90,10 @@ class WebDriver:
         end     = self.find(tag='contains-text-link')
         more    = self.find(by='id', tag='show-more-button')
 
+        tries = 0
         bounce()
-        while end.is_displayed():
+        while end.is_displayed() and tries < 100:
+            tries += 1
             bounce() if not more.is_displayed() else self.clickAway(more)
 
         return self.fetchPage()

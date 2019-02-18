@@ -1,21 +1,17 @@
-#!usr/bin/env python3
-
-from utils import RateLimiter, requestHTML, writeAppDB
+from utils import RateLimiter, requestHTML, safeExecute
+from utils import writeAppDB, writeVersionDB, checkAppDB, checkVersionDB  # DB connectors
 from SupportFiles.webDriverUtils import WebDriver
 from SupportFiles.crawlerBase import CrawlerBase
 from SupportFiles.metaDataBase import DataCollectionBase
 # from googleplayapi.googleplay import GooglePlayAPI
 # from PlayCrawlerMaster.googleplayapi.googleplay import GooglePlayAPI
 
-class GoogleData(DataCollectionBase):
+from datetime import datetime
 
-    # def getName(self):
-    #     self.tryCollection('name', lambda: self.soup.find(itemprop='name').text.strip(), True)
-    #     return False if self.metaData.get('Name') is ('' or None) else None
+class GoogleData(DataCollectionBase):
 
     def getPackage(self):
         self.tryCollection('package', lambda: self.url.split('id=')[-1].split('&')[0])
-        # self.soup = self.soup.select('[data-p~=\"' + self.metaData.get('Package') + '\"]')
 
     def getDeveloper(self):
         self.tryCollection('developer', lambda: self.soup.select('a[href*="apps/dev"]')[0].text.strip())
@@ -39,23 +35,26 @@ class GoogleData(DataCollectionBase):
     def getRating(self):
         self.tryCollection('rating', lambda: float("{0:.2f}".format(float(self.soup.find(itemprop='ratingValue')['content']))))
 
-    def getVersion(self):
-        self.tryCollection('version', lambda: self.soup.find('div', string="Current Version").next_sibling.find('span').text)
-
     def getNumDownloads(self):
         self.tryCollection('downloads', lambda: self.soup.find('div', string="Installs").next_sibling.find('span').text)
+
+
+class GoogleVersion(DataCollectionBase):
 
     def getSize(self):
         self.tryCollection('size', lambda: self.soup.find('div', string="Size").next_sibling.find('span').text)
 
-    def getRequirements(self):
-        self.tryCollection('requirements', lambda: self.soup.find('div', string='Requires Android').next_sibling.find('span').text)
-
-    def getPublishDate(self):
-        self.tryCollection('publish_date', lambda: self.soup.find('div', string='Updated').next_sibling.find('span').text)
-
     def getPatchNotes(self):
         self.tryCollection('patch_notes', lambda: self.soup.find('h2', string="What's New").parent.next_sibling.find('content').text)
+
+    def getPublishDate(self):
+        date = self.soup.find('div', string='Updated').next_sibling.find('span').text
+        date = datetime.strptime(date, "%B %d, %Y")
+
+        self.tryCollection('publish_date', lambda: date)
+
+    def getRequirements(self):
+        self.tryCollection('requirements', lambda: self.soup.find('div', string='Requires Android').next_sibling.find('span').text)
 
 
 # noinspection PyCompatibility
@@ -64,7 +63,6 @@ class GooglePlay(CrawlerBase):
     def __init__(self, siteUrl="https://play.google.com", rateLimiter=RateLimiter(10, 3)):
         super().__init__(siteUrl, rateLimiter)
         self.webDriver = WebDriver()
-        self.categoryLinks = []
         self.subCategories = []
         self.commonCollections = [
             "/collection/topselling_free",
@@ -73,19 +71,16 @@ class GooglePlay(CrawlerBase):
             "/collection/topselling_new_paid",
             "/collection/topselling_new_free"
         ]
-        self.appList = dict({})  # May toss after getting DB connection / will get very big
         # self.gpa = GooglePlayAPI(androidId="551F187F79FC41F3", lang="en_us")
         # self.gpa.login("sdmay19@gmail.com", "Forensics4", "ya29.GluuBvrVmzeVYn1HxKQ_61nKGKjDfSXB_7uQ_LPvg8EWceabszVZn5e5VDHuZNF_Zbh_R3BviPmrMV-DSDSR0Ipc_qfmVU3NX8C31RZi34ecakBd4NJEJZpp8brY")
 
-    def __del__(self):
-        self.webDriver.__del__()
-
     def crawl(self):
         # Get categories
-        self.getCategories(requestHTML(self.siteUrl + '/store/apps'))
+        categories = self.getCategories(requestHTML(f"{self.siteUrl}/store/apps"))
+        categories = ['https://play.google.com/store/apps/category/EDUCATION']
 
         # Iterate over all categories
-        for category in self.categoryLinks:
+        for category in categories:
 
             # Get list of all subcategories plus the common collections
             [self.subCategories.append(category + subCat) for subCat in self.commonCollections]
@@ -99,18 +94,18 @@ class GooglePlay(CrawlerBase):
 
             # Clear cache
             self.subCategories.clear()
-        self.appList.clear()
 
-    def getCategories(self, soup):
+    @staticmethod
+    def getCategories(soup):
         soup = soup.find(id="action-dropdown-children-Categories")
-        [self.categoryLinks.append(cat['href']) for cat in soup(href=True)]
+        return [cat['href'] for cat in soup(href=True)]
 
     def getSubCategories(self, categoryPage):
         soup = requestHTML(categoryPage)
         [self.subCategories.append(self.siteUrl + cat['href']) for cat in soup(class_='title-link')]
 
     def getApps(self, categoryPage):
-        if self.webDriver.loadPage(categoryPage, 'class name', 'loaded'):
+        if self.webDriver.loadPage(categoryPage, 'class name', 'loaded') is None:
             return
 
         soup = self.webDriver.googleScroller()
@@ -119,32 +114,36 @@ class GooglePlay(CrawlerBase):
         apps = soup('a', class_="title")
 
         for app in apps:
-            name = app.text.strip()
-
-            if self.appList.get(name):
-                self.appList[name] = self.appList[name] + 1
-            else:
-                self.appList[name] = 1
-                try:
-                    self.scrapeApp(self.siteUrl + app.attrs['href'])
-                except:
-                    continue
+            self.scrapeApp(f"{self.siteUrl}{app.attrs['href']}")
 
     def scrapeApp(self, appPage):
         soup = requestHTML(appPage)
         name = soup.find(itemprop='name')
 
+        appEntry = checkAppDB(appPage)
         if not name:
             soup = self.webDriver.loadPage(appPage, 'xpath', "//h1[@itemprop='name']", True)
             name = soup.find(itemprop='name')
+        if not name:
+            print(appPage)
+            return
         name = name.text.strip()
-        playData = GoogleData(appPage, soup).getAll()
 
-        # print((playData.metaData))
-        # package = playData.metaData.get("package")
+        if appEntry is None:
+            playData = GoogleData(appPage, soup).getAll()
+            id_ = writeAppDB("GooglePlay", name, appPage, playData.metaData) 
+        else:
+            id_ = appEntry.get('_id')
+        
+        version = safeExecute(soup.find('div', string="Current Version").next_sibling.find, 'span')
+        if version is None:
+            return
+        version = version.text
 
-        id_ = writeAppDB("GooglePlay", name, appPage, playData.metaData) 
-        print(id_)       
+        versions = checkVersionDB(id_, version)
+        if versions == []:
+            playVersion = GoogleVersion(appPage, soup).getAll()
+            writeVersionDB("GooglePlay", name, id_, version, playVersion.metaData)
 
         # if playData.metaData.get('price') == "$0.00":
             # print('Free')
@@ -155,6 +154,7 @@ class GooglePlay(CrawlerBase):
 
 def main():
     GooglePlay().crawl()
+    # GooglePlay().getApps('https://play.google.com/store/apps/stream/vr_top_device_featured_category')
     # GooglePlay().scrapeApp('https://play.google.com/store/apps/details?id=com.snapchat.android')
     # url = 'https://play.google.com/store/apps/details?id=de.ritterit.lukes&hl=en'
     # url = 'https://play.google.com/store/apps/details?id=com.thomson.cxn&feature=more_from_developer#?t=W251bGwsMSwyLDEwMiwiY29tLnRob21zb24uY3huIl0.'
@@ -166,6 +166,8 @@ def main():
     # url = 'https://play.google.com/store/apps/details?id=com.snap.android.apis'
     # url = 'https://play.google.com/store/apps/details?id=com.intergraph.mobileresponder'
     # GooglePlay().scrapeApp(url)
+    # id_ = checkAppDB(appUrl=url).get('_id')
+    # print(checkVersionDB(id_))
 
 
 if __name__ == '__main__':
