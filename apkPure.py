@@ -18,7 +18,7 @@ class GetPureData(DataCollectionBase):
     _getDev     = ("developer",     lambda _: _.soup.find(class_='details-author').find('a').text.strip())
     _getPkg     = ("package",       lambda _: _.url.split('/')[-1])
     _getCat     = ("category",      lambda _: _.soup.find(class_='additional')('span')[-1].text.strip())
-    # _getDesc    = ("description",   lambda _: _.soup.find(class_='content').text)
+    _getDesc    = ("description",   lambda _: _.soup.find(class_='content').text)
     _getRating  = ("rating",        lambda _: _.rating())
     _getTags    = ("tags",          lambda _: [tag.text for tag in _.soup.find(class_="tag_list")('li') if tag.text])
 

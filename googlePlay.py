@@ -2,7 +2,7 @@ from utils import RateLimiter, requestHTML, safeExecute, getPermissions
 from utils import writeAppDB, writeVersionDB, checkAppDB, checkVersionDB  # DB connectors
 from SupportFiles.webDriverUtils import WebDriver
 from SupportFiles.crawlerBase import CrawlerBase
-from SupportFiles.metaDataBase import DataCollectionBase
+from SupportFiles.metaDataBase2 import DataCollectionBase
 # from googleplayapi.googleplay import GooglePlayAPI
 from googleplayapi.gpapi.googleplay import GooglePlayAPI, SecurityCheckError
 
@@ -10,51 +10,31 @@ from datetime import datetime
 
 class GoogleData(DataCollectionBase):
 
-    def getPackage(self):
-        self.tryCollection('package', lambda: self.url.split('id=')[-1].split('&')[0])
+    def price(self):
+        price = self.soup.find(itemprop='price', content=True)['content']
+        return price if price != "0" else "$0.00"
 
-    def getDeveloper(self):
-        self.tryCollection('developer', lambda: self.soup.select('a[href*="apps/dev"]')[0].text.strip())
-
-    def getCategory(self):
-        self.tryCollection('category', lambda: self.soup.find(itemprop='genre').text)
-
-    def getPrice(self):
-        def func():
-            price = self.soup.find(itemprop='price')['content']
-            return price if price is not '0' else '$0.00'
-
-        self.tryCollection('price', func)
-
-    def getContentRating(self):
-        self.tryCollection('content_rating', lambda: self.soup.find(itemprop='contentRating')['content'])
-
-    def getDescription(self):
-        self.tryCollection('description', lambda: self.soup.find(itemprop='description')['content'])
-
-    def getRating(self):
-        self.tryCollection('rating', lambda: float("{0:.2f}".format(float(self.soup.find(itemprop='ratingValue')['content']))))
-
-    def getNumDownloads(self):
-        self.tryCollection('downloads', lambda: self.soup.find('div', string="Installs").next_sibling.find('span').text)
+    _getPkg     = ("package",        lambda _: _.url.split('id=')[-1].split('&')[0])
+    _getDev     = ("developer",      lambda _: _.soup.select('a[href*="apps/dev"]')[0].text.strip())
+    _getCat     = ("category",       lambda _: _.soup.find(itemprop='genre').text)
+    _getPrice   = ("price",          lambda _: _.price())
+    _getCntRate = ("content_rating", lambda _: _.soup.find(itemprop='contentRating')['content'])
+    _getDesc    = ("description",    lambda _: _.soup.find(itemprop='description')['content'])
+    _getRating  = ("rating",         lambda _: "{0:.2f}".format(float(_.soup.find(itemprop='ratingValue')['content'])))
+    _getNumDown = ("downloads",      lambda _: _.soup.find('div', string="Installs").next_sibling.find('span').text)
 
 
 class GoogleVersion(DataCollectionBase):
 
-    def getSize(self):
-        self.tryCollection('size', lambda: self.soup.find('div', string="Size").next_sibling.find('span').text)
-
-    def getPatchNotes(self):
-        self.tryCollection('patch_notes', lambda: self.soup.find('h2', string="What's New").parent.next_sibling.find('content').text)
-
-    def getPublishDate(self):
+    def date(self):
         date = self.soup.find('div', string='Updated').next_sibling.find('span').text
         date = datetime.strptime(date, "%B %d, %Y")
+        return date
 
-        self.tryCollection('publish_date', lambda: date)
-
-    def getRequirements(self):
-        self.tryCollection('requirements', lambda: self.soup.find('div', string='Requires Android').next_sibling.find('span').text)
+    _getSize    = ("file_size",     lambda _: _.soup.find('div', string="Size").next_sibling.find('span').text)
+    _getPatch   = ("patch_notes",   lambda _: _.soup.find('h2', string="What's New").parent.next_sibling.find('content').text)
+    _getPubDate = ("publish_date",  lambda _: _.date())
+    _getReqs    = ("requirements",  lambda _: _.soup.find('div', string="Requires Android").next_sibling.find('span').text)
 
 
 # noinspection PyCompatibility
@@ -152,19 +132,24 @@ class GooglePlay(CrawlerBase):
 
         # Downloading google play apks
         # if price == "$0.00":
-        #     self.gpa.log(package)
-        #     fl = self.gpa.download(package)
-        #     with open(package + ".apk", "wb") as apk_file:
-        #         for chunk in fl.get("file").get("data"):
-        #             apk_file.write(chunk)
+            # self.downloadApk(package)
+            
+
+    def downloadApk(self, package):
+        self.gpa.log(package)
+        fl = self.gpa.download(package)
+        with open(package + ".apk", "wb") as apk_file:
+            for chunk in fl.get("file").get("data"):
+                apk_file.write(chunk)
 
 
 def main():
-    try:
-        GooglePlay().crawl()
-    except KeyboardInterrupt:
-        print("Ended Early")
-    print("Finished")
+    GooglePlay().scrapeApp('https://play.google.com/store/apps/details?id=gov.fema.mobile.android&hl=en_US')
+    # try:
+    #     GooglePlay().crawl()
+    # except KeyboardInterrupt:
+    #     print("Ended Early")
+    # print("Finished")
 
 
 if __name__ == '__main__':
