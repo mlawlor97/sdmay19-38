@@ -215,7 +215,7 @@ pip-selfcheck.json
 
 # Log Files
 *.log
-*.html
+# *.html
 *.json
 !sample_data
 
