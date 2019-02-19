@@ -87,6 +87,8 @@ class App extends Component {
         .catch(err => {
           this.setState({ error: true })
           this.setState({ tableData: [] })
+          this.setState({ response: [] })
+          this.setState({ click: false })
         })
     } else if (this.state.keywordFilter === 'packageName') {
       axios
@@ -121,6 +123,8 @@ class App extends Component {
         .catch(err => {
           this.setState({ error: true })
           this.setState({ tableData: [] })
+          this.setState({ response: [] })
+          this.setState({ click: false })
         })
     }
   }
@@ -159,65 +163,67 @@ class App extends Component {
                   }
                 })
                 const dataArray = []
-                if (found[0].versions[0].report) {
-                  const app_package_name =
-                    found[0].versions[0].report.app_package_name
-                  const version = found[0].versions[0].version
+                if (found[0].versions) {
+                  if (found[0].versions[0].report) {
+                    const app_package_name =
+                      found[0].versions[0].report.app_package_name
+                    const version = found[0].versions[0].version
 
-                  const fileSystemArray = []
-                  const networkArray = []
-                  if (
-                    found[0].versions[0].report.app_evidence[1].file_system
-                      .length
-                  ) {
-                    found[0].versions[0].report.app_evidence[1].file_system.forEach(
-                      element => {
-                        const fileSystemObj = {
-                          path: element.path,
-                          evidence_types: element.evidence_types
+                    const fileSystemArray = []
+                    const networkArray = []
+                    if (
+                      found[0].versions[0].report.app_evidence[1].file_system
+                        .length
+                    ) {
+                      found[0].versions[0].report.app_evidence[1].file_system.forEach(
+                        element => {
+                          const fileSystemObj = {
+                            path: element.path,
+                            evidence_types: element.evidence_types
+                          }
+
+                          fileSystemArray.push(fileSystemObj)
                         }
+                      )
+                    }
 
-                        fileSystemArray.push(fileSystemObj)
-                      }
-                    )
-                  }
+                    if (
+                      found[0].versions[0].report.app_evidence[2].network.length
+                    ) {
+                      found[0].versions[0].report.app_evidence[2].network.forEach(
+                        element => {
+                          const networkObj = {
+                            path: element.path,
+                            evidence_types: element.evidence_types
+                          }
 
-                  if (
-                    found[0].versions[0].report.app_evidence[2].network.length
-                  ) {
-                    found[0].versions[0].report.app_evidence[2].network.forEach(
-                      element => {
-                        const networkObj = {
-                          path: element.path,
-                          evidence_types: element.evidence_types
+                          networkArray.push(networkObj)
                         }
+                      )
+                    }
 
-                        networkArray.push(networkObj)
+                    fileSystemArray.forEach((e, i) => {
+                      const dataObj = {
+                        app_package_name: app_package_name,
+                        version: version
                       }
-                    )
+                      if (fileSystemArray[i]) {
+                        dataObj['f_path'] = fileSystemArray[i].path
+                        dataObj['f_evidence_types'] = fileSystemArray[
+                          i
+                        ].evidence_types.toString()
+                      }
+
+                      if (networkArray[i]) {
+                        dataObj['n_path'] = fileSystemArray[i].path
+                        dataObj['n_evidence_types'] = fileSystemArray[
+                          i
+                        ].evidence_types.toString()
+                      }
+
+                      dataArray.push(dataObj)
+                    })
                   }
-
-                  fileSystemArray.forEach((e, i) => {
-                    const dataObj = {
-                      app_package_name: app_package_name,
-                      version: version
-                    }
-                    if (fileSystemArray[i]) {
-                      dataObj['f_path'] = fileSystemArray[i].path
-                      dataObj['f_evidence_types'] = fileSystemArray[
-                        i
-                      ].evidence_types.toString()
-                    }
-
-                    if (networkArray[i]) {
-                      dataObj['n_path'] = fileSystemArray[i].path
-                      dataObj['n_evidence_types'] = fileSystemArray[
-                        i
-                      ].evidence_types.toString()
-                    }
-
-                    dataArray.push(dataObj)
-                  })
                 }
 
                 this.setState({ tableData: dataArray })
