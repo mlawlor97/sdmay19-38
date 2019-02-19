@@ -129,7 +129,7 @@ coverage.xml
 *.cover
 .hypothesis/
 .pytest_cache/
-!sample_data/*html
+!sample_data/*.html
 
 # Translations
 *.mo
