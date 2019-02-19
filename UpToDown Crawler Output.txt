@@ -62,21 +62,21 @@ Name: WhatsApp Messenger
 	Author: Whatsapp Inc
 	Category: Messaging
 	Rating: 4.3 / 5.0
-	Package Name: com.whatsapp
+	Package Name: 
 	License: Free
 	Operating System: Android
 	Requires Android: 4.0.3, 4.0.4 and up
-	Languages: English, Afrikaans, Korean
-	Size: 33.12MB
-	Downloads: 455,626,424
-	Date: 11.08.18
+	Languages: English, Dutch, Polish, Czech, Danish, Finnish, Greek, Norwegian, Swedish, Català, Hungarian, Malaysian, Vietnamese, Romanian, Slovenian, Farsi, Afrikaans, Bulgarian, Slovak, Ukrainian, Tagalog, Croatian, Serbian, Estonian, Lithuanian, Latvian, Lettish, Hebrew, Swahili, Spanish, Portuguese, French, German, Italian, Japanese, Arabic, Russian, Hindi, Korean, Turkish, Thai
+	Size: 33.95MB
+	Downloads: 492,442,958
+	Date: 02.15.19
 	Signature (MD5): 556c6019249bbc0cab70495178d3a9d1
 	Description:   WhatsApp Messenger is the most convenient way of quickly sending messages on your mobile phone to any contact or friend on your contacts list. The only requirement is that the other people must have the app installed on their own device.  Currently, WhatsApp is compatible with just about all mobile operating systems on the market: Android, iOS, Symbian and Windows Phone. So this basically means you’ll be able to use WhatsApp to communicate with any friend, regardless of what model of device they have.  WhatsApp users can send text messages, voice messages, links and images to any other user. Automatic image compression makes transferring files very easy (although there is obviously some quality loss).  One of the most interesting and most used tools on WhatsApp is the one that lets you easily create and manage groups. Any user can enter any group, as long as they’ve been invited by the group’s creator, and they can leave it whenever they want.  WhatsApp is the perfect communication tool for Android users because with it, you can forget about paying for text messages ever again. It’s also important to keep in mind that WhatsApp is fully compatible with WhatsApp PLUS (in so far as sending and receiving messages is concerned). 
-	Permissions: 52
+	Permissions: 55
 	Versions:
-		2.18.347
-			Languages: English, Afrikaans, Korean
-			Permissions: 52
+		2.19.50
+			Languages: English, Dutch, Polish, Czech, Danish, Finnish, Greek, Norwegian, Swedish, Catal�, Hungarian, Malaysian, Vietnamese, Romanian, Slovenian, Farsi, Afrikaans, Bulgarian, Slovak, Ukrainian, Tagalog, Croatian, Serbian, Estonian, Lithuanian, Latvian, Lettish, Hebrew, Swahili, Spanish, Portuguese, French, German, Italian, Japanese, Arabic, Russian, Hindi, Korean, Turkish, Thai
+			Permissions: 55
 			android.permission.ACCESS_COARSE_LOCATION
 			android.permission.ACCESS_FINE_LOCATION
 			android.permission.AUTHENTICATE_ACCOUNTS
@@ -98,7 +98,9 @@ Name: WhatsApp Messenger
 			android.permission.ACCESS_WIFI_STATE
 			android.permission.BLUETOOTH
 			android.permission.BROADCAST_STICKY
+			android.permission.FOREGROUND_SERVICE
 			android.permission.INSTALL_SHORTCUT
+			android.permission.MANAGE_OWN_CALLS
 			android.permission.MODIFY_AUDIO_SETTINGS
 			android.permission.NFC
 			android.permission.READ_EXTERNAL_STORAGE
@@ -107,6 +109,7 @@ Name: WhatsApp Messenger
 			android.permission.RECEIVE_BOOT_COMPLETED
 			android.permission.REQUEST_INSTALL_PACKAGES
 			android.permission.USE_CREDENTIALS
+			android.permission.USE_FINGERPRINT
 			android.permission.VIBRATE
 			android.permission.WAKE_LOCK
 			android.permission.WRITE_SYNC_SETTINGS
@@ -129,9 +132,9 @@ Name: WhatsApp Messenger
 			com.whatsapp.permission.REGISTRATION
 			com.whatsapp.permission.VOIP_CALL
 			com.whatsapp.sticker.READ
-		2.18.343 
-			Languages: English, Afrikaans, Korean
-			Permissions: 52
+		v2.19.48
+			Languages: English, Dutch, Polish, Czech, Danish, Finnish, Greek, Norwegian, Swedish, Catal�, Hungarian, Malaysian, Vietnamese, Romanian, Slovenian, Farsi, Afrikaans, Bulgarian, Slovak, Ukrainian, Tagalog, Croatian, Serbian, Estonian, Lithuanian, Latvian, Lettish, Hebrew, Swahili, Spanish, Portuguese, French, German, Italian, Japanese, Arabic, Russian, Hindi, Korean, Turkish, Thai
+			Permissions: 55
 			android.permission.ACCESS_COARSE_LOCATION
 			android.permission.ACCESS_FINE_LOCATION
 			android.permission.AUTHENTICATE_ACCOUNTS
@@ -153,7 +156,9 @@ Name: WhatsApp Messenger
 			android.permission.ACCESS_WIFI_STATE
 			android.permission.BLUETOOTH
 			android.permission.BROADCAST_STICKY
+			android.permission.FOREGROUND_SERVICE
 			android.permission.INSTALL_SHORTCUT
+			android.permission.MANAGE_OWN_CALLS
 			android.permission.MODIFY_AUDIO_SETTINGS
 			android.permission.NFC
 			android.permission.READ_EXTERNAL_STORAGE
@@ -162,6 +167,7 @@ Name: WhatsApp Messenger
 			android.permission.RECEIVE_BOOT_COMPLETED
 			android.permission.REQUEST_INSTALL_PACKAGES
 			android.permission.USE_CREDENTIALS
+			android.permission.USE_FINGERPRINT
 			android.permission.VIBRATE
 			android.permission.WAKE_LOCK
 			android.permission.WRITE_SYNC_SETTINGS
@@ -184,317 +190,19 @@ Name: WhatsApp Messenger
 			com.whatsapp.permission.REGISTRATION
 			com.whatsapp.permission.VOIP_CALL
 			com.whatsapp.sticker.READ
-Name: Facebook Messenger
+Name: Facebook
 	Author: Facebook
-	Category: Messaging
+	Category: Social
 	Rating: 4.5 / 5.0
-	Package Name: com.facebook.orca
+	Package Name: 
 	License: Free
 	Operating System: Android
-	Requires Android: 5.0 and up
-	Languages: English, Dutch, Polish, Czech, Danish, Finnish, Greek, Norwegian, Swedish, Català, Hungarian, Malaysian, Vietnamese, Romanian, Slovenian, Farsi, Byelorussian, Afrikaans, Bulgarian, Slovak, Ukrainian, Tagalog, Amharic, Croatian, Serbian, Estonian, Lithuanian, Zulu, Latvian, Lettish, Hebrew, Swahili, Spanish, Portuguese, French, German, Italian, Chinese, Japanese, Arabic, Russian, Hindi, Korean, Turkish, Thai
-	Size: 47.83MB
-	Downloads: 217,843,452
-	Date: 11.07.18
+	Requires Android: 4.1, 4.1.1 and up
+	Languages: English, Dutch, Polish, Czech, Danish, Finnish, Greek, Norwegian, Swedish, Català, Hungarian, Malaysian, Vietnamese, Romanian, Slovenian, Farsi, Afrikaans, Bulgarian, Slovak, Ukrainian, Tagalog, Croatian, Serbian, Estonian, Lithuanian, Latvian, Lettish, Hebrew, Swahili, Spanish, Portuguese, French, German, Italian, Japanese, Arabic, Russian, Hindi, Korean, Turkish, Thai
+	Size: 51.83MB
+	Downloads: 217,381,441
+	Date: 02.14.19
 	Signature (MD5): 3fad024f2dcbe3ee693c96f350f8e376
-	Description:   Facebook Messenger is the official Facebook app that lets you have text conversations with all of your friends on the popular social network. Thanks to this app, you’ll be able to send and receive text messages in conversations which you can later continue on your computer.  As with other instant messaging apps, Facebook Messenger lets you share images, or your location, in the text messages; you can even add several recipients and open chat windows with several people at the same time. Each conversation is then kept in a bubble which you can conveniently move around on your device’s screen.  You can also configure Facebook Messenger to receive sound and vibrating alerts every time you receive a message, and even respond via normal text message (phone to phone) if the person you want to talk to doesn’t have Facebook (or isn’t logged on to it). Plus, you can also make VOIP voice calls from within the application itself.  One of the most entertaining things on Facebook Messenger is its stickers collection, which you can use to personalize your conversations. These fun images are very similar to the classic LINE giant emoticons, and they really help bring your conversations to life.  Facebook Messenger will come in really handy to anyone who regularly uses Facebook (which is probably just about everyone). Thanks to this app you’ll be able to communicate with your friends more quickly, and from anywhere, at any time. 
-	Permissions: 58
+	Description:   Facebook is the official Android app for the iconic original social network <i>par excellence</i>. Once again, this app is here to simplify your Facebook experience by providing all your favorite features from one spot.   Essentially, this Facebook app has all the same features as its original browser version, the only main difference you'll notice is that you can't play Facebook games on it.   That said, gaming aside, you'll get all the same updates from friends and family; browse your timeline, upload and save photos, change your status, comment and the whole lot -- from anywhere.   One of the best features of this official Facebook app is the option to share all kinds of content directly from your smartphone. You can upload photos and videos straight from your gallery directly onto your Facebook account.   Facebook for Android is truly a must-have app for anyone that's fairly active on the world's #1 social network. Albeit, it does come with a single (but major) setback. You cannot access your Facebook direct messages from this app, but rather, you'll have to go the extra mile and download Facebook's fully independent Messenger app (also on Uptodown) in order to check your Facebook messages from your smartphone. 
+	Permissions: 54
 	Versions:
-		191.0.0.22.98
-			Languages: English, Dutch, Polish, Czech, Danish, Finnish, Greek, Norwegian, Swedish, Catal�, Hungarian, Malaysian, Vietnamese, Romanian, Slovenian, Farsi, Byelorussian, Afrikaans, Bulgarian, Slovak, Ukrainian, Tagalog, Amharic, Croatian, Serbian, Estonian, Lithuanian, Zulu, Latvian, Lettish, Hebrew, Swahili, Spanish, Portuguese, French, German, Italian, Chinese, Japanese, Arabic, Russian, Hindi, Korean, Turkish, Thai
-			Permissions: 58
-			android.permission.ACCESS_COARSE_LOCATION
-			android.permission.ACCESS_FINE_LOCATION
-			android.permission.AUTHENTICATE_ACCOUNTS
-			android.permission.BATTERY_STATS
-			android.permission.CALL_PHONE
-			android.permission.CAMERA
-			android.permission.CHANGE_WIFI_STATE
-			android.permission.GET_ACCOUNTS
-			android.permission.INTERNET
-			android.permission.MANAGE_ACCOUNTS
-			android.permission.READ_CONTACTS
-			android.permission.READ_PHONE_STATE
-			android.permission.READ_PROFILE
-			android.permission.READ_SMS
-			android.permission.RECEIVE_SMS
-			android.permission.RECORD_AUDIO
-			android.permission.SEND_SMS
-			android.permission.SYSTEM_ALERT_WINDOW
-			android.permission.WRITE_CONTACTS
-			android.permission.WRITE_EXTERNAL_STORAGE
-			android.permission.WRITE_SMS
-			android.permission.ACCESS_NETWORK_STATE
-			android.permission.ACCESS_WIFI_STATE
-			android.permission.BLUETOOTH
-			android.permission.CHANGE_NETWORK_STATE
-			android.permission.DOWNLOAD_WITHOUT_NOTIFICATION
-			android.permission.MODIFY_AUDIO_SETTINGS
-			android.permission.NFC
-			android.permission.PROCESS_OUTGOING_CALLS
-			android.permission.READ_CALL_LOG
-			android.permission.READ_EXTERNAL_STORAGE
-			android.permission.READ_SYNC_SETTINGS
-			android.permission.RECEIVE_BOOT_COMPLETED
-			android.permission.RECEIVE_MMS
-			android.permission.REQUEST_INSTALL_PACKAGES
-			android.permission.VIBRATE
-			android.permission.WAKE_LOCK
-			android.permission.WRITE_SYNC_SETTINGS
-			com.amazon.device.messaging.permission.RECEIVE
-			com.android.launcher.permission.INSTALL_SHORTCUT
-			com.facebook.katana.provider.ACCESS
-			com.facebook.mlite.provider.ACCESS
-			com.facebook.orca.permission.C2D_MESSAGE
-			com.facebook.orca.permission.CROSS_PROCESS_BROADCAST_MANAGER
-			com.facebook.orca.permission.RECEIVE_ADM_MESSAGE
-			com.facebook.orca.provider.ACCESS
-			com.facebook.permission.prod.FB_APP_COMMUNICATION
-			com.facebook.receiver.permission.ACCESS
-			com.google.android.c2dm.permission.RECEIVE
-			com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE
-			com.google.android.providers.gsf.permission.READ_GSERVICES
-			com.htc.launcher.permission.READ_SETTINGS
-			com.htc.launcher.permission.UPDATE_SHORTCUT
-			com.huawei.android.launcher.permission.CHANGE_BADGE
-			com.nokia.pushnotifications.permission.RECEIVE
-			com.sec.android.provider.badge.permission.READ
-			com.sec.android.provider.badge.permission.WRITE
-			com.sonyericsson.home.permission.BROADCAST_BADGE
-		190.1.0.27.95 
-			Languages: English, Dutch, Polish, Czech, Danish, Finnish, Greek, Norwegian, Swedish, Catal�, Hungarian, Malaysian, Vietnamese, Romanian, Slovenian, Farsi, Byelorussian, Afrikaans, Bulgarian, Slovak, Ukrainian, Tagalog, Amharic, Croatian, Serbian, Estonian, Lithuanian, Zulu, Latvian, Lettish, Hebrew, Swahili, Spanish, Portuguese, French, German, Italian, Chinese, Japanese, Arabic, Russian, Hindi, Korean, Turkish, Thai
-			Permissions: 58
-			android.permission.ACCESS_COARSE_LOCATION
-			android.permission.ACCESS_FINE_LOCATION
-			android.permission.AUTHENTICATE_ACCOUNTS
-			android.permission.BATTERY_STATS
-			android.permission.CALL_PHONE
-			android.permission.CAMERA
-			android.permission.CHANGE_WIFI_STATE
-			android.permission.GET_ACCOUNTS
-			android.permission.INTERNET
-			android.permission.MANAGE_ACCOUNTS
-			android.permission.READ_CONTACTS
-			android.permission.READ_PHONE_STATE
-			android.permission.READ_PROFILE
-			android.permission.READ_SMS
-			android.permission.RECEIVE_SMS
-			android.permission.RECORD_AUDIO
-			android.permission.SEND_SMS
-			android.permission.SYSTEM_ALERT_WINDOW
-			android.permission.WRITE_CONTACTS
-			android.permission.WRITE_EXTERNAL_STORAGE
-			android.permission.WRITE_SMS
-			android.permission.ACCESS_NETWORK_STATE
-			android.permission.ACCESS_WIFI_STATE
-			android.permission.BLUETOOTH
-			android.permission.CHANGE_NETWORK_STATE
-			android.permission.DOWNLOAD_WITHOUT_NOTIFICATION
-			android.permission.MODIFY_AUDIO_SETTINGS
-			android.permission.NFC
-			android.permission.PROCESS_OUTGOING_CALLS
-			android.permission.READ_CALL_LOG
-			android.permission.READ_EXTERNAL_STORAGE
-			android.permission.READ_SYNC_SETTINGS
-			android.permission.RECEIVE_BOOT_COMPLETED
-			android.permission.RECEIVE_MMS
-			android.permission.REQUEST_INSTALL_PACKAGES
-			android.permission.VIBRATE
-			android.permission.WAKE_LOCK
-			android.permission.WRITE_SYNC_SETTINGS
-			com.amazon.device.messaging.permission.RECEIVE
-			com.android.launcher.permission.INSTALL_SHORTCUT
-			com.facebook.katana.provider.ACCESS
-			com.facebook.mlite.provider.ACCESS
-			com.facebook.orca.permission.C2D_MESSAGE
-			com.facebook.orca.permission.CROSS_PROCESS_BROADCAST_MANAGER
-			com.facebook.orca.permission.RECEIVE_ADM_MESSAGE
-			com.facebook.orca.provider.ACCESS
-			com.facebook.permission.prod.FB_APP_COMMUNICATION
-			com.facebook.receiver.permission.ACCESS
-			com.google.android.c2dm.permission.RECEIVE
-			com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE
-			com.google.android.providers.gsf.permission.READ_GSERVICES
-			com.htc.launcher.permission.READ_SETTINGS
-			com.htc.launcher.permission.UPDATE_SHORTCUT
-			com.huawei.android.launcher.permission.CHANGE_BADGE
-			com.nokia.pushnotifications.permission.RECEIVE
-			com.sec.android.provider.badge.permission.READ
-			com.sec.android.provider.badge.permission.WRITE
-			com.sonyericsson.home.permission.BROADCAST_BADGE
-Name: Messenger Lite
-	Author: Facebook
-	Category: Messaging
-	Rating: 4.7 / 5.0
-	Package Name: com.facebook.mlite
-	License: Free
-	Operating System: Android
-	Requires Android: 2.3, 2.3.1, 2.3.2 and up
-	Languages: English, Dutch, Polish, Czech, Danish, Finnish, Greek, Norwegian, Swedish, Hungarian, Malaysian, Vietnamese, Afrikaans, Slovak, Tagalog, Croatian, Swahili, Spanish, Portuguese, French, German, Italian, Chinese, Japanese, Arabic, Russian, Hindi, Korean, Turkish, Thai
-	Size: 6.81MB
-	Downloads: 20,118,452
-	Date: 11.08.18
-	Signature (MD5): 3fad024f2dcbe3ee693c96f350f8e376
-	Description:   Messenger Lite is an official client developed by Facebook for its well-known instant messaging service. The biggest draw is that this client takes up much less space than the standard version, occupying a little less than 10 megabytes. This makes it lighter, which means it can run without any problems on older devices with previous versions of Android.  The application is an official one, so it has practically all the same functions as the original chat service, enabling you to talk with your friends individually or in groups by sending and receiving text, images, videos, and stickers.  The difference between this client and unofficial ones that you can find online is that Messenger Lite can work in the background and send notifications for messages from your friends, like triggering vibrations or lighting up the device's screen when there is any activity. In practical terms, it has the same features as the original client without taking up as much space and consuming as many resources, which is what Facebook applications are generally known for.  Messenger Lite is a fantastic alternative to the official Facebook client. It's especially useful in countries where wireless connections struggle with the huge amount of data needed to run the official client. It's also compatible with a large number of devices and older versions of Android (as far back as 2.3 Gingerbread), though of course you can use it no matter what your situation is. 
-	Permissions: 41
-	Versions:
-		45.0.0.10.193
-			Languages: English, Dutch, Polish, Czech, Danish, Finnish, Greek, Norwegian, Swedish, Hungarian, Malaysian, Vietnamese, Afrikaans, Slovak, Tagalog, Croatian, Swahili, Spanish, Portuguese, French, German, Italian, Chinese, Japanese, Arabic, Russian, Hindi, Korean, Turkish, Thai
-			Permissions: 41
-			android.permission.AUTHENTICATE_ACCOUNTS
-			android.permission.BATTERY_STATS
-			android.permission.CAMERA
-			android.permission.GET_ACCOUNTS
-			android.permission.INTERNET
-			android.permission.MANAGE_ACCOUNTS
-			android.permission.READ_CONTACTS
-			android.permission.READ_PHONE_STATE
-			android.permission.READ_PROFILE
-			android.permission.READ_SMS
-			android.permission.RECORD_AUDIO
-			android.permission.SYSTEM_ALERT_WINDOW
-			android.permission.WRITE_EXTERNAL_STORAGE
-			android.permission.ACCESS_NETWORK_STATE
-			android.permission.ACCESS_WIFI_STATE
-			android.permission.BLUETOOTH
-			android.permission.CHANGE_NETWORK_STATE
-			android.permission.DOWNLOAD_WITHOUT_NOTIFICATION
-			android.permission.MODIFY_AUDIO_SETTINGS
-			android.permission.READ_EXTERNAL_STORAGE
-			android.permission.RECEIVE_BOOT_COMPLETED
-			android.permission.REQUEST_INSTALL_PACKAGES
-			android.permission.VIBRATE
-			android.permission.WAKE_LOCK
-			com.android.launcher.permission.INSTALL_SHORTCUT
-			com.android.launcher.permission.UNINSTALL_SHORTCUT
-			com.facebook.katana.provider.ACCESS
-			com.facebook.lite.provider.ACCESS
-			com.facebook.mlite.BROADCAST
-			com.facebook.mlite.permission.C2D_MESSAGE
-			com.facebook.mlite.provider.ACCESS
-			com.facebook.orca.provider.ACCESS
-			com.facebook.pages.app.provider.ACCESS
-			com.facebook.permission.prod.FB_APP_COMMUNICATION
-			com.facebook.wakizashi.provider.ACCESS
-			com.google.android.c2dm.permission.RECEIVE
-			com.htc.launcher.permission.READ_SETTINGS
-			com.htc.launcher.permission.UPDATE_SHORTCUT
-			com.sec.android.provider.badge.permission.READ
-			com.sec.android.provider.badge.permission.WRITE
-			com.sonyericsson.home.permission.BROADCAST_BADGE
-		45.0.0.4.193 
-			Languages: English, Dutch, Polish, Czech, Danish, Finnish, Greek, Norwegian, Swedish, Hungarian, Malaysian, Vietnamese, Afrikaans, Slovak, Tagalog, Croatian, Swahili, Spanish, Portuguese, French, German, Italian, Chinese, Japanese, Arabic, Russian, Hindi, Korean, Turkish, Thai
-			Permissions: 41
-			android.permission.AUTHENTICATE_ACCOUNTS
-			android.permission.BATTERY_STATS
-			android.permission.CAMERA
-			android.permission.GET_ACCOUNTS
-			android.permission.INTERNET
-			android.permission.MANAGE_ACCOUNTS
-			android.permission.READ_CONTACTS
-			android.permission.READ_PHONE_STATE
-			android.permission.READ_PROFILE
-			android.permission.READ_SMS
-			android.permission.RECORD_AUDIO
-			android.permission.SYSTEM_ALERT_WINDOW
-			android.permission.WRITE_EXTERNAL_STORAGE
-			android.permission.ACCESS_NETWORK_STATE
-			android.permission.ACCESS_WIFI_STATE
-			android.permission.BLUETOOTH
-			android.permission.CHANGE_NETWORK_STATE
-			android.permission.DOWNLOAD_WITHOUT_NOTIFICATION
-			android.permission.MODIFY_AUDIO_SETTINGS
-			android.permission.READ_EXTERNAL_STORAGE
-			android.permission.RECEIVE_BOOT_COMPLETED
-			android.permission.REQUEST_INSTALL_PACKAGES
-			android.permission.VIBRATE
-			android.permission.WAKE_LOCK
-			com.android.launcher.permission.INSTALL_SHORTCUT
-			com.android.launcher.permission.UNINSTALL_SHORTCUT
-			com.facebook.katana.provider.ACCESS
-			com.facebook.lite.provider.ACCESS
-			com.facebook.mlite.BROADCAST
-			com.facebook.mlite.permission.C2D_MESSAGE
-			com.facebook.mlite.provider.ACCESS
-			com.facebook.orca.provider.ACCESS
-			com.facebook.pages.app.provider.ACCESS
-			com.facebook.permission.prod.FB_APP_COMMUNICATION
-			com.facebook.wakizashi.provider.ACCESS
-			com.google.android.c2dm.permission.RECEIVE
-			com.htc.launcher.permission.READ_SETTINGS
-			com.htc.launcher.permission.UPDATE_SHORTCUT
-			com.sec.android.provider.badge.permission.READ
-			com.sec.android.provider.badge.permission.WRITE
-			com.sonyericsson.home.permission.BROADCAST_BADGE
-Name: GB WhatsApp
-	Author: AppSoft
-	Category: Messaging
-	Rating: 3.7 / 5.0
-	Package Name: com.appworld.dual
-	License: Free
-	Operating System: Android
-	Requires Android: 4.0.3, 4.0.4 and up
-	Languages: English, Polish, Danish, Greek, Norwegian, Swedish, Romanian, Slovenian, Slovak, Ukrainian, Estonian, Lithuanian, Latvian, Lettish, German, Italian, Japanese, Arabic, Hindi, Turkish, Thai
-	Size: 36.05MB
-	Downloads: 3,043,860
-	Date: 09.05.18
-	Signature (MD5): 52fef4428af31b2541af00aae5caf891
-	Description: 
-	Permissions: 53
-	Versions:
-		2.18.123
-			Languages: English, Polish, Danish, Greek, Norwegian, Swedish, Romanian, Slovenian, Slovak, Ukrainian, Estonian, Lithuanian, Latvian, Lettish, German, Italian, Japanese, Arabic, Hindi, Turkish, Thai
-			Permissions: 53
-			android.permission.ACCESS_COARSE_LOCATION
-			android.permission.ACCESS_FINE_LOCATION
-			android.permission.AUTHENTICATE_ACCOUNTS
-			android.permission.CAMERA
-			android.permission.CHANGE_WIFI_STATE
-			android.permission.GET_ACCOUNTS
-			android.permission.GET_TASKS
-			android.permission.INTERNET
-			android.permission.MANAGE_ACCOUNTS
-			android.permission.READ_CONTACTS
-			android.permission.READ_PHONE_STATE
-			android.permission.READ_PROFILE
-			android.permission.RECEIVE_SMS
-			android.permission.RECORD_AUDIO
-			android.permission.SEND_SMS
-			android.permission.WRITE_CONTACTS
-			android.permission.WRITE_EXTERNAL_STORAGE
-			android.permission.ACCESS_NETWORK_STATE
-			android.permission.ACCESS_WIFI_STATE
-			android.permission.BLUETOOTH
-			android.permission.BROADCAST_STICKY
-			android.permission.INSTALL_SHORTCUT
-			android.permission.KILL_BACKGROUND_PROCESSES
-			android.permission.MODIFY_AUDIO_SETTINGS
-			android.permission.NFC
-			android.permission.READ_EXTERNAL_STORAGE
-			android.permission.READ_SYNC_SETTINGS
-			android.permission.READ_SYNC_STATS
-			android.permission.RECEIVE_BOOT_COMPLETED
-			android.permission.REQUEST_INSTALL_PACKAGES
-			android.permission.USE_CREDENTIALS
-			android.permission.VIBRATE
-			android.permission.WAKE_LOCK
-			android.permission.WRITE_SETTINGS
-			android.permission.WRITE_SYNC_SETTINGS
-			com.android.launcher.permission.INSTALL_SHORTCUT
-			com.android.launcher.permission.UNINSTALL_SHORTCUT
-			com.appworld.dual.permission.BROADCAST
-			com.appworld.dual.permission.C2D_MESSAGE
-			com.appworld.dual.permission.MAPS_RECEIVE
-			com.appworld.dual.permission.REGISTRATION
-			com.appworld.dual.permission.VOIP_CALL
-			com.google.android.c2dm.permission.RECEIVE
-			com.google.android.providers.gsf.permission.READ_GSERVICES
-			com.htc.launcher.permission.READ_SETTINGS
-			com.htc.launcher.permission.UPDATE_SHORTCUT
-			com.huawei.android.launcher.permission.CHANGE_BADGE
-			com.huawei.android.launcher.permission.READ_SETTINGS
-			com.huawei.android.launcher.permission.WRITE_SETTINGS
-			com.sec.android.provider.badge.permission.READ
-			com.sec.android.provider.badge.permission.WRITE
-			com.sonyericsson.home.permission.BROADCAST_BADGE
-			com.sonymobile.home.permission.PROVIDER_INSERT_BADGE

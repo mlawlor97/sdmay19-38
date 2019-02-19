@@ -65,7 +65,7 @@ def click(url, tag, *args):
     options.add_argument('--headless')
     # options.add_argument('--disable-gpu')
     options.binary_location = "C:/Program Files (x86)/Google/Chrome/Application/chrome.exe"
-    phantom = webdriver.Chrome(chrome_options=options,
+    phantom = webdriver.Chrome(options=options,
                                executable_path=createPath(os.getcwd(), 'chromedriver').replace('\\', '/'))
 
     phantom.get(url)
