@@ -261,12 +261,11 @@ class ApkPure(CrawlerBase):
 
 
 def main():
-    ApkPure()._crawlCategory('https://apkpure.com/game_action')
-    # try:
-    #     ApkPure().crawl()
-    # except KeyboardInterrupt:
-    #     print("Ended Early")
-    # print("Finished")
+    try:
+        ApkPure().crawl()
+    except KeyboardInterrupt:
+        print("Ended Early")
+    print("Finished")
 
 
 if __name__ == '__main__':

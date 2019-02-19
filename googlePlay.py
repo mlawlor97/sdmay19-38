@@ -1,10 +1,10 @@
-from utils import RateLimiter, requestHTML, safeExecute
+from utils import RateLimiter, requestHTML, safeExecute, getPermissions
 from utils import writeAppDB, writeVersionDB, checkAppDB, checkVersionDB  # DB connectors
 from SupportFiles.webDriverUtils import WebDriver
 from SupportFiles.crawlerBase import CrawlerBase
 from SupportFiles.metaDataBase import DataCollectionBase
 # from googleplayapi.googleplay import GooglePlayAPI
-# from PlayCrawlerMaster.googleplayapi.googleplay import GooglePlayAPI
+from googleplayapi.gpapi.googleplay import GooglePlayAPI, SecurityCheckError
 
 from datetime import datetime
 
@@ -59,6 +59,7 @@ class GoogleVersion(DataCollectionBase):
 
 # noinspection PyCompatibility
 class GooglePlay(CrawlerBase):
+    """Webcrawler for the googleplay store."""
 
     def __init__(self, siteUrl="https://play.google.com", rateLimiter=RateLimiter(10, 3)):
         super().__init__(siteUrl, rateLimiter)
@@ -71,13 +72,13 @@ class GooglePlay(CrawlerBase):
             "/collection/topselling_new_paid",
             "/collection/topselling_new_free"
         ]
-        # self.gpa = GooglePlayAPI(androidId="551F187F79FC41F3", lang="en_us")
-        # self.gpa.login("sdmay19@gmail.com", "Forensics4", "ya29.GluuBvrVmzeVYn1HxKQ_61nKGKjDfSXB_7uQ_LPvg8EWceabszVZn5e5VDHuZNF_Zbh_R3BviPmrMV-DSDSR0Ipc_qfmVU3NX8C31RZi34ecakBd4NJEJZpp8brY")
+        self.gpa = GooglePlayAPI()
+        # self.gpa.login("sdmay19@gmail.com", "Forensics4")
+        self.gpa.login(gsfId=3948690411096122542, authSubToken="FwfSBWszDgviSe1ivuuvKa0qjnOTUlcpvGzS9sEtSSdn59NrCqTO9oeyE2h5qiorr-ycCw.")
 
     def crawl(self):
         # Get categories
         categories = self.getCategories(requestHTML(f"{self.siteUrl}/store/apps"))
-        categories = ['https://play.google.com/store/apps/category/EDUCATION']
 
         # Iterate over all categories
         for category in categories:
@@ -131,8 +132,10 @@ class GooglePlay(CrawlerBase):
 
         if appEntry is None:
             playData = GoogleData(appPage, soup).getAll()
+            price, package = playData.metaData.get('price'), playData.metaData.get('package')
             id_ = writeAppDB("GooglePlay", name, appPage, playData.metaData) 
         else:
+            price, package = appEntry.get('price'), appEntry.get('package')
             id_ = appEntry.get('_id')
         
         version = safeExecute(soup.find('div', string="Current Version").next_sibling.find, 'span')
@@ -144,30 +147,24 @@ class GooglePlay(CrawlerBase):
         if versions == []:
             playVersion = GoogleVersion(appPage, soup).getAll()
             writeVersionDB("GooglePlay", name, id_, version, playVersion.metaData)
+        else:
+            return
 
-        # if playData.metaData.get('price') == "$0.00":
-            # print('Free')
-            # details = self.gpa.details(package)
-            # print(details)
-        #     downloadGoogleApk(playData.metaData.get('Package'))
+        # Downloading google play apks
+        # if price == "$0.00":
+        #     self.gpa.log(package)
+        #     fl = self.gpa.download(package)
+        #     with open(package + ".apk", "wb") as apk_file:
+        #         for chunk in fl.get("file").get("data"):
+        #             apk_file.write(chunk)
 
 
 def main():
-    GooglePlay().crawl()
-    # GooglePlay().getApps('https://play.google.com/store/apps/stream/vr_top_device_featured_category')
-    # GooglePlay().scrapeApp('https://play.google.com/store/apps/details?id=com.snapchat.android')
-    # url = 'https://play.google.com/store/apps/details?id=de.ritterit.lukes&hl=en'
-    # url = 'https://play.google.com/store/apps/details?id=com.thomson.cxn&feature=more_from_developer#?t=W251bGwsMSwyLDEwMiwiY29tLnRob21zb24uY3huIl0.'
-    # url = 'https://play.google.com/store/apps/details?id=com.salamandertechnologies.track&hl=en_US'
-    # url = 'https://play.google.com/store/apps/details?id=com.harris.rf.beonptt.android.ui&hl=en'
-    # url = 'https://play.google.com/store/apps/details?id=gov.nih.nlm.erg2012&hl=en_US'
-    # url = 'https://play.google.com/store/apps/details?id=com.cube.arc.hfa'
-    # url = 'https://play.google.com/store/apps/details?id=gov.fema.mobile.android'
-    # url = 'https://play.google.com/store/apps/details?id=com.snap.android.apis'
-    # url = 'https://play.google.com/store/apps/details?id=com.intergraph.mobileresponder'
-    # GooglePlay().scrapeApp(url)
-    # id_ = checkAppDB(appUrl=url).get('_id')
-    # print(checkVersionDB(id_))
+    try:
+        GooglePlay().crawl()
+    except KeyboardInterrupt:
+        print("Ended Early")
+    print("Finished")
 
 
 if __name__ == '__main__':
