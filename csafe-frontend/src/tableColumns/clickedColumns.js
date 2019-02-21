@@ -38,7 +38,7 @@ const clickedColumns = [
     )
   },
   {
-    Header: 'Network File Path',
+    Header: 'Network Address',
     accessor: 'n_path',
     Cell: row => (
       <div>
