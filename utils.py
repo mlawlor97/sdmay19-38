@@ -1,7 +1,7 @@
 import requests
 import re
 import os
-from subprocess import Popen, PIPE, STDOUT
+from subprocess import Popen, PIPE, STDOUT, check_call
 from bs4 import BeautifulSoup
 from pymongo import MongoClient
 
@@ -9,7 +9,6 @@ import json
 from time import sleep
 from threading import Thread
 # from boxsdk import DevelopmentClient
-
 
 class RateLimiter:
     """Limits how often you can query websites given the rate limit factors
@@ -35,7 +34,7 @@ class MongoConnector:
 
     def __init__(self):
         self.client = MongoClient('mongodb://localhost:27017')
-        self.db = self.client.test
+        self.db = self.client.test2
         self.applications = self.db.Applications
         self.versions = self.db.Versions
 
@@ -194,10 +193,25 @@ def checkVersionDB(appId, version=None):
     # folder_id = '54833153949'
     # client.folder(folder_id).upload(filePath, fileName)
 
-def getPermissions(apkFilePath, permList=[]):
+def getPermissions(apkFilePath, permList=list()):
     p = Popen(['java', '-jar', 'SupportFiles/Permissions.jar', apkFilePath], stdout=PIPE, stderr=STDOUT)
     [permList.append(line.strip().decode('ascii')) for line in p.stdout]
     return permList
+
+def getApkValues(apkFilePath, shaList=list()):
+    p1 = Popen(("unzip -p " + apkFilePath + " META-INF/CERT.RSA").split(), stdout=PIPE)
+    p = Popen(['keytool', '-printcert'], stdin=p1.stdout, stdout=PIPE)
+    stdout, stderr = p.communicate()
+
+    id_dict = dict({})
+    for line in stdout.decode('utf-8').split('\n'):
+        args = line.split('\t')
+        if args.__len__() == 2 and args[0] == "":
+            vals = args[1].strip().split()
+            type_ = vals[0].rstrip(":")
+            if type_ == "MD5" or type_ == "SHA1" or type_ == "SHA256":
+                id_dict.update({type_: vals})
+    return id_dict
 
 def safeExecute(func, *args, default=None, error=BaseException):
     try:

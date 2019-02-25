@@ -1,4 +1,4 @@
-from utils import RateLimiter, requestHTML, safeExecute, getPermissions
+from utils import RateLimiter, requestHTML, safeExecute, getPermissions, getApkValues
 from utils import writeAppDB, writeVersionDB, checkAppDB, checkVersionDB  # DB connectors
 from SupportFiles.webDriverUtils import WebDriver
 from SupportFiles.crawlerBase import CrawlerBase
@@ -7,6 +7,8 @@ from SupportFiles.metaDataBase2 import DataCollectionBase
 from googleplayapi.gpapi.googleplay import GooglePlayAPI, SecurityCheckError
 
 from datetime import datetime
+import uuid
+import os
 
 class GoogleData(DataCollectionBase):
 
@@ -40,6 +42,8 @@ class GoogleVersion(DataCollectionBase):
 # noinspection PyCompatibility
 class GooglePlay(CrawlerBase):
     """Webcrawler for the googleplay store."""
+    rootDir = ""    # Change for different save path
+    extraData = 3   # Change when adding more fields
 
     def __init__(self, siteUrl="https://play.google.com", rateLimiter=RateLimiter(10, 3)):
         super().__init__(siteUrl, rateLimiter)
@@ -55,6 +59,8 @@ class GooglePlay(CrawlerBase):
         self.gpa = GooglePlayAPI()
         # self.gpa.login("sdmay19@gmail.com", "Forensics4")
         self.gpa.login(gsfId=3948690411096122542, authSubToken="FwfSBWszDgviSe1ivuuvKa0qjnOTUlcpvGzS9sEtSSdn59NrCqTO9oeyE2h5qiorr-ycCw.")
+        safeExecute(os.mkdir, self.rootDir + 'apks')
+        safeExecute(os.mkdir, self.rootDir + 'apks/googleplay')
 
     def crawl(self):
         # Get categories
@@ -109,12 +115,14 @@ class GooglePlay(CrawlerBase):
             print(appPage)
             return
         name = name.text.strip()
+        safeExecute(os.mkdir, self.rootDir + 'apks/googleplay/' + name)
 
         if appEntry is None:
             playData = GoogleData(appPage, soup).getAll()
             price, package = playData.metaData.get('price'), playData.metaData.get('package')
             id_ = writeAppDB("GooglePlay", name, appPage, playData.metaData) 
         else:
+            appEntry = appEntry.get('metadata')
             price, package = appEntry.get('price'), appEntry.get('package')
             id_ = appEntry.get('_id')
         
@@ -124,32 +132,36 @@ class GooglePlay(CrawlerBase):
         version = version.text
 
         versions = checkVersionDB(id_, version)
-        if versions == []:
-            playVersion = GoogleVersion(appPage, soup).getAll()
-            writeVersionDB("GooglePlay", name, id_, version, playVersion.metaData)
-        else:
+        if versions != [] and versions[0].get('metadata').__len__() - 3 != GoogleVersion().methods.__len__():
             return
+        playVersion = GoogleVersion(appPage, soup).getAll()
 
         # Downloading google play apks
-        # if price == "$0.00":
-            # self.downloadApk(package)
+        if price == "$0.00":
+            permissions, filePath = self.downloadApk(package, "apks/googleplay/" + name)
+            playVersion.metaData.update({'permissions': permissions, 'apk_file_path': filePath})
+            apk_values = getApkValues(filePath)
+            playVersion.metaData.update({'apk_values': apk_values})
             
+        writeVersionDB("GooglePlay", name, id_, version, playVersion.metaData)
 
-    def downloadApk(self, package):
+    def downloadApk(self, package, savePath):
         self.gpa.log(package)
         fl = self.gpa.download(package)
-        with open(package + ".apk", "wb") as apk_file:
+        savePath = self.rootDir + savePath + "/" + uuid.uuid4().hex + ".apk"
+        with open(savePath, "wb") as apk_file:
             for chunk in fl.get("file").get("data"):
                 apk_file.write(chunk)
+            return (getPermissions(savePath), savePath)
 
 
 def main():
-    GooglePlay().scrapeApp('https://play.google.com/store/apps/details?id=gov.fema.mobile.android&hl=en_US')
-    # try:
-    #     GooglePlay().crawl()
-    # except KeyboardInterrupt:
-    #     print("Ended Early")
-    # print("Finished")
+    gp = GooglePlay()
+    try:
+        GooglePlay().crawl()
+    except KeyboardInterrupt:
+        print("Ended Early")
+    print("Finished")
 
 
 if __name__ == '__main__':
