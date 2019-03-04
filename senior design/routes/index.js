@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 let ApplicationModel = require('../models/application');
 let VersionModel = require('../models/version');
+const {ObjectId} = require('mongodb');
 
 router.get('/applications', function (req, res, next) {
     appName = (req.query.appName != null) ? req.query.appName : "";
@@ -20,18 +21,20 @@ router.get('/applications', function (req, res, next) {
 });
 
 router.get('/applications/:id', function (req, res, next) {
-    ApplicationModel.findOne({
-        app_id: req.params.id
-    }).lean().then(application => {
-        VersionModel.find({
-            app_id: req.params.id
-        }).then(versions => {
-            application.versions = versions;
-            res.json(application);
-        }).catch(err => {
-            console.log(err);
-        })
-    }).catch( err => {
+    ApplicationModel.aggregate([
+        {"$match": {"_id" : ObjectId(req.params.id)} },
+        {
+            "$lookup":
+                {
+                    "from":"Versions",
+                    "localField": "_id",
+                    "foreignField": "app_id",
+                    "as": "versions"
+                }
+        }
+    ]).then(doc => {
+        res.json(doc);
+    }).catch(err => {
         console.log(err);
     })
 });
