@@ -7,9 +7,9 @@ router.get('/applications', function (req, res, next) {
     appName = (req.query.appName != null) ? req.query.appName : "";
     packageName = (req.query.packageName != null) ? req.query.packageName : "";
     ApplicationModel.find({
-        "app_name" : { "$regex": req.query.appName, "$options": "i" },
-        "metadata.package" : { "$regex": req.query.packageName, "$options": "i" }
-    }).lean().limit(20).then( doc =>{
+        "app_name" : { "$regex": appName, "$options": "i" },
+        "metadata.package" : { "$regex": packageName, "$options": "i" }
+    }).lean().limit(40).then( doc =>{
         if(doc.length == 0){
             res.status(302).json({'error': 'This application is not available'})
         }
