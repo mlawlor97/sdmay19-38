@@ -19,6 +19,22 @@ router.get('/applications', function (req, res, next) {
     })
 });
 
+router.get('/applications/:id', function (req, res, next) {
+    ApplicationModel.findOne({
+        app_id: req.params.id
+    }).lean().then(application => {
+        VersionModel.find({
+            app_id: req.params.id
+        }).then(versions => {
+            application.versions = versions;
+            res.json(application);
+        }).catch(err => {
+            console.log(err);
+        })
+    }).catch( err => {
+        console.log(err);
+    })
+});
 
 function getVersions(applications) {
     return new Promise(function (resolve, reject){
