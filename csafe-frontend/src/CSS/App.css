@@ -31,17 +31,20 @@
   }
 } */
 
-.query {
-  color: red;
-  text-align: center;
-  margin: auto;
-  width: 25%;
-  border: 3px solid red;
-  padding: 10px;
+.app {
+  width: 350px;
+  margin: 0 auto;
 }
 
-.cell {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+.scroller {
+  margin: 0 auto;
+  height: 800px;
+  width: 800px;
+  overflow: auto;
+}
+
+.item {
+  margin: 30px 0;
+  border-style: solid;
+  border-color: #2ea9dd;
 }
