@@ -3,36 +3,23 @@ var router = express.Router();
 let ApplicationModel = require('../models/application');
 let VersionModel = require('../models/version');
 
-/* GET home page. */
-router.get('/appName', function (req, res, next) {
+router.get('/', function (req, res, next) {
     ApplicationModel.find({
-        "app_name" : { "$regex": req.query.keyword, "$options": "i" }
+        "app_name" : { "$regex": req.query.appName, "$options": "i" },
+        "metadata.package" : { "$regex": req.query.packageName, "$options": "i" }
     }).lean().limit(20).then( doc =>{
         if(doc.length == 0){
-            res.status(302).json({'error': req.query.keyword + ' is not available'})
+            res.status(302).json({'error': 'This application is not available'})
         }
-        getVersions(doc).then( applications => {
-		res.json(applications);
-        });
+        res.json(doc);
     }).catch( err => {
         console.log(err);
     })
 });
 
-router.get('/packageName', function (req, res, next) {
-    ApplicationModel.find({
-        "metadata.package" : { "$regex": req.query.keyword, "$options": "i" }
-    }).lean().limit(20).then( doc =>{
-        if(doc.length == 0){
-            res.status(302).json({'error': req.query.keyword + ' is not available'})
-        }
-        getVersions(doc).then( applications => {
-            res.json(applications);
-        });
-    }).catch( err => {
-        console.log(err);
-    })
-});
+router
+
+
 
 function getVersions(applications) {
     return new Promise(function (resolve, reject){
