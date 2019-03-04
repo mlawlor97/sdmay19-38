@@ -3,7 +3,9 @@ var router = express.Router();
 let ApplicationModel = require('../models/application');
 let VersionModel = require('../models/version');
 
-router.get('/', function (req, res, next) {
+router.get('/applications', function (req, res, next) {
+    appName = (req.query.appName != null) ? req.query.appName : "";
+    packageName = (req.query.packageName != null) ? req.query.packageName : "";
     ApplicationModel.find({
         "app_name" : { "$regex": req.query.appName, "$options": "i" },
         "metadata.package" : { "$regex": req.query.packageName, "$options": "i" }
@@ -16,9 +18,6 @@ router.get('/', function (req, res, next) {
         console.log(err);
     })
 });
-
-router
-
 
 
 function getVersions(applications) {
