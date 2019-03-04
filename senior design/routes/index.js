@@ -36,12 +36,15 @@ router.get('/packageName', function (req, res, next) {
 
 function getVersions(applications) {
     return new Promise(function (resolve, reject){
-        for(let i = 0; i < applications.length; i++) {
+        let j = 0;
+	    for(let i = 0; i < applications.length; i++) {
             VersionModel.find({
                 app_id: applications[i]._id
             }).then(vDoc => {
                 applications[i].versions = vDoc;
-		if( i == applications.length-1){
+		j = j + 1;
+		    
+		    if( j == applications.length){
 			resolve(applications);
 		}
             }).catch(err => {
