@@ -3,11 +3,12 @@ from types import FunctionType
 
 class DataCollectionBase:
 
-    def __init__(self, ErrorUrl, Soup):
+    def __init__(self, ErrorUrl, Soup, **moreSoups):
         self.url = ErrorUrl
         self.soup = Soup
         self.validApplication = False
         self.metaData = {}
+        self.extraBS = moreSoups
 
     def getName(self):
         pass
@@ -45,7 +46,7 @@ class DataCollectionBase:
         :return: metaData Map of all the collected information
         """
         for x, y in self.__class__.__dict__.items():
-            if type(y) == FunctionType and x is not 'getAll' and x is not 'getDescription':
+            if type(y) == FunctionType and x is not 'getAll':
                 func = getattr(self.__class__, x)
                 func(self)
         if self.metaData.get('Name') is None:

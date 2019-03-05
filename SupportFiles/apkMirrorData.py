@@ -14,7 +14,6 @@ class GetMirrorData(DataCollectionBase):
         except AttributeError:
             name = None
             logToFile('NameCheck.txt', self.url)
-        print(name)
         self.metaData.update(Name=name)
 
     def getDeveloper(self):
@@ -27,7 +26,6 @@ class GetMirrorData(DataCollectionBase):
         except AttributeError:
             dev = None
             logToFile('DeveloperCheck.txt', self.url)
-        print(dev)
         self.metaData.update(Developer=dev)
 
     # def getPackage(self):
@@ -42,7 +40,7 @@ class GetMirrorData(DataCollectionBase):
     def getDescription(self):
         desc = []
         try:
-            tabPane = self.soup.find_all("div", {"class": "notes"})
+            tabPane = self.extraBS["DSoup"].find_all("div", {"class": "notes"})
             if tabPane:
                 for note in tabPane:
                     desc.append(note.text)
@@ -90,7 +88,6 @@ class GetMirrorData(DataCollectionBase):
         except AttributeError:
             sec = None
             logToFile('SecurityCheck.txt', self.url)
-        print(sec)
         self.metaData.update(Security=sec)
 
     def getSpecs(self):
