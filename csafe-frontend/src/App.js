@@ -94,8 +94,11 @@ class App extends Component {
           dataArray.push(dataObj)
         })
 
+        const yeet = []
+        yeet.push(dataArray[1])
         this.setState({ versions: generateVersionOptions(boy.versions) })
         this.setState({ newData: dataArray })
+        this.setState({ displayVersion: yeet })
       })
       .catch(err => {
         //something else
@@ -292,7 +295,11 @@ class App extends Component {
                   <ScrollElement name={obj.app_name}>
                     <div className="item">
                       {Object.keys(obj).map(key => {
-                        return <ul>{key + ': ' + obj[key]}</ul>
+                        return (
+                          <ul>
+                            <b>{key}</b> {': ' + obj[key]}
+                          </ul>
+                        )
                       })}
                     </div>
                   </ScrollElement>
