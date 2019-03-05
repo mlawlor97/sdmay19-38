@@ -1,11 +1,6 @@
 import React from 'react'
 import DropDown from './DropDown'
 
-import categoryOptions from '../dropdownOptions/categories'
-import versionOptions from '../dropdownOptions/versions'
-import dateOptions from '../dropdownOptions/date'
-import keywordOptions from '../dropdownOptions/keywordOptions'
-
 function DropDownOrganizer(props) {
   const groupStyles = {
     display: 'flex',
@@ -35,31 +30,10 @@ function DropDownOrganizer(props) {
 
   return (
     <div>
-      {/* <DropDown
-        value={props.categoryValue}
-        onChange={props.onCategoryChange}
-        options={categoryOptions}
-        formatGroupLabel={formatGroupLabel}
-        placeholder={'Categories'}
-      />
       <DropDown
-        value={props.versionValue}
-        onChange={props.onVersionChange}
-        options={versionOptions}
-        formatGroupLabel={formatGroupLabel}
-        placeholder={'Versions'}
-      />
-      <DropDown
-        value={props.dateValue}
-        onChange={props.onDateChange}
-        options={dateOptions}
-        formatGroupLabel={formatGroupLabel}
-        placeholder={'Date'}
-      /> */}
-      <DropDown
-        defaultValue={keywordOptions[0].options[0]}
+        defaultValue={props.defaultValue}
         onChange={props.onKeywordChange}
-        options={keywordOptions}
+        options={props.options}
         formatGroupLabel={formatGroupLabel}
       />
     </div>

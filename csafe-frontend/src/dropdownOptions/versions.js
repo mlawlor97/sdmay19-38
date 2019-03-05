@@ -2,6 +2,7 @@ const versionOptions = [
   {
     label: 'Versions',
     options: [
+      { value: 'all', label: 'All', group: 'Versions' },
       { value: '1', label: 'Below 1.0.0', group: 'Versions' },
       { value: '1_2', label: '1.0.0 - 2.0.0', group: 'Versions' },
       { value: '2_3', label: '2.0.0 - 3.0.0', group: 'Versions' },

@@ -10,9 +10,9 @@ function DropDown(props) {
       options={props.options}
       //placeholder={props.placeholder}
       formatGroupLabel={props.formatGroupLabel}
-      // isClearable={true}
-      // isSearchable={true}
-      // isMulti={true}
+      isClearable={false}
+      isSearchable={false}
+      isMulti={false}
     />
   )
 }
