@@ -6,7 +6,7 @@ import DropDownOrganizer from './components/DropDownOrganizer'
 import ScrollView from './components/ScrollView'
 import ScrollElement from './components/ScrollElement'
 import keywordOptions from './dropdownOptions/keywordOptions'
-import versionOptions from './dropdownOptions/versions'
+import generateVersionOptions from './dropdownOptions/versions'
 
 const axios = require('axios')
 
@@ -16,10 +16,12 @@ class App extends Component {
     this.state = {
       keyword: '',
       keywordFilter: 'appName',
-      versionFilter: 'all',
+      versions: [],
       response: [],
       changeScreen: false,
-      newData: []
+      newData: [],
+      displayVersion: [],
+      tempEvidenceData: []
     }
 
     this.onKeywordChange = this.onKeywordChange.bind(this)
@@ -27,11 +29,14 @@ class App extends Component {
     this.handleKeywordTypeChange = this.handleKeywordTypeChange.bind(this)
     this.onAppClick = this.onAppClick.bind(this)
     this.goBack = this.goBack.bind(this)
+    this.handleVersionChange = this.handleVersionChange.bind(this)
   }
 
   goBack(event) {
     this.setState({ changeScreen: false })
     this.setState({ newData: [] })
+    this.setState({ displayVersion: [] })
+    this.setState({ versions: [] })
   }
 
   onKeywordChange(event) {
@@ -40,6 +45,14 @@ class App extends Component {
 
   handleKeywordTypeChange(selectedOption) {
     this.setState({ keywordFilter: selectedOption.value })
+  }
+
+  handleVersionChange(selectedOption) {
+    const versionData = this.state.newData.filter(
+      obj => obj['version'] === selectedOption.value
+    )
+
+    this.setState({ displayVersion: versionData })
   }
 
   onAppClick(event) {
@@ -81,6 +94,7 @@ class App extends Component {
           dataArray.push(dataObj)
         })
 
+        this.setState({ versions: generateVersionOptions(boy.versions) })
         this.setState({ newData: dataArray })
       })
       .catch(err => {
@@ -162,9 +176,20 @@ class App extends Component {
   }
 
   render() {
+    const beegYosh = {
+      app_package_name: 'WIP',
+      version: 'WIP',
+      file_path: 'WIP',
+      file_evidence_types: 'WIP',
+      network_path: 'WIP',
+      network_evidence_path: 'WIP'
+    }
+    const stop = []
+    stop.push(beegYosh)
+
     const screen = (
       <header className="App-header">
-        <div id="menu">
+        <div className="menu">
           <h1 id="header">Forensic Android App Database</h1>
           <SearchBar
             onSubmit={this.onSubmit}
@@ -195,13 +220,28 @@ class App extends Component {
                       className="item"
                       onClick={() => this.onAppClick(app_id)}
                     >
-                      <ul>{'App Name: ' + app_name}</ul>
-                      <ul>{'Developer: ' + Developer}</ul>
-                      <ul>{'Package: ' + Package}</ul>
-                      <ul>{'Store: ' + store_id} </ul>
-                      <ul>{'Category: ' + Category}</ul>
                       <ul>
-                        {'URL: '}
+                        <b>{'App Name'}</b>
+                        {': ' + app_name}
+                      </ul>
+                      <ul>
+                        <b>{'Developer'}</b>
+                        {': ' + Developer}
+                      </ul>
+                      <ul>
+                        <b>{'Package'}</b>
+                        {': ' + Package}
+                      </ul>
+                      <ul>
+                        <b>{'Store'}</b>
+                        {': ' + store_id}{' '}
+                      </ul>
+                      <ul>
+                        <b>{'Category'}</b>
+                        {': ' + Category}
+                      </ul>
+                      <ul>
+                        <b>{'URL: '}</b>
                         <a href={url}>{url}</a>
                       </ul>
                     </div>
@@ -216,30 +256,51 @@ class App extends Component {
 
     const infoScreen = (
       <header className="App-header">
-        <div id="menu">
+        <div className="menu">
           <h1 id="header">Forensic Android App Database</h1>
           <button onClick={this.goBack}>Go Back</button>
           <DropDownOrganizer
-            onKeywordChange={this.handleKeywordTypeChange}
-            options={versionOptions}
-            defaultValue={versionOptions[0].options[0]}
+            onKeywordChange={this.handleVersionChange}
+            options={this.state.versions}
+            defaultValue={this.state.versions[0]}
           />
         </div>
-        <ScrollView ref={scroller => (this._scroller = scroller)}>
-          <div className="scroller">
-            {this.state.newData.map(obj => {
-              return (
-                <ScrollElement name={obj.app_name}>
-                  <div className="item">
-                    {Object.keys(obj).map(key => {
-                      return <ul>{key + ': ' + obj[key]}</ul>
-                    })}
-                  </div>
-                </ScrollElement>
-              )
-            })}
-          </div>
-        </ScrollView>
+        <div>
+          <ScrollView ref={scroller => (this._scroller = scroller)}>
+            <div id="left">
+              {this.state.displayVersion.map(obj => {
+                return (
+                  <ScrollElement name={obj.app_name}>
+                    <div className="item">
+                      {Object.keys(obj).map(key => {
+                        return (
+                          <ul>
+                            <b>{key}</b> {': ' + obj[key]}
+                          </ul>
+                        )
+                      })}
+                    </div>
+                  </ScrollElement>
+                )
+              })}
+            </div>
+          </ScrollView>
+          <ScrollView ref={scroller => (this._scroller = scroller)}>
+            <div id="right">
+              {stop.map(obj => {
+                return (
+                  <ScrollElement name={obj.app_name}>
+                    <div className="item">
+                      {Object.keys(obj).map(key => {
+                        return <ul>{key + ': ' + obj[key]}</ul>
+                      })}
+                    </div>
+                  </ScrollElement>
+                )
+              })}
+            </div>
+          </ScrollView>
+        </div>
       </header>
     )
 
