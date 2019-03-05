@@ -40,7 +40,7 @@ class GetMirrorData(DataCollectionBase):
     def getDescription(self):
         desc = []
         try:
-            tabPane = self.extraBS["DSoup"].find_all("div", {"class": "notes"})
+            tabPane = self.soup.find_all("div", {"class": "notes"})
             if tabPane:
                 for note in tabPane:
                     desc.append(note.text)

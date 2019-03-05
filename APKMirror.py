@@ -21,7 +21,7 @@ class APKMirror(CrawlerBase):
 
             # For every link on the given page
             for link in pagesToVisit:
-                # Open the link and get link to every version of app
+                # Open the link and get link to every version of app, this is doing most of the heavy lifting
                 o = openPages(link)
                 # For every version
                 for l in o:
@@ -29,7 +29,7 @@ class APKMirror(CrawlerBase):
                     print("Downloading " + l)
                     # click(l, 'downloadButton')
                     # Get meta data
-                    # getmetaData(l)
+                    getmetaData(l)
             i += 1
 
 
@@ -66,7 +66,6 @@ def openPages(url):
                     for innerel in w.find_all("h5", {"class": "appRowTitle wrapText marginZero block-on-mobile"}):
                         a = innerel.find("a", {"class": "fontBlack"})
                         goHere = a.get('href')
-                        correctArr = []
                         correctedLinks = ensureCorrectPage(urlforPaste + goHere)
                         if isinstance(correctedLinks, str):
                             morePagesToVisit.append(correctedLinks)
@@ -144,24 +143,12 @@ def ensureCorrectPage(url):
     return correctedLinks
 
 
-# This function will find all the metadata on the given app page
+# This function will create an instance of the GetMirrorData class to find
+# all of the metadata on the page
 def getmetaData(url):
     soup = requestHTML(url)
-
-    urlforPaste = "https://www.apkmirror.com"
-
-
-    linkToDownloadLater = soup.find("a", {"class": "btn btn-flat downloadButton variantsButton"})
-
-    if linkToDownloadLater:
-        appDetails = soup.find("div", {"class": "table topmargin variants-table"})
-        if appDetails:
-            newPage = appDetails.find("a", {"class": None}).get("href")
-            url = url+newPage
-            soup = requestHTML(url + newPage)
-
-    soupDesc = requestHTML(url + '#description')
-    dataSite = GetMirrorData(url, soup, DSoup=soupDesc)
+    # soupDesc = requestHTML(url + '#description')
+    dataSite = GetMirrorData(url, soup)
     metaData = dataSite.getAll()
     if not metaData:
         return False
