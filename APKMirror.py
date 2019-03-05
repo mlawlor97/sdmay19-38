@@ -19,17 +19,21 @@ class APKMirror(CrawlerBase):
                 istr = str(i)
                 pagesToVisit = getDevPages(url + "page/" + istr + "/")
 
+            appName = ""
             # For every link on the given page
             for link in pagesToVisit:
-                # Open the link and get link to every version of app, this is doing most of the heavy lifting
-                o = openPages(link)
-                # For every version
-                for l in o:
-                    counter += 1
-                    print("Downloading " + l)
-                    # click(l, 'downloadButton')
-                    # Get meta data
-                    getmetaData(l)
+                if "https://" not in link:
+                    appName = link
+                else:
+                    # Open the link and get link to every version of app, this is doing most of the heavy lifting
+                    o = openPages(link)
+                    # For every version
+                    for l in o:
+                        counter += 1
+                        # print("Version link: " + l)
+                        # click(l, 'downloadButton')
+                        # Get meta data
+                        getmetaData(l, appName)
             i += 1
 
 
@@ -48,6 +52,9 @@ def getDevPages(url):
             for innerel in elements.find_all("h5", {"class": "appRowTitle wrapText marginZero block-on-mobile"}):
                 a = innerel.find("a", {"class": "fontBlack"})
                 goHere = a.get('href')
+                # Add the name of the base app
+                pagesToVisit.append(a.text)
+                # Add the link to the app's versions page
                 pagesToVisit.append(urlforPaste + goHere)
     return pagesToVisit
 
@@ -145,11 +152,51 @@ def ensureCorrectPage(url):
 
 # This function will create an instance of the GetMirrorData class to find
 # all of the metadata on the page
-def getmetaData(url):
+def getmetaData(url, appName):
     soup = requestHTML(url)
     # soupDesc = requestHTML(url + '#description')
     dataSite = GetMirrorData(url, soup)
     metaData = dataSite.getAll()
+
+    print("App Name: " + appName)
+
+    # returns string
+    vname = metaData.get("Name")
+    print("\tVersion Name: " + vname)
+
+    # returns string
+    dev = metaData.get("Developer")
+    print("\tDeveloper: " + dev)
+
+    # returns list
+    desc = metaData.get("Description")
+    print("\tDescription: ")
+    for d in desc:
+        d = d.replace('\n', '').replace('\r', '')
+        if d == "" or d == " ":
+            continue
+        print("\t\t" + d)
+
+    # returns list
+    sec = metaData.get("Security")
+    print("\tSecurity: ")
+    for s in sec:
+        s = s.replace('\n', '').replace('\r', '')
+        if s == "" or s == " ":
+            continue
+        print("\t\t" + s)
+
+    # returns list
+    specs = metaData.get("Specs")
+    print("\tSpecs: ")
+    for sp in specs:
+        sp = sp.replace('\n', '').replace('\r', '')
+        if sp == "" or sp == " ":
+            continue
+        print("\t\t" + sp)
+    print("\n\n")
+
+
     if not metaData:
         return False
 

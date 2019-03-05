@@ -1,0 +1,194 @@
+C:\Users\Mitch\AppData\Local\Programs\Python\Python37-32\python.exe "C:\Users\Mitch\Documents\Random School & Code Stuff\Senior Design 2\sdmay19-38\APKMirror.py"
+App Name: A&E - Watch Full Episodes of TV Shows
+	Version Name: A&E - Watch Full Episodes of TV Shows 3.1.8 (Android 4.4+)
+	Developer: A&E Television Networks Mobile
+	Description:
+		We’re always improving your streaming experience, so for this release we fixed some bugs.Please let us know how we're doing at [email protected]om
+		Watch hours of Leah Remini: Scientology and the Aftermath, Live PD, The First 48, Born This Way, Intervention, and more! All your favorite A&E shows are available wherever and whenever you want, right on your Android device.The A&E app is a great new way to access full episodes and clips from all of your favorite A&E shows. New content is added all the time. The A&E app allows you to:•Watch full episodes and clips of your favorite A&E series including:-60 Days In-Beyond Scared Straight-Born This Way-Escaping Polygamy-Hoarders-Intervention-Leah Remini: Scientology and the Aftermath-Live PD-The Lowe Files-The First 48-Storage Wars-Storage Wars: Miami-The First 48-Wahlburgers•See exclusive clips and deleted scenes from A&E shows, never before shown on television.The A&E app is free to use. If your TV provider is supported you can sign in and get access to even more content. A&E CONTENT IS ONLY AVAILABLE TO STREAM IN THE UNITED STATES.Please note: This app features Nielsen’s proprietary measurement software which will allow you to contribute to market research, like Nielsen’s TV Ratings.To learn more about the digital measurement products and your choices in regard to them, please visit www.nielsen.com/digitalprivacy for more information.
+	Security:
+		This APK is signed by A&E Television Networks Mobile and upgrades your existing app.
+		Certificate fingerprints:
+		SHA-1:
+		87ee1e1fba4db6402c61756cf178cd128293b900
+		SHA-256:
+		9ef9b567e6490f8aabffd20739d0c7776bd61d25a369922160ab7bb973e5db6c
+		The cryptographic signature guarantees the file is safe to install and was not tamperedwith in any way.
+		File hashes:
+		MD5:
+		bb07d608ac6d1f7d73087a4163c61eec
+		SHA-1:
+		1208218dab47df5cdadefc6104c337c63a76dff3
+		SHA-256:
+		b7bb501065065dc166105aa2855d5575242940284dbe927cfd0d55f4b74739ab
+		Verify the file you downloaded is not corrupt and was not tampered with using the file hashes above.
+	Specs:
+		Version: 3.1.8 (35318)arm64-v8a + armeabi + armeabi-v7a + mips + mips64 + x86 + x86_64 Package: com.aetn.aetv.watch33 downloads
+		19.27 MB (20,209,400 bytes)
+		Min: Android 4.4 (Kitkat, API 19) Target: Android 8.0 (Oreo, API 26)
+		nodpi
+		MD5, SHA-1, SHA-256signatures
+		Uploaded January 29, 2019 at 7:34PM UTC by HoldTheDoor
+
+
+
+App Name: A&E - Watch Full Episodes of TV Shows
+	Version Name: A&E - Watch Full Episodes of TV Shows 3.1.7 (Android 4.4+)
+	Developer: A&E Television Networks Mobile
+	Description:
+		Watch your favorite Shows without lifting a finger!A&E now auto-plays to the next EpisodeLet us know how it's working at [email protected]
+		Watch hours of Leah Remini: Scientology and the Aftermath, Live PD, The First 48, Born This Way, Intervention, and more! All your favorite A&E shows are available wherever and whenever you want, right on your Android device.The A&E app is a great new way to access full episodes and clips from all of your favorite A&E shows. New content is added all the time. The A&E app allows you to:•Watch full episodes and clips of your favorite A&E series including:-60 Days In-Beyond Scared Straight-Born This Way-Escaping Polygamy-Hoarders-Intervention-Leah Remini: Scientology and the Aftermath-Live PD-The Lowe Files-The First 48-Storage Wars-Storage Wars: Miami-The First 48-Wahlburgers•See exclusive clips and deleted scenes from A&E shows, never before shown on television.The A&E app is free to use. If your TV provider is supported you can sign in and get access to even more content. A&E CONTENT IS ONLY AVAILABLE TO STREAM IN THE UNITED STATES.Please note: This app features Nielsen’s proprietary measurement software which will allow you to contribute to market research, like Nielsen’s TV Ratings.To learn more about the digital measurement products and your choices in regard to them, please visit www.nielsen.com/digitalprivacy for more information.
+	Security:
+		This APK is signed by A&E Television Networks Mobile and upgrades your existing app.
+		Certificate fingerprints:
+		SHA-1:
+		87ee1e1fba4db6402c61756cf178cd128293b900
+		SHA-256:
+		9ef9b567e6490f8aabffd20739d0c7776bd61d25a369922160ab7bb973e5db6c
+		The cryptographic signature guarantees the file is safe to install and was not tamperedwith in any way.
+		File hashes:
+		MD5:
+		7889359368ca2a585b3365d50ef21a5d
+		SHA-1:
+		47a460a9e9e4c2f44d34f9b4821b6d06c96f40ed
+		SHA-256:
+		f856ede2a49bf910d7b69c421dffba7bb5e583940fd0e43f06d7d1148a588a40
+		Verify the file you downloaded is not corrupt and was not tampered with using the file hashes above.
+	Specs:
+		Version: 3.1.7 (35030)arm64-v8a + armeabi + armeabi-v7a + mips + mips64 + x86 + x86_64 Package: com.aetn.aetv.watch57 downloads
+		19.32 MB (20,260,940 bytes)
+		Min: Android 4.4 (Kitkat, API 19) Target: Android 8.0 (Oreo, API 26)
+		nodpi
+		MD5, SHA-1, SHA-256signatures
+		Uploaded November 20, 2018 at 6:07PM UTC by HoldTheDoor
+
+
+
+App Name: A&E - Watch Full Episodes of TV Shows
+	Version Name: A&E - Watch Full Episodes of TV Shows 3.1.6 (Android 4.4+)
+	Developer: A&E Television Networks Mobile
+	Description:
+		Fixed a few bugs and made things run a bit smoother! Please reach out to us at [email protected] with feedback
+		Watch hours of Leah Remini: Scientology and the Aftermath, Live PD, The First 48, Born This Way, Intervention, and more! All your favorite A&E shows are available wherever and whenever you want, right on your Android device.The A&E app is a great new way to access full episodes and clips from all of your favorite A&E shows. New content is added all the time. The A&E app allows you to:•Watch full episodes and clips of your favorite A&E series including:-60 Days In-Beyond Scared Straight-Born This Way-Escaping Polygamy-Hoarders-Intervention-Leah Remini: Scientology and the Aftermath-Live PD-The Lowe Files-The First 48-Storage Wars-Storage Wars: Miami-The First 48-Wahlburgers•See exclusive clips and deleted scenes from A&E shows, never before shown on television.The A&E app is free to use. If your TV provider is supported you can sign in and get access to even more content. A&E CONTENT IS ONLY AVAILABLE TO STREAM IN THE UNITED STATES.Please note: This app features Nielsen’s proprietary measurement software which will allow you to contribute to market research, like Nielsen’s TV Ratings.To learn more about the digital measurement products and your choices in regard to them, please visit www.nielsen.com/digitalprivacy for more information.
+	Security:
+		This APK is signed by A&E Television Networks Mobile and upgrades your existing app.
+		Certificate fingerprints:
+		SHA-1:
+		87ee1e1fba4db6402c61756cf178cd128293b900
+		SHA-256:
+		9ef9b567e6490f8aabffd20739d0c7776bd61d25a369922160ab7bb973e5db6c
+		The cryptographic signature guarantees the file is safe to install and was not tamperedwith in any way.
+		File hashes:
+		MD5:
+		d496f2652656f769914961f9bf7c34ed
+		SHA-1:
+		94a605fd4990e8b9baa69f7155a605a8fc538e5b
+		SHA-256:
+		2751f5a457bae917c088e9c09b8f584da95de8e2f10282af8aad285691a7254a
+		Verify the file you downloaded is not corrupt and was not tampered with using the file hashes above.
+	Specs:
+		Version: 3.1.6 (34897)arm64-v8a + armeabi + armeabi-v7a + mips + mips64 + x86 + x86_64 Package: com.aetn.aetv.watch65 downloads
+		19.3 MB (20,233,255 bytes)
+		Min: Android 4.4 (Kitkat, API 19) Target: Android 8.0 (Oreo, API 26)
+		nodpi
+		MD5, SHA-1, SHA-256signatures
+		Uploaded October 15, 2018 at 2:52PM UTC by HoldTheDoor
+
+
+
+App Name: A&E - Watch Full Episodes of TV Shows
+	Version Name: A&E - Watch Full Episodes of TV Shows 3.1.5 (Android 4.4+)
+	Developer: A&E Television Networks Mobile
+	Description:
+		We updated the Video playback experience to make it smootherLet us know how it works - send feedback to [email protected]
+		Watch hours of Leah Remini: Scientology and the Aftermath, Live PD, The First 48, Born This Way, Intervention, and more! All your favorite A&E shows are available wherever and whenever you want, right on your Android device.The A&E app is a great new way to access full episodes and clips from all of your favorite A&E shows. New content is added all the time. The A&E app allows you to:•Watch full episodes and clips of your favorite A&E series including:-60 Days In-Beyond Scared Straight-Born This Way-Escaping Polygamy-Hoarders-Intervention-Leah Remini: Scientology and the Aftermath-Live PD-The Lowe Files-The First 48-Storage Wars-Storage Wars: Miami-The First 48-Wahlburgers•See exclusive clips and deleted scenes from A&E shows, never before shown on television.The A&E app is free to use. If your TV provider is supported you can sign in and get access to even more content. A&E CONTENT IS ONLY AVAILABLE TO STREAM IN THE UNITED STATES.Please note: This app features Nielsen’s proprietary measurement software which will allow you to contribute to market research, like Nielsen’s TV Ratings.To learn more about the digital measurement products and your choices in regard to them, please visit www.nielsen.com/digitalprivacy for more information.
+	Security:
+		This APK is signed by A&E Television Networks Mobile and upgrades your existing app.
+		Certificate fingerprints:
+		SHA-1:
+		87ee1e1fba4db6402c61756cf178cd128293b900
+		SHA-256:
+		9ef9b567e6490f8aabffd20739d0c7776bd61d25a369922160ab7bb973e5db6c
+		The cryptographic signature guarantees the file is safe to install and was not tamperedwith in any way.
+		File hashes:
+		MD5:
+		ba541847eba93118f6065eb64fed9ab2
+		SHA-1:
+		617b3278de3e799c1aead78370b45de6a01c5f29
+		SHA-256:
+		73dfb4e1fd899a111e421ffe1b989dfcc6ecd8465c40b39cd23d71098359d9ce
+		Verify the file you downloaded is not corrupt and was not tampered with using the file hashes above.
+	Specs:
+		Version: 3.1.5 (34744)arm64-v8a + armeabi + armeabi-v7a + mips + mips64 + x86 + x86_64 Package: com.aetn.aetv.watch59 downloads
+		19.29 MB (20,223,803 bytes)
+		Min: Android 4.4 (Kitkat, API 19) Target: Android 8.0 (Oreo, API 26)
+		nodpi
+		MD5, SHA-1, SHA-256signatures
+		Uploaded September 12, 2018 at 8:45PM UTC by HoldTheDoor
+
+
+
+App Name: A&E - Watch Full Episodes of TV Shows
+	Version Name: A&E - Watch Full Episodes of TV Shows 3.1.1 (Android 4.4+)
+	Developer: A&E Television Networks Mobile
+	Description:
+		A few bug fixes and some polish to make things run smoother! Please reach out to us at [email protected] with feedback!
+		Watch hours of Leah Remini: Scientology and the Aftermath, Live PD, The First 48, Born This Way, Intervention, and more! All your favorite A&E shows are available wherever and whenever you want, right on your Android device.The A&E app is a great new way to access full episodes and clips from all of your favorite A&E shows. New content is added all the time. The A&E app allows you to:•Watch full episodes and clips of your favorite A&E series including:-60 Days In-Beyond Scared Straight-Born This Way-Escaping Polygamy-Hoarders-Intervention-Leah Remini: Scientology and the Aftermath-Live PD-The Lowe Files-The First 48-Storage Wars-Storage Wars: Miami-The First 48-Wahlburgers•See exclusive clips and deleted scenes from A&E shows, never before shown on television.The A&E app is free to use. If your TV provider is supported you can sign in and get access to even more content. A&E CONTENT IS ONLY AVAILABLE TO STREAM IN THE UNITED STATES.Please note: This app features Nielsen’s proprietary measurement software which will allow you to contribute to market research, like Nielsen’s TV Ratings.To learn more about the digital measurement products and your choices in regard to them, please visit www.nielsen.com/digitalprivacy for more information.
+	Security:
+		This APK is signed by A&E Television Networks Mobile and upgrades your existing app.
+		Certificate fingerprints:
+		SHA-1:
+		87ee1e1fba4db6402c61756cf178cd128293b900
+		SHA-256:
+		9ef9b567e6490f8aabffd20739d0c7776bd61d25a369922160ab7bb973e5db6c
+		The cryptographic signature guarantees the file is safe to install and was not tamperedwith in any way.
+		File hashes:
+		MD5:
+		4c00e4ac504f9432776268349eeb9104
+		SHA-1:
+		c5c768bee955e9fd467944de34bf8dcacafb9307
+		SHA-256:
+		07e7c43076fa58309ff4fa4e4b554f1c31c2f1a8985bc61a36dfd68a810cef44
+		Verify the file you downloaded is not corrupt and was not tampered with using the file hashes above.
+	Specs:
+		Version: 3.1.1 (34173)arm64-v8a + armeabi + armeabi-v7a + mips + mips64 + x86 + x86_64 Package: com.aetn.aetv.watch203 downloads
+		18.72 MB (19,624,616 bytes)
+		Min: Android 4.4 (Kitkat, API 19)  Target: Android 7.1 (Nougat MR1, API 25)
+		nodpi
+		MD5, SHA-1, SHA-256signatures
+		Uploaded April 19, 2018 at 11:30PM UTC by Mike
+
+
+
+App Name: A&E - Watch Full Episodes of TV Shows
+	Version Name: A&E - Watch Full Episodes of TV Shows 3.0.3 (Android 4.4+)
+	Developer: A&E Television Networks Mobile
+	Description:
+		APK Notes:New Cable TV Apps
+		Hey, A&E Fans!Just fixing some bugs with version 3.0.3, but here's a reminder of all the new stuff in version 3.0:- Search for your favorite shows by name- Keep track of what you've watched and where you left off- Easily browse through our full library of shows- Quickly jump to any season to find Full Episodes and ExtrasWe'd love to hear what you think! Please send your comments to [email protected]
+		Watch hours of Leah Remini: Scientology and the Aftermath, Live PD, The First 48, Born This Way, Intervention, and more! All your favorite A&E shows are available wherever and whenever you want, right on your Android device.The A&E app is a great new way to access full episodes and clips from all of your favorite A&E shows. New content is added all the time. The A&E app allows you to:•Watch full episodes and clips of your favorite A&E series including:-60 Days In-Beyond Scared Straight-Born This Way-Escaping Polygamy-Hoarders-Intervention-Leah Remini: Scientology and the Aftermath-Live PD-The Lowe Files-The First 48-Storage Wars-Storage Wars: Miami-The First 48-Wahlburgers•See exclusive clips and deleted scenes from A&E shows, never before shown on television.The A&E app is free to use. If your TV provider is supported you can sign in and get access to even more content. More TV providers coming very soon!A&E CONTENT IS ONLY AVAILABLE TO STREAM IN THE UNITED STATES.Please note: This app features Nielsen’s proprietary measurement software which will allow you to contribute to market research, like Nielsen’s TV Ratings.To learn more about the digital measurement products and your choices in regard to them, please visit www.nielsen.com/digitalprivacy for more information.
+	Security:
+		This APK is signed by A&E Television Networks Mobile and upgrades your existing app.
+		Certificate fingerprints:
+		SHA-1:
+		87ee1e1fba4db6402c61756cf178cd128293b900
+		SHA-256:
+		9ef9b567e6490f8aabffd20739d0c7776bd61d25a369922160ab7bb973e5db6c
+		The cryptographic signature guarantees the file is safe to install and was not tamperedwith in any way.
+		File hashes:
+		MD5:
+		568615e20027f510abce6bde3907f8e1
+		SHA-1:
+		a18e7afa56db36f8ac96e6a6fbd49307d71ba921
+		SHA-256:
+		b2199edfe2accec3bcaa211c356516200c9bbf5ad43dc592ed07bf6d4baf4d3c
+		Verify the file you downloaded is not corrupt and was not tampered with using the file hashes above.
+	Specs:
+		Version: 3.0.3 (33910)arm64-v8a + armeabi + armeabi-v7a + mips + mips64 + x86 + x86_64 Package: com.aetn.aetv.watch86 downloads
+		17.26 MB (18,094,321 bytes)
+		Min: Android 4.4 (Kitkat, API 19) Target: Android 7.1 (Nougat MR1, API 25)
+		nodpi
+		MD5, SHA-1, SHA-256signatures
+		Uploaded February 22, 2018 at 12:45AM UTC by Mike
+
+
+
