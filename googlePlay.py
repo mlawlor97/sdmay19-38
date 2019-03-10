@@ -1,10 +1,10 @@
-from utils import RateLimiter, requestHTML, safeExecute, getPermissions, getApkValues
+from utils import RateLimiter, requestHTML, safeExecute, getPermissions, getApkValues, mkStoreDirs
 from utils import writeAppDB, writeVersionDB, checkAppDB, checkVersionDB  # DB connectors
 from SupportFiles.webDriverUtils import WebDriver
 from SupportFiles.crawlerBase import CrawlerBase
 from SupportFiles.metaDataBase2 import DataCollectionBase
 # from googleplayapi.googleplay import GooglePlayAPI
-from googleplayapi.gpapi.googleplay import GooglePlayAPI, SecurityCheckError
+from googleplayapi.gpapi.googleplay import GooglePlayAPI, SecurityCheckError, RequestError
 
 from datetime import datetime
 import uuid
@@ -42,11 +42,11 @@ class GoogleVersion(DataCollectionBase):
 # noinspection PyCompatibility
 class GooglePlay(CrawlerBase):
     """Webcrawler for the googleplay store."""
-    rootDir = ""    # Change for different save path
-    extraData = 3   # Change when adding more fields
+    siteUrl="https://play.google.com"
+    rateLimiter = RateLimiter(10, 3);
 
-    def __init__(self, siteUrl="https://play.google.com", rateLimiter=RateLimiter(10, 3)):
-        super().__init__(siteUrl, rateLimiter)
+    def __init__(self, siteUrl=siteUrl, limiter=rateLimiter):
+        super().__init__(siteUrl, limiter)
         self.webDriver = WebDriver()
         self.subCategories = []
         self.commonCollections = [
@@ -59,8 +59,7 @@ class GooglePlay(CrawlerBase):
         self.gpa = GooglePlayAPI()
         # self.gpa.login("sdmay19@gmail.com", "Forensics4")
         self.gpa.login(gsfId=3948690411096122542, authSubToken="FwfSBWszDgviSe1ivuuvKa0qjnOTUlcpvGzS9sEtSSdn59NrCqTO9oeyE2h5qiorr-ycCw.")
-        safeExecute(os.mkdir, self.rootDir + 'apks')
-        safeExecute(os.mkdir, self.rootDir + 'apks/googleplay')
+        mkStoreDirs(storeName='googleplay')
 
     def crawl(self):
         # Get categories
@@ -100,8 +99,9 @@ class GooglePlay(CrawlerBase):
         soup = soup.find('div', class_="card-list")
         apps = soup('a', class_="title")
 
-        for app in apps:
+        for app in apps[0:6]:
             self.scrapeApp(f"{self.siteUrl}{app.attrs['href']}")
+        exit(0)
 
     def scrapeApp(self, appPage):
         soup = requestHTML(appPage)
@@ -115,16 +115,17 @@ class GooglePlay(CrawlerBase):
             print(appPage)
             return
         name = name.text.strip()
-        safeExecute(os.mkdir, self.rootDir + 'apks/googleplay/' + name)
+        # safeExecute(os.mkdir, os.path.expanduser(self.rootDir + "/" + name))
+        appDir = mkStoreDirs(appName=name)
 
         if appEntry is None:
             playData = GoogleData(appPage, soup).getAll()
             price, package = playData.metaData.get('price'), playData.metaData.get('package')
             id_ = writeAppDB("GooglePlay", name, appPage, playData.metaData) 
         else:
+            id_ = appEntry.get('_id')
             appEntry = appEntry.get('metadata')
             price, package = appEntry.get('price'), appEntry.get('package')
-            id_ = appEntry.get('_id')
         
         version = safeExecute(soup.find('div', string="Current Version").next_sibling.find, 'span')
         if version is None:
@@ -132,35 +133,49 @@ class GooglePlay(CrawlerBase):
         version = version.text
 
         versions = checkVersionDB(id_, version)
-        if versions != [] and versions[0].get('metadata').__len__() - 3 != GoogleVersion().methods.__len__():
+        if versions != []:
+            # print(versions[0].get('apk_file_path'))  # Checks if filepath is present
             return
         playVersion = GoogleVersion(appPage, soup).getAll()
+        calculatedVals = None
+        filePath = None
 
         # Downloading google play apks
         if price == "$0.00":
-            permissions, filePath = self.downloadApk(package, "apks/googleplay/" + name)
-            playVersion.metaData.update({'permissions': permissions, 'apk_file_path': filePath})
-            apk_values = getApkValues(filePath)
-            playVersion.metaData.update({'apk_values': apk_values})
+            # permissions, filePath = self.downloadApk(package, appDir)
+            filePath = self.downloadApk(package, appDir)
+            # if filePath:
+            #     apk_values = getApkValues(filePath)
+            #     calculatedVals = dict({
+            #         'permissions'   : permissions,
+            #         'apk_values'    : apk_values
+            #     })
             
-        writeVersionDB("GooglePlay", name, id_, version, playVersion.metaData)
+        writeVersionDB("GooglePlay", name, id_, version, playVersion.metaData, filePath)
 
     def downloadApk(self, package, savePath):
         self.gpa.log(package)
-        fl = self.gpa.download(package)
-        savePath = self.rootDir + savePath + "/" + uuid.uuid4().hex + ".apk"
+        try:
+            fl = self.gpa.download(package, versionCode=None)
+        except RequestError:
+            print(f"failed to download {package}")
+            # return (None, None)
+            return None
+        savePath = savePath + "/" + uuid.uuid4().hex + ".apk"
         with open(savePath, "wb") as apk_file:
             for chunk in fl.get("file").get("data"):
                 apk_file.write(chunk)
-            return (getPermissions(savePath), savePath)
+        # return (getPermissions(savePath), savePath)
+        return savePath
 
 
 def main():
-    gp = GooglePlay()
-    try:
-        GooglePlay().crawl()
-    except KeyboardInterrupt:
-        print("Ended Early")
+    # GooglePlay().scrapeApp("https://play.google.com/store/apps/details?id=com.google.vr.expeditions")
+    GooglePlay().getApps("https://play.google.com/store/apps/collection/promotion_30025e1_daydream_storecategory_topapps?clp=an8KNgowcHJvbW90aW9uXzMwMDI1ZTFfZGF5ZHJlYW1fc3RvcmVjYXRlZ29yeV90b3BhcHBzEAcYAxJFCj92cl90b3BfZGV2aWNlX2ZlYXR1cmVkX2NhdGVnb3J5X2FwcHNfX18xX3Byb21vXzE1NDMzNTYyOTQ1NzYwMDAQDBgD:S:ANO1ljIyjUI&gsr=CoEBan8KNgowcHJvbW90aW9uXzMwMDI1ZTFfZGF5ZHJlYW1fc3RvcmVjYXRlZ29yeV90b3BhcHBzEAcYAxJFCj92cl90b3BfZGV2aWNlX2ZlYXR1cmVkX2NhdGVnb3J5X2FwcHNfX18xX3Byb21vXzE1NDMzNTYyOTQ1NzYwMDAQDBgD:S:ANO1ljL4zsA")
+    # try:
+    #     GooglePlay().crawl()
+    # except KeyboardInterrupt:
+    #     print("Ended Early")
     print("Finished")
 
 

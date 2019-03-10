@@ -8,6 +8,7 @@ from pymongo import MongoClient
 import json
 from time import sleep
 from threading import Thread
+import hashlib
 # from boxsdk import DevelopmentClient
 
 class RateLimiter:
@@ -42,6 +43,8 @@ class MongoConnector:
 # Global variable to keep from rate limiting websites
 rl = RateLimiter(0, 0)
 db = MongoConnector()
+root = "~/Desktop"
+store = ''
 # client = DevelopmentClient()
 
 
@@ -55,7 +58,6 @@ def setRateLimit(maxPages, waitTime):
     global rl
     rl = RateLimiter(maxPages, waitTime)
 
-
 def createPath(*extensions, basePath=os.getcwd()):
     """Helper method to map strings into a path
 
@@ -65,7 +67,6 @@ def createPath(*extensions, basePath=os.getcwd()):
     """
     return os.path.join(basePath, *extensions)
 
-
 def removeSpecialChars(string):
     """Removes special characters from strings
 
@@ -73,7 +74,6 @@ def removeSpecialChars(string):
     :return: Given string with special characters removed
     """
     return re.sub(r'\W+', ' ', string.lower())
-
 
 def requestHTML(url='', *html):
     """Gets formatted HTML of given url
@@ -93,7 +93,6 @@ def requestHTML(url='', *html):
         return BeautifulSoup(html[0], 'html.parser')
     return BeautifulSoup(requests.get(url).content, 'html.parser')
 
-
 def logToFile(outputFile, line='', writeType='a'):
     """Writes given input to specified file
 
@@ -105,7 +104,6 @@ def logToFile(outputFile, line='', writeType='a'):
     f.write(line)
     f.close()
 
-
 def downloadApk(apkDownloadLink, savePath, fileName, directoryName):
     """Downloads given apk in the background to reduce time
 
@@ -114,27 +112,14 @@ def downloadApk(apkDownloadLink, savePath, fileName, directoryName):
     :param fileName:
     :param directoryName:
     """
-    Thread(target=apkThread, args=(apkDownloadLink, savePath, fileName, directoryName)).start()
-
-
-def apkThread(apkDownloadLink, savePath, fileName, directoryName):
-    """Process to download APK files
-
-    :param apkDownloadLink: APK to be downloaded
-    :param savePath: Where to save APK files
-    :param fileName:
-    :param directoryName:
-    """
-    sleep(0.5)
-    session = requests.Session()
-    s = session.get(apkDownloadLink).content
-    logToFile(savePath, s, 'wb')
-    try:
-        # uploadAPK(savePath, fileName, directoryName)
-        os.remove(savePath)
-    except Exception:
-        os.remove(savePath)
-
+    with requests.get(apkDownloadLink, stream=True) as r:
+        with open(savePath, 'wb') as f:
+            for chunk in r.iter_content(chunk_size=8192): 
+                if chunk: # filter out keep-alive new chunks
+                    f.write(chunk)
+                    f.flush()
+    return savePath
+    # return (getPermissions(savePath), savePath, getApkValues(savePath))
 
 def writeOutput(destination='DB', writeType='w', dataDict=None):
     """Writes Output into given destination
@@ -149,57 +134,78 @@ def writeOutput(destination='DB', writeType='w', dataDict=None):
     logToFile(destination, writeType=writeType)
     logToFile(destination, json.dumps(dataDict, indent=4) + '\n')
 
+def writeAppDB(storeName='', appName='', appUrl='', appPkg='', reviewsPath='', data=dict({})):
+    """Writes New Application Entry to the DB
 
-def writeAppDB(storeName='', appName='', appUrl='', data=None):
+    :param storeName: Name of the appStore
+    :param appName: Name of the application
+    :param appUrl: Url of the application
+    :param data: A dictionary of all the metadata being collected  
+    """
     if data is None:
         data = dict({})
 
     global db
     appDict = {
-        "store_id"  : storeName,
-        "app_name"  : appName.lower(),
-        "app_url"   : appUrl,
-        "metadata"  : data
+        "store_id"     : storeName,
+        "app_name"     : appName.lower(),
+        "app_url"      : appUrl,
+        "app_package"  : appPkg,
+        "metadata"     : data,
+        "reviews_path" : reviewsPath
     }
     result = db.applications.insert_one(appDict)
     return result.inserted_id
 
-
-def writeVersionDB(storeName='', appName='', appId='', version='', data=None):
+def writeVersionDB(storeName='', appName='', appId='', version='', data=None, filePath=''):
     if data is None:
         data = dict({})
 
+    if filePath:
+        apkVals = dict({
+            "extracted" : getApkValues(filePath),
+            "calculated" : genHashValues(filePath)
+        })
+    else:
+        apkVals = None
+
     global db
     appDict = {
-        "store_id"  : storeName,
-        "app_name"  : appName,
-        "app_id"    : appId,
-        "version"   : version,
-        "metadata"  : data
+        "store_id"      : storeName,
+        "app_name"      : appName,
+        "app_id"        : appId,
+        "version"       : version,
+        "metadata"      : data,
+        "apk_location" : filePath,
+        "apk_info"    : apkVals
     }
     result = db.versions.insert_one(appDict)
     return result.inserted_id
 
 def checkAppDB(appUrl=None):
+    """Returns the application entry from the DB based off the url"""
     global db
     return db.applications.find_one({"app_url": appUrl})
 
 def checkVersionDB(appId, version=None):
+    """Returns a list of versions for a specified application
+    
+    :param appId: ObjectId retrieved from the application entry from the DB
+    :returns: list of all versions associated with an application
+    """
     global db
     body = {"app_id": appId, "version": version} if version else {"app_id": appId}
     return list(db.versions.find(body))
 
-# def uploadAPK(filePath, fileName):
-    # folder_id = '54833153949'
-    # client.folder(folder_id).upload(filePath, fileName)
-
 def getPermissions(apkFilePath, permList=list()):
-    p = Popen(['java', '-jar', 'SupportFiles/Permissions.jar', apkFilePath], stdout=PIPE, stderr=STDOUT)
+    permLoc = os.path.join("SupportFiles", "Permissions.jar")
+    p = Popen(['java', '-jar', permLoc, apkFilePath], stdout=PIPE, stderr=STDOUT)
     [permList.append(line.strip().decode('ascii')) for line in p.stdout]
     return permList
 
-def getApkValues(apkFilePath, shaList=list()):
-    p1 = Popen(("unzip -p " + apkFilePath + " META-INF/CERT.RSA").split(), stdout=PIPE)
+def getApkValues(apkFilePath):
+    metaCert = os.path.join("META-INF", "CERT.RSA")
+    p1 = Popen(['unzip', '-p', apkFilePath, metaCert], stdout=PIPE)
     p = Popen(['keytool', '-printcert'], stdin=p1.stdout, stdout=PIPE)
     stdout, stderr = p.communicate()
 
@@ -210,8 +216,29 @@ def getApkValues(apkFilePath, shaList=list()):
             vals = args[1].strip().split()
             type_ = vals[0].rstrip(":")
             if type_ == "MD5" or type_ == "SHA1" or type_ == "SHA256":
-                id_dict.update({type_: vals})
+                id_dict.update({type_: vals[1].replace(":", "")})
     return id_dict
+
+def genHashValues(apkFilePath):
+    id_dict = dict({})
+
+    with open(apkFilePath, "rb") as f:
+        bytes = f.read()
+        id_dict.update({"MD5" : hashlib.md5(bytes).hexdigest()})
+        id_dict.update({"SHA1" : hashlib.sha1(bytes).hexdigest()})
+        id_dict.update({"SHA256" : hashlib.sha256(bytes).hexdigest()})
+
+    return id_dict
+
+def mkStoreDirs(storeName=None, appName=None):
+    global root, store
+    if storeName:
+        safeExecute(os.mkdir, os.path.expanduser(root + '/apk'))
+        safeExecute(os.mkdir, os.path.expanduser(root + '/apk/' + storeName))
+        os.chdir(os.path.expanduser(root + '/apk/' + storeName))
+    else:
+        safeExecute(os.mkdir, appName)
+        return os.path.expanduser(os.getcwd() + '/' + appName + '/')
 
 def safeExecute(func, *args, default=None, error=BaseException):
     try:
