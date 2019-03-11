@@ -7,7 +7,6 @@ from SupportFiles.crawlerBase import CrawlerBase
 from threading import Thread, Lock
 from datetime import datetime, timedelta
 from time import sleep, time
-import os
 import uuid
 
 
@@ -43,6 +42,21 @@ class GetPureVersion(DataCollectionBase):
     _getSign    = ("signature",     lambda _: str(_.soup.find('strong', string='Signature: ').next_sibling).strip())
     _getSha     = ("sha1",           lambda _: str(_.soup.find('strong', string='File SHA1: ').next_sibling).strip())
 
+
+class GetPureVariation(GetPureVersion):
+    def date(self):
+        date = str(self.soup.find('strong', string='Update on: ').next_sibling)
+        date = datetime.strptime(date, "%Y-%m-%d")
+        return date
+
+    _getType    = ("apk_type",      lambda _: _.url.split('-')[-1])
+    _getSize    = ("file_size",     lambda _: str(_.soup.find('strong', string='File Size: ').next_sibling))
+    _getReqs    = GetPureVersion._getReqs
+    _getArch    = ("architecture",  lambda _: str(_.soup.find('strong', string='Architecture: ').next_sibling))
+    _getPubDate = ("publish_date",  lambda _: _.date())
+    _getPatch   = ("patch_notes",   lambda _: _.additionalSoups['patch'].find('div').text)
+    _getSign    = GetPureVersion._getSign
+    _getSha     = GetPureVersion._getSha
 
 # noinspection PyCompatibility
 class GetPureReview(DataCollectionBase):
@@ -119,7 +133,7 @@ class ApkPure(CrawlerBase):
         cats = self.getCategories([])
         threads = []
 
-        for cat in cats[2:3]:
+        for cat in cats:
             threads.append(Thread(target=self._crawlCategory, args=(cat, )))
             threads[-1].start()
 
@@ -149,8 +163,8 @@ class ApkPure(CrawlerBase):
                 appName, id_ = self.scrapeAppData(currUrl)
 
                 if appName:
-                    # self._collectAllVersions(appName, id_, currUrl + '/versions')
-                    self._collectAllReviews(appName)   
+                    self._collectAllVersions(appName, id_, currUrl + '/versions')
+                    # self._collectAllReviews(appName)   
 
             if appList.__len__() is 0:
                 break             
@@ -192,7 +206,7 @@ class ApkPure(CrawlerBase):
 
         return (appName, id_)
 
-    def _collectAllVersions(self, name, id_, url):
+    def _collectAllVersions(self, name, id_, url, variation=False):
         """Creates list of all present versions and passes them for processing
         
         :param name: App Name
@@ -203,11 +217,13 @@ class ApkPure(CrawlerBase):
         versionList = soup.find(class_='ver')
 
         if versionList:
-            self._scrapeVersions(name, id_, url, versionList('li'))
+            self._scrapeVersions(name, id_, url, versionList('li'), variation)
+        elif variation:
+            self._scrapeVersions(name, id_, url, soup(class_='table-row')[1:], variation, soup)
         else:
             logToFile('Versions.txt', f"{url}\n")
 
-    def _scrapeVersions(self, name, id_, url, versionList):
+    def _scrapeVersions(self, name, id_, url, versionList, variation, soup=None):
         """Collects all information for all versions for an application. Only runs on versions that have not been logged into the database. Writes versions into database and downloads apk file.
         
         :param name: App Name
@@ -217,8 +233,9 @@ class ApkPure(CrawlerBase):
         """
         def _loadVersions(index):
             """Opens up version pop-up for all new versions"""
-            for v in versionList[0: difference]:
-                self.webDriver.clickPopUp("ver-item-m", "mfp-close", index, False)
+            for v in versionList[0: None]:
+                popup = "version-info" if variation == True else "pop"
+                self.webDriver.clickPopUp(popup, "mfp-close", index, False)
                 self.webDriver.clickAway("mfp-close", "class name")
                 index += 1
 
@@ -229,30 +246,35 @@ class ApkPure(CrawlerBase):
                 while 'loading..' in v.find(class_='ver-whats-new'):
                     print('loading...')
                     v = self.webDriver.fetchPage()
-            return v.find(class_='ver')('li')
+            return v.find(class_='ver')('li') if variation is False else v(class_='table-row')[1:]
+
+        if not versionList[0].find(class_='pop') and variation == False:
+            [self._collectAllVersions(name, id_, self.siteUrl + v.a['href'], variation=True) for v in versionList]
+            return
 
         versionsLogged = checkVersionDB(id_)
-        difference = versionList.__len__() - versionsLogged.__len__()
-        if difference is 0:
-            return
+        # difference = versionList.__len__() - versionsLogged.__len__()
+        # if difference is 0:
+        #     return
 
         self.lock.acquire() 
         safeExecute(self._loadPage, url, 'ver')
         versionList = safeExecute(_loadVersions, 0, default=versionList)
         self.lock.release()
         appDir = mkStoreDirs(appName=name)
-        # reviewDir = mkStoreDirs(appName=name, apk=False)
         
-        for v in versionList[0: difference]:
+        for v in versionList[0: None]:
             version = safeExecute(v.find('span').text.lstrip, 'V', default=None)
+            if variation is True:
+                version = url.split('/')[-1].split('-')[0]
             if version is None:
                 print(f"{url} has version problems")
             
-            pureVersion = GetPureVersion(url, v).getAll()
-            path = self.scrapeApk(f"{self.siteUrl}{v.find(href=True)['href']}", appDir)
-            print(path)
+            pureVersion = GetPureVersion(url, v).getAll() if variation is False else GetPureVariation(url, v, patch=soup.find(class_='whatsnew')).getAll()
+            path = self.scrapeApk(f"{self.siteUrl}{v(href=True)[-1]['href']}", appDir)
+            # print(pureVersion.metaData)
             writeVersionDB("ApkPure", name, id_, version, pureVersion.metaData, path)
-            exit(0)
+        # exit(0)
 
     def _collectAllReviews(self, appName):
         """Goes through each page of reviews and sends them for further processing
@@ -271,9 +293,7 @@ class ApkPure(CrawlerBase):
         while self._scrapeReviews(f"{reviewsUrl}{pageNumber}", baseUrl, reviewList):
             pageNumber += 1
 
-        print(reviewList.__len__())
         writeOutput(dir_ + "review.txt", reviewList)
-        exit(0)        
 
     def _scrapeReviews(self, groupUrl, url, reviewList):
         """Scrapes all reviews on a review page"""
@@ -306,7 +326,7 @@ class ApkPure(CrawlerBase):
 
         if downloadLink:
             fileName = uuid.uuid4().hex + ".apk"
-            return downloadApk(downloadLink.get('href'), savePath + fileName, fileName, savePath)
+            return downloadApk(downloadLink.get('href'), savePath + '/' + fileName)
         return None
 
     def _loadPage(self, url, verifier, searchBy="class name"):

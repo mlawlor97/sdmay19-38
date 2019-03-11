@@ -43,7 +43,7 @@ class MongoConnector:
 # Global variable to keep from rate limiting websites
 rl = RateLimiter(0, 0)
 db = MongoConnector()
-root = "~/Desktop"
+root = "~/Desktop/lss/research/csafe-mobile/senior-design"
 store = ''
 # client = DevelopmentClient()
 
@@ -104,7 +104,7 @@ def logToFile(outputFile, line='', writeType='a'):
     f.write(line)
     f.close()
 
-def downloadApk(apkDownloadLink, savePath, fileName, directoryName):
+def downloadApk(apkDownloadLink, savePath):
     """Downloads given apk in the background to reduce time
 
     :param apkDownloadLink: APK to be downloaded
@@ -112,6 +112,8 @@ def downloadApk(apkDownloadLink, savePath, fileName, directoryName):
     :param fileName:
     :param directoryName:
     """
+    savePath = removeSpecialChars(savePath).replace(' ', '_')
+    savePath = os.path.normpath(savePath)
     with requests.get(apkDownloadLink, stream=True) as r:
         with open(savePath, 'wb') as f:
             for chunk in r.iter_content(chunk_size=8192): 
@@ -119,7 +121,6 @@ def downloadApk(apkDownloadLink, savePath, fileName, directoryName):
                     f.write(chunk)
                     f.flush()
     return savePath
-    # return (getPermissions(savePath), savePath, getApkValues(savePath))
 
 def writeOutput(destination='DB', writeType='w', dataDict=None):
     """Writes Output into given destination
@@ -134,7 +135,7 @@ def writeOutput(destination='DB', writeType='w', dataDict=None):
     logToFile(destination, writeType=writeType)
     logToFile(destination, json.dumps(dataDict, indent=4) + '\n')
 
-def writeAppDB(storeName='', appName='', appUrl='', appPkg='', reviewsPath='', data=dict({})):
+def writeAppDB(storeName='', appName='', appUrl='', appPkg='', data=dict({}), reviewsPath=''):
     """Writes New Application Entry to the DB
 
     :param storeName: Name of the appStore
@@ -162,6 +163,7 @@ def writeVersionDB(storeName='', appName='', appId='', version='', data=None, fi
         data = dict({})
 
     if filePath:
+        filePath = os.path.normpath(filePath)
         apkVals = dict({
             "extracted" : getApkValues(filePath),
             "calculated" : genHashValues(filePath)
@@ -204,6 +206,7 @@ def getPermissions(apkFilePath, permList=list()):
     return permList
 
 def getApkValues(apkFilePath):
+    return dict({})  # Dummy value until on linux instance
     metaCert = os.path.join("META-INF", "CERT.RSA")
     p1 = Popen(['unzip', '-p', apkFilePath, metaCert], stdout=PIPE)
     p = Popen(['keytool', '-printcert'], stdin=p1.stdout, stdout=PIPE)
@@ -237,8 +240,9 @@ def mkStoreDirs(storeName=None, appName=None):
         safeExecute(os.mkdir, os.path.expanduser(root + '/apk/' + storeName))
         os.chdir(os.path.expanduser(root + '/apk/' + storeName))
     else:
+        appName = appName.replace(' ', '_').lower()
         safeExecute(os.mkdir, appName)
-        return os.path.expanduser(os.getcwd() + '/' + appName + '/')
+        return os.path.normpath(os.getcwd() + '/' + appName + '/')
 
 def safeExecute(func, *args, default=None, error=BaseException):
     try:
