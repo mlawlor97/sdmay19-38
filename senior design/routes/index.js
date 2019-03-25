@@ -71,8 +71,9 @@ router.post('/applications', function (req, res, next) {
         }).catch( err => {
             console.log(err);
         });
-        
+        console.log("before message");
         while(appDoc == null && versionDoc == null){}
+        console.log("after message");
         appDoc.version = versionDoc;
         response.concat(appDoc);
     });
