@@ -65,19 +65,18 @@ router.post('/applications', function (req, res, next) {
                     versionDoc = {'error': 'This application is not available'};
                 }
                 versionDoc = vDoc;
+                appDoc.version = versionDoc;
+                response.concat(appDoc);
+                if(response.length === applications.length){
+                    res.json(response);
+                }
             }).catch(err => {
                 console.log(err);
             });
         }).catch( err => {
             console.log(err);
         });
-        console.log("before message");
-        while(appDoc == null && versionDoc == null){}
-        console.log("after message");
-        appDoc.version = versionDoc;
-        response.concat(appDoc);
     });
-    res.json(response);
 });
 
 function getVersions(applications) {
