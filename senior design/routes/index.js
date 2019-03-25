@@ -49,7 +49,7 @@ router.post('/applications', function (req, res, next) {
         let appStore = application.appStore;
         let appDoc = null , versionDoc = null;
 
-        ApplicationModel.find({
+        ApplicationModel.findOne({
             "metadata.package" : { "$regex": packageName, "$options": "i" },
             "store_id" : { "$regex": appStore, "$options": "i" }
         }).lean().limit(40).then( doc => {
@@ -57,16 +57,16 @@ router.post('/applications', function (req, res, next) {
                 appDoc = {'error': 'This application is not available'};
             }
             appDoc = doc;
-            VersionModel.find({
-                app_id: appDoc._id,
-                version: { "$regex": appVersion, "$options": "i" }
+		console.log(doc._id);
+            VersionModel.findOne({
+                app_id: ObjectId(appDoc._id)
             }).lean().then(vDoc => {
                 if(doc.length == 0){
                     versionDoc = {'error': 'This application is not available'};
                 }
                 versionDoc = vDoc;
                 appDoc.version = versionDoc;
-                response.concat(appDoc);
+                response.push(appDoc);
                 if(response.length === applications.length){
                     res.json(response);
                 }
