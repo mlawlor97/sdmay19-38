@@ -39,6 +39,46 @@ router.get('/applications/:id', function (req, res, next) {
     })
 });
 
+router.post('/applications', function (req, res, next) {
+    let applications = req.body.appData;
+    let response = [];
+
+    applications.forEach( application => {
+        let appVersion = application.appVersion;
+        let packageName = application.packageName;
+        let appStore = application.appStore;
+        let appDoc = null , versionDoc = null;
+
+        ApplicationModel.find({
+            "metadata.package" : { "$regex": packageName, "$options": "i" },
+            "store_id" : { "$regex": appStore, "$options": "i" }
+        }).lean().limit(40).then( doc => {
+            if(doc.length == 0){
+                appDoc = {'error': 'This application is not available'};
+            }
+            appDoc = doc;
+        }).catch( err => {
+            console.log(err);
+        });
+
+        VersionModel.find({
+            app_id: addDoc._id,
+            version: { "$regex": appVersion, "$options": "i" }
+        }).lean().then(vDoc => {
+            if(doc.length == 0){
+                versionDoc = {'error': 'This application is not available'};
+            }
+            versionDoc = vDoc;
+        }).catch(err => {
+            console.log(err);
+        });
+        while(appDoc == null && versionDoc == null){}
+        appDoc.version = versionDoc;
+        response.concat(appDoc);
+    });
+    res.json(response);
+});
+
 function getVersions(applications) {
     return new Promise(function (resolve, reject){
         let j = 0;
@@ -47,11 +87,11 @@ function getVersions(applications) {
                 app_id: applications[i]._id
             }).then(vDoc => {
                 applications[i].versions = vDoc;
-		j = j + 1;
+                j = j + 1;
 		    
-		    if( j == applications.length){
-			resolve(applications);
-		}
+		        if( j == applications.length){
+			        resolve(applications);
+		        }
             }).catch(err => {
                 console.log(err);
             })
