@@ -62,7 +62,7 @@ router.post('/applications', function (req, res, next) {
         });
 
         VersionModel.find({
-            app_id: addDoc._id,
+            app_id: appDoc._id,
             version: { "$regex": appVersion, "$options": "i" }
         }).lean().then(vDoc => {
             if(doc.length == 0){
