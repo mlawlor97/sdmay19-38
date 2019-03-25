@@ -57,21 +57,21 @@ router.post('/applications', function (req, res, next) {
                 appDoc = {'error': 'This application is not available'};
             }
             appDoc = doc;
+            VersionModel.find({
+                app_id: appDoc._id,
+                version: { "$regex": appVersion, "$options": "i" }
+            }).lean().then(vDoc => {
+                if(doc.length == 0){
+                    versionDoc = {'error': 'This application is not available'};
+                }
+                versionDoc = vDoc;
+            }).catch(err => {
+                console.log(err);
+            });
         }).catch( err => {
             console.log(err);
         });
-
-        VersionModel.find({
-            app_id: appDoc._id,
-            version: { "$regex": appVersion, "$options": "i" }
-        }).lean().then(vDoc => {
-            if(doc.length == 0){
-                versionDoc = {'error': 'This application is not available'};
-            }
-            versionDoc = vDoc;
-        }).catch(err => {
-            console.log(err);
-        });
+        
         while(appDoc == null && versionDoc == null){}
         appDoc.version = versionDoc;
         response.concat(appDoc);
