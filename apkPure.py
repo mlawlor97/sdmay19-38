@@ -218,7 +218,7 @@ class ApkPure(CrawlerBase):
 
         if versionList:
             self._scrapeVersions(name, id_, url, versionList('li'), variation)
-        elif variation:
+        elif variation and versionList:
             self._scrapeVersions(name, id_, url, soup(class_='table-row')[1:], variation, soup)
         else:
             logToFile('Versions.txt', f"{url}\n")
@@ -252,7 +252,7 @@ class ApkPure(CrawlerBase):
             [self._collectAllVersions(name, id_, self.siteUrl + v.a['href'], variation=True) for v in versionList]
             return
 
-        versionsLogged = checkVersionDB(id_)
+        # versionsLogged = checkVersionDB(id_)
         # difference = versionList.__len__() - versionsLogged.__len__()
         # if difference is 0:
         #     return
@@ -269,6 +269,9 @@ class ApkPure(CrawlerBase):
                 version = url.split('/')[-1].split('-')[0]
             if version is None:
                 print(f"{url} has version problems")
+                continue
+            if checkVersionDB(id_, version):
+                break
             
             pureVersion = GetPureVersion(url, v).getAll() if variation is False else GetPureVariation(url, v, patch=soup.find(class_='whatsnew')).getAll()
             path = self.scrapeApk(f"{self.siteUrl}{v(href=True)[-1]['href']}", appDir)

@@ -112,7 +112,6 @@ def downloadApk(apkDownloadLink, savePath):
     :param fileName:
     :param directoryName:
     """
-    savePath = removeSpecialChars(savePath).replace(' ', '_')
     savePath = os.path.normpath(savePath)
     with requests.get(apkDownloadLink, stream=True) as r:
         with open(savePath, 'wb') as f:
@@ -240,7 +239,7 @@ def mkStoreDirs(storeName=None, appName=None):
         safeExecute(os.mkdir, os.path.expanduser(root + '/apk/' + storeName))
         os.chdir(os.path.expanduser(root + '/apk/' + storeName))
     else:
-        appName = appName.replace(' ', '_').lower()
+        appName = removeSpecialChars(appName).replace(' ', '_').lower()
         safeExecute(os.mkdir, appName)
         return os.path.normpath(os.getcwd() + '/' + appName + '/')
 

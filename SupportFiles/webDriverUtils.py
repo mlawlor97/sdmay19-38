@@ -19,7 +19,7 @@ class WebDriver:
 
         self.driver = webdriver.Chrome(
             chrome_options=options,
-            executable_path=createPath("SupportFiles", "chromedriver")
+            executable_path=createPath("SupportFiles", "chromedriver.exe")
         )
 
         self.Url = None
