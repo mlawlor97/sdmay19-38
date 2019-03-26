@@ -2,11 +2,12 @@ import React, { Component } from 'react'
 import './CSS/App.css'
 
 import SearchBar from './components/SearchBar'
-import DropDownOrganizer from './components/DropDownOrganizer'
+import DropDown from './components/DropDown'
 import ScrollView from './components/ScrollView'
 import ScrollElement from './components/ScrollElement'
 import keywordOptions from './dropdownOptions/keywordOptions'
 import generateVersionOptions from './dropdownOptions/versions'
+import ReactFileReader from 'react-file-reader'
 
 const axios = require('axios')
 
@@ -21,7 +22,7 @@ class App extends Component {
       changeScreen: false,
       newData: [],
       displayVersion: [],
-      tempEvidenceData: []
+      evidenceData: []
     }
 
     this.onKeywordChange = this.onKeywordChange.bind(this)
@@ -30,6 +31,60 @@ class App extends Component {
     this.onAppClick = this.onAppClick.bind(this)
     this.goBack = this.goBack.bind(this)
     this.handleVersionChange = this.handleVersionChange.bind(this)
+    this.handleFiles = this.handleFiles.bind(this)
+  }
+
+  handleFiles(files) {
+    var reader = new FileReader()
+    reader.onload = e => {
+      // Use reader.result
+      // csv format: package name, app store, version
+      const input = reader.result.split(',')
+      const postBody = []
+      for (let i = 0; i < input.length; i += 3) {
+        const appData = {
+          packageName: input[i],
+          appStore: input[i + 1],
+          appVersion: input[i + 2]
+        }
+
+        postBody.push(appData)
+      }
+      axios
+        .post(
+          'http://sdmay19-18-windows.ece.iastate.edu:3000/api/v1/applications/',
+          {
+            appData: postBody
+          }
+        )
+        .then(res => {
+          const dataArray = []
+          res.data.forEach(element => {
+            const dataObj = {
+              app_id: element['_id'],
+              store_id: element['store_id'],
+              app_name: element['app_name'],
+              Developer: element.metadata['developer'],
+              Package: element.metadata['package'],
+              Category: element.metadata['category'],
+              url: element['app_url']
+            }
+
+            if (element.versions) {
+              dataObj['Version'] = element.versions[0].version
+            }
+
+            dataArray.push(dataObj)
+          })
+
+          this.setState({ response: dataArray })
+        })
+        .catch(err => {
+          console.log('error')
+          console.log(err)
+        })
+    }
+    reader.readAsText(files[0])
   }
 
   goBack(event) {
@@ -37,6 +92,7 @@ class App extends Component {
     this.setState({ newData: [] })
     this.setState({ displayVersion: [] })
     this.setState({ versions: [] })
+    this.setState({ evidenceData: [] })
   }
 
   onKeywordChange(event) {
@@ -94,6 +150,61 @@ class App extends Component {
           dataArray.push(dataObj)
         })
 
+        if (boy.versions[0].report) {
+          const reportArray = []
+          const reportObj = boy.versions[0].report
+
+          const fileSystemArray = []
+          const networkArray = []
+          if (reportObj.app_evidence[1].file_system.length) {
+            reportObj.app_evidence[1].file_system.forEach(element => {
+              const fileSystemObj = {
+                path: element.path,
+                evidence_types: element.evidence_types
+              }
+
+              fileSystemArray.push(fileSystemObj)
+            })
+          }
+
+          if (reportObj.app_evidence[2].network.length) {
+            reportObj.app_evidence[2].network.forEach(element => {
+              const networkObj = {
+                path: element.path,
+                evidence_types: element.evidence_types
+              }
+
+              networkArray.push(networkObj)
+            })
+          }
+
+          fileSystemArray.forEach((e, i) => {
+            const dataObj = {
+              app_package_name: reportObj.app_package_name,
+              version: reportObj.version
+            }
+            if (fileSystemArray[i]) {
+              dataObj['f_path'] = fileSystemArray[i].path
+              dataObj['f_evidence_types'] = fileSystemArray[
+                i
+              ].evidence_types.toString()
+            }
+
+            if (networkArray[i]) {
+              dataObj['n_path'] = fileSystemArray[i].path
+              dataObj['n_evidence_types'] = fileSystemArray[
+                i
+              ].evidence_types.toString()
+            }
+
+            reportArray.push(dataObj)
+          })
+
+          this.setState({ evidenceData: reportArray })
+        } else {
+          this.setState({ evidenceData: [] })
+        }
+
         const yeet = []
         yeet.push(dataArray[1])
         this.setState({ versions: generateVersionOptions(boy.versions) })
@@ -101,7 +212,7 @@ class App extends Component {
         this.setState({ displayVersion: yeet })
       })
       .catch(err => {
-        //something else
+        console.log(err)
       })
   }
 
@@ -179,31 +290,32 @@ class App extends Component {
   }
 
   render() {
-    const beegYosh = {
-      app_package_name: 'WIP',
-      version: 'WIP',
-      file_path: 'WIP',
-      file_evidence_types: 'WIP',
-      network_path: 'WIP',
-      network_evidence_path: 'WIP'
-    }
-    const stop = []
-    stop.push(beegYosh)
-
     const screen = (
       <header className="App-header">
         <div className="menu">
           <h1 id="header">Forensic Android App Database</h1>
-          <SearchBar
-            onSubmit={this.onSubmit}
-            value={this.state.keyword}
-            onChange={this.onKeywordChange}
-          />
-          <DropDownOrganizer
-            onKeywordChange={this.handleKeywordTypeChange}
-            options={keywordOptions}
-            defaultValue={keywordOptions[0].options[0]}
-          />
+          <div className="searchbar">
+            <SearchBar
+              onSubmit={this.onSubmit}
+              value={this.state.keyword}
+              onChange={this.onKeywordChange}
+            />
+          </div>
+          <div className="filereader">
+            <ReactFileReader
+              handleFiles={this.handleFiles}
+              fileTypes={['.csv', '.txt']}
+            >
+              <button className="btn">Upload</button>
+            </ReactFileReader>
+          </div>
+          <div className="dropdown">
+            <DropDown
+              onKeywordChange={this.handleKeywordTypeChange}
+              options={keywordOptions}
+              defaultValue={keywordOptions[0].options[0]}
+            />
+          </div>
         </div>
         <ScrollView ref={scroller => (this._scroller = scroller)}>
           <div className="scroller">
@@ -262,7 +374,7 @@ class App extends Component {
         <div className="menu">
           <h1 id="header">Forensic Android App Database</h1>
           <button onClick={this.goBack}>Go Back</button>
-          <DropDownOrganizer
+          <DropDown
             onKeywordChange={this.handleVersionChange}
             options={this.state.versions}
             defaultValue={this.state.versions[0]}
@@ -290,7 +402,7 @@ class App extends Component {
           </ScrollView>
           <ScrollView ref={scroller => (this._scroller = scroller)}>
             <div id="right">
-              {stop.map(obj => {
+              {this.state.evidenceData.map(obj => {
                 return (
                   <ScrollElement name={obj.app_name}>
                     <div className="item">
