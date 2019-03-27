@@ -1,4 +1,4 @@
-from utils import RateLimiter, requestHTML, safeExecute, getPermissions, getApkValues, mkStoreDirs
+from utils import RateLimiter, requestHTML, safeExecute, getPermissions, getApkValues, mkStoreDirs, logToFile
 from utils import writeAppDB, writeVersionDB, checkAppDB, checkVersionDB  # DB connectors
 from SupportFiles.webDriverUtils import WebDriver
 from SupportFiles.crawlerBase import CrawlerBase
@@ -6,6 +6,7 @@ from SupportFiles.metaDataBase2 import DataCollectionBase
 # from googleplayapi.googleplay import GooglePlayAPI
 from googleplayapi.gpapi.googleplay import GooglePlayAPI, SecurityCheckError, RequestError
 
+from threading import Thread, Lock
 from datetime import datetime
 import uuid
 import os
@@ -58,7 +59,7 @@ class GooglePlay(CrawlerBase):
     def __init__(self, siteUrl=siteUrl, limiter=rateLimiter):
         super().__init__(siteUrl, limiter)
         self.webDriver = WebDriver()
-        self.subCategories = []
+        # self.subCategories = []
         self.commonCollections = [
             "/collection/topselling_free",
             "/collection/topselling_paid",
@@ -67,6 +68,7 @@ class GooglePlay(CrawlerBase):
             "/collection/topselling_new_free"
         ]
         self.gpa = GooglePlayAPI()
+        self.lock = Lock()
         # self.gpa.login("sdmay19@gmail.com", "Forensics4")
         self.gpa.login(gsfId=3948690411096122542,
                        authSubToken="FwfSBWszDgviSe1ivuuvKa0qjnOTUlcpvGzS9sEtSSdn59NrCqTO9oeyE2h5qiorr-ycCw.")
@@ -74,37 +76,43 @@ class GooglePlay(CrawlerBase):
 
     def crawl(self):
         # Get categories
-        categories = self.getCategories(
-            requestHTML(f"{self.siteUrl}/store/apps"))
+        categories = self.getCategories(requestHTML(f"{self.siteUrl}/store/apps"))
+        threads = []
 
         # Iterate over all categories
         for category in categories:
-
-            # Get list of all subcategories plus the common collections
-            [self.subCategories.append(category + subCat)
-             for subCat in self.commonCollections]
-
-            self.getSubCategories(category)
-            if self.subCategories.__len__() == self.commonCollections.__len__():
-                self.subCategories.append(category)
-
-            # Iterate over all subcategories
-            [self.getApps(subCategory) for subCategory in self.subCategories]
-
-            # Clear cache
-            self.subCategories.clear()
+            threads.append(Thread(target=self.crawlCategory, args=(category, )))
+            threads[-1].start()
+        
+        [t.join() for t in threads]
 
     @staticmethod
     def getCategories(soup):
         soup = soup.find(id="action-dropdown-children-Categories")
         return [cat['href'] for cat in soup(href=True)]
 
-    def getSubCategories(self, categoryPage):
+    def getSubCategories(self, categoryPage, subCategories):
         soup = requestHTML(categoryPage)
-        [self.subCategories.append(self.siteUrl + cat['href'])
-         for cat in soup(class_='title-link')]
+        [subCategories.append(self.siteUrl + cat['href']) for cat in soup(class_='title-link')]
+
+    def crawlCategory(self, category):
+        subCategories = []
+
+        [subCategories.append(category + subCat) for subCat in self.commonCollections]
+
+        self.getSubCategories(category, subCategories)
+        if subCategories.__len__() == self.commonCollections.__len__():
+            subCategories.append(category)
+        
+        [self.getApps(subCategory) for subCategory in subCategories]
+        print(f"Finished Category {category}")
+
+        subCategories.clear()
+
 
     def getApps(self, categoryPage):
+        self.lock.acquire()
+
         if self.webDriver.loadPage(categoryPage, 'class name', 'loaded') is None:
             return
 
@@ -112,6 +120,8 @@ class GooglePlay(CrawlerBase):
 
         soup = soup.find('div', class_="card-list")
         apps = soup('a', class_="title")
+
+        self.lock.release()
 
         for app in apps:
             self.scrapeApp(f"{self.siteUrl}{app.attrs['href']}")
@@ -122,8 +132,9 @@ class GooglePlay(CrawlerBase):
 
         appEntry = checkAppDB(appPage)
         if not name:
-            soup = self.webDriver.loadPage(
-                appPage, 'xpath', "//h1[@itemprop='name']", True)
+            self.lock.acquire()
+            soup = self.webDriver.loadPage(appPage, 'xpath', "//h1[@itemprop='name']", True)
+            self.lock.release()
             name = soup.find(itemprop='name')
         if not name:
             print(appPage)
@@ -133,16 +144,14 @@ class GooglePlay(CrawlerBase):
 
         if appEntry is None:
             playData = GoogleData(appPage, soup).getAll()
-            price, package = playData.metaData.get(
-                'price'), playData.metaData.get('package')
-            id_ = writeAppDB("GooglePlay", name, appPage, package, playData.metaData)
+            price, package = playData.metaData.get('price'), playData.metaData.get('package')
+            # id_ = writeAppDB("GooglePlay", name, appPage, package, playData.metaData)
         else:
             id_ = appEntry.get('_id')
             appEntry = appEntry.get('metadata')
             price, package = appEntry.get('price'), appEntry.get('package')
 
-        version = safeExecute(
-            soup.find('div', string="Current Version").next_sibling.find, 'span')
+        version = safeExecute(soup.find('div', string="Current Version").next_sibling.find, 'span')
         if version is None:
             return
         version = version.text
@@ -157,8 +166,7 @@ class GooglePlay(CrawlerBase):
         if price == "$0.00":
             filePath = self.downloadApk(package, appDir)
 
-        writeVersionDB("GooglePlay", name, id_, version,
-                       playVersion.metaData, filePath)
+        writeVersionDB("GooglePlay", name, id_, version,playVersion.metaData, filePath)
 
     def downloadApk(self, package, savePath):
         fileName = uuid.uuid4().hex + ".apk"
@@ -167,7 +175,8 @@ class GooglePlay(CrawlerBase):
         try:
             fl = self.gpa.download(package, versionCode=None)
         except RequestError:
-            print(f"failed to download {package}")
+            # print(f"failed to download {package}")
+            logToFile("../incompatible.txt", package)
             return None
         with open(savePath, "wb") as apk_file:
             for chunk in fl.get("file").get("data"):
