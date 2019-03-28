@@ -1,71 +1,64 @@
-html,
-body {
-  height: 100%;
-  margin: 0;
-}
-
-.App-header {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
+.gridwrapper {
+  display: grid;
+  grid-template-columns: 100%;
 }
 
 .menu {
-  /* overflow: hidden; */
+  position: fixed;
+  z-index: 1;
   background: white;
-  position: fixed; /* Set the navbar to fixed position */
-  top: 0; /* Position the navbar at the top of the page */
-  width: 100%; /* Full width */
-  height: 120px;
+  width: 100%;
+  text-align: center;
+}
+
+.searchbar {
+  display: inline-block;
+}
+
+.filereader {
+  display: inline-block;
 }
 
 #header {
   color: #2ea9dd;
-  background: white;
-  border-bottom: solid;
-}
-
-#search-bar {
-  background-color: white;
-}
-
-.app {
-  width: 350px;
-  margin: 0 auto;
+  text-decoration: underline;
 }
 
 .scroller {
-  margin-top: 120px;
-  height: 85%;
-  width: 85%;
-  overflow: auto;
+  top: 140px;
+  position: relative;
 }
 
 .item {
-  margin: 30px 0;
-  border-style: solid;
+  border: solid;
   border-color: #2ea9dd;
+  margin: 5px;
+  overflow: auto;
+}
+
+.item:hover {
+  transition: 0.2s;
+  background-color: lightgray;
+  cursor: pointer;
 }
 
 #left {
+  top: 140px;
+  position: relative;
   float: left;
-  width: 50%;
-  background: white;
-  height: 80%;
-  overflow: auto;
-  margin-top: 10%;
-  /* border-style: solid;
-  border-color: #2ea9dd; */
-  box-sizing: border-box;
+  width: 45%;
 }
+
 #right {
+  top: 140px;
+  position: relative;
   float: right;
-  width: 50%;
-  background: white;
-  height: 80%;
+  width: 55%;
+}
+
+.itemInfo {
+  border: solid;
+  border-color: #2ea9dd;
+  margin: 5px;
   overflow: auto;
-  margin-top: 10%;
-  /* border-style: solid;
-  border-color: #2ea9dd; */
-  box-sizing: border-box;
 }

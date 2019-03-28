@@ -292,133 +292,137 @@ class App extends Component {
   render() {
     const screen = (
       <header className="App-header">
-        <div className="menu">
-          <h1 id="header">Forensic Android App Database</h1>
-          <div className="searchbar">
-            <SearchBar
-              onSubmit={this.onSubmit}
-              value={this.state.keyword}
-              onChange={this.onKeywordChange}
-            />
+        <div className="gridwrapper">
+          <div className="menu">
+            <h1 id="header">Forensic Android App Database</h1>
+            <div className="searchbar">
+              <SearchBar
+                onSubmit={this.onSubmit}
+                value={this.state.keyword}
+                onChange={this.onKeywordChange}
+              />
+            </div>
+            <div className="filereader">
+              <ReactFileReader
+                handleFiles={this.handleFiles}
+                fileTypes={['.csv', '.txt']}
+              >
+                <button className="btn">Upload</button>
+              </ReactFileReader>
+            </div>
+            <div className="dropdown">
+              <DropDown
+                onKeywordChange={this.handleKeywordTypeChange}
+                options={keywordOptions}
+                defaultValue={keywordOptions[0].options[0]}
+              />
+            </div>
           </div>
-          <div className="filereader">
-            <ReactFileReader
-              handleFiles={this.handleFiles}
-              fileTypes={['.csv', '.txt']}
-            >
-              <button className="btn">Upload</button>
-            </ReactFileReader>
-          </div>
-          <div className="dropdown">
-            <DropDown
-              onKeywordChange={this.handleKeywordTypeChange}
-              options={keywordOptions}
-              defaultValue={keywordOptions[0].options[0]}
-            />
-          </div>
+          <ScrollView ref={scroller => (this._scroller = scroller)}>
+            <div className="scroller">
+              {this.state.response.map(
+                ({
+                  app_name,
+                  Developer,
+                  Package,
+                  Category,
+                  url,
+                  app_id,
+                  store_id
+                }) => {
+                  return (
+                    <ScrollElement name={app_name}>
+                      <div
+                        className="item"
+                        onClick={() => this.onAppClick(app_id)}
+                      >
+                        <ul>
+                          <b>{'App Name'}</b>
+                          {': ' + app_name}
+                        </ul>
+                        <ul>
+                          <b>{'Developer'}</b>
+                          {': ' + Developer}
+                        </ul>
+                        <ul>
+                          <b>{'Package'}</b>
+                          {': ' + Package}
+                        </ul>
+                        <ul>
+                          <b>{'Store'}</b>
+                          {': ' + store_id}{' '}
+                        </ul>
+                        <ul>
+                          <b>{'Category'}</b>
+                          {': ' + Category}
+                        </ul>
+                        <ul>
+                          <b>{'URL: '}</b>
+                          <a href={url}>{url}</a>
+                        </ul>
+                      </div>
+                    </ScrollElement>
+                  )
+                }
+              )}
+            </div>
+          </ScrollView>
         </div>
-        <ScrollView ref={scroller => (this._scroller = scroller)}>
-          <div className="scroller">
-            {this.state.response.map(
-              ({
-                app_name,
-                Developer,
-                Package,
-                Category,
-                url,
-                app_id,
-                store_id
-              }) => {
-                return (
-                  <ScrollElement name={app_name}>
-                    <div
-                      className="item"
-                      onClick={() => this.onAppClick(app_id)}
-                    >
-                      <ul>
-                        <b>{'App Name'}</b>
-                        {': ' + app_name}
-                      </ul>
-                      <ul>
-                        <b>{'Developer'}</b>
-                        {': ' + Developer}
-                      </ul>
-                      <ul>
-                        <b>{'Package'}</b>
-                        {': ' + Package}
-                      </ul>
-                      <ul>
-                        <b>{'Store'}</b>
-                        {': ' + store_id}{' '}
-                      </ul>
-                      <ul>
-                        <b>{'Category'}</b>
-                        {': ' + Category}
-                      </ul>
-                      <ul>
-                        <b>{'URL: '}</b>
-                        <a href={url}>{url}</a>
-                      </ul>
-                    </div>
-                  </ScrollElement>
-                )
-              }
-            )}
-          </div>
-        </ScrollView>
       </header>
     )
 
     const infoScreen = (
       <header className="App-header">
-        <div className="menu">
-          <h1 id="header">Forensic Android App Database</h1>
-          <button onClick={this.goBack}>Go Back</button>
-          <DropDown
-            onKeywordChange={this.handleVersionChange}
-            options={this.state.versions}
-            defaultValue={this.state.versions[0]}
-          />
-        </div>
-        <div>
-          <ScrollView ref={scroller => (this._scroller = scroller)}>
-            <div id="left">
-              {this.state.displayVersion.map(obj => {
-                return (
-                  <ScrollElement name={obj.app_name}>
-                    <div className="item">
-                      {Object.keys(obj).map(key => {
-                        return (
-                          <ul>
-                            <b>{key}</b> {': ' + obj[key]}
-                          </ul>
-                        )
-                      })}
-                    </div>
-                  </ScrollElement>
-                )
-              })}
-            </div>
-          </ScrollView>
-          <ScrollView ref={scroller => (this._scroller = scroller)}>
-            <div id="right">
-              {this.state.evidenceData.map(obj => {
-                return (
-                  <ScrollElement name={obj.app_name}>
-                    <div className="item">
-                      {Object.keys(obj).map(key => {
-                        return (
-                          <ul>
-                            <b>{key}</b> {': ' + obj[key]}
-                          </ul>
-                        )
-                      })}
-                    </div>
-                  </ScrollElement>
-                )
-              })}
-            </div>
-          </ScrollView>
+        <div className="gridwrapperInfo">
+          <div className="menu">
+            <h1 id="header">Forensic Android App Database</h1>
+            <button onClick={this.goBack}>Go Back</button>
+            <DropDown
+              onKeywordChange={this.handleVersionChange}
+              options={this.state.versions}
+              defaultValue={this.state.versions[0]}
+            />
+          </div>
+          <div className="scrollerInfo">
+            <ScrollView ref={scroller => (this._scroller = scroller)}>
+              <div id="left">
+                {this.state.displayVersion.map(obj => {
+                  return (
+                    <ScrollElement name={obj.app_name}>
+                      <div className="itemInfo">
+                        {Object.keys(obj).map(key => {
+                          return (
+                            <ul>
+                              <b>{key}</b> {': ' + obj[key]}
+                            </ul>
+                          )
+                        })}
+                      </div>
+                    </ScrollElement>
+                  )
+                })}
+              </div>
+            </ScrollView>
+            <ScrollView ref={scroller => (this._scroller = scroller)}>
+              <div id="right">
+                {this.state.evidenceData.map(obj => {
+                  return (
+                    <ScrollElement name={obj.app_name}>
+                      <div className="itemInfo">
+                        {Object.keys(obj).map(key => {
+                          return (
+                            <ul>
+                              <b>{key}</b> {': ' + obj[key]}
+                            </ul>
+                          )
+                        })}
+                      </div>
+                    </ScrollElement>
+                  )
+                })}
+              </div>
+            </ScrollView>
+          </div>
         </div>
       </header>
     )
