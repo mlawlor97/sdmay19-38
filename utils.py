@@ -9,7 +9,6 @@ import json
 from time import sleep
 from threading import Thread
 import hashlib
-# from boxsdk import DevelopmentClient
 
 class RateLimiter:
     """Limits how often you can query websites given the rate limit factors
@@ -45,8 +44,6 @@ rl = RateLimiter(0, 0)
 db = MongoConnector()
 root = "~/Desktop/lss/research/csafe-mobile/senior-design"
 store = ''
-# client = DevelopmentClient()
-
 
 def setRateLimit(maxPages, waitTime):
     """Assigns values to the RateLimiter
@@ -161,16 +158,19 @@ def writeVersionDB(storeName='', appName='', appId='', version='', data=None, fi
     if data is None:
         data = dict({})
 
+    global db
     if filePath:
         filePath = os.path.normpath(filePath)
         apkVals = dict({
             "extracted" : getApkValues(filePath),
             "calculated" : genHashValues(filePath)
         })
+        existing = db.versions.find_one({"apk_info.calculated": apkVals.get("calculated")})
+        if existing:
+            filePath = existing.get("apk_location")
     else:
         apkVals = None
 
-    global db
     appDict = {
         "store_id"      : storeName,
         "app_name"      : appName,
@@ -241,7 +241,8 @@ def mkStoreDirs(storeName=None, appName=None):
     else:
         appName = removeSpecialChars(appName).replace(' ', '_').lower()
         safeExecute(os.mkdir, appName)
-        return os.path.normpath(os.getcwd() + '/' + appName + '/')
+        normpath = os.path.normpath(os.getcwd() + '/' + appName + '/')
+        return normpath[normpath.index("lss") + 3:]
 
 def safeExecute(func, *args, default=None, error=BaseException):
     try:
