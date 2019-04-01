@@ -59,9 +59,11 @@ class GooglePlay(CrawlerBase):
         self.index = index
         self.gpa = GooglePlayAPI()
         # self.gpa.login("sdmay19@gmail.com", "Forensics4")
-        self.gpa.login(gsfId=3948690411096122542,
-                       authSubToken="FwfSBWszDgviSe1ivuuvKa0qjnOTUlcpvGzS9sEtSSdn59NrCqTO9oeyE2h5qiorr-ycCw.")
+        self.gpa.login(gsfId=3948690411096122542, authSubToken="FwfSBWszDgviSe1ivuuvKa0qjnOTUlcpvGzS9sEtSSdn59NrCqTO9oeyE2h5qiorr-ycCw.")
         mkStoreDirs(storeName='googleplay')
+
+    def __del__(self):
+        self.webDriver.__del__()
 
     def crawl(self):
         # Get categories
@@ -171,10 +173,17 @@ class GooglePlay(CrawlerBase):
 
 
 def main(args):
+    gp = GooglePlay(index=args)
     try:
-        GooglePlay(index=args).crawl()
+        gp.scrapeApp("https://play.google.com/store/apps/details?id=com.snapchat.android")
+        # gp.crawl()
     except KeyboardInterrupt:
         print("Ended Early")
+    except BaseException as e:
+        print(e)
+        gp.__del__()
+        print("Errored Out")
+    gp.__del__()
     print("Finished")
 
 

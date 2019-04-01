@@ -167,7 +167,10 @@ def writeVersionDB(storeName='', appName='', appId='', version='', data=None, fi
         })
         existing = db.versions.find_one({"apk_info.calculated": apkVals.get("calculated")})
         if existing:
+            os.remove(filePath)
             filePath = existing.get("apk_location")
+        else:
+            filePath = filePath[filePath.index('lss') + 3:]
     else:
         apkVals = None
 
@@ -241,8 +244,7 @@ def mkStoreDirs(storeName=None, appName=None):
     else:
         appName = removeSpecialChars(appName).replace(' ', '_').lower()
         safeExecute(os.mkdir, appName)
-        normpath = os.path.normpath(os.getcwd() + '/' + appName + '/')
-        return normpath[normpath.index("lss") + 3:]
+        return os.path.normpath(os.getcwd() + '/' + appName + '/')
 
 def safeExecute(func, *args, default=None, error=BaseException):
     try:
