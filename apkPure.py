@@ -271,7 +271,7 @@ class ApkPure(CrawlerBase):
                 print(f"{url} has version problems")
                 continue
             if checkVersionDB(id_, version):
-                break
+                continue
             
             pureVersion = GetPureVersion(url, v).getAll() if variation is False else GetPureVariation(url, v, patch=soup.find(class_='whatsnew')).getAll()
             path = self.scrapeApk(f"{self.siteUrl}{v(href=True)[-1]['href']}", appDir)

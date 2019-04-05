@@ -161,7 +161,7 @@ class GooglePlay(CrawlerBase):
             fl = self.gpa.download(package, versionCode=None)
         except RequestError:
             print(f"failed to download {package}")
-            logToFile("../gp_incompatible.txt", f"{package}")
+            logToFile("../gp_incompatible.txt", f"{package}\n")
             return None
         except BaseException:
             print(f"Error on {package}")
