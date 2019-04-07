@@ -29,7 +29,7 @@ router.get('/applications', function (req, res, next) {
 
 router.get('/applications/:id', function (req, res, next) {
     ApplicationModel.aggregate([
-        {"$match": {"_id" : req.params.id} },
+        {"$match": {"_id" : ObjectId(req.params.id)} },
         {
             "$lookup":
                 {
