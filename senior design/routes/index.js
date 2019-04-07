@@ -5,9 +5,32 @@ let VersionModel = require('../models/version');
 const {ObjectId} = require('mongodb');
 
 router.get('/stats', function (req, res, next) {
-   ApplicationModel.collection.stats().then( doc => {
-       res.json(doc);
-   })
+    let response = {};
+    let done = 0;
+    ApplicationModel.collection.stats().then( doc => {
+       response.applications = doc.count;
+       done += 1;
+        if(done === 3){
+            res.json(response)
+        }
+    });
+    VersionModel.collection.stats().then(doc => {
+        response.versions = doc.count;
+        done += 1;
+        if(done === 3){
+            res.json(response)
+        }
+    });
+    ApplicationModel.aggregate([
+        {"$group" : { "_id" : "$store_id", "count" : {"$sum" : 1}}}
+    ]).then(doc => {
+        response.stores = doc;
+        done += 1;
+        if(done === 3){
+            res.json(response)
+        }
+    })
+
 });
 
 
