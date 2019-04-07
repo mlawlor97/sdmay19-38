@@ -76,7 +76,7 @@ router.post('/applications', function (req, res, next) {
         let appStore = application.appStore;
         let appDoc = null , versionDoc = null;
 
-        ApplicationModel.find({
+        ApplicationModel.findOne({
             "metadata.package" : { "$regex": packageName, "$options": "i" },
             "store_id" : { "$regex": appStore, "$options": "i" }
         }).lean().limit(50).then( doc => {
@@ -85,7 +85,7 @@ router.post('/applications', function (req, res, next) {
             }
             appDoc = doc;
             VersionModel.find({
-                app_id: appDoc._id,
+                app_id: ObjectId(appDoc._id),
                 version: { "$regex": appVersion, "$options": "i" }
             }, {"apk_location":0}).lean().then(vDoc => {
                 if(vDoc.length === 0){
@@ -93,7 +93,7 @@ router.post('/applications', function (req, res, next) {
                 }
                 versionDoc = vDoc;
                 appDoc.version = versionDoc;
-                response.concat(appDoc);
+                response.push(appDoc);
                 if(response.length === applications.length){
                     res.json(response);
                 }
