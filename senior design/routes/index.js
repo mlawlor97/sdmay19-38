@@ -57,7 +57,6 @@ router.post('/applications', function (req, res, next) {
                 appDoc = {'error': 'This application is not available'};
             }
             appDoc = doc;
-		console.log(doc._id);
             VersionModel.findOne({
                 app_id: ObjectId(appDoc._id)
             }).lean().then(vDoc => {
