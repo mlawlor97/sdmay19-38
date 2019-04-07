@@ -4,6 +4,13 @@ let ApplicationModel = require('../models/application');
 let VersionModel = require('../models/version');
 const {ObjectId} = require('mongodb');
 
+router.get('/stats', function (req, res, next) {
+   ApplicationModel.collection.stats().then( doc => {
+       res.json(doc);
+   })
+});
+
+
 router.get('/applications', function (req, res, next) {
     appName = (req.query.appName != null) ? req.query.appName : "";
     packageName = (req.query.packageName != null) ? req.query.packageName : "";
@@ -11,7 +18,7 @@ router.get('/applications', function (req, res, next) {
         "app_name" : { "$regex": appName, "$options": "i" },
         "metadata.package" : { "$regex": packageName, "$options": "i" }
     }).lean().limit(40).then( doc =>{
-        if(doc.length == 0){
+        if(doc.length === 0){
             res.status(302).json({'error': 'This application is not available'})
         }
         res.json(doc);
@@ -22,7 +29,7 @@ router.get('/applications', function (req, res, next) {
 
 router.get('/applications/:id', function (req, res, next) {
     ApplicationModel.aggregate([
-        {"$match": {"_id" : ObjectId(req.params.id)} },
+        {"$match": {"_id" : req.params.id} },
         {
             "$lookup":
                 {
@@ -31,7 +38,27 @@ router.get('/applications/:id', function (req, res, next) {
                     "foreignField": "app_id",
                     "as": "versions"
                 }
-        }
+        },
+        {"$unwind" : "$versions"},
+        {
+            "$lookup":
+                {
+                    "from":"Reports",
+                    "localField": "_id",
+                    "foreignField": "app_id",
+                    "as": "versions.report"
+                }
+        },
+        {"$group" : {
+                "_id":"$_id",
+                "store_id" : {"$first" : "store_id" },
+                "app_name" : {"$first" : "app_name" },
+                "app_url" : {"$first" : "app_url" },
+                "metadata" : {"$first" : "$metadata" },
+                "versions" : {"$push" : "$versions"}
+            }
+        },
+        {"$project": {"versions.apk_location":0, "reviews_path":0}}
     ]).then(doc => {
         res.json(doc);
     }).catch(err => {
@@ -52,16 +79,16 @@ router.post('/applications', function (req, res, next) {
         ApplicationModel.find({
             "metadata.package" : { "$regex": packageName, "$options": "i" },
             "store_id" : { "$regex": appStore, "$options": "i" }
-        }).lean().limit(40).then( doc => {
-            if(doc.length == 0){
+        }).lean().limit(50).then( doc => {
+            if(doc.length === 0){
                 appDoc = {'error': 'This application is not available'};
             }
             appDoc = doc;
             VersionModel.find({
                 app_id: appDoc._id,
                 version: { "$regex": appVersion, "$options": "i" }
-            }).lean().then(vDoc => {
-                if(doc.length == 0){
+            }, {"apk_location":0}).lean().then(vDoc => {
+                if(vDoc.length === 0){
                     versionDoc = {'error': 'This application is not available'};
                 }
                 versionDoc = vDoc;
@@ -78,25 +105,5 @@ router.post('/applications', function (req, res, next) {
         });
     });
 });
-
-function getVersions(applications) {
-    return new Promise(function (resolve, reject){
-        let j = 0;
-	    for(let i = 0; i < applications.length; i++) {
-            VersionModel.find({
-                app_id: applications[i]._id
-            }).then(vDoc => {
-                applications[i].versions = vDoc;
-                j = j + 1;
-		    
-		        if( j == applications.length){
-			        resolve(applications);
-		        }
-            }).catch(err => {
-                console.log(err);
-            })
-        }
-    })
-}
 
 module.exports = router;
