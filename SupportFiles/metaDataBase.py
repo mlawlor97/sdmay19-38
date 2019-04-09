@@ -49,8 +49,6 @@ class DataCollectionBase:
             if type(y) == FunctionType and x is not 'getAll':
                 func = getattr(self.__class__, x)
                 func(self)
-        if self.metaData.get('Name') is None:
-            return False
         else:
             return self.metaData
 
