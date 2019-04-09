@@ -34,4 +34,4 @@ class GetMirrorAppData(DataCollectionBase):
         except AttributeError:
             desc = None
             logToFile('DeveloperCheck.txt', self.url)
-        self.metaData.update(Description=desc)
+        self.metaData.update(Description=descStr)
