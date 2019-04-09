@@ -41,6 +41,7 @@ class APKMirror(CrawlerBase):
                         # If first round, pass doAppData as 1 to write app first and get appID
                         if doAppData == 1:
                            idApp = getmetaData(l, appName, doAppData, link)
+                           doAppData = 0
                         # On next writes, only write versions using obtained appID
                         else:
                             getmetaData(l, appName, idApp, link)
@@ -174,7 +175,7 @@ def getmetaData(url, appName, doAppData, appLink):
     pkg = dataSite.get("Package")
     vnumber = dataSite.get("VersionNumber")
 
-    if doAppData == 1:
+    if doAppData is 1:
         soupApp = requestHTML(appLink)
         appDataSite = GetMirrorAppData(appLink, soupApp).getAll()
         # Write app on first time through
