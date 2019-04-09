@@ -6,21 +6,6 @@ from SupportFiles.apkMirrorAppData import GetMirrorAppData
 
 
 
-
-class MirrorData(DataCollectionBase):
-
-    def Dev(self):
-        price = self.soup.find(itemprop='price', content=True)['content']
-        return price if price != "0" else "$0.00"
-
-class GoogleVersion(DataCollectionBase):
-
-    def Dev(self):
-        price = self.soup.find(itemprop='price', content=True)['content']
-        return price if price != "0" else "$0.00"
-
-
-
 class APKMirror(CrawlerBase):
 
     def crawl(self):
@@ -46,16 +31,20 @@ class APKMirror(CrawlerBase):
                 else:
                     # Open the link and get link to every version of app, this is doing most of the heavy lifting
                     o = openPages(link, appName)
-                    doAppData = True
+                    doAppData = 1
+                    idApp = 0
                     # For every version
                     for l in o:
                         counter += 1
                         # print("Version link: " + l)
                         # click(l, 'downloadButton')
-                        # Get meta data
-                        getmetaData(l, appName, doAppData, link)
-                        if doAppData is True:
-                            doAppData = False
+                        # If first round, pass doAppData as 1 to write app first and get appID
+                        if doAppData == 1:
+                           idApp = getmetaData(l, appName, doAppData, link)
+                        # On next writes, only write versions using obtained appID
+                        else:
+                            getmetaData(l, appName, idApp, link)
+
 
 
 
@@ -180,101 +169,24 @@ def ensureCorrectPage(url):
 # all of the metadata on the page
 def getmetaData(url, appName, doAppData, appLink):
     soup = requestHTML(url)
-    # soupDesc = requestHTML(url + '#description')
     dataSite = GetMirrorData(url, soup).getAll()
 
-    vname = metaData.get("Name")
-    dev = metaData.get("Developer")
-    pkg = metaData.get("Package")
+    pkg = dataSite.get("Package")
+    vnumber = dataSite.get("VersionNumber")
 
-
-    if doAppData is True:
+    if doAppData == 1:
         soupApp = requestHTML(appLink)
         appDataSite = GetMirrorAppData(appLink, soupApp).getAll()
-        idApp = writeAppDB("APKMirror", appName, url, pkg, appDataSite.metaData)
+        # Write app on first time through
+        idApp = writeAppDB("APKMirror", appName, appLink, pkg, appDataSite.metaData)
+        # Write first version
+        idVersion = idVersion = writeVersionDB("APKMirror", appName, idApp, vnumber, dataSite.metaData)
+        return idApp
 
-    idVersion = writeVersionDB("APKMirror", appName, idApp, vname, dataSite.metaData)
-
-
-
-    if not metaData:
-        return False
-
-
-# Returns list of hashes in order:
-# Certificate SHA-1, Certificate SHA-256, File MD5, File SHA-1, File SHA-256
-def splitSecurity(sec):
-    cert_sha1_index = sec.find('SHA-1')
-    cert_sha2_index = sec.find('SHA-256')
-    end_cert = sec.find('The cryptographic')
-
-    split_sec = sec[end_cert:]
-
-    file_md5_index = split_sec.find('MD5')
-    file_sha1_index = split_sec.find('SHA-1')
-    file_sha2_index = split_sec.find('SHA-256')
-    end_file = split_sec.find('Verify the file')
-
-    cert_sha1 = sec[cert_sha1_index+7:cert_sha2_index]
-    cert_sha2 = sec[cert_sha2_index+9:end_cert]
-
-    file_md5 = split_sec[file_md5_index+5:file_sha1_index]
-    file_sha1 = split_sec[file_sha1_index+7:file_sha2_index]
-    file_sha2 = split_sec[file_sha2_index + 9:end_file]
-
-    security_data = [cert_sha1, cert_sha2, file_md5, file_sha1, file_sha2]
-    return security_data
-
-
-# Returns app specs in order:
-# Version number, Architecture, Package, Number of Downloads, File Size,
-# Minimum Android Version, Target Android Version, and Upload Date
-def splitSpecs(spec):
-    find_architecture = False
-    version_index = spec.find(')')
-    package_index = spec.find('Package')
-    if package_index - version_index > 1:
-        architecture_index = spec.find('arm')
-        find_architecture = True
-
-    downloads_index = spec.find('downloads')
-    size_index = spec.find('bytes)')
-    min_android_index = spec.find('Min:')
-    target_android_index = spec.find('Target:')
-
-    version = spec[10:version_index+1]
-
-    if find_architecture is True:
-        architecture = spec[architecture_index:package_index-1]
     else:
-        architecture = "No architecture found"
+        # Write versions for all other calls
+        idVersion = writeVersionDB("APKMirror", appName, doAppData, vnumber, dataSite.metaData)
 
-    download_sub = spec[package_index:downloads_index]
-    real_downloads_index = 0
-
-    for i, c in enumerate(reversed(download_sub)):
-        if c.isalpha():
-            real_downloads_index = i-1
-            break
-    package = spec[package_index+9:package_index+len(download_sub)-real_downloads_index-1]
-    downloads = spec[package_index+len(download_sub)-real_downloads_index-1:downloads_index-1]
-
-    size = spec[downloads_index+10:size_index+6]
-
-    min_android = spec[min_android_index+5:target_android_index-1]
-
-    target_android_temp_sub = spec[target_android_index:]
-    target_android_end_index = target_android_temp_sub.find(')')
-    target_android = target_android_temp_sub[8:target_android_end_index+1]
-
-    uploaded_date_index = target_android_temp_sub.find('Uploaded')
-
-    uploaded_end_index = target_android_temp_sub.find(' at ')
-
-    uploaded_date = target_android_temp_sub[uploaded_date_index+9:uploaded_end_index]
-
-    spec_data = [version, architecture, package, downloads, size, min_android, target_android, uploaded_date]
-    return spec_data
 
 
 def main():
