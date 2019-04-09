@@ -30,7 +30,6 @@ router.get('/stats', function (req, res, next) {
             res.json(response)
         }
     })
-
 });
 
 
@@ -40,7 +39,7 @@ router.get('/applications', function (req, res, next) {
     ApplicationModel.find({
         "app_name" : { "$regex": appName, "$options": "i" },
         "metadata.package" : { "$regex": packageName, "$options": "i" }
-    }).lean().limit(40).then( doc =>{
+    }).lean().limit(50).then( doc =>{
         if(doc.length === 0){
             res.status(302).json({'error': 'This application is not available'})
         }
@@ -74,11 +73,11 @@ router.get('/applications/:id', function (req, res, next) {
         },
         {"$group" : {
                 "_id":"$_id",
-                "store_id" : {"$first" : "store_id" },
-                "app_name" : {"$first" : "app_name" },
-                "app_url" : {"$first" : "app_url" },
+                "store_id" : {"$first" : "$store_id" },
+                "app_name" : {"$first" : "$app_name" },
+                "app_url" : {"$first" : "$app_url" },
                 "metadata" : {"$first" : "$metadata" },
-                "versions" : {"$push" : "$versions"}
+                "versions" : {"$push" : "$versions" }
             }
         },
         {"$project": {"versions.apk_location":0, "reviews_path":0}}
