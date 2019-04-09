@@ -178,14 +178,16 @@ def getmetaData(url, appName, doAppData, appLink):
         soupApp = requestHTML(appLink)
         appDataSite = GetMirrorAppData(appLink, soupApp).getAll()
         # Write app on first time through
-        idApp = writeAppDB("APKMirror", appName, appLink, pkg, appDataSite.metaData)
+        idApp = writeAppDB("APKMirror", appName, appLink, pkg, appDataSite)
         # Write first version
-        idVersion = idVersion = writeVersionDB("APKMirror", appName, idApp, vnumber, dataSite.metaData)
+        idVersion = idVersion = writeVersionDB("APKMirror", appName, idApp, vnumber, dataSite)
+        print("Got App: " + appName)
         return idApp
 
     else:
         # Write versions for all other calls
         idVersion = writeVersionDB("APKMirror", appName, doAppData, vnumber, dataSite.metaData)
+        print("Got version: " + vnumber + " of app: " + appName)
 
 
 

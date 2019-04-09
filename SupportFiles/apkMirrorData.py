@@ -204,7 +204,6 @@ class GetMirrorData(DataCollectionBase):
         except AttributeError:
             specs = None
             logToFile('SpecsCheck.txt', self.url)
-        self.metaData.update(Specs=specs)
 
 
 
