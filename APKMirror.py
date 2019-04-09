@@ -187,7 +187,7 @@ def getmetaData(url, appName, doAppData, appLink):
 
     else:
         # Write versions for all other calls
-        idVersion = writeVersionDB("APKMirror", appName, doAppData, vnumber, dataSite.metaData)
+        idVersion = writeVersionDB("APKMirror", appName, doAppData, vnumber, dataSite)
         print("Got version: " + vnumber + " of app: " + appName)
 
 
