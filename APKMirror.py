@@ -181,7 +181,7 @@ def getmetaData(url, appName, doAppData, appLink):
         # Write app on first time through
         idApp = writeAppDB("APKMirror", appName, appLink, pkg, appDataSite)
         # Write first version
-        idVersion = idVersion = writeVersionDB("APKMirror", appName, idApp, vnumber, dataSite)
+        idVersion = writeVersionDB("APKMirror", appName, idApp, vnumber, dataSite)
         print("Got App: " + appName)
         return idApp
 
