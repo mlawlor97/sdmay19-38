@@ -67,8 +67,8 @@ router.get('/applications/:id', function (req, res, next) {
             "$lookup":
                 {
                     "from":"Reports",
-                    "localField": "_id",
-                    "foreignField": "app_id",
+                    "localField": "versions._id",
+                    "foreignField": "versions",
                     "as": "versions.report"
                 }
         },
