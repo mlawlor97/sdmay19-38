@@ -81,7 +81,7 @@ router.get('/applications/:id', function (req, res, next) {
                 "versions" : {"$push" : "$versions" }
             }
         },
-        {"$project": {"versions.apk_location":0, "reviews_path":0}}
+        {"$project": {"versions.apk_location":0, "reviews_path":0, "versions.report.versions" : 0}}
     ]).then(doc => {
         res.json(doc);
     }).catch(err => {
