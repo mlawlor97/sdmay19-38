@@ -42,7 +42,7 @@ class MongoConnector:
 # Global variable to keep from rate limiting websites
 rl = RateLimiter(0, 0)
 db = MongoConnector()
-root = "~/Desktop/lss/research/csafe-mobile/senior-design"
+root = "~/Desktop/lss" #/research/csafe-mobile/senior-design"
 store = ''
 
 def setRateLimit(maxPages, waitTime):
@@ -251,3 +251,7 @@ def safeExecute(func, *args, default=None, error=BaseException):
         return func(*args)
     except error:
         return default
+
+def removeApp(appId):
+    global db
+    db.applications.delete_one({"_id": appId})

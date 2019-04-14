@@ -1,4 +1,4 @@
-from utils import RateLimiter, requestHTML, safeExecute, getPermissions, getApkValues, mkStoreDirs, logToFile
+from utils import RateLimiter, requestHTML, safeExecute, getPermissions, getApkValues, mkStoreDirs, logToFile, removeApp
 from utils import writeAppDB, writeVersionDB, checkAppDB, checkVersionDB  # DB connectors
 from SupportFiles.webDriverUtils import WebDriver
 from SupportFiles.crawlerBase import CrawlerBase
@@ -61,18 +61,20 @@ class GooglePlay(CrawlerBase):
         # self.gpa.login("sdmay19@gmail.com", "Forensics4")
         self.gpa.login(gsfId=3948690411096122542, authSubToken="FwfSBWszDgviSe1ivuuvKa0qjnOTUlcpvGzS9sEtSSdn59NrCqTO9oeyE2h5qiorr-ycCw.")
         mkStoreDirs(storeName='googleplay')
+        self.count = 0
 
     def __del__(self):
         self.webDriver.__del__()
 
     def crawl(self):
         # Get categories
-        categories = self.getCategories(requestHTML(f"{self.siteUrl}/store/apps"))
+        categories = []
+        # categories = self.getCategories(requestHTML(f"{self.siteUrl}/store/apps"))
         categories.append("https://play.google.com/store/apps/top")
-        categories.append("https://play.google.com/store/apps/new")
+        # categories.append("https://play.google.com/store/apps/new")
 
         # Iterate over all categories
-        for category in categories[self.index : self.index + 1]:
+        for category in categories:
             print(category)
 
             # Get list of all subcategories plus the common collections
@@ -84,7 +86,11 @@ class GooglePlay(CrawlerBase):
                 self.subCategories.append(category)
 
             # Iterate over all subcategories
-            [self.getApps(subCategory) for subCategory in self.subCategories]
+            # [self.getApps(subCategory) for subCategory in self.subCategories]
+            for subCategory in self.subCategories:
+                self.getApps(subCategory)
+                if self.count >= 50:
+                    return
 
             # Clear cache
             self.subCategories.clear()
@@ -109,6 +115,8 @@ class GooglePlay(CrawlerBase):
 
         for app in apps:
             self.scrapeApp(f"{self.siteUrl}{app.attrs['href']}")
+            if self.count >= 50:
+                return
 
     def scrapeApp(self, appPage):
         soup = requestHTML(appPage)
@@ -151,6 +159,11 @@ class GooglePlay(CrawlerBase):
         if price == "$0.00":
             filePath = safeExecute(self.downloadApk, package, appDir, default=None)
 
+        if not filePath:
+            removeApp(id_)
+            return
+        else:
+            self.count += 1
         writeVersionDB("GooglePlay", name, id_, version, playVersion.metaData, filePath)
 
     def downloadApk(self, package, savePath):
@@ -172,11 +185,20 @@ class GooglePlay(CrawlerBase):
         return savePath
 
 
-def main(args):
-    gp = GooglePlay(index=args)
+def main(*args):
+    index = 0 if not args else int(args[0])
+    gp = GooglePlay(index=index)
     try:
-        gp.scrapeApp("https://play.google.com/store/apps/details?id=com.snapchat.android")
-        # gp.crawl()
+        gp.scrapeApp("https://play.google.com/store/apps/details?id=de.ritterit.lukes&hl=en")
+        gp.scrapeApp("https://play.google.com/store/apps/details?id=com.thomson.cxn&feature=more_from_developer#?t=W251bGwsMSwyLDEwMiwiY29tLnRob21zb24uY3huIl0.")
+        gp.scrapeApp("https://play.google.com/store/apps/details?id=com.salamandertechnologies.track&hl=en_US")
+        gp.scrapeApp("https://play.google.com/store/apps/details?id=com.harris.rf.beonptt.android.ui&hl=en")
+        gp.scrapeApp("https://play.google.com/store/apps/details?id=gov.nih.nlm.erg2012&hl=en_US")
+        gp.scrapeApp("https://play.google.com/store/apps/details?id=com.cube.arc.hfa")
+        gp.scrapeApp("https://play.google.com/store/apps/details?id=gov.fema.mobile.android")
+        gp.scrapeApp("https://play.google.com/store/apps/details?id=com.snap.android.apis")
+        gp.scrapeApp("https://play.google.com/store/apps/details?id=com.intergraph.mobileresponder")
+        gp.crawl()
     except KeyboardInterrupt:
         print("Ended Early")
     except BaseException as e:
