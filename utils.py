@@ -42,7 +42,7 @@ class MongoConnector:
 # Global variable to keep from rate limiting websites
 rl = RateLimiter(0, 0)
 db = MongoConnector()
-root = "~/Desktop/lss/research/csafe-mobile/senior-design"
+root = "~/Desktop/lss" #/research/csafe-mobile/senior-design"
 store = ''
 
 def setRateLimit(maxPages, waitTime):
@@ -208,7 +208,7 @@ def getPermissions(apkFilePath, permList=list()):
     return permList
 
 def getApkValues(apkFilePath):
-    return dict({})  # Dummy value until on linux instance
+    return dict({})  # Dummy value until on linux instance """REMOVE TO GET MORE SHA VALUES"""
     metaCert = os.path.join("META-INF", "CERT.RSA")
     p1 = Popen(['unzip', '-p', apkFilePath, metaCert], stdout=PIPE)
     p = Popen(['keytool', '-printcert'], stdin=p1.stdout, stdout=PIPE)

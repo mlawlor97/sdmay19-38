@@ -72,12 +72,11 @@ class GooglePlay(CrawlerBase):
         categories.append("https://play.google.com/store/apps/new")
 
         # Iterate over all categories
-        for category in categories[self.index : self.index + 1]:
+        for category in categories[self.index::4]:
             print(category)
 
             # Get list of all subcategories plus the common collections
-            [self.subCategories.append(category + subCat)
-             for subCat in self.commonCollections]
+            [self.subCategories.append(category + subCat) for subCat in self.commonCollections]
 
             self.getSubCategories(category)
             if self.subCategories.__len__() == self.commonCollections.__len__():
@@ -107,8 +106,7 @@ class GooglePlay(CrawlerBase):
         soup = soup.find('div', class_="card-list")
         apps = soup('a', class_="title")
 
-        for app in apps:
-            self.scrapeApp(f"{self.siteUrl}{app.attrs['href']}")
+        [self.scrapeApp(f"{self.siteUrl}{app.attrs['href']}") for app in apps]
 
     def scrapeApp(self, appPage):
         soup = requestHTML(appPage)
@@ -172,18 +170,17 @@ class GooglePlay(CrawlerBase):
         return savePath
 
 
-def main(args):
-    gp = GooglePlay(index=args)
+def main(*args):
+    offset = 0 if not args else args[0]  # Should be a value 0-3
+    gp = GooglePlay(index=offset)
     try:
-        gp.scrapeApp("https://play.google.com/store/apps/details?id=com.snapchat.android")
-        # gp.crawl()
+        gp.crawl()
     except KeyboardInterrupt:
         print("Ended Early")
     except BaseException as e:
         print(e)
         gp.__del__()
         print("Errored Out")
-    gp.__del__()
     print("Finished")
 
 
