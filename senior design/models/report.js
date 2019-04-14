@@ -6,6 +6,6 @@ let ObjectId = mongoose.Schema.Types.ObjectId;
 let ReportSchema = new Schema ({
     versions: [ObjectId],
     report : {}
-});
+}, { versionKey: false });
 
 module.exports = mongoose.model('Report', ReportSchema, 'Reports');
