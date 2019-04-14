@@ -8,4 +8,4 @@ let ReportSchema = new Schema ({
     report : {}
 });
 
-module.exports = mongoose.model('Version', ReportSchema, 'Versions');
+module.exports = mongoose.model('Report', ReportSchema, 'Reports');

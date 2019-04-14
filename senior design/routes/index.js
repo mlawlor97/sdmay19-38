@@ -131,7 +131,7 @@ router.post('/applications', function (req, res, next) {
 
 
 router.post('/report', function(req, res, next) {
-    let report  = req.body.report;
+    let reportReq  = req.body.report;
     let sha = req.body.sha; // TODO: CHANGE THIS QUERY
     VersionModel.find({
         "app_name" : sha
@@ -139,7 +139,7 @@ router.post('/report', function(req, res, next) {
         let versionIds = doc.map(version => version._id);
         let report = new ReportModel({
             'versions' : versionIds,
-            'report' : report
+            'report' : reportReq
         });
 
         report.save().then( doc => {
