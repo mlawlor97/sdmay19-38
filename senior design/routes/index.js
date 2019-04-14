@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 let ApplicationModel = require('../models/application');
 let VersionModel = require('../models/version');
+let ReportModel = require('../models/report');
 const {ObjectId} = require('mongodb');
 
 router.get('/stats', function (req, res, next) {
@@ -125,6 +126,29 @@ router.post('/applications', function (req, res, next) {
         }).catch( err => {
             console.log(err);
         });
+    });
+});
+
+
+router.post('/report', function(req, res, next) {
+    let report  = req.body.report;
+    let sha = req.body.sha; // TODO: CHANGE THIS QUERY
+    VersionModel.find({
+        "app_name" : sha
+    }).then( doc => {
+        let versionIds = doc.map(version => version._id);
+        let report = new ReportModel({
+            'versions' : versionIds,
+            'report' : report
+        });
+
+        report.save().then( doc => {
+            res.json({'response' : 'Successfully added report document'});
+        }).catch( err => {
+            console.log(err);
+        });
+    }).catch( err => {
+        console.log(err);
     });
 });
 
