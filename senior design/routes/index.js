@@ -134,7 +134,7 @@ router.get('/download/:id', function(req, res, next) {
         "_id" : ObjectId(req.params.id)
     }).lean().then( doc => {
         let path = doc.apk_location;
-        res.download(path);
+        res.download(path, doc.app_name + '.apk');
     }).catch( err => {
         console.log(err);
     })
