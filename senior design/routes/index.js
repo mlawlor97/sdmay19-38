@@ -131,7 +131,7 @@ router.post('/applications', function (req, res, next) {
 
 router.get('/download/:id', function(req, res, next) {
     VersionModel.find({
-        "app_id" : ObjectId(req.params.id)
+        "_id" : ObjectId(req.params.id)
     }).then( doc => {
         let path = doc.apk_location;
         res.download(path);
