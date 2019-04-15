@@ -129,12 +129,22 @@ router.post('/applications', function (req, res, next) {
     });
 });
 
+router.get('/download/:id', function(req, res, next) {
+    VersionModel.find({
+        "app_id" : ObjectId(req.params.id)
+    }).then( doc => {
+        let path = doc.apk_location;
+        res.download(path);
+    }).catch( err => {
+        console.log(err);
+    })
+});
 
 router.post('/report', function(req, res, next) {
     let reportReq  = req.body.report;
-    let sha = req.body.sha; // TODO: CHANGE THIS QUERY
+    let sha = req.body.sha;
     VersionModel.find({
-        "app_name" : sha
+        "app_info.extracted" : sha
     }).then( doc => {
         let versionIds = doc.map(version => version._id);
         let report = new ReportModel({
