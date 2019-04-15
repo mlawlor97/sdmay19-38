@@ -1,6 +1,12 @@
 from utils import RateLimiter, mkStoreDirs, requestHTML, checkAppDB, safeExecute
 from SupportFiles.crawlerBase import CrawlerBase
 from SupportFiles.webDriverUtils import WebDriver
+from SupportFiles.metaDataBase2 import DataCollectionBase
+
+
+class SlideMeData(DataCollectionBase):
+    pass
+
 
 class SlideMe(CrawlerBase):
     siteUrl = "http://slideme.org"
@@ -18,13 +24,13 @@ class SlideMe(CrawlerBase):
         crawlableCats = []
 
         for cat in categories[-1:]:
+        # for cat in categories:
             subs = self.getCategories(requestHTML(cat))
             crawlableCats += subs if subs.__len__() > 0 else [cat]
             break
         
-        print(crawlableCats.__len__())
-
         for cat in crawlableCats[:1]:
+        # for cat in crawlableCats:
             page = 0
             while(True):
                 apps = self.getApps(requestHTML(f"{cat}&page={page}"))
@@ -33,6 +39,7 @@ class SlideMe(CrawlerBase):
                 
                 page += 1
                 [self.scrapeAppData(app) for app in apps[:1]]
+                # [self.scrapeAppData(app) for app in apps]
                 break
 
     def getCategories(self, soup):
