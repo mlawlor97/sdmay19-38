@@ -45,17 +45,15 @@ class App extends Component {
         captainFalcon = version._id
       }
     })
-    axios
-      .get(
-        'http://sdmay19-18-windows.ece.iastate.edu:3000/api/v1/download/' +
+    setTimeout(() => {
+      const response = {
+        file:
+          'http://sdmay19-18-windows.ece.iastate.edu:3000/api/v1/download/' +
           captainFalcon
-      )
-      .then(res => {
-        console.log(res)
-      })
-      .catch(err => {
-        console.log(err)
-      })
+      }
+
+      window.open(response.file)
+    }, 100)
   }
 
   grabStats() {
@@ -197,6 +195,10 @@ class App extends Component {
             signature: obj.metadata['signature'],
             sha1: obj.metadata['sha1']
           }
+
+          obj.metadata.permissions.forEach(permission => {
+            dataObj['permissions'] += '\n' + permission
+          })
 
           if (obj.metadata['apk_type'] === undefined) {
             dataObj['apk_type'] = 'APK'
