@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { BrowserRouter as Router, Link, Route } from 'react-router-dom'
 import './CSS/App.css'
 
 import SearchBar from './components/SearchBar'
@@ -19,19 +20,51 @@ class App extends Component {
       keywordFilter: 'appName',
       versions: [],
       response: [],
-      changeScreen: false,
       newData: [],
       displayVersion: [],
-      evidenceData: []
+      evidenceData: [],
+      refresh: true,
+      stats: ''
     }
 
     this.onKeywordChange = this.onKeywordChange.bind(this)
     this.onSubmit = this.onSubmit.bind(this)
     this.handleKeywordTypeChange = this.handleKeywordTypeChange.bind(this)
     this.onAppClick = this.onAppClick.bind(this)
-    this.goBack = this.goBack.bind(this)
     this.handleVersionChange = this.handleVersionChange.bind(this)
     this.handleFiles = this.handleFiles.bind(this)
+    this.grabStats = this.grabStats.bind(this)
+  }
+
+  grabStats() {
+    axios
+      .get('http://sdmay19-18-windows.ece.iastate.edu:3000/api/v1/stats')
+      .then(res => {
+        const statView = (
+          <div className="stats">
+            <ul>
+              <b>{'applications'}</b> {': ' + res.data['applications']}
+            </ul>
+            <ul>
+              <b>{'versions'}</b> {': ' + res.data['versions']}
+            </ul>
+            <ul>
+              <b>{'Store'}</b> {': ' + res.data.stores[0]._id}
+              <br />
+              <b>{'Number of Apps'}</b> {': ' + res.data.stores[0].count}
+            </ul>
+            <ul>
+              <b>{'Store'}</b> {': ' + res.data.stores[1]._id}
+              <br />
+              <b>{'Number of Apps'}</b> {': ' + res.data.stores[1].count}
+            </ul>
+          </div>
+        )
+        this.setState({ stats: statView })
+      })
+      .catch(err => {
+        console.log(err)
+      })
   }
 
   handleFiles(files) {
@@ -87,14 +120,6 @@ class App extends Component {
     reader.readAsText(files[0])
   }
 
-  goBack(event) {
-    this.setState({ changeScreen: false })
-    this.setState({ newData: [] })
-    this.setState({ displayVersion: [] })
-    this.setState({ versions: [] })
-    this.setState({ evidenceData: [] })
-  }
-
   onKeywordChange(event) {
     this.setState({ keyword: event.target.value })
   }
@@ -112,8 +137,11 @@ class App extends Component {
   }
 
   onAppClick(event) {
+    this.setState({ newData: [] })
+    this.setState({ displayVersion: [] })
+    this.setState({ versions: [] })
+    this.setState({ evidenceData: [] })
     const dataArray = []
-    this.setState({ changeScreen: true })
     axios
       .get(
         'http://sdmay19-18-windows.ece.iastate.edu:3000/api/v1/applications/' +
@@ -150,14 +178,14 @@ class App extends Component {
           dataArray.push(dataObj)
         })
 
-        if (boy.versions[0].report) {
+        if (boy.versions[0].report.length !== 0) {
           const reportArray = []
           const reportObj = boy.versions[0].report
 
           const fileSystemArray = []
           const networkArray = []
-          if (reportObj.app_evidence[1].file_system.length) {
-            reportObj.app_evidence[1].file_system.forEach(element => {
+          if (reportObj[0].report.app_evidence[1].file_system.length) {
+            reportObj[0].report.app_evidence[1].file_system.forEach(element => {
               const fileSystemObj = {
                 path: element.path,
                 evidence_types: element.evidence_types
@@ -167,8 +195,8 @@ class App extends Component {
             })
           }
 
-          if (reportObj.app_evidence[2].network.length) {
-            reportObj.app_evidence[2].network.forEach(element => {
+          if (reportObj[0].report.app_evidence[2].network.length) {
+            reportObj[0].report.app_evidence[2].network.forEach(element => {
               const networkObj = {
                 path: element.path,
                 evidence_types: element.evidence_types
@@ -184,15 +212,15 @@ class App extends Component {
               version: reportObj.version
             }
             if (fileSystemArray[i]) {
-              dataObj['f_path'] = fileSystemArray[i].path
-              dataObj['f_evidence_types'] = fileSystemArray[
+              dataObj['file path'] = fileSystemArray[i].path
+              dataObj['file evidence types'] = fileSystemArray[
                 i
               ].evidence_types.toString()
             }
 
             if (networkArray[i]) {
-              dataObj['n_path'] = fileSystemArray[i].path
-              dataObj['n_evidence_types'] = fileSystemArray[
+              dataObj['network address'] = fileSystemArray[i].path
+              dataObj['network evidence types'] = fileSystemArray[
                 i
               ].evidence_types.toString()
             }
@@ -248,6 +276,7 @@ class App extends Component {
             dataArray.push(dataObj)
           })
           this.setState({ response: dataArray })
+          this.setState({ refresh: false })
         })
         .catch(err => {
           this.setState({ response: [] })
@@ -282,6 +311,7 @@ class App extends Component {
             dataArray.push(dataObj)
           })
           this.setState({ response: dataArray })
+          this.setState({ refresh: false })
         })
         .catch(err => {
           this.setState({ response: [] })
@@ -289,7 +319,61 @@ class App extends Component {
     }
   }
 
+  componentWillMount() {
+    this.grabStats()
+  }
+
   render() {
+    const sView = (
+      <ScrollView ref={scroller => (this._scroller = scroller)}>
+        <div className="scroller">
+          {this.state.response.map(
+            ({
+              app_name,
+              Developer,
+              Package,
+              Category,
+              url,
+              app_id,
+              store_id
+            }) => {
+              return (
+                <ScrollElement name={app_name}>
+                  <div className="item" onClick={() => this.onAppClick(app_id)}>
+                    <Link className="routeLink" to={`/app/${app_id}`}>
+                      <ul>
+                        <b>{'App Name'}</b>
+                        {': ' + app_name}
+                      </ul>
+                      <ul>
+                        <b>{'Developer'}</b>
+                        {': ' + Developer}
+                      </ul>
+                      <ul>
+                        <b>{'Package'}</b>
+                        {': ' + Package}
+                      </ul>
+                      <ul>
+                        <b>{'Store'}</b>
+                        {': ' + store_id}{' '}
+                      </ul>
+                      <ul>
+                        <b>{'Category'}</b>
+                        {': ' + Category}
+                      </ul>
+                    </Link>
+                    <ul>
+                      <b>{'URL: '}</b>
+                      <a href={url}>{url}</a>
+                    </ul>
+                  </div>
+                </ScrollElement>
+              )
+            }
+          )}
+        </div>
+      </ScrollView>
+    )
     const screen = (
       <header className="App-header">
         <div className="gridwrapper">
@@ -309,6 +393,11 @@ class App extends Component {
               >
                 <button className="btn">Upload</button>
               </ReactFileReader>
+              {/* <span
+                title={'CSV format is app package name, version, app store'}
+              >
+                !
+              </span> */}
             </div>
             <div className="dropdown">
               <DropDown
@@ -318,55 +407,7 @@ class App extends Component {
               />
             </div>
           </div>
-          <ScrollView ref={scroller => (this._scroller = scroller)}>
-            <div className="scroller">
-              {this.state.response.map(
-                ({
-                  app_name,
-                  Developer,
-                  Package,
-                  Category,
-                  url,
-                  app_id,
-                  store_id
-                }) => {
-                  return (
-                    <ScrollElement name={app_name}>
-                      <div
-                        className="item"
-                        onClick={() => this.onAppClick(app_id)}
-                      >
-                        <ul>
-                          <b>{'App Name'}</b>
-                          {': ' + app_name}
-                        </ul>
-                        <ul>
-                          <b>{'Developer'}</b>
-                          {': ' + Developer}
-                        </ul>
-                        <ul>
-                          <b>{'Package'}</b>
-                          {': ' + Package}
-                        </ul>
-                        <ul>
-                          <b>{'Store'}</b>
-                          {': ' + store_id}{' '}
-                        </ul>
-                        <ul>
-                          <b>{'Category'}</b>
-                          {': ' + Category}
-                        </ul>
-                        <ul>
-                          <b>{'URL: '}</b>
-                          <a href={url}>{url}</a>
-                        </ul>
-                      </div>
-                    </ScrollElement>
-                  )
-                }
-              )}
-            </div>
-          </ScrollView>
+          {this.state.refresh ? this.state.stats : sView}
         </div>
       </header>
     )
@@ -376,7 +417,6 @@ class App extends Component {
         <div className="gridwrapperInfo">
           <div className="menu">
             <h1 id="header">Forensic Android App Database</h1>
-            <button onClick={this.goBack}>Go Back</button>
             <DropDown
               onKeywordChange={this.handleVersionChange}
               options={this.state.versions}
@@ -428,7 +468,12 @@ class App extends Component {
     )
 
     return (
-      <div className="App">{this.state.changeScreen ? infoScreen : screen}</div>
+      <Router>
+        <div className="App">
+          <Route exact={true} path="/" render={() => screen} />
+          <Route path="/app/:app_id" render={() => infoScreen} />
+        </div>
+      </Router>
     )
   }
 }
