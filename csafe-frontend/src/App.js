@@ -24,7 +24,8 @@ class App extends Component {
       displayVersion: [],
       evidenceData: [],
       refresh: true,
-      stats: ''
+      stats: '',
+      responseVersions: []
     }
 
     this.onKeywordChange = this.onKeywordChange.bind(this)
@@ -34,6 +35,27 @@ class App extends Component {
     this.handleVersionChange = this.handleVersionChange.bind(this)
     this.handleFiles = this.handleFiles.bind(this)
     this.grabStats = this.grabStats.bind(this)
+    this.downloadAPK = this.downloadAPK.bind(this)
+  }
+
+  downloadAPK() {
+    let captainFalcon = ''
+    this.state.responseVersions.forEach(version => {
+      if (version.version === this.state.displayVersion[0].version) {
+        captainFalcon = version._id
+      }
+    })
+    axios
+      .get(
+        'http://sdmay19-18-windows.ece.iastate.edu:3000/api/v1/download/' +
+          captainFalcon
+      )
+      .then(res => {
+        console.log(res)
+      })
+      .catch(err => {
+        console.log(err)
+      })
   }
 
   grabStats() {
@@ -148,6 +170,7 @@ class App extends Component {
           event
       )
       .then(res => {
+        this.setState({ responseVersions: res.data[0].versions })
         const boy = res.data[0]
 
         const dataObj = {
@@ -173,6 +196,10 @@ class App extends Component {
             patch_notes: obj.metadata['patch_notes'],
             signature: obj.metadata['signature'],
             sha1: obj.metadata['sha1']
+          }
+
+          if (obj.metadata['apk_type'] === undefined) {
+            dataObj['apk_type'] = 'APK'
           }
 
           dataArray.push(dataObj)
@@ -208,7 +235,7 @@ class App extends Component {
 
           fileSystemArray.forEach((e, i) => {
             const dataObj = {
-              app_package_name: reportObj.app_package_name,
+              app_package_name: boy.metadata['package'],
               version: reportObj.version
             }
             if (fileSystemArray[i]) {
@@ -417,6 +444,7 @@ class App extends Component {
         <div className="gridwrapperInfo">
           <div className="menu">
             <h1 id="header">Forensic Android App Database</h1>
+            <button onClick={this.downloadAPK}>Download APK</button>
             <DropDown
               onKeywordChange={this.handleVersionChange}
               options={this.state.versions}
