@@ -196,9 +196,11 @@ class App extends Component {
             sha1: obj.metadata['sha1']
           }
 
-          obj.metadata.permissions.forEach(permission => {
-            dataObj['permissions'] += '\n' + permission
-          })
+          if (obj.metadata.permissions !== undefined) {
+            obj.metadata.permissions.forEach(permission => {
+              dataObj['permissions'] += '\n' + permission
+            })
+          }
 
           if (obj.metadata['apk_type'] === undefined) {
             dataObj['apk_type'] = 'APK'
