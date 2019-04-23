@@ -44,7 +44,7 @@ class MongoConnector:
 # Global variable to keep from rate limiting websites
 rl = RateLimiter(0, 0)
 db = MongoConnector()
-root = "~/Desktop/lss"  # /research/csafe-mobile/senior-design"
+root = "~/Desktop/lss/research/csafe-mobile/senior-design"
 start = os.getcwd()
 store = ''
 
