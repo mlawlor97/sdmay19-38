@@ -88,9 +88,9 @@ class UpToDown():
         for links in apps:  # Runs 20 apps at a time
             for a in links.find_all("a", href=True):
                 linkToVisit = a["href"]
-                self.getAppData(linkToVisit)
+                _id = self.getAppData(linkToVisit)
                 # try:
-                self.getAllVersions(linkToVisit)
+                self.getAllVersions(linkToVisit, _id)
                 # except:
                     # getSingleVersion(linkToVisit)
                 if counter >= self.appLimitPerCategory - 1:
@@ -148,7 +148,7 @@ class UpToDown():
         if (not self.testFlag):
             downloadApk(downloadLink, self.downloadPath)
 
-    def getAllVersions(self, appPage):
+    def getAllVersions(self, appPage, _id):
         # r = requests.get(appPage + "/old")
         # soup = BeautifulSoup(r.content, "lxml")
         soup = None
@@ -201,10 +201,13 @@ class UpToDown():
                     for p in permissionList:
                         permissions.append(p.text)
 
-                self.writeVersion(versionName, languages, permissions)
+                
                 downloadLink = downloadPage.find("a", {"class": "data download"})["href"]
+                savepath = None
                 if (not self.testFlag):
-                    downloadApk(downloadLink, self.downloadPath)
+                    savepath = downloadApk(downloadLink, self.downloadPath)
+                app = appPage.split("/")[-1]
+                self.writeVersion(versionName, languages, permissions, app, _id, savepath)
             counter += 1
 
 
@@ -330,7 +333,7 @@ class UpToDown():
             permissionCount = permissionsSoup.parent.find("dd").text
 
         # write to db when available
-    #     self.writeOutput(outFile, name, author, category, rating, packageName, license, operatingSystem, requiresAndroid, languages, size, downloads, date, signatureMD5, description, permissionCount)
+        # self.writeOutput(outFile, name, author, category, rating, packageName, license, operatingSystem, requiresAndroid, languages, size, downloads, date, signatureMD5, description, permissionCount)
 
     # def writeOutput(self, outFile, name, author, category, rating, packageName, license, operatingSystem, requiresAndroid, languages, size, downloads, date, signatureMD5, description, permissionCount):
         # write to file - text for now
@@ -353,9 +356,16 @@ class UpToDown():
                 "\n\tPermissions: " + permissionCount + "\n"))
         f.write(("\tVersions:\n"))
         f.close()
+        metadata = dict(name=name,author=author,category=category,rating=rating,packagename=packageName,license=license,operatingsystem=operatingSystem,
+                        requiresandroid=requiresAndroid,languages=languages,size=size,downloads=downloads,date=date,signatureMD5=signatureMD5,
+                        description=description)
+        return (writeAppDB('UpToDown', name, appPage + '/download', packageName, metadata))
+
+        # write to db
+        
 
 
-    def writeVersion(self, version, languages, permissions):
+    def writeVersion(self, version, languages, permissions, app, _id, savepath):
         # write to file - text for now
         # outFile = "UpToDown Crawler Output.txt"
         f = open(self.outFile, "a")
@@ -367,6 +377,8 @@ class UpToDown():
             for permission in permissions:
                 f.write(("\t\t\t" + permission + "\n"))
         f.close()
+        # metadata = dict()
+        writeVersionDB('UpToDown', app, _id, version, None, savepath)
 
     def crawl(self):
         
