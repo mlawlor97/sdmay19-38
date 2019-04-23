@@ -49,8 +49,7 @@ class SlideMe(CrawlerBase):
 
         crawlableCats = []
 
-        for cat in categories[-1:]:
-        # for cat in categories:
+        for cat in categories:
             subs = self.getCategories(requestHTML(cat))
             crawlableCats += subs if subs.__len__() > 0 else [cat]
             break
@@ -63,9 +62,7 @@ class SlideMe(CrawlerBase):
                     break
                 
                 page += 1
-                [self.scrapeAppData(app) for app in apps[:1]]
-                # [self.scrapeAppData(app) for app in apps]
-                return
+                [self.scrapeAppData(app) for app in apps]
 
     def getCategories(self, soup):
         cats = []
