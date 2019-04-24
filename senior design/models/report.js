@@ -5,11 +5,7 @@ let ObjectId = mongoose.Schema.Types.ObjectId;
 
 let ReportSchema = new Schema ({
     versions: [ObjectId],
-    sha : {
-        sha1 : String,
-        sha256 : String,
-        md5 : String
-    },
+    sha : {},
     report : {}
 }, { versionKey: false });
 
