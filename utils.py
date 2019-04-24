@@ -42,7 +42,7 @@ class MongoConnector:
 # Global variable to keep from rate limiting websites
 rl = RateLimiter(0, 0)
 db = MongoConnector()
-root = "~/Desktop/lss/research/csafe-mobile/senior-design"
+root = "/home/emmettkoz"
 store = ''
 
 def setRateLimit(maxPages, waitTime):
@@ -169,8 +169,8 @@ def writeVersionDB(storeName='', appName='', appId='', version='', data=None, fi
         if existing:
             os.remove(filePath)
             filePath = existing.get("apk_location")
-        else:
-            filePath = filePath[filePath.index('lss') + 3:]
+        #else:
+            #filePath = filePath[filePath.index('lss') + 3:]
     else:
         apkVals = None
 

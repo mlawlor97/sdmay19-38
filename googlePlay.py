@@ -130,6 +130,7 @@ class GooglePlay(CrawlerBase):
             print(appPage)
             return
         name = name.text.strip()
+        print(name)
         appDir = mkStoreDirs(appName=name)
 
         if appEntry is None:
@@ -161,6 +162,7 @@ class GooglePlay(CrawlerBase):
 
         if not filePath:
             removeApp(id_)
+            print("Past remove")
             return
         else:
             self.count += 1
