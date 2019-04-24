@@ -10,6 +10,7 @@ from time import sleep
 from threading import Thread
 import hashlib
 
+
 class RateLimiter:
     """Limits how often you can query websites given the rate limit factors
 
@@ -18,6 +19,7 @@ class RateLimiter:
         waitTime: How long the crawler should wait to keep from being rate-limited
         visited: The number of links visited in the current cycle
     """
+
     def __init__(self, maxPages=0, waitTime=0):
         """Sets rate limit for visiting web pages. Will wait given time when threshold is reached
 
@@ -34,7 +36,7 @@ class MongoConnector:
 
     def __init__(self):
         self.client = MongoClient('mongodb://localhost:27017')
-        self.db = self.client.test2
+        self.db = self.client.test4
         self.applications = self.db.Applications
         self.versions = self.db.Versions
 
@@ -42,8 +44,10 @@ class MongoConnector:
 # Global variable to keep from rate limiting websites
 rl = RateLimiter(0, 0)
 db = MongoConnector()
-root = "~/Desktop/lss" #/research/csafe-mobile/senior-design"
+root = "~/Desktop/lss"#/research/csafe-mobile/senior-design"
+start = os.getcwd()
 store = ''
+
 
 def setRateLimit(maxPages, waitTime):
     """Assigns values to the RateLimiter
@@ -55,6 +59,7 @@ def setRateLimit(maxPages, waitTime):
     global rl
     rl = RateLimiter(maxPages, waitTime)
 
+
 def createPath(*extensions, basePath=os.getcwd()):
     """Helper method to map strings into a path
 
@@ -64,6 +69,7 @@ def createPath(*extensions, basePath=os.getcwd()):
     """
     return os.path.join(basePath, *extensions)
 
+
 def removeSpecialChars(string):
     """Removes special characters from strings
 
@@ -71,6 +77,7 @@ def removeSpecialChars(string):
     :return: Given string with special characters removed
     """
     return re.sub(r'\W+', ' ', string.lower())
+
 
 def requestHTML(url='', *html):
     """Gets formatted HTML of given url
@@ -90,6 +97,7 @@ def requestHTML(url='', *html):
         return BeautifulSoup(html[0], 'html.parser')
     return BeautifulSoup(requests.get(url).content, 'html.parser')
 
+
 def logToFile(outputFile, line='', writeType='a'):
     """Writes given input to specified file
 
@@ -100,6 +108,7 @@ def logToFile(outputFile, line='', writeType='a'):
     f = open(outputFile, writeType)
     f.write(line)
     f.close()
+
 
 def downloadApk(apkDownloadLink, savePath):
     """Downloads given apk in the background to reduce time
@@ -112,11 +121,12 @@ def downloadApk(apkDownloadLink, savePath):
     savePath = os.path.normpath(savePath)
     with requests.get(apkDownloadLink, stream=True) as r:
         with open(savePath, 'wb') as f:
-            for chunk in r.iter_content(chunk_size=8192): 
-                if chunk: # filter out keep-alive new chunks
+            for chunk in r.iter_content(chunk_size=8192):
+                if chunk:  # filter out keep-alive new chunks
                     f.write(chunk)
                     f.flush()
     return savePath
+
 
 def writeOutput(destination='DB', writeType='w', dataDict=None):
     """Writes Output into given destination
@@ -131,6 +141,7 @@ def writeOutput(destination='DB', writeType='w', dataDict=None):
     logToFile(destination, writeType=writeType)
     logToFile(destination, json.dumps(dataDict, indent=4) + '\n')
 
+
 def writeAppDB(storeName='', appName='', appUrl='', appPkg='', data=dict({}), reviewsPath=''):
     """Writes New Application Entry to the DB
 
@@ -144,15 +155,16 @@ def writeAppDB(storeName='', appName='', appUrl='', appPkg='', data=dict({}), re
 
     global db
     appDict = {
-        "store_id"     : storeName,
-        "app_name"     : appName.lower(),
-        "app_url"      : appUrl,
-        "app_package"  : appPkg,
-        "metadata"     : data,
-        "reviews_path" : reviewsPath
+        "store_id": storeName,
+        "app_name": appName.lower(),
+        "app_url": appUrl,
+        "app_package": appPkg,
+        "metadata": data,
+        "reviews_path": reviewsPath
     }
     result = db.applications.insert_one(appDict)
     return result.inserted_id
+
 
 def writeVersionDB(storeName='', appName='', appId='', version='', data=None, filePath=''):
     if data is None:
@@ -162,10 +174,13 @@ def writeVersionDB(storeName='', appName='', appId='', version='', data=None, fi
     if filePath:
         filePath = os.path.normpath(filePath)
         apkVals = dict({
-            "extracted" : getApkValues(filePath),
-            "calculated" : genHashValues(filePath)
+            "extracted": getApkValues(filePath),
+            "calculated": genHashValues(filePath)
         })
-        existing = db.versions.find_one({"apk_info.calculated": apkVals.get("calculated")})
+        existing = db.versions.find_one(
+            {"apk_info.calculated": apkVals.get("calculated")})
+        data.update({'file_size' : convert_bytes(os.path.getsize(filePath))})
+        data.update({'permissions' : getPermissions(filePath)})
         if existing:
             os.remove(filePath)
             filePath = existing.get("apk_location")
@@ -175,40 +190,62 @@ def writeVersionDB(storeName='', appName='', appId='', version='', data=None, fi
         apkVals = None
 
     appDict = {
-        "store_id"      : storeName,
-        "app_name"      : appName,
-        "app_id"        : appId,
-        "version"       : version,
-        "metadata"      : data,
-        "apk_location" : filePath,
-        "apk_info"    : apkVals
+        "store_id": storeName,
+        "app_name": appName,
+        "app_id": appId,
+        "version": version,
+        "metadata": data,
+        "apk_location": filePath,
+        "apk_info": apkVals
     }
+
     result = db.versions.insert_one(appDict)
     return result.inserted_id
+
 
 def checkAppDB(appUrl=None):
     """Returns the application entry from the DB based off the url"""
     global db
     return db.applications.find_one({"app_url": appUrl})
 
+
 def checkVersionDB(appId, version=None):
     """Returns a list of versions for a specified application
-    
+
     :param appId: ObjectId retrieved from the application entry from the DB
     :returns: list of all versions associated with an application
     """
     global db
-    body = {"app_id": appId, "version": version} if version else {"app_id": appId}
+    body = {"app_id": appId, "version": version} if version else {
+        "app_id": appId}
     return list(db.versions.find(body))
 
-def getPermissions(apkFilePath, permList=list()):
+
+def getPermissions(apkFilePath):
+    permList = []
+    temp = os.getcwd()
+    os.chdir(start)
     permLoc = os.path.join("SupportFiles", "Permissions.jar")
-    p = Popen(['java', '-jar', permLoc, apkFilePath], stdout=PIPE, stderr=STDOUT)
+    p = Popen(['java', '-jar', permLoc, apkFilePath],
+              stdout=PIPE, stderr=STDOUT)
     [permList.append(line.strip().decode('ascii')) for line in p.stdout]
+    os.chdir(temp)
     return permList
 
+
+# Only need this because SlideMe is stupid and doesn't list it
+def getPackageName(apkFilePath):
+    temp = os.getcwd()
+    os.chdir(start)
+    permLoc = os.path.join("SupportFiles", "Package.jar")
+    p = Popen(['java', '-jar', permLoc, apkFilePath],
+              stdout=PIPE, stderr=STDOUT)
+    os.chdir(temp)
+    return [line.strip().decode('ascii') for line in p.stdout]
+
+
 def getApkValues(apkFilePath):
-    return dict({})  # Dummy value until on linux instance """REMOVE TO GET MORE SHA VALUES"""
+    # return dict({})  # Dummy value until on linux instance
     metaCert = os.path.join("META-INF", "CERT.RSA")
     p1 = Popen(['unzip', '-p', apkFilePath, metaCert], stdout=PIPE)
     p = Popen(['keytool', '-printcert'], stdin=p1.stdout, stdout=PIPE)
@@ -224,16 +261,18 @@ def getApkValues(apkFilePath):
                 id_dict.update({type_: vals[1].replace(":", "")})
     return id_dict
 
+
 def genHashValues(apkFilePath):
     id_dict = dict({})
 
     with open(apkFilePath, "rb") as f:
         bytes = f.read()
-        id_dict.update({"MD5" : hashlib.md5(bytes).hexdigest()})
-        id_dict.update({"SHA1" : hashlib.sha1(bytes).hexdigest()})
-        id_dict.update({"SHA256" : hashlib.sha256(bytes).hexdigest()})
+        id_dict.update({"MD5": hashlib.md5(bytes).hexdigest()})
+        id_dict.update({"SHA1": hashlib.sha1(bytes).hexdigest()})
+        id_dict.update({"SHA256": hashlib.sha256(bytes).hexdigest()})
 
     return id_dict
+
 
 def mkStoreDirs(storeName=None, appName=None):
     global root, store
@@ -246,8 +285,16 @@ def mkStoreDirs(storeName=None, appName=None):
         safeExecute(os.mkdir, appName)
         return os.path.normpath(os.getcwd() + '/' + appName + '/')
 
+
 def safeExecute(func, *args, default=None, error=BaseException):
     try:
         return func(*args)
     except error:
         return default
+
+
+def convert_bytes(num):
+    for x in ['bytes', 'KB', 'MB', 'GB', 'TB']:
+        if num < 1000.0:
+            return "%3.1f %s" % (num, x)
+        num /= 1000.0
