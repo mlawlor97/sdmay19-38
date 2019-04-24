@@ -149,6 +149,7 @@ router.post('/report', function(req, res, next) {
         let versionIds = doc.map(version => version._id);
         let report = new ReportModel({
             'versions' : versionIds,
+            'sha' : sha,
             'report' : reportReq
         });
 
