@@ -1,10 +1,19 @@
 FROM python:3.7-alpine
 COPY . /app
 WORKDIR /app
-RUN apk add python3-dev chromium chromium-chromedriver && pip3 install --upgrade pip
+
+RUN apk update \
+&& apk upgrade \
+&& apk add --no-cache bash \
+&& apk add --no-cache --virtual=build-dependencies unzip \
+&& apk add --no-cache curl \
+&& apk add --no-cache openjdk8-jre
+
+RUN apk add python3-dev chromium chromium-chromedriver unzip && pip3 install --upgrade pip
 RUN pip3 install --upgrade setuptools
 RUN pip3 install -r requirements.txt
-CMD python3 test.py
+RUN mkdir /lss
+CMD python3 apkPure.py
 
 
 #Both the other ones need .dockerignore files
