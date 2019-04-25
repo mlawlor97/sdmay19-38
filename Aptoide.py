@@ -112,7 +112,7 @@ def openVersion(link, app_name, app_id):
 
 
     versionDataSite = GetAptoideData(link, soup).getAll()
-    vnumber = versionDataSite.metadata.get('Version')
+    vnumber = versionDataSite.metaData.get('Version')
 
     # check that version doesn't already exist in db
     version_entry = checkVersionDB(app_id, vnumber)
