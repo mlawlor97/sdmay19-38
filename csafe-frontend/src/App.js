@@ -47,9 +47,7 @@ class App extends Component {
     })
     setTimeout(() => {
       const response = {
-        file:
-          'http://sdmay19-18-windows.ece.iastate.edu:3000/api/v1/download/' +
-          captainFalcon
+        file: 'http://localhost:3000/api/v1/download/' + captainFalcon
       }
 
       window.open(response.file)
@@ -58,7 +56,7 @@ class App extends Component {
 
   grabStats() {
     axios
-      .get('http://sdmay19-18-windows.ece.iastate.edu:3000/api/v1/stats')
+      .get('http://localhost:3000/api/v1/stats')
       .then(res => {
         const statView = (
           <div className="stats">
@@ -104,12 +102,9 @@ class App extends Component {
         postBody.push(appData)
       }
       axios
-        .post(
-          'http://sdmay19-18-windows.ece.iastate.edu:3000/api/v1/applications/',
-          {
-            appData: postBody
-          }
-        )
+        .post('http://localhost:3000/api/v1/applications/', {
+          appData: postBody
+        })
         .then(res => {
           const dataArray = []
           res.data.forEach(element => {
@@ -163,10 +158,7 @@ class App extends Component {
     this.setState({ evidenceData: [] })
     const dataArray = []
     axios
-      .get(
-        'http://sdmay19-18-windows.ece.iastate.edu:3000/api/v1/applications/' +
-          event
-      )
+      .get('http://localhost:3000/api/v1/applications/' + event)
       .then(res => {
         this.setState({ responseVersions: res.data[0].versions })
         const boy = res.data[0]
@@ -279,14 +271,11 @@ class App extends Component {
     event.preventDefault()
     if (this.state.keywordFilter === 'appName') {
       axios
-        .get(
-          'http://sdmay19-18-windows.ece.iastate.edu:3000/api/v1/applications',
-          {
-            params: {
-              appName: this.state.keyword
-            }
+        .get('http://localhost:3000/api/v1/applications', {
+          params: {
+            appName: this.state.keyword
           }
-        )
+        })
         .then(res => {
           const dataArray = []
           res.data.forEach(element => {
@@ -314,14 +303,11 @@ class App extends Component {
         })
     } else if (this.state.keywordFilter === 'packageName') {
       axios
-        .get(
-          'http://sdmay19-18-windows.ece.iastate.edu:3000/api/v1/applications',
-          {
-            params: {
-              packageName: this.state.keyword
-            }
+        .get('http://localhost:3000/api/v1/applications', {
+          params: {
+            packageName: this.state.keyword
           }
-        )
+        })
         .then(res => {
           const dataArray = []
           res.data.forEach(element => {
