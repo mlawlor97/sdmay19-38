@@ -16,6 +16,9 @@ RUN mkdir /lss
 CMD python3 apkPure.py
 
 
+
+#RUN apk add python3-dev gcc openssl-dev musl-dev libffi-dev libxslt-dev chromium && pip3 install --upgrade pip
+
 #Both the other ones need .dockerignore files
 
 # Stage 1
