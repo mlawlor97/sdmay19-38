@@ -178,8 +178,7 @@ def openPopups(soup):
 
 # this is a main function, in coding a main function is the function that starts everything, isn't coding fun
 def main():
-    # crawl()
-    openVersion("https://amazon-assistant.en.aptoide.com/?store_name=superwarehouse&app_id=36089894", "what", "ever")
+    crawl()
 
 
 
