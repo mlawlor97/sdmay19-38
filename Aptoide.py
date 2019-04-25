@@ -115,18 +115,19 @@ def openVersion(link, app_name, app_id):
     vnumber = versionDataSite.get('Version')
 
     # check that version doesn't already exist in db
-    version_entry = checkVersionDB(app_id, vnumber)
-    if version_entry is None:
-        id_version = writeVersionDB("Aptoide", app_name, app_id, vnumber, versionDataSite)
+    # version_entry = checkVersionDB(app_id, vnumber)
+    # if version_entry is None:
+        # id_version = writeVersionDB("Aptoide", app_name, app_id, vnumber, versionDataSite)
 
 
 # Getting the base app is just getting the most recent app
 def getBaseApp(url, soup):
-    app_entry = checkAppDB(url)
+    # app_entry = checkAppDB(url)
+    app_entry = 0
     common_data = []
 
     # if app already exists skip all the hard stuff
-    if app_entry is None:
+    if app_entry is 0:
 
         popup_arr = openPopups(soup)
 
@@ -147,7 +148,7 @@ def getBaseApp(url, soup):
         common_data.append(name)
 
         appDataSite = GetAptoideAppData(url, soup).getAll()
-        idApp = writeAppDB("Aptoide", name, url, package, appDataSite)
+        # idApp = writeAppDB("Aptoide", name, url, package, appDataSite)
         idApp = 0
         common_data.append(idApp)
         return common_data
