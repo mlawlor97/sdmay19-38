@@ -3,11 +3,12 @@ from types import FunctionType
 
 class DataCollectionBase:
 
-    def __init__(self, ErrorUrl, Soup):
+    def __init__(self, ErrorUrl, Soup, **moreSoups):
         self.url = ErrorUrl
         self.soup = Soup
         self.validApplication = False
         self.metaData = {}
+        self.extraBS = moreSoups
 
     def getName(self):
         pass
@@ -15,22 +16,28 @@ class DataCollectionBase:
     def getDeveloper(self):
         pass
 
-    def getPackage(self):
-        pass
+    # def getPackage(self):
+    #     pass
 
-    def getCategory(self):
-        pass
+    # def getCategory(self):
+    #     pass
 
     def getDescription(self):
         pass
 
-    def getRating(self):
+    # def getRating(self):
+    #     pass
+
+    # def getTags(self):
+    #     pass
+
+    # def getNumDownloads(self):
+    #     pass
+
+    def getSecurity(self):
         pass
 
-    def getTags(self):
-        pass
-
-    def getNumDownloads(self):
+    def getSpecs(self):
         pass
 
     def getAll(self):
@@ -42,7 +49,6 @@ class DataCollectionBase:
             if type(y) == FunctionType and x is not 'getAll':
                 func = getattr(self.__class__, x)
                 func(self)
-        if self.metaData.get('Name') is None:
-            return False
         else:
             return self.metaData
+
