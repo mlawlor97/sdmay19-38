@@ -112,7 +112,7 @@ def openVersion(link, app_name, app_id):
 
 
     versionDataSite = GetAptoideData(link, soup).getAll()
-    vnumber = versionDataSite.metaData.get('Version')
+    vnumber = versionDataSite.get('Version')
 
     # check that version doesn't already exist in db
     version_entry = checkVersionDB(app_id, vnumber)
@@ -178,7 +178,8 @@ def openPopups(soup):
 
 # this is a main function, in coding a main function is the function that starts everything, isn't coding fun
 def main():
-    crawl()
+    # crawl()
+    openVersion("https://amazon-assistant.en.aptoide.com/?store_name=superwarehouse&app_id=36089894", "what", "ever")
 
 
 
