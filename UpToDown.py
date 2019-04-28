@@ -377,8 +377,8 @@ class UpToDown():
             for permission in permissions:
                 f.write(("\t\t\t" + permission + "\n"))
         f.close()
-        # metadata = dict()
-        writeVersionDB('UpToDown', app, _id, version, None, savepath)
+        metadata = dict(languages=languages,permissions=permissions)
+        writeVersionDB('UpToDown', app, _id, version, metadata, savepath)
 
     def crawl(self):
         
