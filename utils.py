@@ -306,3 +306,7 @@ def convert_bytes(num):
         if num < 1000.0:
             return "%3.1f %s" % (num, x)
         num /= 1000.0
+
+def removeApp(appId):
+    global db
+    db.applications.delete_one({"_id": appId})
