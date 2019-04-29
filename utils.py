@@ -39,6 +39,7 @@ class MongoConnector:
         self.db = self.client.test2
         self.applications = self.db.Applications
         self.versions = self.db.Versions
+        self.reports = self.db.Reports
 
 
 # Global variable to keep from rate limiting websites
@@ -179,6 +180,9 @@ def writeVersionDB(storeName='', appName='', appId='', version='', data=None, fi
         })
         existing = db.versions.find_one(
             {"apk_info.calculated": apkVals.get("calculated")})
+
+        writeReportDB(apkVals['extracted'], appId)
+
         data.update({'file_size' : convert_bytes(os.path.getsize(filePath))})
         data.update({'permissions' : getPermissions(filePath)})
         if existing:
@@ -202,6 +206,10 @@ def writeVersionDB(storeName='', appName='', appId='', version='', data=None, fi
     result = db.versions.insert_one(appDict)
     return result.inserted_id
 
+def writeReportDB(shas, _id):
+    global db
+    report = db.reports.find_one({'sha' : shas})
+    db.reports.update_one({'sha': shas}, {'versions': report.get('versions') + [_id]})
 
 def checkAppDB(appUrl=None):
     """Returns the application entry from the DB based off the url"""
@@ -245,7 +253,7 @@ def getPackageName(apkFilePath):
 
 
 def getApkValues(apkFilePath):
-    return dict({})  # Dummy value until on linux instance
+    # return dict({})  # Dummy value until on linux instance
     metaCert = os.path.join("META-INF", "CERT.RSA")
     p1 = Popen(['unzip', '-p', apkFilePath, metaCert], stdout=PIPE)
     p = Popen(['keytool', '-printcert'], stdin=p1.stdout, stdout=PIPE)
