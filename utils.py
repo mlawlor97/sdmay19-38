@@ -36,15 +36,16 @@ class MongoConnector:
 
     def __init__(self):
         self.client = MongoClient('mongodb://localhost:27017')
-        self.db = self.client.test4
+        self.db = self.client.test2
         self.applications = self.db.Applications
         self.versions = self.db.Versions
+        self.reports = self.db.Reports
 
 
 # Global variable to keep from rate limiting websites
 rl = RateLimiter(0, 0)
 db = MongoConnector()
-root = "~/Desktop/lss"#/research/csafe-mobile/senior-design"
+root = "~/Desktop/lss/research/csafe-mobile/senior-design"
 start = os.getcwd()
 store = ''
 
@@ -179,6 +180,9 @@ def writeVersionDB(storeName='', appName='', appId='', version='', data=None, fi
         })
         existing = db.versions.find_one(
             {"apk_info.calculated": apkVals.get("calculated")})
+
+        writeReportDB(apkVals['extracted'], appId)
+
         data.update({'file_size' : convert_bytes(os.path.getsize(filePath))})
         data.update({'permissions' : getPermissions(filePath)})
         if existing:
@@ -202,6 +206,10 @@ def writeVersionDB(storeName='', appName='', appId='', version='', data=None, fi
     result = db.versions.insert_one(appDict)
     return result.inserted_id
 
+def writeReportDB(shas, _id):
+    global db
+    report = db.reports.find_one({'sha' : shas})
+    db.reports.update_one({'sha': shas}, {'versions': report.get('versions') + [_id]})
 
 def checkAppDB(appUrl=None):
     """Returns the application entry from the DB based off the url"""
@@ -291,7 +299,6 @@ def safeExecute(func, *args, default=None, error=BaseException):
         return func(*args)
     except error:
         return default
-
 
 def convert_bytes(num):
     for x in ['bytes', 'KB', 'MB', 'GB', 'TB']:
