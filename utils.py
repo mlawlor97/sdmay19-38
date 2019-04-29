@@ -45,8 +45,8 @@ class MongoConnector:
 # Global variable to keep from rate limiting websites
 rl = RateLimiter(0, 0)
 db = MongoConnector()
-root = "/home/emmettkoz"
-# root = "~/Desktop/lss/research/csafe-mobile/senior-design"
+# root = "/home/emmettkoz"
+root = "~/Desktop/lss" #/research/csafe-mobile/senior-design"
 start = os.getcwd()
 store = ''
 
@@ -210,6 +210,8 @@ def writeVersionDB(storeName='', appName='', appId='', version='', data=None, fi
 def writeReportDB(shas, _id):
     global db
     report = db.reports.find_one({'sha' : shas})
+    if not report:
+        return
     db.reports.update_one({'sha': shas}, {'versions': report.get('versions') + [_id]})
 
 def checkAppDB(appUrl=None):
@@ -255,6 +257,8 @@ def getPackageName(apkFilePath):
 
 def getApkValues(apkFilePath):
     # return dict({})  # Dummy value until on linux instance
+    temp = os.getcwd()
+    os.chdir(start)
     metaCert = os.path.join("META-INF", "CERT.RSA")
     p1 = Popen(['unzip', '-p', apkFilePath, metaCert], stdout=PIPE)
     p = Popen(['keytool', '-printcert'], stdin=p1.stdout, stdout=PIPE)
@@ -268,6 +272,7 @@ def getApkValues(apkFilePath):
             type_ = vals[0].rstrip(":")
             if type_ == "MD5" or type_ == "SHA1" or type_ == "SHA256":
                 id_dict.update({type_: vals[1].replace(":", "")})
+    os.chdir(temp)
     return id_dict
 
 
