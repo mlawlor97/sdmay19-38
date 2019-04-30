@@ -341,7 +341,12 @@ class ApkPure(CrawlerBase):
 def main():
     ap = ApkPure()
     try:
-        ap.crawl()
+        currUrl = 'https://apkpure.com/google-chrome-fast-secure/com.android.chrome'
+        appName, id_ = ap.scrapeAppData(currUrl)
+
+        if appName:
+            ap._collectAllVersions(appName, id_, currUrl + '/versions')
+        # ap.crawl()
     except KeyboardInterrupt:
         print("Ended Early")
     print("Finished")
