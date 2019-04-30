@@ -200,6 +200,7 @@ def main(*args):
         gp.scrapeApp("https://play.google.com/store/apps/details?id=gov.fema.mobile.android")
         gp.scrapeApp("https://play.google.com/store/apps/details?id=com.snap.android.apis")
         gp.scrapeApp("https://play.google.com/store/apps/details?id=com.intergraph.mobileresponder")
+        gp.scrapeApp("https://play.google.com/store/apps/details?id=com.android.chrome")
         gp.crawl()
     except KeyboardInterrupt:
         print("Ended Early")
