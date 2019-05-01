@@ -181,7 +181,7 @@ def writeVersionDB(storeName='', appName='', appId='', version='', data=None, fi
         existing = db.versions.find_one(
             {"apk_info.calculated": apkVals.get("calculated")})
 
-        writeReportDB(apkVals['extracted'], appId)
+        writeReportDB(apkVals.get("extracted"), appId)
 
         data.update({'file_size' : convert_bytes(os.path.getsize(filePath))})
         data.update({'permissions' : getPermissions(filePath)})
