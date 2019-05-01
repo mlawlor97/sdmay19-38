@@ -209,7 +209,8 @@ def writeVersionDB(storeName='', appName='', appId='', version='', data=None, fi
 def writeReportDB(shas, _id):
     global db
     report = db.reports.find_one({'sha' : shas})
-    db.reports.update_one({'sha': shas}, {'versions': report.get('versions') + [_id]})
+    if report:
+        db.reports.update_one({'sha': shas}, {'versions': report.get('versions') + [_id]})
 
 def checkAppDB(appUrl=None):
     """Returns the application entry from the DB based off the url"""
@@ -254,9 +255,9 @@ def getPackageName(apkFilePath):
 
 def getApkValues(apkFilePath):
     # return dict({})  # Dummy value until on linux instance
-    metaCert = os.path.join("META-INF", "CERT.RSA")
-    p1 = Popen(['unzip', '-p', apkFilePath, metaCert], stdout=PIPE)
-    p = Popen(['keytool', '-printcert'], stdin=p1.stdout, stdout=PIPE)
+    # metaCert = os.path.join("META-INF", "CERT.RSA")
+    # p1 = Popen(['unzip', '-p', apkFilePath, metaCert], stdout=PIPE)
+    p = Popen(['keytool', '-list', '-printcert', '-jarfile', apkFilePath], stdout=PIPE)
     stdout, stderr = p.communicate()
 
     id_dict = dict({})
