@@ -46,7 +46,7 @@ class MongoConnector:
 rl = RateLimiter(0, 0)
 db = MongoConnector()
 # root = "/home/emmettkoz"
-root = "~/Desktop/lss" #/research/csafe-mobile/senior-design"
+root = "/home/emmettkoz/lss" #/research/csafe-mobile/senior-design"
 start = os.getcwd()
 store = ''
 
