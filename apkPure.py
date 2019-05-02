@@ -1,4 +1,4 @@
-from utils import RateLimiter, requestHTML, logToFile, removeSpecialChars, createPath, downloadApk, writeOutput, safeExecute, mkStoreDirs
+from utils import RateLimiter, requestHTML, logToFile, removeSpecialChars, createPath, downloadApk, writeOutput, safeExecute, mkStoreDirs, getApkValues
 from utils import writeAppDB, writeVersionDB, checkAppDB, checkVersionDB  # DB Connectors
 from SupportFiles.webDriverUtils import WebDriver
 from SupportFiles.metaDataBase2 import DataCollectionBase
@@ -341,12 +341,7 @@ class ApkPure(CrawlerBase):
 def main():
     ap = ApkPure()
     try:
-        currUrl = 'https://apkpure.com/google-chrome-fast-secure/com.android.chrome'
-        appName, id_ = ap.scrapeAppData(currUrl)
-
-        if appName:
-            ap._collectAllVersions(appName, id_, currUrl + '/versions')
-        # ap.crawl()
+        ap.crawl()
     except KeyboardInterrupt:
         print("Ended Early")
     print("Finished")
