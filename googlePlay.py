@@ -8,6 +8,7 @@ from googleplayapi.gpapi.googleplay import GooglePlayAPI, SecurityCheckError, Re
 from datetime import datetime
 import uuid
 import os
+import sys
 
 
 class GoogleData(DataCollectionBase):
@@ -184,5 +185,8 @@ def main(*args):
     print("Finished")
 
 
-# if __name__ == '__main__':
-#     main()
+if __name__ == '__main__':
+    if sys.argv.__len__() > 1:
+        main(int(sys.argv[1]) % 4)
+    else:
+        main(0)
